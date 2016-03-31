@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15B22c" minimumToolsVersion="Xcode 7.0">
+    <entity name="GGDiskCachedObject" representedClassName="GGDiskCachedObject" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastUpdateTime" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GGDiskCachedObject" positionX="-63" positionY="-18" width="128" height="90"/>
+    </elements>
+</model>
