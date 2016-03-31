@@ -44,6 +44,11 @@ NSString *const kAPI_SIZE = @"size";
     [self POST:kAPI_Register params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
+- (void)getCaptchaWithMobile:(NSString *)mobile completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"mobile":mobile};
+    [self POST:kAPI_GetCaptcha params:params memoryCache:NO diskCache:NO completed:completed];
+}
+
 #pragma mark - life
 + (instancetype)sharedManager{
     static dispatch_once_t onceToken;

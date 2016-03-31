@@ -14,9 +14,11 @@
 + (instancetype)sharedManager;
 
 
+#pragma mark - 登录注册
+
 - (void)loginWithMobile:(NSString *)mobile password:(NSString *)password completedHandler:(GGRequestCallbackBlock)completed;
 - (void)registerWithMobile:(NSString *)mobile password:(NSString *)password captcha:(NSString *)captcha completedHandler:(GGRequestCallbackBlock)completed;
-
+- (void)getCaptchaWithMobile:(NSString *)mobile completedHandler:(GGRequestCallbackBlock)completed;
 
 
 
