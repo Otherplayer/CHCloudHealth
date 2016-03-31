@@ -145,6 +145,7 @@
 				8482A2F01CACC13F0070931B /* Sections */,
 				84F1F4741CAD2C6E0061AACC /* Networking */,
 				8482A2ED1CACC12D0070931B /* General */,
+				84F1F4BF1CAD351B0061AACC /* Categories */,
 				8482A2EF1CACC13F0070931B /* Resources */,
 				8482A3381CACC8500070931B /* AppGlobal.h */,
 				8464DE131CAA48C7000B987E /* AppDelegate.h */,
@@ -302,6 +303,13 @@
 				84F1F4A81CAD2C6E0061AACC /* HYQBASEModel.m */,
 			);
 			path = RootModel;
+			sourceTree = "<group>";
+		};
+		84F1F4BF1CAD351B0061AACC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		9EA6CF6E1056A669C882E269 /* Frameworks */ = {
