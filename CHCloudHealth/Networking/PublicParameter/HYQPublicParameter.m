@@ -12,22 +12,14 @@
 @implementation HYQPublicParameter
 
 
-//+ (instancetype)sharedInstance{
-//    static dispatch_once_t onceToken;
-//    static HYQPublicParameter *paramter;
-//    dispatch_once(&onceToken, ^{
-//        paramter = [[HYQPublicParameter alloc] init];
-//    });
-//    return paramter;
-//}
-
-//
-//- (NSDictionary *)parameters{
-//    if (!_parameters || _parameters.allKeys.count == 0) {
-//        _parameters = [[self paramtersInfo] copy];
-//    }
-//    return _parameters;
-//}
++ (instancetype)sharedInstance{
+    static dispatch_once_t onceToken;
+    static HYQPublicParameter *paramter;
+    dispatch_once(&onceToken, ^{
+        paramter = [[HYQPublicParameter alloc] init];
+    });
+    return paramter;
+}
 
 /**
  *  接口参数
@@ -43,53 +35,52 @@
  */
 
 + (NSDictionary *)publicParameter{
-//    
-//    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-//    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-//    
+    
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     
     
-    // app build版本
-    //NSString *app_build = [infoDictionary objectForKey:@"CFBundleVersion"];
+    
+//     app build版本
+//    NSString *app_build = [infoDictionary objectForKey:@"CFBundleVersion"];
     
     
-////    app_type   手机型号
-//    NSString *phoneModel =   [[UIDevice currentDevice] model];
+//    app_type   手机型号
+    NSString *phoneModel =   [[UIDevice currentDevice] model];
 //    NSString *hardwareStr =  [[UIDevice currentDevice] hardwareSimpleDescription];
-////    NSString *size = NSStringFromCGSize(CGSizeMake(kMainWidth, kMainHeight));
-//    NSString *size = [NSString stringWithFormat:@"%.f-%.f",kMainWidth,kMainHeight];
-////    app_os_ver 系统版本号
-//    NSString *phoneVersion = [[UIDevice currentDevice] systemVersion];
-////    app_name   app名字
-//    NSString *appName =      [infoDictionary objectForKey:@"CFBundleDisplayName"];
-////    app_ver    app版本号
-//    NSString *appVersion =   [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-////    app_token  用户的登录状态标识符
-//    NSString *app_token  =   [user objectForKey:@"app_token"]?:@"";
-////    uid        用户的id
+//    NSString *size = NSStringFromCGSize(CGSizeMake(kMainWidth, kMainHeight));
+    NSString *size = [NSString stringWithFormat:@"%.f-%.f",kMainWidth,kMainHeight];
+//    app_os_ver 系统版本号
+    NSString *phoneVersion = [[UIDevice currentDevice] systemVersion];
+//    app_name   app名字
+    NSString *appName =      [infoDictionary objectForKey:@"CFBundleDisplayName"];
+//    app_ver    app版本号
+    NSString *appVersion =   [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+//    app_token  用户的登录状态标识符
+    NSString *app_token  =   [user objectForKey:@"app_token"]?:@"";
+//    uid        用户的id
 //    NSString *uid        =   [user objectForKey:kUSER_ID]?:@"";
-//    //token 推送
+    //token 推送
 //    NSString *devToken = [[NSUserDefaults standardUserDefaults] objectForKey:kRCloudDeviceToken];
-//    //唯一广告标识
+    //唯一广告标识
 //    NSString *IDFA = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
 //    NSString *uuid = IDFA;
-//    
-//    NSDictionary *publicParameter = [NSDictionary dictionaryWithObjectsAndKeys:
+    
+    NSDictionary *publicParameter = [NSDictionary dictionaryWithObjectsAndKeys:
 //                                     uid, @"uid",
-//                                     app_token, @"app_token",
+                                     app_token, @"app_token",
 //                                     hardwareStr,@"hardware",
-//                                     size,@"screen_size",
-//                                     phoneModel,@"app_type",
-//                                     phoneVersion, @"app_os_ver",
-//                                     appVersion, @"app_ver",
-//                                     appName,@"app_name",
-//                                     @"ios",@"app_os",
+                                     size,@"screen_size",
+                                     phoneModel,@"app_type",
+                                     phoneVersion, @"app_os_ver",
+                                     appVersion, @"app_ver",
+                                     appName,@"app_name",
+                                     @"ios",@"app_os",
 //                                     devToken,@"app_umeng",
-//                                     uuid,@"app_id", nil];
-//    return publicParameter;
-//    
-//    
-    return nil;
+//                                     uuid,@"app_id",
+                                     nil];
+    return publicParameter;
+    
 }
 
 

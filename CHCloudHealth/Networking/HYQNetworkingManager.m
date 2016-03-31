@@ -31,19 +31,7 @@ NSString *const kAPI_SIZE = @"size";
 
 
 #pragma mark - public interface
-//
-//
-//- (void)checkRelationShip:(NSString *)targetID completed:(HYQNetWorkBlock)completed{
-//    NSDictionary *parameters = @{@"broker_uid":targetID};
-//    [self POST:kAPI_CheckRelationship params:parameters memoryCache:NO diskCache:NO completed:^(BOOL success, NSString *errDesc, HYQBASEModel *model) {
-//        if (success) {
-//            completed(success,model.data);
-//        }else{
-//            completed(success,errDesc);
-//        }
-//    }];
-//}
-//
+
 - (void)getLaunchAdvertisementCompletedHandler:(GGRequestCallbackBlock)completed{
     
     [self POST:kAPI_AD_Launch params:nil memoryCache:NO diskCache:NO completed:completed];

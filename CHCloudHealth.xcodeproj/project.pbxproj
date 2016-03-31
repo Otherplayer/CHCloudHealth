@@ -142,8 +142,8 @@
 		8464DE0F1CAA48C7000B987E /* CHCloudHealth */ = {
 			isa = PBXGroup;
 			children = (
-				84F1F4741CAD2C6E0061AACC /* Networking */,
 				8482A2F01CACC13F0070931B /* Sections */,
+				84F1F4741CAD2C6E0061AACC /* Networking */,
 				8482A2ED1CACC12D0070931B /* General */,
 				8482A2EF1CACC13F0070931B /* Resources */,
 				8482A3381CACC8500070931B /* AppGlobal.h */,
@@ -201,10 +201,10 @@
 				84F1F4A61CAD2C6E0061AACC /* RootModel */,
 				84F1F4941CAD2C6E0061AACC /* HYQHelperReachibility.h */,
 				84F1F4951CAD2C6E0061AACC /* HYQHelperReachibility.m */,
+				84F1F49C1CAD2C6E0061AACC /* NetEnvironmentConfig.h */,
 				84F1F4961CAD2C6E0061AACC /* HYQNetworkingConfig.h */,
 				84F1F4971CAD2C6E0061AACC /* HYQNetworkingManager.h */,
 				84F1F4981CAD2C6E0061AACC /* HYQNetworkingManager.m */,
-				84F1F49C1CAD2C6E0061AACC /* NetEnvironmentConfig.h */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

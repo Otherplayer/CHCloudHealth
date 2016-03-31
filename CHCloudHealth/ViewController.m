@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [[HYQNetworkingManager sharedManager] getLaunchAdvertisementCompletedHandler:^(BOOL success, NSString *errDesc, HYQBASEModel *model) {
+        
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
