@@ -9,14 +9,11 @@
 #ifndef HYQNetworkingConfig_h
 #define HYQNetworkingConfig_h
 #import "NetEnvironmentConfig.h"
-
-NSString *const kAPI_AD_Launch = HOTYQ_JAVA_API @"indexdata/startAdv.do";
-
-
 #pragma mark - 登录
 
 
-
+NSString *const kAPI_Login = HOTYQ_JAVA_API @"userController/login";
+NSString *const kAPI_Register = HOTYQ_JAVA_API @"userController/register";
 
 
 

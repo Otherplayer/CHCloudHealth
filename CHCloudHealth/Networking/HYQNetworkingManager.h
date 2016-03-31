@@ -14,20 +14,8 @@
 + (instancetype)sharedManager;
 
 
-
-
-- (void)getLaunchAdvertisementCompletedHandler:(GGRequestCallbackBlock)completed;
-
-
-
-
-
-
-
-
-
-
-
+- (void)loginWithMobile:(NSString *)mobile password:(NSString *)password completedHandler:(GGRequestCallbackBlock)completed;
+- (void)registerWithMobile:(NSString *)mobile password:(NSString *)password captcha:(NSString *)captcha completedHandler:(GGRequestCallbackBlock)completed;
 
 
 

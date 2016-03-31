@@ -104,10 +104,12 @@ NSString *const kIMGKey = @"kIMGKey";
     NSMutableDictionary *allparameters = [[NSMutableDictionary alloc] initWithDictionary:[HYQPublicParameter publicParameter]];
     //在这里统一添加公共参数进来
     if (parameters) {
-        for (NSString *key in [parameters allKeys]) {
-            id value = [parameters objectForKey:key];
-            [allparameters setObject:value forKey:key];
-        }
+//        for (NSString *key in [parameters allKeys]) {
+//            id value = [parameters objectForKey:key];
+//            [allparameters setObject:value forKey:key];
+//        }
+        
+        [allparameters setObject:parameters forKey:@"data"];
     }
     
     NSLog(@"参数：%@\n\n url:%@",allparameters,URLString);
@@ -208,7 +210,7 @@ NSString *const kIMGKey = @"kIMGKey";
         return;
     }
     
-    GGResponseErrCodeType reponseCode = [object[@"state_code"] intValue];
+    GGResponseErrCodeType reponseCode = [object[@"status"] intValue];
     
     
 #ifdef SHOULD_USE_JSONMODEL
@@ -223,8 +225,7 @@ NSString *const kIMGKey = @"kIMGKey";
     }
 #else
     id resultData = object[@"data"];
-    completed(reponseCode == GGServiceResponseErrCodeTypeNone, baseModel.description, resultData);
-    NSLog(@"dddddddddddd%@",baseModel.description);
+    completed(reponseCode == GGServiceResponseErrCodeTypeNone, object[@"message"], resultData);
 #endif
     
     

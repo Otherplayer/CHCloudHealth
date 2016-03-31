@@ -24,14 +24,14 @@
 
 
 //////////////////////////////////
-#define HOTYQ_API_VERSION @"0302" //// API 版本号
+//#define HOTYQ_API_VERSION @"0302" //// API 版本号
 //////////////////////////////////
 
 #ifdef IS_OFFLINE_TEST
-#define HOTYQ_JAVA_API @"http://www.hotyq.com:8098/api/" HOTYQ_API_VERSION @"/"
+#define HOTYQ_JAVA_API @"http://123.57.54.62:8081/healthcloud-core/"
 
 #else
-#define HOTYQ_JAVA_API @"https://api.hotyq.com:8099/api/" HOTYQ_API_VERSION @"/"
+#define HOTYQ_JAVA_API @"http://123.57.54.62:8081/healthcloud-core/"
 #endif
 
 

@@ -9,7 +9,7 @@
 #ifndef GGNetwoking_GGNTConfiguration_h
 #define GGNetwoking_GGNTConfiguration_h
 
-#define SHOULD_USE_JSONMODEL   /*是否调用JSONModel*/
+//#define SHOULD_USE_JSONMODEL   /*是否调用JSONModel*/
 
 #import "HYQBASEModel.h"
 
@@ -40,7 +40,7 @@ static NSUInteger     kGGDiskCacheCapacityLimitM = 500;   // 最大本地缓存�
 
 typedef NS_ENUM(NSInteger, GGResponseErrCodeType){
     GGServiceResponseErrCodeTypeNone = 1000,     //服务端返回错误代码
-    GGServiceResponseErrCodeTypeSeverErr = 500,
+    GGServiceResponseErrCodeTypeSeverErr = 9000,
     GGResponseErrCodeTypeEmailExisted = 301,
     GGResponseErrCodeTypeEmail_PsdError = 302,
     GGResponseErrCodeTypeOldPsdError = 303,
