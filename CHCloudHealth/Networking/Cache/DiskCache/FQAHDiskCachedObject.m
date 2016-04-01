@@ -23,7 +23,9 @@
     cachedObject.content = content;
     cachedObject.lastUpdateTime = [NSDate dateWithTimeIntervalSinceNow:0];
     //save
+    
     [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveToPersistentStoreAndWait];// should save on currentthread ???
+    
     return cachedObject;
 }
 
