@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view.
     [self installRevealGesture];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(haha:) name:@"jjjjjjjjjjj" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldGotoSubMenuController:) name:kNotificationMenuController object:nil];
     
 }
 
@@ -29,7 +29,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)haha:(id)sender{
+- (void)shouldGotoSubMenuController:(NSNotification *)notification{
     dispatch_async(dispatch_get_main_queue(), ^{
         ViewController *controller = [[ViewController alloc] init];
         [self.navigationController pushViewController:controller animated:NO];

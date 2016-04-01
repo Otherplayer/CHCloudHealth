@@ -39,7 +39,7 @@
     SWRevealViewController *revealController = self.revealViewController;
     [revealController revealToggleAnimated:YES];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"jjjjjjjjjjj" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationMenuController object:nil];
     
 }
 
