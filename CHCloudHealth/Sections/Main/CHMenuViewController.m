@@ -42,11 +42,8 @@
     return 5;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *identifierCell = @"identifier2cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierCell];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifierCell];
-    }
+    static NSString *identifierCell = @"IdentifierMenu";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierCell forIndexPath:indexPath];
     
     [self configureCell:cell atIndexPath:indexPath];
     
@@ -62,7 +59,7 @@
 
 - (UIView *)tableHeaderView{
     if (!_tableHeaderView) {
-        _tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, 200)];
+        _tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth - 120, 200)];
         _tableHeaderView.backgroundColor = [UIColor cyanColor];
     }
     return _tableHeaderView;
