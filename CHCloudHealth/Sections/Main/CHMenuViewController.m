@@ -103,7 +103,9 @@
 #pragma mark - configure
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    
+    NSArray *data = [self.datas objectAtIndex:indexPath.section];
+    NSString *title = [data objectAtIndex:indexPath.row][@"title"];
+    [cell.textLabel setText:title];
 }
 
 
