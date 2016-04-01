@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JRSwizzle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSONModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,11 +62,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>07564B2A3A002DDAD93E4F9702CDFD2C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>09FA060F1A0492FB25232F489AC4E573</key>
 		<dict>
 			<key>primary</key>
@@ -72,27 +72,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>44C91F216CA7D75DB9D4D896FBEA6103</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5F4EA1D99C8EC2F86D5AC5FDC0232EE5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>777C6D33FEF84D13A8801FF0B8A83210</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7A8C07AE127F7F76336F79A23B66BC3F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7AE83E474B356C2273F57605DB10DE1F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8F74D9EA91F4C43190670066BAC37D44</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A9CDFF523B6E03E0B25100141BB3F4A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A71D4088EABBE7B01E833C9605C60B67</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>D54AB3ECEB9A8FBA15D4F73CBE326692</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D7C967A53FCA359579E0193F038FF324</key>
 		<dict>
 			<key>primary</key>
 			<true/>

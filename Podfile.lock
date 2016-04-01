@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - JDStatusBarNotification (1.5.3)
+  - JRSwizzle (1.0)
   - JSONModel (1.1.2)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
@@ -37,6 +38,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.5.0)
   - JDStatusBarNotification (~> 1.5.3)
+  - JRSwizzle (~> 1.0)
   - JSONModel (~> 1.1.0)
   - MagicalRecord (~> 2.3.2)
   - MBProgressHUD (~> 0.9)
@@ -47,6 +49,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   JDStatusBarNotification: 29413865af11c862c17180610b0f46a21118b412
+  JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
   JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
