@@ -34,6 +34,10 @@
 		8472D20C1CAE53930003E35A /* FQAHPublicParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8472D1F41CAE53930003E35A /* FQAHPublicParameter.m */; };
 		8472D20D1CAE53930003E35A /* FQAHReachibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8472D1F71CAE53930003E35A /* FQAHReachibility.m */; };
 		8472D20E1CAE53930003E35A /* BASEModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8472D1FA1CAE53930003E35A /* BASEModel.m */; };
+		84B1E2041CAE5AC6004573F4 /* CHRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E2031CAE5AC6004573F4 /* CHRevealViewController.m */; };
+		84B1E2071CAE5B58004573F4 /* CHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E2061CAE5B58004573F4 /* CHMainViewController.m */; };
+		84B1E20A1CAE5E84004573F4 /* CHMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E2091CAE5E84004573F4 /* CHMenuViewController.m */; };
+		84B1E20D1CAE5FEA004573F4 /* CHRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E20C1CAE5FEA004573F4 /* CHRootViewController.m */; };
 		84F1F4BE1CAD2CB60061AACC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F1F4BD1CAD2CB60061AACC /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +97,14 @@
 		8472D1FA1CAE53930003E35A /* BASEModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BASEModel.m; sourceTree = "<group>"; };
 		8482A3371CACC8280070931B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8482A3381CACC8500070931B /* AppGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppGlobal.h; sourceTree = "<group>"; };
+		84B1E2021CAE5AC6004573F4 /* CHRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRevealViewController.h; sourceTree = "<group>"; };
+		84B1E2031CAE5AC6004573F4 /* CHRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRevealViewController.m; sourceTree = "<group>"; };
+		84B1E2051CAE5B58004573F4 /* CHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMainViewController.h; sourceTree = "<group>"; };
+		84B1E2061CAE5B58004573F4 /* CHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMainViewController.m; sourceTree = "<group>"; };
+		84B1E2081CAE5E84004573F4 /* CHMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMenuViewController.h; sourceTree = "<group>"; };
+		84B1E2091CAE5E84004573F4 /* CHMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMenuViewController.m; sourceTree = "<group>"; };
+		84B1E20B1CAE5FEA004573F4 /* CHRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRootViewController.h; sourceTree = "<group>"; };
+		84B1E20C1CAE5FEA004573F4 /* CHRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRootViewController.m; sourceTree = "<group>"; };
 		84F1F4BD1CAD2CB60061AACC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EA12FFC0D604A8243CDEE906 /* Pods-CHCloudHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHCloudHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHCloudHealth/Pods-CHCloudHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -291,6 +303,7 @@
 		8482A2ED1CACC12D0070931B /* General */ = {
 			isa = PBXGroup;
 			children = (
+				84B1E2011CAE5AAD004573F4 /* Base */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -305,8 +318,31 @@
 		8482A2F01CACC13F0070931B /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				84B1E2001CAE5A9E004573F4 /* Main */,
 			);
 			path = Sections;
+			sourceTree = "<group>";
+		};
+		84B1E2001CAE5A9E004573F4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				84B1E2081CAE5E84004573F4 /* CHMenuViewController.h */,
+				84B1E2091CAE5E84004573F4 /* CHMenuViewController.m */,
+				84B1E2051CAE5B58004573F4 /* CHMainViewController.h */,
+				84B1E2061CAE5B58004573F4 /* CHMainViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		84B1E2011CAE5AAD004573F4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				84B1E2021CAE5AC6004573F4 /* CHRevealViewController.h */,
+				84B1E2031CAE5AC6004573F4 /* CHRevealViewController.m */,
+				84B1E20B1CAE5FEA004573F4 /* CHRootViewController.h */,
+				84B1E20C1CAE5FEA004573F4 /* CHRootViewController.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		84F1F4BF1CAD351B0061AACC /* Categories */ = {
@@ -447,9 +483,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8472D20E1CAE53930003E35A /* BASEModel.m in Sources */,
+				84B1E20D1CAE5FEA004573F4 /* CHRootViewController.m in Sources */,
 				8472D1FE1CAE53930003E35A /* FQAHNetworking.xcdatamodeld in Sources */,
 				8464DE181CAA48C7000B987E /* ViewController.m in Sources */,
 				8472D20A1CAE53930003E35A /* FQAHURLResponse.m in Sources */,
+				84B1E20A1CAE5E84004573F4 /* CHMenuViewController.m in Sources */,
 				8472D1FF1CAE53930003E35A /* FQAHCache.m in Sources */,
 				8472D2071CAE53930003E35A /* UIDevice+FQAHCategories.m in Sources */,
 				8472D20B1CAE53930003E35A /* NetworkingManager.m in Sources */,
@@ -466,9 +504,11 @@
 				8472D20D1CAE53930003E35A /* FQAHReachibility.m in Sources */,
 				8472D2051CAE53930003E35A /* NSObject+FQAHCategories.m in Sources */,
 				8472D2031CAE53930003E35A /* NSFileManager+FQAHCategories.m in Sources */,
+				84B1E2041CAE5AC6004573F4 /* CHRevealViewController.m in Sources */,
 				8472D2061CAE53930003E35A /* NSURLRequest+FQAHCategories.m in Sources */,
 				8464DE121CAA48C7000B987E /* main.m in Sources */,
 				8472D2091CAE53930003E35A /* FQAHBaseNetwork.m in Sources */,
+				84B1E2071CAE5B58004573F4 /* CHMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

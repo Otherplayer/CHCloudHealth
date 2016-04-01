@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - JDStatusBarNotification (1.5.3)
   - JSONModel (1.1.2)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
@@ -29,24 +30,29 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
+  - SWRevealViewController (2.3.0)
   - UIActivityIndicator-for-SDWebImage (1.2):
     - SDWebImage (~> 3.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.0)
+  - JDStatusBarNotification (~> 1.5.3)
   - JSONModel (~> 1.1.0)
   - MagicalRecord (~> 2.3.2)
   - MBProgressHUD (~> 0.9)
   - MJRefresh (~> 3.0.7)
+  - SWRevealViewController (~> 2.3.0)
   - UIActivityIndicator-for-SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  JDStatusBarNotification: 29413865af11c862c17180610b0f46a21118b412
   JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
 
 COCOAPODS: 0.39.0
