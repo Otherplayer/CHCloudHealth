@@ -7,13 +7,13 @@
 //
 
 #import "AFHTTPRequestOperationManager.h"
-#import "GGNTConfiguration.h"
-#import "HYQBASEModel.h"
+#import "FQAHNTConfiguration.h"
+#import "BASEModel.h"
 
 extern NSString *const kIMGKey;
 
 
-@interface GGBaseNetwork : AFHTTPRequestOperationManager
+@interface FQAHBaseNetwork : AFHTTPRequestOperationManager
 //*(+ (instancetype)sharedNetwork;)*//
 
 /// post 请求

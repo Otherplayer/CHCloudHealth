@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "HYQHelperReachibility.h"
 
 @interface AppDelegate ()
 
@@ -18,8 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[HYQHelperReachibility sharedInstance] startMonitoringInternetStates];
-    
+    // Register Splite
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"FQAHNetworking.sqlite"];
+    [[FQAHReachibility sharedInstance] startMonitoringInternetStates];
     
     
     
@@ -46,6 +46,11 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    [MagicalRecord cleanUp];
+    
+    
 }
 
 @end

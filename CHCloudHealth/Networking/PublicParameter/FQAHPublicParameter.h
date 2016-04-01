@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HYQPublicParameter : NSObject
+@interface FQAHPublicParameter : NSObject
 + (NSDictionary *)publicParameter;
 
 @end

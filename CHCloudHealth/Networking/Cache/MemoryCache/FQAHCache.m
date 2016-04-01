@@ -6,15 +6,15 @@
 //  Copyright (c) 2015年 __无邪_. All rights reserved.
 //
 
-#import "GGCache.h"
-#import "GGNTConfiguration.h"
-@interface GGCache ()
+#import "FQAHCache.h"
+#import "FQAHNTConfiguration.h"
+@interface FQAHCache ()
 
 @property (nonatomic, strong) NSCache *cache;
 
 @end
 
-@implementation GGCache
+@implementation FQAHCache
 #pragma mark - getters and setters
 - (NSCache *)cache
 {
@@ -29,9 +29,9 @@
 + (instancetype)sharedInstance
 {
     static dispatch_once_t onceToken;
-    static GGCache *sharedInstance;
+    static FQAHCache *sharedInstance;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[GGCache alloc] init];
+        sharedInstance = [[FQAHCache alloc] init];
     });
     return sharedInstance;
 }
@@ -60,7 +60,7 @@
 
 
 - (NSData *)fetchCachedDataWithKey:(NSString *)key{
-    GGCachedObject *cachedObject = [self.cache objectForKey:key];
+    FQAHCachedObject *cachedObject = [self.cache objectForKey:key];
     if (cachedObject.isOutdated || cachedObject.isEmpty) {
         return nil;
     } else {
@@ -69,9 +69,9 @@
 }
 
 - (void)saveCacheWithData:(NSData *)cachedData key:(NSString *)key{
-    GGCachedObject *cachedObject = [self.cache objectForKey:key];
+    FQAHCachedObject *cachedObject = [self.cache objectForKey:key];
     if (cachedObject == nil) {
-        cachedObject = [[GGCachedObject alloc] init];
+        cachedObject = [[FQAHCachedObject alloc] init];
     }
     [cachedObject updateContent:cachedData];
     [self.cache setObject:cachedObject forKey:key];

@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-#define Internet [HYQHelperReachibility sharedInstance]
+#define Internet [FQAHReachibility sharedInstance]
 
-@interface HYQHelperReachibility : NSObject
+@interface FQAHReachibility : NSObject
 
 @property (nonatomic, unsafe_unretained) BOOL isReachable;
 @property (nonatomic, unsafe_unretained) BOOL isReachableWifi;
 //@property (nonatomic, strong) NSString *wifiName;
 
-+ (HYQHelperReachibility *)sharedInstance;
++ (FQAHReachibility *)sharedInstance;
 - (void)startMonitoringInternetStates;
 
 @end

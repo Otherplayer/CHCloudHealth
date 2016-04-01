@@ -6,31 +6,31 @@
 //  Copyright (c) 2015年 __无邪_. All rights reserved.
 //
 
-#import "GGBaseNetwork.h"
-#import "GGURLResponse.h"
-#import "GGLogger.h"
+#import "FQAHBaseNetwork.h"
+#import "FQAHURLResponse.h"
+#import "FQAHLogger.h"
 
-#import "GGCache.h"
-#import "GGDiskCache.h"
-#import "HYQHelperReachibility.h"
+#import "FQAHCache.h"
+#import "FQAHDiskCache.h"
+//#import "FQAHReachibility.h"
 
-#import "HYQPublicParameter.h"
+#import "FQAHPublicParameter.h"
 
 NSString *const kIMGKey = @"kIMGKey";
 
-@interface GGBaseNetwork ()
-@property (nonatomic, strong)GGCache *cache;
+@interface FQAHBaseNetwork ()
+@property (nonatomic, strong)FQAHCache *cache;
 @property (nonatomic, strong)NSMutableDictionary *dispatchList; //请求列表
-@property (nonatomic, strong)GGBaseNetwork *shareManager;
+@property (nonatomic, strong)FQAHBaseNetwork *shareManager;
 @end
 
-@implementation GGBaseNetwork
+@implementation FQAHBaseNetwork
 #pragma mark - lifecircle
 + (instancetype)sharedNetwork {
-    static GGBaseNetwork *shareManager = nil;
+    static FQAHBaseNetwork *shareManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        shareManager =[GGBaseNetwork manager];
+        shareManager =[FQAHBaseNetwork manager];
         dispatch_queue_t requestQueue = dispatch_queue_create("com.example.MyQueue", NULL);
         shareManager.completionQueue = requestQueue;
         
@@ -84,9 +84,9 @@ NSString *const kIMGKey = @"kIMGKey";
     return _dispatchList;
 }
 
-- (GGCache *)cache{
+- (FQAHCache *)cache{
     if (_cache == nil) {
-        _cache = [GGCache sharedInstance];
+        _cache = [FQAHCache sharedInstance];
     }
     return _cache;
 }
@@ -101,14 +101,13 @@ NSString *const kIMGKey = @"kIMGKey";
 ////网络请求,请勿改动
 
 - (void)POST:(NSString *)URLString params:(id)parameters memoryCache:(BOOL)memoryCache diskCache:(BOOL)diskCache completed:(GGRequestCallbackBlock)completed{
-    NSMutableDictionary *allparameters = [[NSMutableDictionary alloc] initWithDictionary:[HYQPublicParameter publicParameter]];
+    NSMutableDictionary *allparameters = [[NSMutableDictionary alloc] initWithDictionary:[FQAHPublicParameter publicParameter]];
     //在这里统一添加公共参数进来
     if (parameters) {
 //        for (NSString *key in [parameters allKeys]) {
 //            id value = [parameters objectForKey:key];
 //            [allparameters setObject:value forKey:key];
 //        }
-        
         [allparameters setObject:parameters forKey:@"data"];
     }
     
@@ -117,7 +116,7 @@ NSString *const kIMGKey = @"kIMGKey";
         return;
     }
     
-    [[GGBaseNetwork sharedNetwork] POST:URLString parameters:allparameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[FQAHBaseNetwork sharedNetwork] POST:URLString parameters:allparameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [self isSuccessedOnCallingAPIOperation:operation object:responseObject url:URLString params:allparameters memoryCache:memoryCache diskCache:diskCache completedHandler:completed];
         
@@ -131,7 +130,7 @@ NSString *const kIMGKey = @"kIMGKey";
 
 - (void)POST:(NSString *)URLString params:(id)parameters images:(NSArray *)images imageSConfig:(NSString *)serviceName completed:(GGRequestCallbackBlock)completed{
     
-    [[GGBaseNetwork sharedNetwork] POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [[FQAHBaseNetwork sharedNetwork] POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
         for (int i = 0; i < images.count; i++) {
             UIImage *image = [[images objectAtIndex:i] objectForKey:kIMGKey];
@@ -158,7 +157,7 @@ NSString *const kIMGKey = @"kIMGKey";
         return;
     }
     
-    [[GGBaseNetwork sharedNetwork] GET:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[FQAHBaseNetwork sharedNetwork] GET:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [self isSuccessedOnCallingAPIOperation:operation object:responseObject url:URLString params:parameters memoryCache:memoryCache diskCache:diskCache completedHandler:completed];
         
@@ -178,7 +177,7 @@ NSString *const kIMGKey = @"kIMGKey";
 
 ////数据处理，请勿改动
 
-- (void)handleResponse:(GGURLResponse *)response shouldCache:(BOOL)flag diskCache:(BOOL)diskCache completedHandler:(GGRequestCallbackBlock)completed{
+- (void)handleResponse:(FQAHURLResponse *)response shouldCache:(BOOL)flag diskCache:(BOOL)diskCache completedHandler:(GGRequestCallbackBlock)completed{
     
     id fetchedRawData = nil;
     
@@ -196,7 +195,7 @@ NSString *const kIMGKey = @"kIMGKey";
 //        [[GGDiskCache sharedInstance] saveCacheWithData:response.responseData URLStr:response.requestUrlStr params:response.requestParams];
 //    }
     
-    [GGLogger logDebugResponse:response];
+    [FQAHLogger logDebugResponse:response];
     
     [self fetchData:fetchedRawData completedHandler:completed];
     
@@ -210,12 +209,12 @@ NSString *const kIMGKey = @"kIMGKey";
         return;
     }
     
-    GGResponseErrCodeType reponseCode = [object[@"status"] intValue];
+    GGResponseErrCodeType reponseCode = [object[@"state_code"] intValue];
     
     
 #ifdef SHOULD_USE_JSONMODEL
     NSError *jsonModelError = nil;
-    HYQBASEModel *baseModel = [[HYQBASEModel alloc] initWithDictionary:object error:&jsonModelError];
+    BASEModel *baseModel = [[BASEModel alloc] initWithDictionary:object error:&jsonModelError];
     if (jsonModelError) {
         completed(NO, @"数据解析出错了", nil);
         NSLog(@"*************************数据解析错误:%@********************************************",jsonModelError);
@@ -225,7 +224,8 @@ NSString *const kIMGKey = @"kIMGKey";
     }
 #else
     id resultData = object[@"data"];
-    completed(reponseCode == GGServiceResponseErrCodeTypeNone, object[@"message"], resultData);
+    completed(reponseCode == GGServiceResponseErrCodeTypeNone, baseModel.description, resultData);
+    NSLog(@"dddddddddddd%@",baseModel.description);
 #endif
     
     
@@ -241,9 +241,9 @@ NSString *const kIMGKey = @"kIMGKey";
     }
     
     // 在网络未连接时是否需要从本地磁盘读数据
-    BOOL isCannotReachable = ![HYQHelperReachibility sharedInstance].isReachable;
+    BOOL isCannotReachable = ![FQAHReachibility sharedInstance].isReachable;
     if (diskCache && isCannotReachable && [self hasDiskCacheWithURLStr:URLString Params:parameters completedHandler:completed]) {
-        return NO;/////////
+        return YES;
     }
     return NO;
 }
@@ -258,7 +258,7 @@ NSString *const kIMGKey = @"kIMGKey";
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        GGURLResponse *response = [[GGURLResponse alloc] initWithMemoryData:result];
+        FQAHURLResponse *response = [[FQAHURLResponse alloc] initWithMemoryData:result];
         response.requestParams = params;
         response.requestUrlStr = urlStr;
         [self handleResponse:response shouldCache:NO diskCache:YES completedHandler:completed];
@@ -269,14 +269,14 @@ NSString *const kIMGKey = @"kIMGKey";
 
 - (BOOL)hasDiskCacheWithURLStr:(NSString *)urlStr Params:(NSDictionary *)params completedHandler:(GGRequestCallbackBlock)completed{
     
-    NSData *result = [[GGDiskCache sharedInstance] fetchCachedDataWithURLStr:urlStr params:params];
+    NSData *result = [[FQAHDiskCache sharedInstance] fetchCachedDataWithURLStr:urlStr params:params];
     
     if (result == nil) {
         return NO;
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        GGURLResponse *response = [[GGURLResponse alloc] initWithDiskData:result];
+        FQAHURLResponse *response = [[FQAHURLResponse alloc] initWithDiskData:result];
         response.requestParams = params;
         response.requestUrlStr = urlStr;
         [self handleResponse:response shouldCache:NO diskCache:NO completedHandler:completed];
@@ -289,7 +289,7 @@ NSString *const kIMGKey = @"kIMGKey";
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 - (void)isSuccessedOnCallingAPIOperation:(AFHTTPRequestOperation *)operation object:(id)object url:(NSString *)url params:(id)params memoryCache:(BOOL)memoryCache diskCache:(BOOL)diskCache completedHandler:(GGRequestCallbackBlock)completed{
-    GGURLResponse *response = [[GGURLResponse alloc] initWithResponse:operation.response
+    FQAHURLResponse *response = [[FQAHURLResponse alloc] initWithResponse:operation.response
                                                               request:operation.request
                                                        responseObject:object
                                                        responseString:operation.responseString
@@ -304,14 +304,14 @@ NSString *const kIMGKey = @"kIMGKey";
 
 - (void)isSuccessedOnCallingAPIOperationNoCache:(AFHTTPRequestOperation *)operation withReObject:(id)responseObject completedHandler:(GGRequestCallbackBlock)completed{
     
-    [GGLogger logDebugOperation:operation];
+    [FQAHLogger logDebugOperation:operation];
     
     [self fetchData:responseObject completedHandler:completed];
 }
 
 - (void)isFailedOnCallingAPIOperation:(AFHTTPRequestOperation *)operation withError:(NSError *)error completedHandler:(GGRequestCallbackBlock)completed{
     
-    [GGLogger logDebugOperation:operation];
+    [FQAHLogger logDebugOperation:operation];
     
 //    NSString *errorDesc = error.description;//localizedDescription
 //    if (error.code == NSURLErrorTimedOut) {

@@ -6,15 +6,15 @@
 //  Copyright (c) 2015年 __无邪_. All rights reserved.
 //
 
-#import "GGLogger.h"
+#import "FQAHLogger.h"
 
-@implementation GGLogger
+@implementation FQAHLogger
 
 + (void)logDebugOperation:(AFHTTPRequestOperation *)operation{
     return [self logDebugInfoWithResponse:operation.response resposeString:operation.responseString request:operation.request error:operation.error];
 }
 
-+ (void)logDebugResponse:(GGURLResponse *)response{
++ (void)logDebugResponse:(FQAHURLResponse *)response{
     if (response.isCache) {
         return [self logDebugInfoWithObject:response.responseObject requestUrl:response.requestUrlStr params:response.requestParams];
     }

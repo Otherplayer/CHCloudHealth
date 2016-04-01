@@ -6,16 +6,16 @@
 //  Copyright (c) 2015年 __无邪_. All rights reserved.
 //
 
-#import "GGCachedObject.h"
-#import "GGNTConfiguration.h"
-@interface GGCachedObject ()
+#import "FQAHCachedObject.h"
+#import "FQAHNTConfiguration.h"
+@interface FQAHCachedObject ()
 
 @property (nonatomic, copy, readwrite) NSData *content;
 @property (nonatomic, copy, readwrite) NSDate *lastUpdateTime;
 
 @end
 
-@implementation GGCachedObject
+@implementation FQAHCachedObject
 #pragma mark - getters and setters
 - (BOOL)isEmpty
 {

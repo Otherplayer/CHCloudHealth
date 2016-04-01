@@ -6,9 +6,9 @@
 //  Copyright © 2015年 hotyq. All rights reserved.
 //
 
-#import "HYQBASEModel.h"
+#import "BASEModel.h"
 
-@implementation HYQBASEModel
+@implementation BASEModel
 
 
 //+ (void)initKeyMapper

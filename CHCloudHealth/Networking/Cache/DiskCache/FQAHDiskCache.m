@@ -6,21 +6,21 @@
 //  Copyright © 2015年 __无邪_. All rights reserved.
 //
 
-#import "GGDiskCache.h"
-#import "GGNTConfiguration.h"
+#import "FQAHDiskCache.h"
+#import "FQAHNTConfiguration.h"
 
-@interface GGDiskCache ()
+@interface FQAHDiskCache ()
 
 @end
 
-@implementation GGDiskCache
+@implementation FQAHDiskCache
 
 #pragma mark - life cycle
 + (instancetype)sharedInstance{
     static dispatch_once_t onceToken;
-    static GGDiskCache *sharedInstance;
+    static FQAHDiskCache *sharedInstance;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[GGDiskCache alloc] init];
+        sharedInstance = [[FQAHDiskCache alloc] init];
     });
     return sharedInstance;
 }
@@ -32,7 +32,7 @@
 
 - (NSData *)fetchCachedDataWithURLStr:(NSString *)urlStr params:(NSDictionary *)requestParams{
     NSString *identifier = [self keyWithURLStr:urlStr params:requestParams];
-    GGDiskCachedObject *cachedObject = [GGDiskCachedObject fetchCachedDataWithIdentifier:identifier];
+    FQAHDiskCachedObject *cachedObject = [FQAHDiskCachedObject fetchCachedDataWithIdentifier:identifier];
     if (cachedObject == nil) {
         return nil;
     }
@@ -47,12 +47,12 @@
         return;
     }
     
-    [GGDiskCachedObject saveContent:cachedData identifier:identifier];
+    [FQAHDiskCachedObject saveContent:cachedData identifier:identifier];
 }
 
 - (void)deleteCacheWithURLStr:(NSString *)urlStr params:(NSDictionary *)requestParams{
     NSString *identifier = [self keyWithURLStr:urlStr params:requestParams];
-    [GGDiskCachedObject deleteCachedObjectWithIdentifier:identifier];
+    [FQAHDiskCachedObject deleteCachedObjectWithIdentifier:identifier];
 }
 
 
@@ -77,16 +77,16 @@
 //        //1. 手机存储空间过小，删除两天前的数据
 //        NSDate *beforeYesterday = [NSDate dateWithTimeIntervalSinceNow:- 2 * 3600];
 //        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"lastUpdateTime > %@",beforeYesterday];
-//        [GGDiskCachedObject MR_deleteAllMatchingPredicate:predicate];
+//        [FQAHDiskCachedObject MR_deleteAllMatchingPredicate:predicate];
 //        
 //        //2. 删除后，空间还是太小(小于 10 M), 删除剩下的一半数据
 //        if ([self deviceFreeDiskSpace] <= 10 * 1024) {
-////            NSArray *oldDatas = [[GGDiskCachedObject MR_findAll] sortedArrayUsingComparator:^NSComparisonResult(GGDiskCachedObject*  _Nonnull obj1, GGDiskCachedObject*  _Nonnull obj2) {
+////            NSArray *oldDatas = [[FQAHDiskCachedObject MR_findAll] sortedArrayUsingComparator:^NSComparisonResult(FQAHDiskCachedObject*  _Nonnull obj1, FQAHDiskCachedObject*  _Nonnull obj2) {
 ////                return [obj1.lastUpdateTime compare:obj2.lastUpdateTime];
 ////            }];
 ////            if (oldDatas && oldDatas.count > 1) {
 ////                for (int i = 0; i < oldDatas.count / 2; i++) {
-////                    GGDiskCachedObject *objectCache = oldDatas[i];
+////                    FQAHDiskCachedObject *objectCache = oldDatas[i];
 ////                    [objectCache MR_deleteEntity];
 ////                }
 ////            }
@@ -95,7 +95,7 @@
 //        // 3.还小，就提示用户空间不足
 //        if ([self deviceFreeDiskSpace] <= 10 * 1024) {
 //            //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"key != %@",[NSNull null]];
-//            //[GGDiskCachedObject MR_deleteAllMatchingPredicate:predicate];
+//            //[FQAHDiskCachedObject MR_deleteAllMatchingPredicate:predicate];
 //            dispatch_async(dispatch_get_main_queue(), ^{
 //                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"手机存储空间不足！" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
 //                [alertView show];
@@ -104,7 +104,7 @@
 //        }
 //        
 //#ifdef DEBUG
-//        NSArray *datasCount = [GGDiskCachedObject MR_findAll];
+//        NSArray *datasCount = [FQAHDiskCachedObject MR_findAll];
 //        NSLog(@"本地数据数量： %ld",datasCount.count);
 //#endif
 //        

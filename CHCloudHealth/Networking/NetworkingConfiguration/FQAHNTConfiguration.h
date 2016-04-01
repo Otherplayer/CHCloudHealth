@@ -1,35 +1,33 @@
 //
-//  GGNTConfiguration.h
-//  GGNetwoking
+//  FQAHNTConfiguration.h
+//  FQAHProject
 //
-//  Created by __无邪_ on 15/8/27.
-//  Copyright (c) 2015年 __无邪_. All rights reserved.
+//  Created by __无邪_ on 4/1/16.
+//  Copyright © 2016 fqah. All rights reserved.
 //
 
-#ifndef GGNetwoking_GGNTConfiguration_h
-#define GGNetwoking_GGNTConfiguration_h
-
-//#define SHOULD_USE_JSONMODEL   /*是否调用JSONModel*/
-
-#import "HYQBASEModel.h"
+#ifndef FQAHNTConfiguration_h
+#define FQAHNTConfiguration_h
 
 
-////////////////////////////////////////
-//#ifdef DEBUG
-////#define IS_OFF_LINE
-//#endif
-////////////////////////////////////////
-//
-//
-//
-//
-//
-//
-//#ifdef IS_OFF_LINE
-//#define HOTYQ_JAVA_API @"https://121.201.63.217:8089/api/0107/"
-//#else
-//#define HOTYQ_JAVA_API @"https://www.hotyq.com:8099/api/0107/"          //线上接口
-//#endif
+#define SHOULD_USE_JSONMODEL   /*是否调用JSONModel*/
+
+#import "BASEModel.h"
+
+
+
+//////////////////////////////////////
+#ifdef DEBUG
+#define IS_OFF_LINE
+#endif
+//////////////////////////////////////
+
+
+#ifdef IS_OFF_LINE
+#define HOTYQ_JAVA_API @"http://123.57.54.62:8081/healthcloud-core/"
+#else
+#define HOTYQ_JAVA_API @"http://123.57.54.62:8081/healthcloud-core/"          //线上接口
+#endif
 
 
 
@@ -40,7 +38,7 @@ static NSUInteger     kGGDiskCacheCapacityLimitM = 500;   // 最大本地缓存�
 
 typedef NS_ENUM(NSInteger, GGResponseErrCodeType){
     GGServiceResponseErrCodeTypeNone = 1000,     //服务端返回错误代码
-    GGServiceResponseErrCodeTypeSeverErr = 9000,
+    GGServiceResponseErrCodeTypeSeverErr = 500,
     GGResponseErrCodeTypeEmailExisted = 301,
     GGResponseErrCodeTypeEmail_PsdError = 302,
     GGResponseErrCodeTypeOldPsdError = 303,
@@ -58,7 +56,7 @@ typedef NS_ENUM(NSUInteger, GGURLResponseStatus){
 #ifdef SHOULD_USE_JSONMODEL
 
 typedef void (^HYQNetWorkBlock) (BOOL success,id modelObject);
-typedef void (^GGRequestCallbackBlock)(BOOL success, NSString *errDesc, HYQBASEModel *model);
+typedef void (^GGRequestCallbackBlock)(BOOL success, NSString *errDesc, BASEModel *model);
 typedef void (^HYQNetWorkBlock) (BOOL success,id modelObject);
 #else
 typedef void (^GGRequestCallbackBlock)(BOOL success, NSString *errDesc, id responseData);
@@ -66,7 +64,4 @@ typedef void (^GGRequestCallbackBlock)(BOOL success, NSString *errDesc, id respo
 
 //typedef void (^GGRequestTimeoutBlock)(NSInteger errCode, NSString *localizedDescription);
 
-
-
-
-#endif
+#endif /* FQAHNTConfiguration_h */

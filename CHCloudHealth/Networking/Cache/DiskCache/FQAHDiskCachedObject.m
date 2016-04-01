@@ -1,24 +1,23 @@
 //
-//  GGDiskCachedObject.m
-//  GGNetwoking
+//  FQAHDiskCachedObject.m
+//  
 //
-//  Created by __无邪_ on 15/10/4.
-//  Copyright © 2015年 __无邪_. All rights reserved.
+//  Created by __无邪_ on 4/1/16.
+//
 //
 
-#import "GGDiskCachedObject.h"
+#import "FQAHDiskCachedObject.h"
 
-@implementation GGDiskCachedObject
+@implementation FQAHDiskCachedObject
 
 // Insert code here to add functionality to your managed object subclass
-
 #pragma mark - public method
 
 + (instancetype)saveContent:(NSData *)content identifier:(NSString *)identifier{
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"key = %@",identifier];
-    GGDiskCachedObject *cachedObject = [GGDiskCachedObject MR_findFirstWithPredicate:predicate];
+    FQAHDiskCachedObject *cachedObject = [FQAHDiskCachedObject MR_findFirstWithPredicate:predicate];
     if (cachedObject == nil) {
-        cachedObject = [GGDiskCachedObject MR_createEntity];
+        cachedObject = [FQAHDiskCachedObject MR_createEntity];
         cachedObject.key = identifier;
     }
     cachedObject.content = content;
@@ -29,18 +28,17 @@
 }
 
 + (instancetype)fetchCachedDataWithIdentifier:(NSString *)identifier{
-    GGDiskCachedObject *cachedObject = [GGDiskCachedObject MR_findFirstByAttribute:@"key" withValue:identifier];
+    FQAHDiskCachedObject *cachedObject = [FQAHDiskCachedObject MR_findFirstByAttribute:@"key" withValue:identifier];
     return cachedObject;
 }
 
 + (void)deleteCachedObjectWithIdentifier:(NSString *)identifier{
-    GGDiskCachedObject *cachedObject = [GGDiskCachedObject MR_findFirstByAttribute:@"key" withValue:identifier];
+    FQAHDiskCachedObject *cachedObject = [FQAHDiskCachedObject MR_findFirstByAttribute:@"key" withValue:identifier];
     if (cachedObject) {
         BOOL isDeleted = [cachedObject MR_deleteEntity];
         NSLog(@"DELETE:[%d]",isDeleted);
     }
 }
-
 
 
 

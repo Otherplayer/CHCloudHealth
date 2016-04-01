@@ -1,9 +1,9 @@
 //
-//  GGDiskCachedObject.h
-//  GGNetwoking
+//  FQAHDiskCachedObject.h
+//  
 //
-//  Created by __无邪_ on 15/10/4.
-//  Copyright © 2015年 __无邪_. All rights reserved.
+//  Created by __无邪_ on 4/1/16.
+//
 //
 
 #import <Foundation/Foundation.h>
@@ -11,8 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GGDiskCachedObject : NSManagedObject
+@interface FQAHDiskCachedObject : NSManagedObject
 
+// Insert code here to declare functionality of your managed object subclass
 // Insert code here to declare functionality of your managed object subclass
 + (instancetype)saveContent:(NSData *)content identifier:(NSString *)identifier;
 
@@ -25,4 +26,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#import "GGDiskCachedObject+CoreDataProperties.h"
+#import "FQAHDiskCachedObject+CoreDataProperties.h"

@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 __无邪_. All rights reserved.
 //
 
-#import "GGURLResponse.h"
-@interface GGURLResponse ()
+#import "FQAHURLResponse.h"
+@interface FQAHURLResponse ()
 @property (nonatomic, copy, readwrite) NSString *responseString;
 @property (nonatomic, copy, readwrite) id responseObject;
 @property (nonatomic, copy, readwrite) NSURLRequest *request;
@@ -18,7 +18,7 @@
 @property (nonatomic, strong, readwrite) NSHTTPURLResponse *response;
 @end
 
-@implementation GGURLResponse
+@implementation FQAHURLResponse
 
 - (instancetype)initWithMemoryData:(NSData *)data{
     self = [super init];

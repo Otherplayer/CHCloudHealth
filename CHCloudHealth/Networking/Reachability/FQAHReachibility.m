@@ -6,22 +6,22 @@
 //  Copyright (c) 2015年 __无邪_. All rights reserved.
 //
 
-#import "HYQHelperReachibility.h"
+#import "FQAHReachibility.h"
 
 #define REMOTEHOSTNAME @"www.baidu.com"
 #define REMOTEHOSTFULLYNAME @"http://www.baidu.com"
-@interface HYQHelperReachibility ()
+@interface FQAHReachibility ()
 
 @end
 
-@implementation HYQHelperReachibility
+@implementation FQAHReachibility
 
 
-+ (HYQHelperReachibility *)sharedInstance{
-    static HYQHelperReachibility *reachability = nil;
++ (FQAHReachibility *)sharedInstance{
+    static FQAHReachibility *reachability = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        reachability = [[HYQHelperReachibility alloc] init];
+        reachability = [[FQAHReachibility alloc] init];
     });
     return reachability;
 }

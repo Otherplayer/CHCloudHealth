@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GGCachedObject : NSObject
+@interface FQAHCachedObject : NSObject
 
 @property (nonatomic, copy, readonly) NSData *content;
 @property (nonatomic, copy, readonly) NSDate *lastUpdateTime;

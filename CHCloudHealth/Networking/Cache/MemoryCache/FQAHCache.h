@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GGCachedObject.h"
+#import "FQAHCachedObject.h"
 
-@interface GGCache : NSObject
+@interface FQAHCache : NSObject
 
 + (instancetype)sharedInstance;
 

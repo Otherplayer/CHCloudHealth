@@ -6,14 +6,15 @@
 //  Copyright © 2015年 hotyq. All rights reserved.
 //
 
-#import "GGBaseNetwork.h"
+#import "FQAHBaseNetwork.h"
 #import <JSONModel.h>
+#import "FQAHReachibility.h"
 
-@interface HYQNetworkingManager : GGBaseNetwork
+@interface NetworkingManager : FQAHBaseNetwork
 
 + (instancetype)sharedManager;
 
-
+- (void)getLaunchAdvertisementCompletedHandler:(GGRequestCallbackBlock)completed;
 #pragma mark - 登录注册
 
 - (void)loginWithMobile:(NSString *)mobile password:(NSString *)password completedHandler:(GGRequestCallbackBlock)completed;
