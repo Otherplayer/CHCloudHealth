@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.tableView.tableHeaderView = self.tableHeaderView;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +35,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:NO];
+    
+    SWRevealViewController *revealController = self.revealViewController;
+    [revealController revealToggleAnimated:YES];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"jjjjjjjjjjj" object:nil];
+    
 }
 
 #pragma mark - UITableViewDataSource

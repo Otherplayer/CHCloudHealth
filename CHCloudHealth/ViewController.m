@@ -23,6 +23,8 @@
         
     }];
     
+    self.view.backgroundColor = [UIColor redColor];
+    
 //    [[HYQNetworkingManager sharedManager] getCaptchaWithMobile:@"18513149993" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
 //        
 //    }];
