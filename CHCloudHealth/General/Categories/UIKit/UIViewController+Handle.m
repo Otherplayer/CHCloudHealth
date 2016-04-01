@@ -71,7 +71,7 @@
     }
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor disabledColor] forState:UIControlStateSelected];
+    [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateSelected];
     [button setTitleColor:[UIColor colorWithWhite:1 alpha:0.4] forState:UIControlStateDisabled];
     [button.titleLabel setFont:[UIFont systemFontOfSize:15]];
     [button setEnabled:enabled];

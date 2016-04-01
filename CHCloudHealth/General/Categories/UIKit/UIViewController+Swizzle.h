@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIViewController (Swizzle)
-@property (nonatomic, assign) NSInteger supportLandscape;
+
 @end

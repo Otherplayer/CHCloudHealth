@@ -9,7 +9,6 @@
 #import "UIViewController+Swizzle.h"
 //#import <objc/runtime.h>
 #import "JRSwizzle.h"
-#import "AppDelegate.h"
 
 @implementation UIViewController (Swizzle)
 
@@ -73,49 +72,7 @@
 - (void)HYQuan:(BOOL)animated {
     [self HYQuan:animated];
     NSLog(@"[当前视图控制器]: %@", self);
-    
-//    if ([self isKindOfClass:[PlayerViewController class]]) {
-//        [self setSupportLandscape:1];
-//    }else{
-//        [self setSupportLandscape:0];
-//    }
+
 }
-
-
-
-//#pragma mark - Function Orientation
-//
-//- (void)setSupportLandscape:(NSInteger)supportLandscape{
-//    
-//    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    delegate.tabBarController.supportLandscape = supportLandscape;
-//}
-//
-//- (NSInteger)supportLandscape{
-//    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    return delegate.tabBarController.supportLandscape;
-//}
-//
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-//    if (self.supportLandscape) {
-//        return YES;
-//    }else {
-//        return NO;
-//    }
-//}
-//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-//    if (self.supportLandscape) {
-//        return UIInterfaceOrientationMaskAll;
-//    }
-//    return UIInterfaceOrientationMaskPortrait;
-//}
-//
-//- (BOOL)shouldAutorotate {
-//    if (self.supportLandscape) {
-//        return YES;
-//    }else{
-//        return NO;
-//    }
-//}
 
 @end
