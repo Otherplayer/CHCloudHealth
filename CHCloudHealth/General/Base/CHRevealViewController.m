@@ -22,6 +22,9 @@
     // Do any additional setup after loading the view.
     
     [self setRearViewRevealWidth:(CGRectGetWidth(self.view.bounds) - 120)];
+    [self setFrontViewShadowOffset:CGSizeMake(0.1, 1)];
+    [self setFrontViewShadowRadius:1];
+    [self setFrontViewShadowOpacity:0.75];
 }
 
 - (void)didReceiveMemoryWarning {
