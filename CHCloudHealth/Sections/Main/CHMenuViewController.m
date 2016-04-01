@@ -20,7 +20,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.datas = [[NSMutableArray alloc] init];
-    self.tableView.tableHeaderView = self.tableHeaderView;
+    //self.tableView.tableHeaderView = self.tableHeaderView;
+    [self.tableView blankTableFooterView];
+    
+    // section first
+    [self.datas addObject:@[@{@"title":@"基础信息",@"image":@""}]];
+    // section second
+    [self.datas addObject:@[@{@"title":@"基础信息"},
+                            @{@"title":@"基础信息"},
+                            @{@"title":@"基础信息"},
+                            @{@"title":@"基础信息"},
+                            @{@"title":@"基础信息"},
+                            @{@"title":@"基础信息"},
+                            @{@"title":@"基础信息"},
+                            @{@"title":@"基础信息"},]];
+    // section third
+    [self.datas addObject:@[@{@"title":@"App管理"}]];
     
 }
 
@@ -44,16 +59,42 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationMenuController object:nil];
     
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 1) {
+        return 64;
+    }
+    return 0;
+}
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (section == 1) {
+        UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, 64)];
+        titleView.backgroundColor = [UIColor greenColor];
+        return titleView;
+    }
+    return nil;
+}
 
 #pragma mark - UITableViewDataSource
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.datas.count;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return [[self.datas objectAtIndex:section] count];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return 150;
+    }
+    return 44;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        static NSString *identifierMenuHeader = @"IdentifierMenuHeader";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMenuHeader forIndexPath:indexPath];
+        return cell;
+    }
     static NSString *identifierCell = @"IdentifierMenu";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierCell forIndexPath:indexPath];
-    
     [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
@@ -66,13 +107,13 @@
 }
 
 
-- (UIView *)tableHeaderView{
-    if (!_tableHeaderView) {
-        _tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth - 120, 200)];
-        _tableHeaderView.backgroundColor = [UIColor cyanColor];
-    }
-    return _tableHeaderView;
-}
+//- (UIView *)tableHeaderView{
+//    if (!_tableHeaderView) {
+//        _tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth - 120, 200)];
+//        _tableHeaderView.backgroundColor = [UIColor cyanColor];
+//    }
+//    return _tableHeaderView;
+//}
 
 
 /*
