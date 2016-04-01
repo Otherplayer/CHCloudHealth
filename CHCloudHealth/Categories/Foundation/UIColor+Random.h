@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (Random)
+
 + (UIColor *)RandomColor;
+
++ (UIColor *)defaultColor;//主题颜色
+
 @end

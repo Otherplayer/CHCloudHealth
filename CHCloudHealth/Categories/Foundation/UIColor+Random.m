@@ -16,4 +16,9 @@
     UIColor *randColor = [UIColor colorWithRed:aRedValue / 255.0f green:aGreenValue / 255.0f blue:aBlueValue / 255.0f alpha:1.0f];
     return randColor;
 }
+
++ (UIColor *)defaultColor{
+    return [UIColor colorFromHexRGB:@"#FFB400"];
+}
+
 @end
