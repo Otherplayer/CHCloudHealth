@@ -10,7 +10,6 @@
 
 @interface CHMainViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
-
 @end
 
 @implementation CHMainViewController
