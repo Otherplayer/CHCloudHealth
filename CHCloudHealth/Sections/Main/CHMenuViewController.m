@@ -11,6 +11,7 @@
 @interface CHMenuViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIView *tableHeaderView;
+@property (strong, nonatomic) NSMutableArray *datas;
 @end
 
 @implementation CHMenuViewController
@@ -18,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.datas = [[NSMutableArray alloc] init];
     self.tableView.tableHeaderView = self.tableHeaderView;
     
 }
