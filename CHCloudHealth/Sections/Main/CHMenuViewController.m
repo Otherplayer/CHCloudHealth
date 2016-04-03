@@ -107,7 +107,6 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     NSArray *data = [self.datas objectAtIndex:indexPath.section];
     NSString *title = [data objectAtIndex:indexPath.row][@"title"];
-    [cell setBackgroundColor:[UIColor clearColor]];
     [cell.textLabel setTextColor:[UIColor whiteColor]];
     [cell.textLabel setText:title];
 }
