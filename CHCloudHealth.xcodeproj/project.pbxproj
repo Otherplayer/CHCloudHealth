@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D28232D7C0428A043614F48 /* libPods-CHCloudHealth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7A51FD90EC5FD877E25B1E /* libPods-CHCloudHealth.a */; };
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
+		63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7EB1CB0C52A009BF266 /* Login.storyboard */; };
 		8464DE121CAA48C7000B987E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8464DE111CAA48C7000B987E /* main.m */; };
 		8464DE151CAA48C7000B987E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8464DE141CAA48C7000B987E /* AppDelegate.m */; };
 		8464DE181CAA48C7000B987E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8464DE171CAA48C7000B987E /* ViewController.m */; };
@@ -82,6 +83,7 @@
 		32E958EE73A4318A56D03553 /* Pods-CHCloudHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHCloudHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHCloudHealth/Pods-CHCloudHealth.release.xcconfig"; sourceTree = "<group>"; };
 		5A7A51FD90EC5FD877E25B1E /* libPods-CHCloudHealth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CHCloudHealth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D9F7E71CB0C47E009BF266 /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
+		63D9F7EC1CB0C52A009BF266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		8464DE0D1CAA48C7000B987E /* CHCloudHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHCloudHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8464DE111CAA48C7000B987E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8464DE131CAA48C7000B987E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				8464DE161CAA48C7000B987E /* ViewController.h */,
 				8464DE171CAA48C7000B987E /* ViewController.m */,
 				8464DE191CAA48C7000B987E /* Main.storyboard */,
+				63D9F7EB1CB0C52A009BF266 /* Login.storyboard */,
 				8464DE1C1CAA48C7000B987E /* Assets.xcassets */,
 				8464DE1E1CAA48C7000B987E /* LaunchScreen.storyboard */,
 				8464DE211CAA48C7000B987E /* Info.plist */,
@@ -648,6 +651,7 @@
 				63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */,
 				8464DE201CAA48C7000B987E /* LaunchScreen.storyboard in Resources */,
 				8464DE1D1CAA48C7000B987E /* Assets.xcassets in Resources */,
+				63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */,
 				8464DE1B1CAA48C7000B987E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -775,6 +779,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		63D9F7EB1CB0C52A009BF266 /* Login.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63D9F7EC1CB0C52A009BF266 /* Base */,
+			);
+			name = Login.storyboard;
+			sourceTree = "<group>";
+		};
 		8464DE191CAA48C7000B987E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
