@@ -14,7 +14,6 @@
 
 + (instancetype)sharedManager;
 
-- (void)getLaunchAdvertisementCompletedHandler:(GGRequestCallbackBlock)completed;
 #pragma mark - 登录注册
 
 - (void)loginWithMobile:(NSString *)mobile password:(NSString *)password completedHandler:(GGRequestCallbackBlock)completed;

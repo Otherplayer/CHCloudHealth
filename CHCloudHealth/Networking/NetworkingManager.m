@@ -15,7 +15,6 @@
  * API URL 调用参数
  */
 
-NSString *const kAPI_AD_Launch = HOTYQ_JAVA_API @"indexdata/startAdv.do";
 NSString *const kAPI_Login = HOTYQ_JAVA_API @"userController/login";
 NSString *const kAPI_Register = HOTYQ_JAVA_API @"userController/register";
 NSString *const kAPI_GetCaptcha = HOTYQ_JAVA_API @"userController/sendSmsCapctha";
@@ -35,12 +34,6 @@ NSString *const kAPI_SIZE = @"size";
 
 
 #pragma mark - public interface
-
-- (void)getLaunchAdvertisementCompletedHandler:(GGRequestCallbackBlock)completed{
-    
-    [self POST:kAPI_AD_Launch params:nil memoryCache:YES diskCache:YES completed:completed];
-}
-
 
 
 
