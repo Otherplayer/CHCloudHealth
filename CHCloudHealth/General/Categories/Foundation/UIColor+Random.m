@@ -18,7 +18,7 @@
 }
 
 + (UIColor *)defaultColor{
-    return [UIColor colorFromHexRGB:@"#FFB400"];
+    return [UIColor colorWithRed:0.059 green:0.502 blue:0.996 alpha:1.000];
 }
 
 @end

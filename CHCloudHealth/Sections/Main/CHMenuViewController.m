@@ -22,18 +22,20 @@
     self.datas = [[NSMutableArray alloc] init];
     //self.tableView.tableHeaderView = self.tableHeaderView;
     [self.tableView blankTableFooterView];
+    [self.tableView setBackgroundColor:[UIColor defaultColor]];
     
     // section first
     [self.datas addObject:@[@{@"title":@"基础信息",@"image":@""}]];
     // section second
     [self.datas addObject:@[@{@"title":@"基础信息"},
-                            @{@"title":@"基础信息"},
-                            @{@"title":@"基础信息"},
-                            @{@"title":@"基础信息"},
-                            @{@"title":@"基础信息"},
-                            @{@"title":@"基础信息"},
-                            @{@"title":@"基础信息"},
-                            @{@"title":@"基础信息"},]];
+                            @{@"title":@"亲情号码"},
+                            @{@"title":@"监护区域"},
+                            @{@"title":@"位置监测"},
+                            @{@"title":@"心率监测"},
+                            @{@"title":@"血糖监测"},
+                            @{@"title":@"血压监测"},
+                            @{@"title":@"服药提醒"},
+                            @{@"title":@"SOS设置"}]];
     // section third
     [self.datas addObject:@[@{@"title":@"App管理"}]];
     
@@ -105,6 +107,8 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     NSArray *data = [self.datas objectAtIndex:indexPath.section];
     NSString *title = [data objectAtIndex:indexPath.row][@"title"];
+    [cell setBackgroundColor:[UIColor clearColor]];
+    [cell.textLabel setTextColor:[UIColor whiteColor]];
     [cell.textLabel setText:title];
 }
 
