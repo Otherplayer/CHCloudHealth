@@ -25,7 +25,7 @@
     [self.tableView setBackgroundColor:[UIColor defaultColor]];
     
     // section first
-    [self.datas addObject:@[@{@"title":@"基础信息",@"image":@""}]];
+    [self.datas addObject:@[@{@"title":@"设置",@"image":@"ios_icon_18"}]];
     // section second
     [self.datas addObject:@[@{@"title":@"基础信息"},
                             @{@"title":@"亲情号码"},
@@ -37,7 +37,7 @@
                             @{@"title":@"服药提醒"},
                             @{@"title":@"SOS设置"}]];
     // section third
-    [self.datas addObject:@[@{@"title":@"App管理"}]];
+    [self.datas addObject:@[@{@"title":@"APP管理"}]];
     
 }
 
@@ -61,20 +61,20 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationMenuController object:nil];
     
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section == 1) {
-        return 64;
-    }
-    return 0;
-}
-- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    if (section == 1) {
-        UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, 64)];
-        titleView.backgroundColor = [UIColor greenColor];
-        return titleView;
-    }
-    return nil;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+//    if (section == 1) {
+//        return 64;
+//    }
+//    return 0;
+//}
+//- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    if (section == 1) {
+//        UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, 64)];
+//        titleView.backgroundColor = [UIColor greenColor];
+//        return titleView;
+//    }
+//    return nil;
+//}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

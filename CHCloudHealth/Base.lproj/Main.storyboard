@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -39,13 +40,94 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IdentifierMenuHeader" rowHeight="150" id="Mrf-34-ygN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="IdentifierMenuHeader" rowHeight="150" id="Mrf-34-ygN">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mrf-34-ygN" id="c9t-WH-Kqa">
                                             <rect key="frame" x="0.0" y="0.0" width="207" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios_icon_18" translatesAutoresizingMaskIntoConstraints="NO" id="CYc-Ia-Cwl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="0hx-0q-e73"/>
+                                                        <constraint firstAttribute="height" constant="25" id="tqX-AT-mdj"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="0hx-0q-e73"/>
+                                                            <exclude reference="tqX-AT-mdj"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="0hx-0q-e73"/>
+                                                            <include reference="tqX-AT-mdj"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM3-bm-g1O">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="85" id="ACV-2T-SWy"/>
+                                                        <constraint firstAttribute="height" constant="47" id="edd-AL-g1y"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="ACV-2T-SWy"/>
+                                                            <exclude reference="edd-AL-g1y"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="ACV-2T-SWy"/>
+                                                            <include reference="edd-AL-g1y"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="CYc-Ia-Cwl" firstAttribute="leading" secondItem="c9t-WH-Kqa" secondAttribute="leadingMargin" constant="16" id="AD7-16-3Oc"/>
+                                                <constraint firstItem="CYc-Ia-Cwl" firstAttribute="top" secondItem="c9t-WH-Kqa" secondAttribute="topMargin" constant="54" id="CsX-Rn-twG"/>
+                                                <constraint firstItem="jM3-bm-g1O" firstAttribute="leading" secondItem="CYc-Ia-Cwl" secondAttribute="trailing" constant="17" id="DiP-FT-Pe7"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="jM3-bm-g1O" secondAttribute="bottom" constant="44" id="LHA-8h-GkG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CYc-Ia-Cwl" secondAttribute="bottom" constant="55" id="joa-Td-AXn"/>
+                                                <constraint firstItem="jM3-bm-g1O" firstAttribute="top" secondItem="c9t-WH-Kqa" secondAttribute="topMargin" constant="43" id="o9d-Tl-CCX"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="CYc-Ia-Cwl"/>
+                                                    <exclude reference="jM3-bm-g1O"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="AD7-16-3Oc"/>
+                                                    <exclude reference="CsX-Rn-twG"/>
+                                                    <exclude reference="joa-Td-AXn"/>
+                                                    <exclude reference="DiP-FT-Pe7"/>
+                                                    <exclude reference="LHA-8h-GkG"/>
+                                                    <exclude reference="o9d-Tl-CCX"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="CYc-Ia-Cwl"/>
+                                                    <include reference="jM3-bm-g1O"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="AD7-16-3Oc"/>
+                                                    <include reference="CsX-Rn-twG"/>
+                                                    <include reference="joa-Td-AXn"/>
+                                                    <include reference="DiP-FT-Pe7"/>
+                                                    <include reference="LHA-8h-GkG"/>
+                                                    <include reference="o9d-Tl-CCX"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IdentifierMenu" id="30E-U0-ato">
@@ -139,7 +221,8 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="NCo-5v-Clv">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="og5-Ae-hjF"/>
+                        <barButtonItem key="leftBarButtonItem" image="ios_icon_10" id="og5-Ae-hjF"/>
+                        <barButtonItem key="rightBarButtonItem" image="ios_icon_16" id="FyH-m0-vO3"/>
                     </navigationItem>
                     <connections>
                         <outlet property="revealButtonItem" destination="og5-Ae-hjF" id="t4A-3g-dpp"/>
@@ -150,4 +233,9 @@
             <point key="canvasLocation" x="1324.5" y="-469"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ios_icon_10" width="24" height="24"/>
+        <image name="ios_icon_16" width="27" height="27"/>
+        <image name="ios_icon_18" width="24" height="24"/>
+    </resources>
 </document>
