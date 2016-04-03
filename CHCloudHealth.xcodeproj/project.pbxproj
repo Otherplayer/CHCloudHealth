@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D28232D7C0428A043614F48 /* libPods-CHCloudHealth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7A51FD90EC5FD877E25B1E /* libPods-CHCloudHealth.a */; };
+		63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */; };
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
 		63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7EB1CB0C52A009BF266 /* Login.storyboard */; };
 		8464DE121CAA48C7000B987E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8464DE111CAA48C7000B987E /* main.m */; };
@@ -82,6 +83,8 @@
 /* Begin PBXFileReference section */
 		32E958EE73A4318A56D03553 /* Pods-CHCloudHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHCloudHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHCloudHealth/Pods-CHCloudHealth.release.xcconfig"; sourceTree = "<group>"; };
 		5A7A51FD90EC5FD877E25B1E /* libPods-CHCloudHealth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CHCloudHealth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63A29B451CB0D23C009C61B2 /* HYQHelperHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQHelperHUD.h; sourceTree = "<group>"; };
+		63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQHelperHUD.m; sourceTree = "<group>"; };
 		63D9F7E71CB0C47E009BF266 /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
 		63D9F7EC1CB0C52A009BF266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		8464DE0D1CAA48C7000B987E /* CHCloudHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHCloudHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -464,6 +467,8 @@
 		84B1E2111CAE7197004573F4 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				63A29B451CB0D23C009C61B2 /* HYQHelperHUD.h */,
+				63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -731,6 +736,7 @@
 				84B1E2FE1CAE77BA004573F4 /* NSObject+Categories.m in Sources */,
 				8472D1FD1CAE53930003E35A /* FQAHDiskCachedObject.m in Sources */,
 				8472D2081CAE53930003E35A /* FQAHLogger.m in Sources */,
+				63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */,
 				84B1E3091CAE77BA004573F4 /* UIButton+CountDown.m in Sources */,
 				84B1E3001CAE77BA004573F4 /* NSString+HYQCategory.m in Sources */,
 				8472D2001CAE53930003E35A /* FQAHCachedObject.m in Sources */,
