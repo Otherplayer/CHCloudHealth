@@ -834,7 +834,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdentifierMainState" rowHeight="164" id="Rbe-8b-hjN" customClass="CHMainStateCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdentifierMainState" rowHeight="142" id="Rbe-8b-hjN" customClass="CHMainStateCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rbe-8b-hjN" id="70n-fF-hh4">
@@ -971,13 +971,34 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios_icon_15" translatesAutoresizingMaskIntoConstraints="NO" id="8Hn-f4-p4F">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="31" id="GpT-DE-0f8"/>
+                                                        <constraint firstAttribute="height" constant="24" id="gBz-2r-PUG"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="GpT-DE-0f8"/>
+                                                            <exclude reference="gBz-2r-PUG"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="GpT-DE-0f8"/>
+                                                            <include reference="gBz-2r-PUG"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Oig-4Q-eic" firstAttribute="leading" secondItem="70n-fF-hh4" secondAttribute="leadingMargin" constant="12" id="2Sm-p5-c2a"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="PWc-JK-Gvh" secondAttribute="trailing" constant="21" id="FYH-ZO-FyH"/>
+                                                <constraint firstItem="8Hn-f4-p4F" firstAttribute="top" secondItem="Mb4-Qn-4bP" secondAttribute="bottom" constant="44" id="IwF-AO-8Zp"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Mb4-Qn-4bP" secondAttribute="trailing" constant="72" id="JLm-hU-OG3">
                                                     <variation key="widthClass=compact" constant="0.0"/>
                                                 </constraint>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8Hn-f4-p4F" secondAttribute="trailing" id="SeI-og-mop"/>
                                                 <constraint firstItem="Mb4-Qn-4bP" firstAttribute="top" secondItem="Zs1-WH-rqR" secondAttribute="bottom" constant="8" id="TWq-24-gPm"/>
                                                 <constraint firstAttribute="topMargin" secondItem="PWc-JK-Gvh" secondAttribute="top" id="Vyc-vg-fBI"/>
                                                 <constraint firstItem="MU5-yQ-E8p" firstAttribute="top" secondItem="KkY-mo-uDP" secondAttribute="bottom" constant="-1" id="Ycz-hR-Bh4">
@@ -1005,6 +1026,7 @@
                                                     <exclude reference="Oig-4Q-eic"/>
                                                     <exclude reference="KkY-mo-uDP"/>
                                                     <exclude reference="MU5-yQ-E8p"/>
+                                                    <exclude reference="8Hn-f4-p4F"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="dPk-3K-lmG"/>
@@ -1020,6 +1042,8 @@
                                                     <exclude reference="jP2-VE-kqs"/>
                                                     <exclude reference="FYH-ZO-FyH"/>
                                                     <exclude reference="Vyc-vg-fBI"/>
+                                                    <exclude reference="IwF-AO-8Zp"/>
+                                                    <exclude reference="SeI-og-mop"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -1030,6 +1054,7 @@
                                                     <include reference="Oig-4Q-eic"/>
                                                     <include reference="KkY-mo-uDP"/>
                                                     <include reference="MU5-yQ-E8p"/>
+                                                    <include reference="8Hn-f4-p4F"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="dPk-3K-lmG"/>
@@ -1045,6 +1070,8 @@
                                                     <include reference="jP2-VE-kqs"/>
                                                     <include reference="FYH-ZO-FyH"/>
                                                     <include reference="Vyc-vg-fBI"/>
+                                                    <include reference="IwF-AO-8Zp"/>
+                                                    <include reference="SeI-og-mop"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1111,6 +1138,7 @@
     <resources>
         <image name="ios_icon_10" width="24" height="24"/>
         <image name="ios_icon_11" width="22" height="22"/>
+        <image name="ios_icon_15" width="18" height="18"/>
         <image name="ios_icon_16" width="27" height="27"/>
         <image name="ios_icon_18" width="24" height="24"/>
     </resources>
