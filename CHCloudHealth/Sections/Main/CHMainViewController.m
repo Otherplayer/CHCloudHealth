@@ -26,7 +26,7 @@
     [self installRevealGesture];
     [self setTitle:@"慈海云健康"];
     
-    
+    [self setAutomaticallyAdjustsScrollViewInsets:YES];
     [self.tableView blankTableFooterView];
     
     self.tableView.descriptionText = @"连接设备后\n才会显示数据哦";
@@ -75,7 +75,7 @@
     if (indexPath.row == 0) {
         return 221;
     }
-    return 142;
+    return 154;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

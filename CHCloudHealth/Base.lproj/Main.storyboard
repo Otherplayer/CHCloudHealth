@@ -834,7 +834,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdentifierMainState" rowHeight="142" id="Rbe-8b-hjN" customClass="CHMainStateCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdentifierMainState" rowHeight="154" id="Rbe-8b-hjN" customClass="CHMainStateCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rbe-8b-hjN" id="70n-fF-hh4">
@@ -990,6 +990,13 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObS-cG-G2w">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="10"/>
+                                                    </variation>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Oig-4Q-eic" firstAttribute="leading" secondItem="70n-fF-hh4" secondAttribute="leadingMargin" constant="12" id="2Sm-p5-c2a"/>
@@ -1000,7 +1007,9 @@
                                                 </constraint>
                                                 <constraint firstAttribute="trailingMargin" secondItem="8Hn-f4-p4F" secondAttribute="trailing" id="SeI-og-mop"/>
                                                 <constraint firstItem="Mb4-Qn-4bP" firstAttribute="top" secondItem="Zs1-WH-rqR" secondAttribute="bottom" constant="8" id="TWq-24-gPm"/>
-                                                <constraint firstAttribute="topMargin" secondItem="PWc-JK-Gvh" secondAttribute="top" id="Vyc-vg-fBI"/>
+                                                <constraint firstAttribute="topMargin" secondItem="PWc-JK-Gvh" secondAttribute="top" id="Vyc-vg-fBI">
+                                                    <variation key="widthClass=compact" constant="-10"/>
+                                                </constraint>
                                                 <constraint firstItem="MU5-yQ-E8p" firstAttribute="top" secondItem="KkY-mo-uDP" secondAttribute="bottom" constant="-1" id="Ycz-hR-Bh4">
                                                     <variation key="widthClass=compact" constant="7"/>
                                                 </constraint>
@@ -1014,7 +1023,9 @@
                                                 <constraint firstItem="Oig-4Q-eic" firstAttribute="top" secondItem="Mb4-Qn-4bP" secondAttribute="bottom" constant="14" id="hmY-EJ-c3Z">
                                                     <variation key="widthClass=compact" constant="22"/>
                                                 </constraint>
-                                                <constraint firstAttribute="topMargin" secondItem="Zs1-WH-rqR" secondAttribute="top" id="iYo-TX-ZWA"/>
+                                                <constraint firstAttribute="topMargin" secondItem="Zs1-WH-rqR" secondAttribute="top" id="iYo-TX-ZWA">
+                                                    <variation key="widthClass=compact" constant="-10"/>
+                                                </constraint>
                                                 <constraint firstItem="MU5-yQ-E8p" firstAttribute="leading" secondItem="Oig-4Q-eic" secondAttribute="trailing" constant="31" id="jP2-VE-kqs"/>
                                                 <constraint firstItem="KkY-mo-uDP" firstAttribute="leading" secondItem="Oig-4Q-eic" secondAttribute="trailing" constant="32" id="vPW-u7-SCh"/>
                                             </constraints>
@@ -1027,6 +1038,7 @@
                                                     <exclude reference="KkY-mo-uDP"/>
                                                     <exclude reference="MU5-yQ-E8p"/>
                                                     <exclude reference="8Hn-f4-p4F"/>
+                                                    <exclude reference="ObS-cG-G2w"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="dPk-3K-lmG"/>
@@ -1055,6 +1067,7 @@
                                                     <include reference="KkY-mo-uDP"/>
                                                     <include reference="MU5-yQ-E8p"/>
                                                     <include reference="8Hn-f4-p4F"/>
+                                                    <include reference="ObS-cG-G2w"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="dPk-3K-lmG"/>
