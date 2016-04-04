@@ -980,7 +980,9 @@
                                                 </constraint>
                                                 <constraint firstItem="Mb4-Qn-4bP" firstAttribute="top" secondItem="Zs1-WH-rqR" secondAttribute="bottom" constant="8" id="TWq-24-gPm"/>
                                                 <constraint firstAttribute="topMargin" secondItem="PWc-JK-Gvh" secondAttribute="top" id="Vyc-vg-fBI"/>
-                                                <constraint firstItem="MU5-yQ-E8p" firstAttribute="top" secondItem="KkY-mo-uDP" secondAttribute="bottom" constant="-1" id="Ycz-hR-Bh4"/>
+                                                <constraint firstItem="MU5-yQ-E8p" firstAttribute="top" secondItem="KkY-mo-uDP" secondAttribute="bottom" constant="-1" id="Ycz-hR-Bh4">
+                                                    <variation key="widthClass=compact" constant="7"/>
+                                                </constraint>
                                                 <constraint firstItem="KkY-mo-uDP" firstAttribute="top" secondItem="Mb4-Qn-4bP" secondAttribute="bottom" constant="20" id="Z3C-Fb-AoM">
                                                     <variation key="widthClass=compact" constant="14"/>
                                                 </constraint>
@@ -988,7 +990,9 @@
                                                 <constraint firstItem="Mb4-Qn-4bP" firstAttribute="leading" secondItem="70n-fF-hh4" secondAttribute="leadingMargin" constant="72" id="den-pg-MeJ">
                                                     <variation key="widthClass=compact" constant="15"/>
                                                 </constraint>
-                                                <constraint firstItem="Oig-4Q-eic" firstAttribute="top" secondItem="Mb4-Qn-4bP" secondAttribute="bottom" constant="14" id="hmY-EJ-c3Z"/>
+                                                <constraint firstItem="Oig-4Q-eic" firstAttribute="top" secondItem="Mb4-Qn-4bP" secondAttribute="bottom" constant="14" id="hmY-EJ-c3Z">
+                                                    <variation key="widthClass=compact" constant="22"/>
+                                                </constraint>
                                                 <constraint firstAttribute="topMargin" secondItem="Zs1-WH-rqR" secondAttribute="top" id="iYo-TX-ZWA"/>
                                                 <constraint firstItem="MU5-yQ-E8p" firstAttribute="leading" secondItem="Oig-4Q-eic" secondAttribute="trailing" constant="31" id="jP2-VE-kqs"/>
                                                 <constraint firstItem="KkY-mo-uDP" firstAttribute="leading" secondItem="Oig-4Q-eic" secondAttribute="trailing" constant="32" id="vPW-u7-SCh"/>
