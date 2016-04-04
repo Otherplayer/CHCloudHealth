@@ -10,6 +10,8 @@
 		0D28232D7C0428A043614F48 /* libPods-CHCloudHealth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7A51FD90EC5FD877E25B1E /* libPods-CHCloudHealth.a */; };
 		63412E231CB2628B00FAD0DA /* UIStoryboard+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E221CB2628B00FAD0DA /* UIStoryboard+Categories.m */; };
 		63412E271CB2634600FAD0DA /* CHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E261CB2634600FAD0DA /* CHLoginController.m */; };
+		63412E2A1CB2717B00FAD0DA /* CHRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E291CB2717B00FAD0DA /* CHRegisterController.m */; };
+		63412E2D1CB273CA00FAD0DA /* CHBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E2C1CB273CA00FAD0DA /* CHBaseNavigationController.m */; };
 		63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */; };
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
 		63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7EB1CB0C52A009BF266 /* Login.storyboard */; };
@@ -89,6 +91,10 @@
 		63412E221CB2628B00FAD0DA /* UIStoryboard+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+Categories.m"; sourceTree = "<group>"; };
 		63412E251CB2634600FAD0DA /* CHLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLoginController.h; sourceTree = "<group>"; };
 		63412E261CB2634600FAD0DA /* CHLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLoginController.m; sourceTree = "<group>"; };
+		63412E281CB2717B00FAD0DA /* CHRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRegisterController.h; sourceTree = "<group>"; };
+		63412E291CB2717B00FAD0DA /* CHRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRegisterController.m; sourceTree = "<group>"; };
+		63412E2B1CB273CA00FAD0DA /* CHBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBaseNavigationController.h; sourceTree = "<group>"; };
+		63412E2C1CB273CA00FAD0DA /* CHBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBaseNavigationController.m; sourceTree = "<group>"; };
 		63A29B451CB0D23C009C61B2 /* HYQHelperHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQHelperHUD.h; sourceTree = "<group>"; };
 		63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQHelperHUD.m; sourceTree = "<group>"; };
 		63D9F7E71CB0C47E009BF266 /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
@@ -249,6 +255,8 @@
 			children = (
 				63412E251CB2634600FAD0DA /* CHLoginController.h */,
 				63412E261CB2634600FAD0DA /* CHLoginController.m */,
+				63412E281CB2717B00FAD0DA /* CHRegisterController.h */,
+				63412E291CB2717B00FAD0DA /* CHRegisterController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -476,6 +484,8 @@
 				84B1E2031CAE5AC6004573F4 /* CHRevealViewController.m */,
 				84B1E20B1CAE5FEA004573F4 /* CHRootViewController.h */,
 				84B1E20C1CAE5FEA004573F4 /* CHRootViewController.m */,
+				63412E2B1CB273CA00FAD0DA /* CHBaseNavigationController.h */,
+				63412E2C1CB273CA00FAD0DA /* CHBaseNavigationController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -767,6 +777,7 @@
 				8464DE151CAA48C7000B987E /* AppDelegate.m in Sources */,
 				63412E271CB2634600FAD0DA /* CHLoginController.m in Sources */,
 				8472D20D1CAE53930003E35A /* FQAHReachibility.m in Sources */,
+				63412E2A1CB2717B00FAD0DA /* CHRegisterController.m in Sources */,
 				8472D2051CAE53930003E35A /* NSObject+FQAHCategories.m in Sources */,
 				84B1E3051CAE77BA004573F4 /* UIControl+Categories.m in Sources */,
 				84B1E2FF1CAE77BA004573F4 /* NSString+Ghost.m in Sources */,
@@ -787,6 +798,7 @@
 				84B1E30D1CAE77BA004573F4 /* UIImage+Color.m in Sources */,
 				84B1E3151CAE77BA004573F4 /* UIView+BlockGesture.m in Sources */,
 				84B1E3021CAE77BA004573F4 /* UIApplication+Categories.m in Sources */,
+				63412E2D1CB273CA00FAD0DA /* CHBaseNavigationController.m in Sources */,
 				8464DE121CAA48C7000B987E /* main.m in Sources */,
 				8472D2091CAE53930003E35A /* FQAHBaseNetwork.m in Sources */,
 				84B1E3111CAE77BA004573F4 /* UINavigationController+Categories.m in Sources */,

@@ -42,8 +42,8 @@
 }
 
 - (IBAction)mailAction:(id)sender {
-    UIViewController *controller = [[UIStoryboard loginStoryboard] loginController];
-    [self presentViewController:controller animated:YES completion:nil];
+    CHBaseNavigationController *nav = [[UIStoryboard loginStoryboard] loginController];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 /*

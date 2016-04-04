@@ -18,8 +18,8 @@
 
 #pragma mark - Entry
 
-- (UIViewController *)loginController{
-    return [[UIStoryboard loginStoryboard] instantiateViewControllerWithIdentifier:@"CHLoginController"];
+- (CHBaseNavigationController *)loginController{
+    return [[UIStoryboard loginStoryboard] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
 }
 
 @end

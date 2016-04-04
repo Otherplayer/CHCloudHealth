@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="Shw-Eg-Cxa">
             <objects>
-                <navigationController id="Alo-WS-rGB" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Alo-WS-rGB" customClass="CHBaseNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xFW-fR-w6u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -89,7 +89,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <real key="value" value="22.5"/>
@@ -201,6 +201,9 @@
                                         <include reference="z89-VN-Kuw"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="N0Q-ZL-URZ" kind="push" id="vGS-HD-uzk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -323,18 +326,212 @@
             </objects>
             <point key="canvasLocation" x="477" y="138"/>
         </scene>
-        <!--View Controller-->
+        <!--注册-->
         <scene sceneID="q8c-tB-wd1">
             <objects>
-                <viewController id="N0Q-ZL-URZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CHRegisterController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N0Q-ZL-URZ" customClass="CHRegisterController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hQT-Qx-M8Q"/>
                         <viewControllerLayoutGuide type="bottom" id="gTp-3J-aUP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yzq-0d-6St">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="请输入手机号" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GBR-ZY-MCa">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="vRK-Ns-QwF"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="vRK-Ns-QwF"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="vRK-Ns-QwF"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="请输入密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="A1v-cz-g3I">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="0Uo-9N-vXP"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0Uo-9N-vXP"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0Uo-9N-vXP"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="请输验证码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dm0-27-fT0">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9j8-FV-BqN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.31830841302871704" green="0.61763226985931396" blue="0.91251415014266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="H2M-bi-GFr"/>
+                                    <constraint firstAttribute="width" constant="137" id="S0K-Rg-47V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="获取验证码">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="H2M-bi-GFr"/>
+                                        <exclude reference="S0K-Rg-47V"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="H2M-bi-GFr"/>
+                                        <include reference="S0K-Rg-47V"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3H-9J-Nho">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.31830841302871704" green="0.61763226985931396" blue="0.91251415014266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="JIc-y5-Dax"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="立即注册">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JIc-y5-Dax"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="JIc-y5-Dax"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A1v-cz-g3I" firstAttribute="leading" secondItem="Yzq-0d-6St" secondAttribute="leadingMargin" constant="27" id="Ddh-MM-rCN"/>
+                            <constraint firstItem="A1v-cz-g3I" firstAttribute="top" secondItem="GBR-ZY-MCa" secondAttribute="bottom" constant="20" id="GYp-l8-tQt"/>
+                            <constraint firstItem="GBR-ZY-MCa" firstAttribute="top" secondItem="hQT-Qx-M8Q" secondAttribute="bottom" constant="33" id="Kq8-UP-ULz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GBR-ZY-MCa" secondAttribute="trailing" constant="27" id="LOj-pf-yMe"/>
+                            <constraint firstItem="Dm0-27-fT0" firstAttribute="leading" secondItem="A1v-cz-g3I" secondAttribute="leading" id="Lwr-Ls-duP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A1v-cz-g3I" secondAttribute="trailing" constant="27" id="N9P-wZ-Oeb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j3H-9J-Nho" secondAttribute="trailing" constant="27" id="StC-cV-1vJ"/>
+                            <constraint firstItem="j3H-9J-Nho" firstAttribute="leading" secondItem="Yzq-0d-6St" secondAttribute="leadingMargin" constant="27" id="Z9z-PR-xxF"/>
+                            <constraint firstItem="9j8-FV-BqN" firstAttribute="top" secondItem="A1v-cz-g3I" secondAttribute="bottom" constant="21" id="ZfU-dW-heH"/>
+                            <constraint firstItem="j3H-9J-Nho" firstAttribute="top" secondItem="A1v-cz-g3I" secondAttribute="bottom" constant="124" id="c9p-6v-Q9T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9j8-FV-BqN" secondAttribute="trailing" constant="27" id="dfo-ME-4if"/>
+                            <constraint firstItem="Dm0-27-fT0" firstAttribute="top" secondItem="9j8-FV-BqN" secondAttribute="top" id="gsZ-oK-LrI"/>
+                            <constraint firstItem="9j8-FV-BqN" firstAttribute="leading" secondItem="Dm0-27-fT0" secondAttribute="trailing" constant="8" symbolic="YES" id="hj7-O8-QBC"/>
+                            <constraint firstItem="Dm0-27-fT0" firstAttribute="bottom" secondItem="9j8-FV-BqN" secondAttribute="bottom" id="ikn-dc-D9B"/>
+                            <constraint firstItem="GBR-ZY-MCa" firstAttribute="leading" secondItem="Yzq-0d-6St" secondAttribute="leadingMargin" constant="27" id="lGV-88-Y4H"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="GBR-ZY-MCa"/>
+                                <exclude reference="A1v-cz-g3I"/>
+                                <exclude reference="Dm0-27-fT0"/>
+                                <exclude reference="9j8-FV-BqN"/>
+                                <exclude reference="j3H-9J-Nho"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Kq8-UP-ULz"/>
+                                <exclude reference="LOj-pf-yMe"/>
+                                <exclude reference="lGV-88-Y4H"/>
+                                <exclude reference="Ddh-MM-rCN"/>
+                                <exclude reference="GYp-l8-tQt"/>
+                                <exclude reference="N9P-wZ-Oeb"/>
+                                <exclude reference="Lwr-Ls-duP"/>
+                                <exclude reference="gsZ-oK-LrI"/>
+                                <exclude reference="ikn-dc-D9B"/>
+                                <exclude reference="ZfU-dW-heH"/>
+                                <exclude reference="dfo-ME-4if"/>
+                                <exclude reference="hj7-O8-QBC"/>
+                                <exclude reference="StC-cV-1vJ"/>
+                                <exclude reference="Z9z-PR-xxF"/>
+                                <exclude reference="c9p-6v-Q9T"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="GBR-ZY-MCa"/>
+                                <include reference="A1v-cz-g3I"/>
+                                <include reference="Dm0-27-fT0"/>
+                                <include reference="9j8-FV-BqN"/>
+                                <include reference="j3H-9J-Nho"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Kq8-UP-ULz"/>
+                                <include reference="LOj-pf-yMe"/>
+                                <include reference="lGV-88-Y4H"/>
+                                <include reference="Ddh-MM-rCN"/>
+                                <include reference="GYp-l8-tQt"/>
+                                <include reference="N9P-wZ-Oeb"/>
+                                <include reference="Lwr-Ls-duP"/>
+                                <include reference="gsZ-oK-LrI"/>
+                                <include reference="ikn-dc-D9B"/>
+                                <include reference="ZfU-dW-heH"/>
+                                <include reference="dfo-ME-4if"/>
+                                <include reference="hj7-O8-QBC"/>
+                                <include reference="StC-cV-1vJ"/>
+                                <include reference="Z9z-PR-xxF"/>
+                                <include reference="c9p-6v-Q9T"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="注册" id="Ixf-UE-0lI"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wk1-J5-rgN" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CHBaseNavigationController.h"
 
 @interface UIStoryboard (Categories)
 + (instancetype)mainStoryboard;
 + (instancetype)loginStoryboard;
 
 
-- (UIViewController *)loginController;
-
+- (CHBaseNavigationController *)loginController;
 
 
 
