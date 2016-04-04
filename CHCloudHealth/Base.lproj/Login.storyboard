@@ -205,6 +205,28 @@
                                     <segue destination="N0Q-ZL-URZ" kind="push" id="vGS-HD-uzk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vv-iI-eyo">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="3Yc-9Z-PgR"/>
+                                </constraints>
+                                <state key="normal" image="ios_icon_3">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3Yc-9Z-PgR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="3Yc-9Z-PgR"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="cancelAction:" destination="cGc-0l-d75" eventType="touchUpInside" id="knI-tT-dGE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -223,6 +245,7 @@
                             <constraint firstAttribute="trailing" secondItem="3xd-1h-bsa" secondAttribute="trailing" id="K19-4G-eny"/>
                             <constraint firstItem="kfl-Ze-1qY" firstAttribute="top" secondItem="nyn-Bi-zcf" secondAttribute="bottom" constant="21" id="LUG-2Y-Wtg"/>
                             <constraint firstItem="n4s-Aq-ids" firstAttribute="top" secondItem="fre-05-vr7" secondAttribute="bottom" constant="40" id="NrO-4g-Gwi"/>
+                            <constraint firstItem="6vv-iI-eyo" firstAttribute="top" secondItem="fre-05-vr7" secondAttribute="bottom" constant="4" id="QOI-cd-ObL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nyn-Bi-zcf" secondAttribute="trailing" constant="27" id="RcH-pb-GQP"/>
                             <constraint firstItem="3xd-1h-bsa" firstAttribute="top" secondItem="A5h-ae-7br" secondAttribute="top" id="Yyy-Od-1nt"/>
                             <constraint firstItem="kjh-Ld-T3S" firstAttribute="top" secondItem="kfl-Ze-1qY" secondAttribute="bottom" constant="8" id="bac-H2-ePb"/>
@@ -232,6 +255,7 @@
                                 <variation key="widthClass=compact" constant="8"/>
                             </constraint>
                             <constraint firstItem="nyn-Bi-zcf" firstAttribute="leading" secondItem="A5h-ae-7br" secondAttribute="leadingMargin" constant="27" id="hnu-Lp-2ba"/>
+                            <constraint firstItem="6vv-iI-eyo" firstAttribute="leading" secondItem="A5h-ae-7br" secondAttribute="leadingMargin" constant="-5" id="i2z-Xt-NhZ"/>
                             <constraint firstItem="3xd-1h-bsa" firstAttribute="leading" secondItem="A5h-ae-7br" secondAttribute="leading" id="tY7-5T-Pqz"/>
                             <constraint firstItem="nyn-Bi-zcf" firstAttribute="top" secondItem="n4s-Aq-ids" secondAttribute="bottom" constant="65" id="tfF-1B-w5l">
                                 <variation key="widthClass=compact" constant="21"/>
@@ -248,11 +272,14 @@
                                 <exclude reference="kjh-Ld-T3S"/>
                                 <exclude reference="zSJ-ht-7ux"/>
                                 <exclude reference="hp0-Ib-FVK"/>
+                                <exclude reference="6vv-iI-eyo"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="K19-4G-eny"/>
                                 <exclude reference="Yyy-Od-1nt"/>
                                 <exclude reference="tY7-5T-Pqz"/>
+                                <exclude reference="QOI-cd-ObL"/>
+                                <exclude reference="i2z-Xt-NhZ"/>
                                 <exclude reference="0CS-nW-GDW"/>
                                 <exclude reference="BAT-d1-ZYZ"/>
                                 <exclude reference="NrO-4g-Gwi"/>
@@ -285,11 +312,14 @@
                                 <include reference="kjh-Ld-T3S"/>
                                 <include reference="zSJ-ht-7ux"/>
                                 <include reference="hp0-Ib-FVK"/>
+                                <include reference="6vv-iI-eyo"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="K19-4G-eny"/>
                                 <include reference="Yyy-Od-1nt"/>
                                 <include reference="tY7-5T-Pqz"/>
+                                <include reference="QOI-cd-ObL"/>
+                                <include reference="i2z-Xt-NhZ"/>
                                 <include reference="0CS-nW-GDW"/>
                                 <include reference="BAT-d1-ZYZ"/>
                                 <include reference="NrO-4g-Gwi"/>
@@ -544,5 +574,6 @@
     <resources>
         <image name="bg_login.png" width="750" height="1334"/>
         <image name="ios_icon_1" width="161" height="127"/>
+        <image name="ios_icon_3" width="22" height="22"/>
     </resources>
 </document>

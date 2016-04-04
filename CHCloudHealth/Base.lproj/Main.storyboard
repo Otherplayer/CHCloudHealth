@@ -224,8 +224,11 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="NCo-5v-Clv">
-                        <barButtonItem key="leftBarButtonItem" image="ios_icon_10" id="og5-Ae-hjF"/>
+                        <barButtonItem key="leftBarButtonItem" image="ios_icon_10" id="og5-Ae-hjF">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="ios_icon_16" id="FyH-m0-vO3">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="mailAction:" destination="alt-9q-Gf8" id="RXT-YR-ecX"/>
                             </connections>

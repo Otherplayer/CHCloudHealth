@@ -41,6 +41,26 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO];
+    [super viewWillDisappear:animated];
+}
+
+#pragma mark - Action
+
+- (IBAction)cancelAction:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self hidenKeyboard];
 }
