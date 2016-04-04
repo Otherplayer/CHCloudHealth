@@ -53,7 +53,7 @@
     [button setTitle:@"" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, (kNavButtonHeight - kNavImageWidth)/2, kNavImageWidth, kNavImageWidth)];
-    [imageView setImage:[UIImage imageNamed:@"back"]];
+    [imageView setImage:[UIImage imageNamed:@"ios_icon_4"]];
     [imageView setContentMode:UIViewContentModeScaleAspectFit];
     [button addSubview:imageView];
     

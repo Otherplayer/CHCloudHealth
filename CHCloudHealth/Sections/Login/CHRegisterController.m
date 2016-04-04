@@ -12,6 +12,14 @@
 
 
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self addBackButton];
+    
+    
+}
+
 
 
 

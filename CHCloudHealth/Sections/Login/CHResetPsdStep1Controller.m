@@ -10,4 +10,12 @@
 
 @implementation CHResetPsdStep1Controller
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self addBackButton];
+    
+    
+}
+
 @end
