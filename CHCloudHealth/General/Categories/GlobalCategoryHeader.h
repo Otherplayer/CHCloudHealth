@@ -29,6 +29,8 @@
 #import "NSString+Size.h"
 #import "UIImage+Extention.h"
 
+#import "UIStoryboard+Categories.h"
+
 #import "UIView+Extension.h"
 
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D28232D7C0428A043614F48 /* libPods-CHCloudHealth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7A51FD90EC5FD877E25B1E /* libPods-CHCloudHealth.a */; };
+		63412E231CB2628B00FAD0DA /* UIStoryboard+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E221CB2628B00FAD0DA /* UIStoryboard+Categories.m */; };
+		63412E271CB2634600FAD0DA /* CHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E261CB2634600FAD0DA /* CHLoginController.m */; };
 		63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */; };
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
 		63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7EB1CB0C52A009BF266 /* Login.storyboard */; };
@@ -83,6 +85,10 @@
 /* Begin PBXFileReference section */
 		32E958EE73A4318A56D03553 /* Pods-CHCloudHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHCloudHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHCloudHealth/Pods-CHCloudHealth.release.xcconfig"; sourceTree = "<group>"; };
 		5A7A51FD90EC5FD877E25B1E /* libPods-CHCloudHealth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CHCloudHealth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63412E211CB2628B00FAD0DA /* UIStoryboard+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+Categories.h"; sourceTree = "<group>"; };
+		63412E221CB2628B00FAD0DA /* UIStoryboard+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+Categories.m"; sourceTree = "<group>"; };
+		63412E251CB2634600FAD0DA /* CHLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLoginController.h; sourceTree = "<group>"; };
+		63412E261CB2634600FAD0DA /* CHLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLoginController.m; sourceTree = "<group>"; };
 		63A29B451CB0D23C009C61B2 /* HYQHelperHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQHelperHUD.h; sourceTree = "<group>"; };
 		63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQHelperHUD.m; sourceTree = "<group>"; };
 		63D9F7E71CB0C47E009BF266 /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
@@ -238,6 +244,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63412E241CB2632500FAD0DA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				63412E251CB2634600FAD0DA /* CHLoginController.h */,
+				63412E261CB2634600FAD0DA /* CHLoginController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		63D9F7E61CB0C472009BF266 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,6 +452,7 @@
 		8482A2F01CACC13F0070931B /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				63412E241CB2632500FAD0DA /* Login */,
 				84B1E2001CAE5A9E004573F4 /* Main */,
 			);
 			path = Sections;
@@ -476,8 +492,8 @@
 		84B1E2AC1CAE77BA004573F4 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				84B1E2AD1CAE77BA004573F4 /* Foundation */,
 				84B1E2CF1CAE77BA004573F4 /* GlobalCategoryHeader.h */,
+				84B1E2AD1CAE77BA004573F4 /* Foundation */,
 				84B1E2D01CAE77BA004573F4 /* UIKit */,
 			);
 			path = Categories;
@@ -555,7 +571,6 @@
 				84B1E2E41CAE77BA004573F4 /* UINavigationController+Categories.m */,
 				84B1E2E51CAE77BA004573F4 /* UINavigationController+FDFullscreenPopGesture.h */,
 				84B1E2E61CAE77BA004573F4 /* UINavigationController+FDFullscreenPopGesture.m */,
-				84B1E2E71CAE77BA004573F4 /* UIQuickCreateCategory */,
 				84B1E2E81CAE77BA004573F4 /* UIScrollView+Categories.h */,
 				84B1E2E91CAE77BA004573F4 /* UIScrollView+Categories.m */,
 				84B1E2EA1CAE77BA004573F4 /* UITableView+Categories.h */,
@@ -572,15 +587,10 @@
 				84B1E2F51CAE77BA004573F4 /* UIViewController+Swizzle.m */,
 				84B1E2F61CAE77BA004573F4 /* UIWebView+JavaScriptAlertCategory.h */,
 				84B1E2F71CAE77BA004573F4 /* UIWebView+JavaScriptAlertCategory.m */,
+				63412E211CB2628B00FAD0DA /* UIStoryboard+Categories.h */,
+				63412E221CB2628B00FAD0DA /* UIStoryboard+Categories.m */,
 			);
 			path = UIKit;
-			sourceTree = "<group>";
-		};
-		84B1E2E71CAE77BA004573F4 /* UIQuickCreateCategory */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIQuickCreateCategory;
 			sourceTree = "<group>";
 		};
 		9EA6CF6E1056A669C882E269 /* Frameworks */ = {
@@ -755,11 +765,13 @@
 				8472D1FC1CAE53930003E35A /* FQAHDiskCachedObject+CoreDataProperties.m in Sources */,
 				8472D2021CAE53930003E35A /* NSDictionary+FQAHCategories.m in Sources */,
 				8464DE151CAA48C7000B987E /* AppDelegate.m in Sources */,
+				63412E271CB2634600FAD0DA /* CHLoginController.m in Sources */,
 				8472D20D1CAE53930003E35A /* FQAHReachibility.m in Sources */,
 				8472D2051CAE53930003E35A /* NSObject+FQAHCategories.m in Sources */,
 				84B1E3051CAE77BA004573F4 /* UIControl+Categories.m in Sources */,
 				84B1E2FF1CAE77BA004573F4 /* NSString+Ghost.m in Sources */,
 				8472D2031CAE53930003E35A /* NSFileManager+FQAHCategories.m in Sources */,
+				63412E231CB2628B00FAD0DA /* UIStoryboard+Categories.m in Sources */,
 				84B1E2041CAE5AC6004573F4 /* CHRevealViewController.m in Sources */,
 				84B1E3161CAE77BA004573F4 /* UIView+Categories.m in Sources */,
 				84B1E3101CAE77BA004573F4 /* UINavigationBar+Awesome.m in Sources */,

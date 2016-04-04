@@ -11,6 +11,7 @@
 
 @interface CHMainViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *mailButtonItem;
 @end
 
 @implementation CHMainViewController
@@ -22,19 +23,27 @@
     [self setTitle:@"慈海云健康"];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldGotoSubMenuController:) name:kNotificationMenuController object:nil];
-    
+    [[NetworkingManager sharedManager] registerWithMobile:@"18513149993" password:@"123455" captcha:@"12345" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark - Action
 
 - (void)shouldGotoSubMenuController:(NSNotification *)notification{
     dispatch_async(dispatch_get_main_queue(), ^{
         ViewController *controller = [[ViewController alloc] init];
         [self.navigationController pushViewController:controller animated:NO];
     });
+}
+
+- (IBAction)mailAction:(id)sender {
+    UIViewController *controller = [[UIStoryboard loginStoryboard] loginController];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 /*

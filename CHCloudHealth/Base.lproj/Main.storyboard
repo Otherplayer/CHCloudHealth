@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ij2-Za-dBx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ij2-Za-dBx">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -44,7 +45,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mrf-34-ygN" id="c9t-WH-Kqa">
-                                            <rect key="frame" x="0.0" y="0.0" width="207" height="149.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios_icon_18" translatesAutoresizingMaskIntoConstraints="NO" id="CYc-Ia-Cwl">
@@ -104,12 +105,12 @@
                                                     <exclude reference="jM3-bm-g1O"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="AD7-16-3Oc"/>
-                                                    <exclude reference="CsX-Rn-twG"/>
-                                                    <exclude reference="joa-Td-AXn"/>
                                                     <exclude reference="DiP-FT-Pe7"/>
                                                     <exclude reference="LHA-8h-GkG"/>
                                                     <exclude reference="o9d-Tl-CCX"/>
+                                                    <exclude reference="AD7-16-3Oc"/>
+                                                    <exclude reference="CsX-Rn-twG"/>
+                                                    <exclude reference="joa-Td-AXn"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -118,12 +119,12 @@
                                                     <include reference="jM3-bm-g1O"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="AD7-16-3Oc"/>
-                                                    <include reference="CsX-Rn-twG"/>
-                                                    <include reference="joa-Td-AXn"/>
                                                     <include reference="DiP-FT-Pe7"/>
                                                     <include reference="LHA-8h-GkG"/>
                                                     <include reference="o9d-Tl-CCX"/>
+                                                    <include reference="AD7-16-3Oc"/>
+                                                    <include reference="CsX-Rn-twG"/>
+                                                    <include reference="joa-Td-AXn"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -134,7 +135,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="30E-U0-ato" id="Atg-Hc-eNU">
-                                            <rect key="frame" x="0.0" y="0.0" width="207" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="207" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -224,9 +225,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="NCo-5v-Clv">
                         <barButtonItem key="leftBarButtonItem" image="ios_icon_10" id="og5-Ae-hjF"/>
-                        <barButtonItem key="rightBarButtonItem" image="ios_icon_16" id="FyH-m0-vO3"/>
+                        <barButtonItem key="rightBarButtonItem" image="ios_icon_16" id="FyH-m0-vO3">
+                            <connections>
+                                <action selector="mailAction:" destination="alt-9q-Gf8" id="RXT-YR-ecX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="mailButtonItem" destination="FyH-m0-vO3" id="jGW-b8-UUk"/>
                         <outlet property="revealButtonItem" destination="og5-Ae-hjF" id="t4A-3g-dpp"/>
                     </connections>
                 </viewController>

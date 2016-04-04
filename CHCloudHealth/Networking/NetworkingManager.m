@@ -15,9 +15,9 @@
  * API URL 调用参数
  */
 
-NSString *const kAPI_Login = HOTYQ_JAVA_API @"userController/login";
-NSString *const kAPI_Register = HOTYQ_JAVA_API @"userController/register";
-NSString *const kAPI_GetCaptcha = HOTYQ_JAVA_API @"userController/sendSmsCapctha";
+NSString *const kAPI_Login = HOTYQ_JAVA_API @"user/login";
+NSString *const kAPI_Register = HOTYQ_JAVA_API @"user/register";
+NSString *const kAPI_GetCaptcha = HOTYQ_JAVA_API @"user/sendSmsCapctha";
 
 
 NSString *const kAPI_PAGE = @"page";
