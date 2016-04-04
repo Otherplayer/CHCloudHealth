@@ -15,6 +15,9 @@
 		63412E301CB279B300FAD0DA /* CHResetPsdStep1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E2F1CB279B300FAD0DA /* CHResetPsdStep1Controller.m */; };
 		63412E331CB279C000FAD0DA /* CHResetPsdStep2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E321CB279C000FAD0DA /* CHResetPsdStep2Controller.m */; };
 		63412E371CB27C9100FAD0DA /* CHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E361CB27C9100FAD0DA /* CHUser.m */; };
+		63412E3A1CB285B100FAD0DA /* UITableView+Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E391CB285B100FAD0DA /* UITableView+Empty.m */; };
+		63412E3D1CB285F900FAD0DA /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E3C1CB285F900FAD0DA /* UIScrollView+EmptyDataSet.m */; };
+		63412E401CB2860700FAD0DA /* DZNEmptyDataSetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E3F1CB2860700FAD0DA /* DZNEmptyDataSetView.m */; };
 		63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */; };
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
 		63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7EB1CB0C52A009BF266 /* Login.storyboard */; };
@@ -104,6 +107,12 @@
 		63412E321CB279C000FAD0DA /* CHResetPsdStep2Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHResetPsdStep2Controller.m; sourceTree = "<group>"; };
 		63412E351CB27C9100FAD0DA /* CHUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUser.h; sourceTree = "<group>"; };
 		63412E361CB27C9100FAD0DA /* CHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUser.m; sourceTree = "<group>"; };
+		63412E381CB285B100FAD0DA /* UITableView+Empty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Empty.h"; sourceTree = "<group>"; };
+		63412E391CB285B100FAD0DA /* UITableView+Empty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Empty.m"; sourceTree = "<group>"; };
+		63412E3B1CB285F900FAD0DA /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		63412E3C1CB285F900FAD0DA /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		63412E3E1CB2860700FAD0DA /* DZNEmptyDataSetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZNEmptyDataSetView.h; sourceTree = "<group>"; };
+		63412E3F1CB2860700FAD0DA /* DZNEmptyDataSetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZNEmptyDataSetView.m; sourceTree = "<group>"; };
 		63A29B451CB0D23C009C61B2 /* HYQHelperHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQHelperHUD.h; sourceTree = "<group>"; };
 		63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQHelperHUD.m; sourceTree = "<group>"; };
 		63D9F7E71CB0C47E009BF266 /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
@@ -516,6 +525,8 @@
 		84B1E2111CAE7197004573F4 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				63412E3E1CB2860700FAD0DA /* DZNEmptyDataSetView.h */,
+				63412E3F1CB2860700FAD0DA /* DZNEmptyDataSetView.m */,
 				63A29B451CB0D23C009C61B2 /* HYQHelperHUD.h */,
 				63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */,
 			);
@@ -582,6 +593,8 @@
 		84B1E2D01CAE77BA004573F4 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				63412E381CB285B100FAD0DA /* UITableView+Empty.h */,
+				63412E391CB285B100FAD0DA /* UITableView+Empty.m */,
 				84B1E2D11CAE77BA004573F4 /* NSString+Size.h */,
 				84B1E2D21CAE77BA004573F4 /* NSString+Size.m */,
 				84B1E2D31CAE77BA004573F4 /* UIButton+CountDown.h */,
@@ -606,6 +619,8 @@
 				84B1E2E61CAE77BA004573F4 /* UINavigationController+FDFullscreenPopGesture.m */,
 				84B1E2E81CAE77BA004573F4 /* UIScrollView+Categories.h */,
 				84B1E2E91CAE77BA004573F4 /* UIScrollView+Categories.m */,
+				63412E3B1CB285F900FAD0DA /* UIScrollView+EmptyDataSet.h */,
+				63412E3C1CB285F900FAD0DA /* UIScrollView+EmptyDataSet.m */,
 				84B1E2EA1CAE77BA004573F4 /* UITableView+Categories.h */,
 				84B1E2EB1CAE77BA004573F4 /* UITableView+Categories.m */,
 				84B1E2EC1CAE77BA004573F4 /* UIView+BlockGesture.h */,
@@ -762,6 +777,7 @@
 				84B1E3191CAE77BA004573F4 /* UIViewController+Swizzle.m in Sources */,
 				8472D20E1CAE53930003E35A /* BASEModel.m in Sources */,
 				84B1E20D1CAE5FEA004573F4 /* CHRootViewController.m in Sources */,
+				63412E3A1CB285B100FAD0DA /* UITableView+Empty.m in Sources */,
 				84B1E2FA1CAE77BA004573F4 /* NSDate+HYQFormatter.m in Sources */,
 				63412E301CB279B300FAD0DA /* CHResetPsdStep1Controller.m in Sources */,
 				8472D1FE1CAE53930003E35A /* FQAHNetworking.xcdatamodeld in Sources */,
@@ -771,6 +787,7 @@
 				84B1E20A1CAE5E84004573F4 /* CHMenuViewController.m in Sources */,
 				8472D1FF1CAE53930003E35A /* FQAHCache.m in Sources */,
 				8472D2071CAE53930003E35A /* UIDevice+FQAHCategories.m in Sources */,
+				63412E401CB2860700FAD0DA /* DZNEmptyDataSetView.m in Sources */,
 				84B1E2F91CAE77BA004573F4 /* NSDate+Ghost.m in Sources */,
 				84B1E3011CAE77BA004573F4 /* NSString+Pinyin.m in Sources */,
 				84B1E30B1CAE77BA004573F4 /* UIColor+Gradient.m in Sources */,
@@ -828,6 +845,7 @@
 				8464DE121CAA48C7000B987E /* main.m in Sources */,
 				8472D2091CAE53930003E35A /* FQAHBaseNetwork.m in Sources */,
 				84B1E3111CAE77BA004573F4 /* UINavigationController+Categories.m in Sources */,
+				63412E3D1CB285F900FAD0DA /* UIScrollView+EmptyDataSet.m in Sources */,
 				84B1E2071CAE5B58004573F4 /* CHMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
