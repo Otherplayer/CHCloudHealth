@@ -483,8 +483,8 @@
 		8482A2F01CACC13F0070931B /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				63412E241CB2632500FAD0DA /* Login */,
 				84B1E2001CAE5A9E004573F4 /* Main */,
+				63412E241CB2632500FAD0DA /* Login */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
