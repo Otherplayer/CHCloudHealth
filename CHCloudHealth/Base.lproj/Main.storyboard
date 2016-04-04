@@ -221,7 +221,45 @@
                     <view key="view" contentMode="scaleToFill" id="gR8-vx-rcw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="evl-54-66S">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="alt-9q-Gf8" id="fXI-tV-mhz"/>
+                                    <outlet property="delegate" destination="alt-9q-Gf8" id="JWL-6x-IsA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="evl-54-66S" secondAttribute="trailing" id="3BV-ye-9fw"/>
+                            <constraint firstItem="SLb-qu-WH4" firstAttribute="top" secondItem="evl-54-66S" secondAttribute="bottom" id="6Md-KM-Lqv"/>
+                            <constraint firstItem="evl-54-66S" firstAttribute="leading" secondItem="gR8-vx-rcw" secondAttribute="leading" id="M8e-bz-kIm"/>
+                            <constraint firstItem="evl-54-66S" firstAttribute="top" secondItem="KJH-do-f2y" secondAttribute="bottom" id="kct-er-YUa"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="evl-54-66S"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="3BV-ye-9fw"/>
+                                <exclude reference="M8e-bz-kIm"/>
+                                <exclude reference="kct-er-YUa"/>
+                                <exclude reference="6Md-KM-Lqv"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="evl-54-66S"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="3BV-ye-9fw"/>
+                                <include reference="M8e-bz-kIm"/>
+                                <include reference="kct-er-YUa"/>
+                                <include reference="6Md-KM-Lqv"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="NCo-5v-Clv">
                         <barButtonItem key="leftBarButtonItem" image="ios_icon_10" id="og5-Ae-hjF">
@@ -237,6 +275,7 @@
                     <connections>
                         <outlet property="mailButtonItem" destination="FyH-m0-vO3" id="jGW-b8-UUk"/>
                         <outlet property="revealButtonItem" destination="og5-Ae-hjF" id="t4A-3g-dpp"/>
+                        <outlet property="tableView" destination="evl-54-66S" id="dtq-XI-lcM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dxn-JO-h9L" userLabel="First Responder" sceneMemberID="firstResponder"/>

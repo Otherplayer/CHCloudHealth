@@ -12,6 +12,8 @@
 @interface CHMainViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *mailButtonItem;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation CHMainViewController
@@ -22,16 +24,65 @@
     [self installRevealGesture];
     [self setTitle:@"慈海云健康"];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldGotoSubMenuController:) name:kNotificationMenuController object:nil];
-    [[NetworkingManager sharedManager] registerWithMobile:@"18513149993" password:@"123455" captcha:@"12345" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+    
+    [self.tableView blankTableFooterView];
+    
+    self.tableView.descriptionText = @"连接设备后\n才会显示数据哦";
+    self.tableView.loadedImageName = @"ios_icon_17";
+    self.tableView.buttonText = @"绑定设备";
+    [self.tableView clickLoading:^{
         
     }];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldGotoSubMenuController:) name:kNotificationMenuController object:nil];
+    
+    [self getDatas];
+    
+    double delayInSeconds = 3;
+    dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    // 得到全局队列
+    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    // 延期执行
+    dispatch_after(delayInNanoSeconds, concurrentQueue, ^(void){
+        self.tableView.loading = NO;
+    });
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark -
+
+- (void)getDatas{
+    self.tableView.loading = YES;
+    
+}
+
+
+#pragma mark - Delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifierMenuHeader = @"IdentifierMenuHeader";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMenuHeader forIndexPath:indexPath];
+    return cell;
+}
+
+
+
+
+
+
+
+
 #pragma mark - Action
 
 - (void)shouldGotoSubMenuController:(NSNotification *)notification{

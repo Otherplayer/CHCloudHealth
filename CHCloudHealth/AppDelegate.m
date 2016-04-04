@@ -18,8 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     // Register Splite
-    [MagicalRecord setupCoreDataStackWithStoreNamed:@"FQAHNetworking.sqlite"];
     [[FQAHReachibility sharedInstance] startMonitoringInternetStates];
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"FQAHNetworking.sqlite"];
     
     
     

@@ -136,12 +136,12 @@ id (^block)();
 // 返回一张空状态的图片在文字上面的
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
     if (![self isReachable]) {
-        return [UIImage imageNamed:@"dismissNetWork"];
+        return [UIImage imageNamed:@"ios_icon_17"];
     }else
     if (self.loading) {
         return nil;
     }else {
-        NSString *imageName = @"ios_default_face";
+        NSString *imageName = @"ios_icon_17";
         if (self.loadedImageName) {
             imageName = self.loadedImageName;
         }

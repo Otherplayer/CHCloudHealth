@@ -18,6 +18,14 @@
 		63412E3A1CB285B100FAD0DA /* UITableView+Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E391CB285B100FAD0DA /* UITableView+Empty.m */; };
 		63412E3D1CB285F900FAD0DA /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E3C1CB285F900FAD0DA /* UIScrollView+EmptyDataSet.m */; };
 		63412E401CB2860700FAD0DA /* DZNEmptyDataSetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E3F1CB2860700FAD0DA /* DZNEmptyDataSetView.m */; };
+		63412E441CB2A24700FAD0DA /* CHUserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E431CB2A24700FAD0DA /* CHUserInfoController.m */; };
+		63412E471CB2A28100FAD0DA /* CHRelationShipController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E461CB2A28100FAD0DA /* CHRelationShipController.m */; };
+		63412E4A1CB2A29F00FAD0DA /* CHCareAreaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E491CB2A29F00FAD0DA /* CHCareAreaController.m */; };
+		63412E4D1CB2A2C500FAD0DA /* CHLocationMonitorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E4C1CB2A2C500FAD0DA /* CHLocationMonitorController.m */; };
+		63412E501CB2A2E800FAD0DA /* CHMonitorCareController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E4F1CB2A2E800FAD0DA /* CHMonitorCareController.m */; };
+		63412E531CB2A33F00FAD0DA /* CHMedicineReminderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E521CB2A33F00FAD0DA /* CHMedicineReminderController.m */; };
+		63412E561CB2A35100FAD0DA /* CHSOSSetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E551CB2A35100FAD0DA /* CHSOSSetController.m */; };
+		63412E591CB2A36700FAD0DA /* CHAPPManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E581CB2A36700FAD0DA /* CHAPPManagerController.m */; };
 		63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */; };
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
 		63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7EB1CB0C52A009BF266 /* Login.storyboard */; };
@@ -113,6 +121,22 @@
 		63412E3C1CB285F900FAD0DA /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		63412E3E1CB2860700FAD0DA /* DZNEmptyDataSetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZNEmptyDataSetView.h; sourceTree = "<group>"; };
 		63412E3F1CB2860700FAD0DA /* DZNEmptyDataSetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZNEmptyDataSetView.m; sourceTree = "<group>"; };
+		63412E421CB2A24700FAD0DA /* CHUserInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUserInfoController.h; sourceTree = "<group>"; };
+		63412E431CB2A24700FAD0DA /* CHUserInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUserInfoController.m; sourceTree = "<group>"; };
+		63412E451CB2A28100FAD0DA /* CHRelationShipController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRelationShipController.h; sourceTree = "<group>"; };
+		63412E461CB2A28100FAD0DA /* CHRelationShipController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRelationShipController.m; sourceTree = "<group>"; };
+		63412E481CB2A29F00FAD0DA /* CHCareAreaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCareAreaController.h; sourceTree = "<group>"; };
+		63412E491CB2A29F00FAD0DA /* CHCareAreaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCareAreaController.m; sourceTree = "<group>"; };
+		63412E4B1CB2A2C500FAD0DA /* CHLocationMonitorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLocationMonitorController.h; sourceTree = "<group>"; };
+		63412E4C1CB2A2C500FAD0DA /* CHLocationMonitorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLocationMonitorController.m; sourceTree = "<group>"; };
+		63412E4E1CB2A2E800FAD0DA /* CHMonitorCareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMonitorCareController.h; sourceTree = "<group>"; };
+		63412E4F1CB2A2E800FAD0DA /* CHMonitorCareController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMonitorCareController.m; sourceTree = "<group>"; };
+		63412E511CB2A33F00FAD0DA /* CHMedicineReminderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMedicineReminderController.h; sourceTree = "<group>"; };
+		63412E521CB2A33F00FAD0DA /* CHMedicineReminderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMedicineReminderController.m; sourceTree = "<group>"; };
+		63412E541CB2A35100FAD0DA /* CHSOSSetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSOSSetController.h; sourceTree = "<group>"; };
+		63412E551CB2A35100FAD0DA /* CHSOSSetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSOSSetController.m; sourceTree = "<group>"; };
+		63412E571CB2A36700FAD0DA /* CHAPPManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAPPManagerController.h; sourceTree = "<group>"; };
+		63412E581CB2A36700FAD0DA /* CHAPPManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAPPManagerController.m; sourceTree = "<group>"; };
 		63A29B451CB0D23C009C61B2 /* HYQHelperHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQHelperHUD.h; sourceTree = "<group>"; };
 		63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQHelperHUD.m; sourceTree = "<group>"; };
 		63D9F7E71CB0C47E009BF266 /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
@@ -290,6 +314,29 @@
 				63412E361CB27C9100FAD0DA /* CHUser.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		63412E411CB2A22200FAD0DA /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				63412E421CB2A24700FAD0DA /* CHUserInfoController.h */,
+				63412E431CB2A24700FAD0DA /* CHUserInfoController.m */,
+				63412E451CB2A28100FAD0DA /* CHRelationShipController.h */,
+				63412E461CB2A28100FAD0DA /* CHRelationShipController.m */,
+				63412E481CB2A29F00FAD0DA /* CHCareAreaController.h */,
+				63412E491CB2A29F00FAD0DA /* CHCareAreaController.m */,
+				63412E4B1CB2A2C500FAD0DA /* CHLocationMonitorController.h */,
+				63412E4C1CB2A2C500FAD0DA /* CHLocationMonitorController.m */,
+				63412E4E1CB2A2E800FAD0DA /* CHMonitorCareController.h */,
+				63412E4F1CB2A2E800FAD0DA /* CHMonitorCareController.m */,
+				63412E511CB2A33F00FAD0DA /* CHMedicineReminderController.h */,
+				63412E521CB2A33F00FAD0DA /* CHMedicineReminderController.m */,
+				63412E541CB2A35100FAD0DA /* CHSOSSetController.h */,
+				63412E551CB2A35100FAD0DA /* CHSOSSetController.m */,
+				63412E571CB2A36700FAD0DA /* CHAPPManagerController.h */,
+				63412E581CB2A36700FAD0DA /* CHAPPManagerController.m */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		63D9F7E61CB0C472009BF266 /* Resources */ = {
@@ -494,6 +541,7 @@
 			children = (
 				84B1E2001CAE5A9E004573F4 /* Main */,
 				63412E241CB2632500FAD0DA /* Login */,
+				63412E411CB2A22200FAD0DA /* Setting */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -775,6 +823,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B1E3191CAE77BA004573F4 /* UIViewController+Swizzle.m in Sources */,
+				63412E441CB2A24700FAD0DA /* CHUserInfoController.m in Sources */,
 				8472D20E1CAE53930003E35A /* BASEModel.m in Sources */,
 				84B1E20D1CAE5FEA004573F4 /* CHRootViewController.m in Sources */,
 				63412E3A1CB285B100FAD0DA /* UITableView+Empty.m in Sources */,
@@ -788,6 +837,7 @@
 				8472D1FF1CAE53930003E35A /* FQAHCache.m in Sources */,
 				8472D2071CAE53930003E35A /* UIDevice+FQAHCategories.m in Sources */,
 				63412E401CB2860700FAD0DA /* DZNEmptyDataSetView.m in Sources */,
+				63412E561CB2A35100FAD0DA /* CHSOSSetController.m in Sources */,
 				84B1E2F91CAE77BA004573F4 /* NSDate+Ghost.m in Sources */,
 				84B1E3011CAE77BA004573F4 /* NSString+Pinyin.m in Sources */,
 				84B1E30B1CAE77BA004573F4 /* UIColor+Gradient.m in Sources */,
@@ -801,8 +851,10 @@
 				84B1E3091CAE77BA004573F4 /* UIButton+CountDown.m in Sources */,
 				84B1E3001CAE77BA004573F4 /* NSString+HYQCategory.m in Sources */,
 				8472D2001CAE53930003E35A /* FQAHCachedObject.m in Sources */,
+				63412E471CB2A28100FAD0DA /* CHRelationShipController.m in Sources */,
 				84B1E30F1CAE77BA004573F4 /* UIImage+Orientation.m in Sources */,
 				8472D2041CAE53930003E35A /* NSMutableString+FQAHCategories.m in Sources */,
+				63412E591CB2A36700FAD0DA /* CHAPPManagerController.m in Sources */,
 				84B1E3041CAE77BA004573F4 /* UIColor+Random.m in Sources */,
 				84B1E3061CAE77BA004573F4 /* UIDevice+Hardware.m in Sources */,
 				63412E371CB27C9100FAD0DA /* CHUser.m in Sources */,
@@ -819,12 +871,14 @@
 				8464DE151CAA48C7000B987E /* AppDelegate.m in Sources */,
 				63412E271CB2634600FAD0DA /* CHLoginController.m in Sources */,
 				8472D20D1CAE53930003E35A /* FQAHReachibility.m in Sources */,
+				63412E4D1CB2A2C500FAD0DA /* CHLocationMonitorController.m in Sources */,
 				63412E2A1CB2717B00FAD0DA /* CHRegisterController.m in Sources */,
 				8472D2051CAE53930003E35A /* NSObject+FQAHCategories.m in Sources */,
 				84B1E3051CAE77BA004573F4 /* UIControl+Categories.m in Sources */,
 				84B1E2FF1CAE77BA004573F4 /* NSString+Ghost.m in Sources */,
 				8472D2031CAE53930003E35A /* NSFileManager+FQAHCategories.m in Sources */,
 				63412E231CB2628B00FAD0DA /* UIStoryboard+Categories.m in Sources */,
+				63412E531CB2A33F00FAD0DA /* CHMedicineReminderController.m in Sources */,
 				84B1E2041CAE5AC6004573F4 /* CHRevealViewController.m in Sources */,
 				84B1E3161CAE77BA004573F4 /* UIView+Categories.m in Sources */,
 				84B1E3101CAE77BA004573F4 /* UINavigationBar+Awesome.m in Sources */,
@@ -833,6 +887,7 @@
 				84B1E3031CAE77BA004573F4 /* UIColor+HexRGB.m in Sources */,
 				84B1E30A1CAE77BA004573F4 /* UIButton+UIButton_BackgroundImageButton.m in Sources */,
 				84B1E3081CAE77BA004573F4 /* NSString+Size.m in Sources */,
+				63412E501CB2A2E800FAD0DA /* CHMonitorCareController.m in Sources */,
 				8472D2061CAE53930003E35A /* NSURLRequest+FQAHCategories.m in Sources */,
 				84B1E2FC1CAE77BA004573F4 /* NSFileManager+Ghost.m in Sources */,
 				84B1E30C1CAE77BA004573F4 /* UIImage+Blur.m in Sources */,
@@ -840,6 +895,7 @@
 				84B1E3071CAE77BA004573F4 /* UIResponder+Ghost.m in Sources */,
 				84B1E30D1CAE77BA004573F4 /* UIImage+Color.m in Sources */,
 				84B1E3151CAE77BA004573F4 /* UIView+BlockGesture.m in Sources */,
+				63412E4A1CB2A29F00FAD0DA /* CHCareAreaController.m in Sources */,
 				84B1E3021CAE77BA004573F4 /* UIApplication+Categories.m in Sources */,
 				63412E2D1CB273CA00FAD0DA /* CHBaseNavigationController.m in Sources */,
 				8464DE121CAA48C7000B987E /* main.m in Sources */,
