@@ -105,8 +105,12 @@
         
         NSLog(@"%@",notification);
         
-        UIViewController *controller = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:notification.object];
-        [self.navigationController pushViewController:controller animated:NO];
+        NSString *identifier = notification.object;
+        if (identifier) {
+            UIViewController *controller = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:identifier];
+            [self.navigationController pushViewController:controller animated:NO];
+        }
+        
     });
 }
 

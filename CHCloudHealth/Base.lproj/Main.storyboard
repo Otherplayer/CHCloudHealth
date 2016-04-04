@@ -236,15 +236,50 @@
         <!--基础信息-->
         <scene sceneID="0lp-o2-PGs">
             <objects>
-                <viewController storyboardIdentifier="CHUserInfoController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fd9-W1-a8j" userLabel="基础信息" customClass="CHUserInfoController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CHUserInfoController" title="基础信息" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fd9-W1-a8j" userLabel="基础信息" customClass="CHUserInfoController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d8Q-aR-Ju4"/>
                         <viewControllerLayoutGuide type="bottom" id="Sxd-Ac-6Jt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zlv-TF-5h2">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hqk-lI-4cl">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hqk-lI-4cl" firstAttribute="top" secondItem="zlv-TF-5h2" secondAttribute="top" id="27l-fL-su4"/>
+                            <constraint firstItem="Hqk-lI-4cl" firstAttribute="leading" secondItem="zlv-TF-5h2" secondAttribute="leading" id="8wE-Qg-ZG0"/>
+                            <constraint firstItem="Sxd-Ac-6Jt" firstAttribute="top" secondItem="Hqk-lI-4cl" secondAttribute="bottom" id="C0a-KM-08U"/>
+                            <constraint firstAttribute="trailing" secondItem="Hqk-lI-4cl" secondAttribute="trailing" id="kJo-en-nre"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Hqk-lI-4cl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="27l-fL-su4"/>
+                                <exclude reference="8wE-Qg-ZG0"/>
+                                <exclude reference="kJo-en-nre"/>
+                                <exclude reference="C0a-KM-08U"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Hqk-lI-4cl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="27l-fL-su4"/>
+                                <include reference="8wE-Qg-ZG0"/>
+                                <include reference="kJo-en-nre"/>
+                                <include reference="C0a-KM-08U"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfk-7E-GWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1170,7 +1205,9 @@
                             <constraint firstAttribute="trailing" secondItem="evl-54-66S" secondAttribute="trailing" id="3BV-ye-9fw"/>
                             <constraint firstItem="SLb-qu-WH4" firstAttribute="top" secondItem="evl-54-66S" secondAttribute="bottom" id="6Md-KM-Lqv"/>
                             <constraint firstItem="evl-54-66S" firstAttribute="leading" secondItem="gR8-vx-rcw" secondAttribute="leading" id="M8e-bz-kIm"/>
-                            <constraint firstItem="evl-54-66S" firstAttribute="top" secondItem="KJH-do-f2y" secondAttribute="bottom" id="kct-er-YUa"/>
+                            <constraint firstItem="evl-54-66S" firstAttribute="top" secondItem="KJH-do-f2y" secondAttribute="bottom" id="kct-er-YUa">
+                                <variation key="widthClass=compact" constant="-64"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
