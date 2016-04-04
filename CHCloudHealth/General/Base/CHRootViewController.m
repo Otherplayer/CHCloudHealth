@@ -33,14 +33,29 @@
 
 #pragma mark - Action
 
-- (void)hidenKeyboard{
-    [UIApplication hideKeyboard];
-}
 
 
 #pragma mark - Delegate
 
 #pragma mark - Private
+- (void)hidenKeyboard{
+    [UIApplication hideKeyboard];
+}
+- (BOOL)isReachable{
+    return [FQAHReachibility sharedInstance].isReachable;
+}
+- (BOOL)isLogin{
+    return [CHUser sharedInstance].islogin;
+}
+- (BOOL)canGo{
+    BOOL isReachable = [self isReachable];
+    if (isReachable) {
+        return YES;
+    }
+    [HYQShowTip showTipInView:self.view tip:@"网络连接错误" dealy:2];
+    return NO;
+    
+}
 
 #pragma mark - Configure
 

@@ -8,6 +8,12 @@
 
 #import "CHResetPsdStep1Controller.h"
 
+@interface CHResetPsdStep1Controller ()
+@property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
+@property (weak, nonatomic) IBOutlet UIButton *btnNext;
+
+@end
+
 @implementation CHResetPsdStep1Controller
 
 - (void)viewDidLoad {
@@ -18,6 +24,12 @@
     
 }
 
+
+#pragma mark - Action
+
+
+- (IBAction)nextAction:(id)sender {
+}
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

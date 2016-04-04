@@ -18,4 +18,13 @@
 
 
 
+/// 网络是否连接
+- (BOOL)isReachable;
+/// 是否登录
+- (BOOL)isLogin;
+/// 判断网络是否连接，未连接时有提示
+- (BOOL)canGo;
+
+
+
 @end
