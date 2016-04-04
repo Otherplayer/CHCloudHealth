@@ -131,12 +131,57 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IdentifierMenu" id="30E-U0-ato">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="IdentifierMenu" id="30E-U0-ato">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="30E-U0-ato" id="Atg-Hc-eNU">
                                             <rect key="frame" x="0.0" y="0.0" width="207" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios_icon_12" translatesAutoresizingMaskIntoConstraints="NO" id="qxy-wx-dTZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="A0t-Wn-Ae3"/>
+                                                        <constraint firstAttribute="width" constant="36" id="xmB-gw-QxC"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="A0t-Wn-Ae3"/>
+                                                            <exclude reference="xmB-gw-QxC"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="A0t-Wn-Ae3"/>
+                                                            <include reference="xmB-gw-QxC"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qxy-wx-dTZ" secondAttribute="trailing" constant="-8" id="6Lc-Tg-Rh4">
+                                                    <variation key="widthClass=compact" constant="-5"/>
+                                                </constraint>
+                                                <constraint firstItem="qxy-wx-dTZ" firstAttribute="top" secondItem="Atg-Hc-eNU" secondAttribute="topMargin" constant="-4" id="tbs-IE-y9Q"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="qxy-wx-dTZ"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="6Lc-Tg-Rh4"/>
+                                                    <exclude reference="tbs-IE-y9Q"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="qxy-wx-dTZ"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="6Lc-Tg-Rh4"/>
+                                                    <include reference="tbs-IE-y9Q"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1088,6 +1133,13 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ivAvatar" destination="Oig-4Q-eic" id="0GF-Lc-AjC"/>
+                                            <outlet property="labDate" destination="KkY-mo-uDP" id="5mg-9L-sbt"/>
+                                            <outlet property="labState" destination="PWc-JK-Gvh" id="W8b-mX-MGv"/>
+                                            <outlet property="labTitle" destination="Zs1-WH-rqR" id="OOF-nD-DK5"/>
+                                            <outlet property="labValue" destination="MU5-yQ-E8p" id="1BW-Sx-vuW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1151,6 +1203,7 @@
     <resources>
         <image name="ios_icon_10" width="24" height="24"/>
         <image name="ios_icon_11" width="22" height="22"/>
+        <image name="ios_icon_12" width="18" height="18"/>
         <image name="ios_icon_15" width="18" height="18"/>
         <image name="ios_icon_16" width="27" height="27"/>
         <image name="ios_icon_18" width="24" height="24"/>
