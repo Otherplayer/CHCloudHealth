@@ -26,6 +26,7 @@
 		63412E531CB2A33F00FAD0DA /* CHMedicineReminderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E521CB2A33F00FAD0DA /* CHMedicineReminderController.m */; };
 		63412E561CB2A35100FAD0DA /* CHSOSSetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E551CB2A35100FAD0DA /* CHSOSSetController.m */; };
 		63412E591CB2A36700FAD0DA /* CHAPPManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E581CB2A36700FAD0DA /* CHAPPManagerController.m */; };
+		63412E5E1CB2A58400FAD0DA /* CHMainHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */; };
 		63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */; };
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
 		63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7EB1CB0C52A009BF266 /* Login.storyboard */; };
@@ -137,6 +138,8 @@
 		63412E551CB2A35100FAD0DA /* CHSOSSetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSOSSetController.m; sourceTree = "<group>"; };
 		63412E571CB2A36700FAD0DA /* CHAPPManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAPPManagerController.h; sourceTree = "<group>"; };
 		63412E581CB2A36700FAD0DA /* CHAPPManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAPPManagerController.m; sourceTree = "<group>"; };
+		63412E5C1CB2A58400FAD0DA /* CHMainHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMainHeaderCell.h; sourceTree = "<group>"; };
+		63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMainHeaderCell.m; sourceTree = "<group>"; };
 		63A29B451CB0D23C009C61B2 /* HYQHelperHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQHelperHUD.h; sourceTree = "<group>"; };
 		63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQHelperHUD.m; sourceTree = "<group>"; };
 		63D9F7E71CB0C47E009BF266 /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
@@ -337,6 +340,22 @@
 				63412E581CB2A36700FAD0DA /* CHAPPManagerController.m */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		63412E5A1CB2A56200FAD0DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63412E5B1CB2A56200FAD0DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63412E5C1CB2A58400FAD0DA /* CHMainHeaderCell.h */,
+				63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		63D9F7E61CB0C472009BF266 /* Resources */ = {
@@ -549,6 +568,8 @@
 		84B1E2001CAE5A9E004573F4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				63412E5A1CB2A56200FAD0DA /* Model */,
+				63412E5B1CB2A56200FAD0DA /* View */,
 				84B1E2081CAE5E84004573F4 /* CHMenuViewController.h */,
 				84B1E2091CAE5E84004573F4 /* CHMenuViewController.m */,
 				84B1E2051CAE5B58004573F4 /* CHMainViewController.h */,
@@ -828,6 +849,7 @@
 				84B1E20D1CAE5FEA004573F4 /* CHRootViewController.m in Sources */,
 				63412E3A1CB285B100FAD0DA /* UITableView+Empty.m in Sources */,
 				84B1E2FA1CAE77BA004573F4 /* NSDate+HYQFormatter.m in Sources */,
+				63412E5E1CB2A58400FAD0DA /* CHMainHeaderCell.m in Sources */,
 				63412E301CB279B300FAD0DA /* CHResetPsdStep1Controller.m in Sources */,
 				8472D1FE1CAE53930003E35A /* FQAHNetworking.xcdatamodeld in Sources */,
 				8464DE181CAA48C7000B987E /* ViewController.m in Sources */,
@@ -976,6 +998,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "61173819-548d-4940-984a-d43cb35a7355";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1013,6 +1036,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "61173819-548d-4940-984a-d43cb35a7355";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1031,6 +1055,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fqah.CHCloudHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "61173819-548d-4940-984a-d43cb35a7355";
 				WARNING_CFLAGS = "-Wno-deprecated-declarations";
 			};
 			name = Debug;
@@ -1048,6 +1073,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fqah.CHCloudHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "61173819-548d-4940-984a-d43cb35a7355";
 			};
 			name = Release;
 		};
