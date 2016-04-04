@@ -27,6 +27,7 @@
 		63412E561CB2A35100FAD0DA /* CHSOSSetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E551CB2A35100FAD0DA /* CHSOSSetController.m */; };
 		63412E591CB2A36700FAD0DA /* CHAPPManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E581CB2A36700FAD0DA /* CHAPPManagerController.m */; };
 		63412E5E1CB2A58400FAD0DA /* CHMainHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */; };
+		63412E611CB2B31900FAD0DA /* CHMainStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E601CB2B31900FAD0DA /* CHMainStateCell.m */; };
 		63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */; };
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
 		63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7EB1CB0C52A009BF266 /* Login.storyboard */; };
@@ -140,6 +141,8 @@
 		63412E581CB2A36700FAD0DA /* CHAPPManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAPPManagerController.m; sourceTree = "<group>"; };
 		63412E5C1CB2A58400FAD0DA /* CHMainHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMainHeaderCell.h; sourceTree = "<group>"; };
 		63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMainHeaderCell.m; sourceTree = "<group>"; };
+		63412E5F1CB2B31900FAD0DA /* CHMainStateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMainStateCell.h; sourceTree = "<group>"; };
+		63412E601CB2B31900FAD0DA /* CHMainStateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMainStateCell.m; sourceTree = "<group>"; };
 		63A29B451CB0D23C009C61B2 /* HYQHelperHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQHelperHUD.h; sourceTree = "<group>"; };
 		63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQHelperHUD.m; sourceTree = "<group>"; };
 		63D9F7E71CB0C47E009BF266 /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
@@ -354,6 +357,8 @@
 			children = (
 				63412E5C1CB2A58400FAD0DA /* CHMainHeaderCell.h */,
 				63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */,
+				63412E5F1CB2B31900FAD0DA /* CHMainStateCell.h */,
+				63412E601CB2B31900FAD0DA /* CHMainStateCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -867,6 +872,7 @@
 				84B1E3131CAE77BA004573F4 /* UIScrollView+Categories.m in Sources */,
 				8472D20B1CAE53930003E35A /* NetworkingManager.m in Sources */,
 				84B1E2FE1CAE77BA004573F4 /* NSObject+Categories.m in Sources */,
+				63412E611CB2B31900FAD0DA /* CHMainStateCell.m in Sources */,
 				8472D1FD1CAE53930003E35A /* FQAHDiskCachedObject.m in Sources */,
 				8472D2081CAE53930003E35A /* FQAHLogger.m in Sources */,
 				63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */,

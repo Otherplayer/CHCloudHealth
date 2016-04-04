@@ -9,6 +9,7 @@
 #import "CHMainViewController.h"
 #import "ViewController.h"
 #import "CHMainHeaderCell.h"
+#import "CHMainStateCell.h"
 
 @interface CHMainViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
@@ -68,12 +69,19 @@
 #pragma mark - Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *identifierMenuHeader = @"IdentifierMainHeader";
-    CHMainHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMenuHeader forIndexPath:indexPath];
+    
+    if (indexPath.row == 0) {
+        static NSString *identifierMenuHeader = @"IdentifierMainHeader";
+        CHMainHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMenuHeader forIndexPath:indexPath];
+        return cell;
+    }
+    
+    static NSString *identifierMainState = @"IdentifierMainState";
+    CHMainStateCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMainState forIndexPath:indexPath];
     return cell;
 }
 
