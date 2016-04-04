@@ -36,7 +36,7 @@
 
 + (NSDictionary *)publicParameter{
 //    
-//    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
 //    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
 //    
     
@@ -57,31 +57,23 @@
 ////    app_ver    app版本号
 //    NSString *appVersion =   [infoDictionary objectForKey:@"CFBundleShortVersionString"];
 ////    app_token  用户的登录状态标识符
-//    NSString *app_token  =   [user objectForKey:@"app_token"]?:@"";
-////    uid        用户的id
-//    NSString *uid        =   [user objectForKey:kUSER_ID]?:@"";
-//    //token 推送
-//    NSString *devToken = [[NSUserDefaults standardUserDefaults] objectForKey:kRCloudDeviceToken];
-//    //唯一广告标识
-//    NSString *IDFA = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-//    NSString *uuid = IDFA;
-//    
-//    NSDictionary *publicParameter = [NSDictionary dictionaryWithObjectsAndKeys:
-//                                     uid, @"uid",
-//                                     app_token, @"app_token",
-//                                     hardwareStr,@"hardware",
-//                                     size,@"screen_size",
-//                                     phoneModel,@"app_type",
-//                                     phoneVersion, @"app_os_ver",
-//                                     appVersion, @"app_ver",
-//                                     appName,@"app_name",
-//                                     @"ios",@"app_os",
-//                                     devToken,@"app_umeng",
-//                                     uuid,@"app_id", nil];
-//    return publicParameter;
-//    
-//    
-    return nil;
+    ////    uid        用户的id
+    //    NSString *uid        =   [user objectForKey:kUSER_ID]?:@"";
+    //    //token 推送
+    //    NSString *devToken = [[NSUserDefaults standardUserDefaults] objectForKey:kRCloudDeviceToken];
+    //    //唯一广告标识
+    //    NSString *IDFA = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    //    NSString *uuid = IDFA;
+    
+    NSString *appToken  =   [user objectForKey:kAppToken]?:@"";
+    NSString *deviceIdentifier = [NSString UUIDString];
+    
+    NSDictionary *publicParameter = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     appToken, @"token",
+                                     deviceIdentifier,@"deviceIdentifier",
+                                     @"ios",@"device",
+                                     nil];
+    return publicParameter;
 }
 
 

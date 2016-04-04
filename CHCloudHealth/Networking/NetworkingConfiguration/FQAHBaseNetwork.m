@@ -104,15 +104,18 @@ NSString *const kIMGKey = @"kIMGKey";
     NSMutableDictionary *allparameters = [[NSMutableDictionary alloc] initWithDictionary:[FQAHPublicParameter publicParameter]];
     //在这里统一添加公共参数进来
     if (parameters) {
-//        for (NSString *key in [parameters allKeys]) {
-//            id value = [parameters objectForKey:key];
-//            [allparameters setObject:value forKey:key];
-//        }
-        [allparameters setObject:parameters forKey:@"data"];
+        for (NSString *key in [parameters allKeys]) {
+            id value = [parameters objectForKey:key];
+            [allparameters setObject:value forKey:key];
+        }
+    }
+    NSDictionary *targetParameters;
+    if (allparameters) {
+        targetParameters = @{@"data":allparameters};
     }
     
-    NSLog(@"参数：%@\n\n url:%@",allparameters,URLString);
-    if ([self shouldLoadDataFromCache:URLString params:allparameters memoryCache:memoryCache diskCache:diskCache completed:completed]) {
+    NSLog(@"参数：%@\n\n url:%@",targetParameters,URLString);
+    if ([self shouldLoadDataFromCache:URLString params:targetParameters memoryCache:memoryCache diskCache:diskCache completed:completed]) {
         return;
     }
     
