@@ -12,6 +12,8 @@
 		63412E271CB2634600FAD0DA /* CHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E261CB2634600FAD0DA /* CHLoginController.m */; };
 		63412E2A1CB2717B00FAD0DA /* CHRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E291CB2717B00FAD0DA /* CHRegisterController.m */; };
 		63412E2D1CB273CA00FAD0DA /* CHBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E2C1CB273CA00FAD0DA /* CHBaseNavigationController.m */; };
+		63412E301CB279B300FAD0DA /* CHResetPsdStep1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E2F1CB279B300FAD0DA /* CHResetPsdStep1Controller.m */; };
+		63412E331CB279C000FAD0DA /* CHResetPsdStep2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E321CB279C000FAD0DA /* CHResetPsdStep2Controller.m */; };
 		63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */; };
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
 		63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7EB1CB0C52A009BF266 /* Login.storyboard */; };
@@ -95,6 +97,10 @@
 		63412E291CB2717B00FAD0DA /* CHRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRegisterController.m; sourceTree = "<group>"; };
 		63412E2B1CB273CA00FAD0DA /* CHBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBaseNavigationController.h; sourceTree = "<group>"; };
 		63412E2C1CB273CA00FAD0DA /* CHBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBaseNavigationController.m; sourceTree = "<group>"; };
+		63412E2E1CB279B300FAD0DA /* CHResetPsdStep1Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHResetPsdStep1Controller.h; sourceTree = "<group>"; };
+		63412E2F1CB279B300FAD0DA /* CHResetPsdStep1Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHResetPsdStep1Controller.m; sourceTree = "<group>"; };
+		63412E311CB279C000FAD0DA /* CHResetPsdStep2Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHResetPsdStep2Controller.h; sourceTree = "<group>"; };
+		63412E321CB279C000FAD0DA /* CHResetPsdStep2Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHResetPsdStep2Controller.m; sourceTree = "<group>"; };
 		63A29B451CB0D23C009C61B2 /* HYQHelperHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQHelperHUD.h; sourceTree = "<group>"; };
 		63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQHelperHUD.m; sourceTree = "<group>"; };
 		63D9F7E71CB0C47E009BF266 /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
@@ -257,6 +263,10 @@
 				63412E261CB2634600FAD0DA /* CHLoginController.m */,
 				63412E281CB2717B00FAD0DA /* CHRegisterController.h */,
 				63412E291CB2717B00FAD0DA /* CHRegisterController.m */,
+				63412E2E1CB279B300FAD0DA /* CHResetPsdStep1Controller.h */,
+				63412E2F1CB279B300FAD0DA /* CHResetPsdStep1Controller.m */,
+				63412E311CB279C000FAD0DA /* CHResetPsdStep2Controller.h */,
+				63412E321CB279C000FAD0DA /* CHResetPsdStep2Controller.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -740,6 +750,7 @@
 				8472D20E1CAE53930003E35A /* BASEModel.m in Sources */,
 				84B1E20D1CAE5FEA004573F4 /* CHRootViewController.m in Sources */,
 				84B1E2FA1CAE77BA004573F4 /* NSDate+HYQFormatter.m in Sources */,
+				63412E301CB279B300FAD0DA /* CHResetPsdStep1Controller.m in Sources */,
 				8472D1FE1CAE53930003E35A /* FQAHNetworking.xcdatamodeld in Sources */,
 				8464DE181CAA48C7000B987E /* ViewController.m in Sources */,
 				84B1E2FB1CAE77BA004573F4 /* NSDictionary+Categories.m in Sources */,
@@ -786,6 +797,7 @@
 				84B1E2041CAE5AC6004573F4 /* CHRevealViewController.m in Sources */,
 				84B1E3161CAE77BA004573F4 /* UIView+Categories.m in Sources */,
 				84B1E3101CAE77BA004573F4 /* UINavigationBar+Awesome.m in Sources */,
+				63412E331CB279C000FAD0DA /* CHResetPsdStep2Controller.m in Sources */,
 				84B1E3181CAE77BA004573F4 /* UIViewController+Handle.m in Sources */,
 				84B1E3031CAE77BA004573F4 /* UIColor+HexRGB.m in Sources */,
 				84B1E30A1CAE77BA004573F4 /* UIButton+UIButton_BackgroundImageButton.m in Sources */,
