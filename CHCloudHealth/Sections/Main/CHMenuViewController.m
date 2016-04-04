@@ -23,7 +23,6 @@
     //self.tableView.tableHeaderView = self.tableHeaderView;
     [self.tableView blankTableFooterView];
     [self.tableView setBackgroundColor:[UIColor defaultColor]];
-    
     // section first
     [self.datas addObject:@[@{@"title":@"设置",@"image":@"ios_icon_18"}]];
     // section second
