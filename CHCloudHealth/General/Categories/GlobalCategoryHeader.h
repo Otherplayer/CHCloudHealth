@@ -32,6 +32,7 @@
 #import "UIStoryboard+Categories.h"
 
 #import "UIView+Extension.h"
+#import "UITableView+Empty.h"
 
 
 #endif /* GlobalCategoryHeader_h */

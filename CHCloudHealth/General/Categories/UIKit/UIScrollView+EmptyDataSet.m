@@ -496,7 +496,7 @@ static char const * const kEmptyDataSetView =       "emptyDataSetView";
             }else{
                 // fqah default
                 NSMutableDictionary *attributes = [NSMutableDictionary new];
-                NSString *text = i18n_Text(@"service_error");
+                NSString *text = @"service_error";
                 view.detailLabel.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributes];
             }
             

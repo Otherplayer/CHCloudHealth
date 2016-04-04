@@ -295,7 +295,7 @@ id (^block)();
 }
 
 - (BOOL)isReachable{
-    return [HYQHelperReachibility sharedInstance].isReachable;
+    return [FQAHReachibility sharedInstance].isReachable;
 }
 
 
