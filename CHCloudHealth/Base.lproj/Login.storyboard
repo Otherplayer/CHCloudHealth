@@ -250,10 +250,10 @@
                             <constraint firstAttribute="trailing" secondItem="3xd-1h-bsa" secondAttribute="trailing" id="K19-4G-eny"/>
                             <constraint firstItem="kfl-Ze-1qY" firstAttribute="top" secondItem="nyn-Bi-zcf" secondAttribute="bottom" constant="21" id="LUG-2Y-Wtg"/>
                             <constraint firstItem="n4s-Aq-ids" firstAttribute="top" secondItem="fre-05-vr7" secondAttribute="bottom" constant="40" id="NrO-4g-Gwi">
-                                <variation key="widthClass=compact" constant="-4"/>
+                                <variation key="widthClass=compact" constant="19"/>
                             </constraint>
                             <constraint firstItem="6vv-iI-eyo" firstAttribute="top" secondItem="fre-05-vr7" secondAttribute="bottom" constant="4" id="QOI-cd-ObL">
-                                <variation key="widthClass=compact" constant="-40"/>
+                                <variation key="widthClass=compact" constant="24"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="nyn-Bi-zcf" secondAttribute="trailing" constant="27" id="RcH-pb-GQP"/>
                             <constraint firstItem="3xd-1h-bsa" firstAttribute="top" secondItem="A5h-ae-7br" secondAttribute="top" id="Yyy-Od-1nt"/>
