@@ -26,7 +26,7 @@
     // section first
     [self.datas addObject:@[@{@"title":@"设置",@"image":@"ios_icon_18"}]];
     // section second
-    [self.datas addObject:@[@{@"title":@"基础信息"},
+    [self.datas addObject:@[@{@"title":@"基础信息",@"identifier":@"CHUserInfoController"},
                             @{@"title":@"亲情号码"},
                             @{@"title":@"监护区域"},
                             @{@"title":@"位置监测"},
@@ -54,10 +54,17 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:NO];
     
-    SWRevealViewController *revealController = self.revealViewController;
-    [revealController revealToggleAnimated:YES];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationMenuController object:nil];
+    if (indexPath.section == 1) {
+        
+        SWRevealViewController *revealController = self.revealViewController;
+        [revealController revealToggleAnimated:YES];
+        
+        
+        NSString *identifier = self.datas[indexPath.section][indexPath.row][@"identifier"];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationMenuController object:identifier];
+    }
     
 }
 //- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

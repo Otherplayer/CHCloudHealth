@@ -9,5 +9,11 @@
 #import "CHSOSSetController.h"
 
 @implementation CHSOSSetController
+#pragma mark - LifeCircle
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self addBackButton];
+    
+}
 
 @end

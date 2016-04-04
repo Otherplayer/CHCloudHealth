@@ -9,5 +9,11 @@
 #import "CHCareAreaController.h"
 
 @implementation CHCareAreaController
+#pragma mark - LifeCircle
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self addBackButton];
+    
+}
 
 @end

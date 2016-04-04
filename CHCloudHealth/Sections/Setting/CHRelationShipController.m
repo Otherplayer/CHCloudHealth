@@ -9,5 +9,11 @@
 #import "CHRelationShipController.h"
 
 @implementation CHRelationShipController
+#pragma mark - LifeCircle
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self addBackButton];
+    
+}
 
 @end

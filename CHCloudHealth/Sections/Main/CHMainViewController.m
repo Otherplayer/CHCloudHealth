@@ -102,7 +102,10 @@
 
 - (void)shouldGotoSubMenuController:(NSNotification *)notification{
     dispatch_async(dispatch_get_main_queue(), ^{
-        ViewController *controller = [[ViewController alloc] init];
+        
+        NSLog(@"%@",notification);
+        
+        UIViewController *controller = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:notification.object];
         [self.navigationController pushViewController:controller animated:NO];
     });
 }

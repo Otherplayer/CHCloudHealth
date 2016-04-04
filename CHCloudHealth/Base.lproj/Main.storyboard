@@ -233,6 +233,23 @@
             </objects>
             <point key="canvasLocation" x="247.5" y="270"/>
         </scene>
+        <!--基础信息-->
+        <scene sceneID="0lp-o2-PGs">
+            <objects>
+                <viewController storyboardIdentifier="CHUserInfoController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fd9-W1-a8j" userLabel="基础信息" customClass="CHUserInfoController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d8Q-aR-Ju4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sxd-Ac-6Jt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zlv-TF-5h2">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tfk-7E-GWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37.5" y="1006"/>
+        </scene>
         <!--Reveal View Controller-->
         <scene sceneID="H5W-fS-QLG">
             <objects>

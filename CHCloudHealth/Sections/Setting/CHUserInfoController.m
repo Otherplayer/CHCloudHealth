@@ -10,4 +10,12 @@
 
 @implementation CHUserInfoController
 
+#pragma mark - LifeCircle
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self addBackButton];
+    
+}
+
+
 @end

@@ -9,5 +9,11 @@
 #import "CHMedicineReminderController.h"
 
 @implementation CHMedicineReminderController
+#pragma mark - LifeCircle
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self addBackButton];
+    
+}
 
 @end

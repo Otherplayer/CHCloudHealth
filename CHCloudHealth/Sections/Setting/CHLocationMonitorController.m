@@ -9,5 +9,11 @@
 #import "CHLocationMonitorController.h"
 
 @implementation CHLocationMonitorController
+#pragma mark - LifeCircle
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self addBackButton];
+    
+}
 
 @end
