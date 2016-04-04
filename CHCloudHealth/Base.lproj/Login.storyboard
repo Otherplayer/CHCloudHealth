@@ -233,7 +233,9 @@
                             </constraint>
                             <constraint firstItem="nyn-Bi-zcf" firstAttribute="leading" secondItem="A5h-ae-7br" secondAttribute="leadingMargin" constant="27" id="hnu-Lp-2ba"/>
                             <constraint firstItem="3xd-1h-bsa" firstAttribute="leading" secondItem="A5h-ae-7br" secondAttribute="leading" id="tY7-5T-Pqz"/>
-                            <constraint firstItem="nyn-Bi-zcf" firstAttribute="top" secondItem="n4s-Aq-ids" secondAttribute="bottom" constant="65" id="tfF-1B-w5l"/>
+                            <constraint firstItem="nyn-Bi-zcf" firstAttribute="top" secondItem="n4s-Aq-ids" secondAttribute="bottom" constant="65" id="tfF-1B-w5l">
+                                <variation key="widthClass=compact" constant="21"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="0Fn-zz-uuu" secondAttribute="trailing" constant="104" id="va3-PK-yPz"/>
                         </constraints>
                         <variation key="default">

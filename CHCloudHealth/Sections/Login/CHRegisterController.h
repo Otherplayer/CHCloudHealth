@@ -6,8 +6,8 @@
 //  Copyright © 2016年 fqah. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CHRootViewController.h"
 
-@interface CHRegisterController : UIViewController
+@interface CHRegisterController : CHRootViewController
 
 @end

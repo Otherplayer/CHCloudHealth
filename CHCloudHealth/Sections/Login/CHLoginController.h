@@ -6,8 +6,8 @@
 //  Copyright © 2016年 fqah. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CHRootViewController.h"
 
-@interface CHLoginController : UIViewController
+@interface CHLoginController : CHRootViewController
 
 @end

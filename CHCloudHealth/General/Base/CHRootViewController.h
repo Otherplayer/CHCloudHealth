@@ -14,5 +14,8 @@
 
 - (void)installRevealGesture;
 
+- (void)hidenKeyboard;
+
+
 
 @end

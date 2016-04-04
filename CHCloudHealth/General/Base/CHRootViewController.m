@@ -9,6 +9,7 @@
 //
 
 #import "CHRootViewController.h"
+#import "UIApplication+Categories.h"
 
 @interface CHRootViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
@@ -31,6 +32,11 @@
 #pragma mark - Network Methods
 
 #pragma mark - Action
+
+- (void)hidenKeyboard{
+    [UIApplication hideKeyboard];
+}
+
 
 #pragma mark - Delegate
 
