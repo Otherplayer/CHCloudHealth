@@ -132,30 +132,6 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSJ-ht-7ux">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="121" id="PYw-vA-p9X">
-                                        <variation key="widthClass=compact" constant="104"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="35" id="d75-Td-0EZ"/>
-                                </constraints>
-                                <state key="normal" title="获取登录帮助">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="PYw-vA-p9X"/>
-                                        <exclude reference="d75-Td-0EZ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="PYw-vA-p9X"/>
-                                        <include reference="d75-Td-0EZ"/>
-                                    </mask>
-                                </variation>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjh-Ld-T3S">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -181,6 +157,51 @@
                                     </mask>
                                 </variation>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSJ-ht-7ux">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="PYw-vA-p9X">
+                                        <variation key="widthClass=compact" constant="104"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="35" id="d75-Td-0EZ"/>
+                                </constraints>
+                                <state key="normal" title="获取登录帮助">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PYw-vA-p9X"/>
+                                        <exclude reference="d75-Td-0EZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="PYw-vA-p9X"/>
+                                        <include reference="d75-Td-0EZ"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hp0-Ib-FVK">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.31830841302871704" green="0.61763226985931396" blue="0.91251415014266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="z89-VN-Kuw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="新用户注册-&gt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="z89-VN-Kuw"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="z89-VN-Kuw"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -189,6 +210,7 @@
                             <constraint firstItem="zSJ-ht-7ux" firstAttribute="top" secondItem="kfl-Ze-1qY" secondAttribute="bottom" constant="8" id="4va-rw-pdh"/>
                             <constraint firstItem="kjh-Ld-T3S" firstAttribute="leading" secondItem="A5h-ae-7br" secondAttribute="leadingMargin" constant="27" id="5ic-Im-RrO"/>
                             <constraint firstItem="wsw-OW-gIF" firstAttribute="top" secondItem="3xd-1h-bsa" secondAttribute="bottom" id="6Ay-7F-OeM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hp0-Ib-FVK" secondAttribute="trailing" constant="-20" id="6kY-Hu-aMh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kfl-Ze-1qY" secondAttribute="trailing" constant="27" id="8GQ-hi-vMP"/>
                             <constraint firstItem="0Fn-zz-uuu" firstAttribute="leading" secondItem="A5h-ae-7br" secondAttribute="leadingMargin" constant="104" id="8T7-zW-RTq"/>
                             <constraint firstItem="n4s-Aq-ids" firstAttribute="leading" secondItem="A5h-ae-7br" secondAttribute="leadingMargin" constant="100" id="BAT-d1-ZYZ"/>
@@ -201,6 +223,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="nyn-Bi-zcf" secondAttribute="trailing" constant="27" id="RcH-pb-GQP"/>
                             <constraint firstItem="3xd-1h-bsa" firstAttribute="top" secondItem="A5h-ae-7br" secondAttribute="top" id="Yyy-Od-1nt"/>
                             <constraint firstItem="kjh-Ld-T3S" firstAttribute="top" secondItem="kfl-Ze-1qY" secondAttribute="bottom" constant="8" id="bac-H2-ePb"/>
+                            <constraint firstItem="hp0-Ib-FVK" firstAttribute="leading" secondItem="A5h-ae-7br" secondAttribute="leadingMargin" constant="-20" id="cxu-oI-V2j"/>
+                            <constraint firstItem="wsw-OW-gIF" firstAttribute="top" secondItem="hp0-Ib-FVK" secondAttribute="bottom" id="fW2-0h-yUv"/>
                             <constraint firstItem="zSJ-ht-7ux" firstAttribute="leading" secondItem="kjh-Ld-T3S" secondAttribute="trailing" constant="21" id="fam-Yt-gBf">
                                 <variation key="widthClass=compact" constant="8"/>
                             </constraint>
@@ -216,8 +240,9 @@
                                 <exclude reference="nyn-Bi-zcf"/>
                                 <exclude reference="kfl-Ze-1qY"/>
                                 <exclude reference="0Fn-zz-uuu"/>
-                                <exclude reference="zSJ-ht-7ux"/>
                                 <exclude reference="kjh-Ld-T3S"/>
+                                <exclude reference="zSJ-ht-7ux"/>
+                                <exclude reference="hp0-Ib-FVK"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="K19-4G-eny"/>
@@ -239,7 +264,10 @@
                                 <exclude reference="8T7-zW-RTq"/>
                                 <exclude reference="Eum-N6-iDi"/>
                                 <exclude reference="va3-PK-yPz"/>
+                                <exclude reference="6kY-Hu-aMh"/>
+                                <exclude reference="cxu-oI-V2j"/>
                                 <exclude reference="6Ay-7F-OeM"/>
+                                <exclude reference="fW2-0h-yUv"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -249,8 +277,9 @@
                                 <include reference="nyn-Bi-zcf"/>
                                 <include reference="kfl-Ze-1qY"/>
                                 <include reference="0Fn-zz-uuu"/>
-                                <include reference="zSJ-ht-7ux"/>
                                 <include reference="kjh-Ld-T3S"/>
+                                <include reference="zSJ-ht-7ux"/>
+                                <include reference="hp0-Ib-FVK"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="K19-4G-eny"/>
@@ -272,12 +301,23 @@
                                 <include reference="8T7-zW-RTq"/>
                                 <include reference="Eum-N6-iDi"/>
                                 <include reference="va3-PK-yPz"/>
+                                <include reference="6kY-Hu-aMh"/>
+                                <include reference="cxu-oI-V2j"/>
                                 <include reference="6Ay-7F-OeM"/>
+                                <include reference="fW2-0h-yUv"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="gn9-ev-QKa"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="btnForgetPassword" destination="kjh-Ld-T3S" id="2Hg-nt-SBx"/>
+                        <outlet property="btnGetHelp" destination="zSJ-ht-7ux" id="Yak-Rx-Qx3"/>
+                        <outlet property="btnLogin" destination="0Fn-zz-uuu" id="L3c-dd-ODQ"/>
+                        <outlet property="btnRegister" destination="hp0-Ib-FVK" id="Uwf-Gf-Nzo"/>
+                        <outlet property="mobilTextField" destination="nyn-Bi-zcf" id="Qm3-Xv-aPy"/>
+                        <outlet property="passwordTextField" destination="kfl-Ze-1qY" id="5Gf-sV-vSx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmI-2L-DIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

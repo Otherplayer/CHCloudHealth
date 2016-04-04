@@ -8,6 +8,22 @@
 
 #import "CHLoginController.h"
 
+@interface CHLoginController ()
+@property (weak, nonatomic) IBOutlet UITextField *mobilTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *btnForgetPassword;
+@property (weak, nonatomic) IBOutlet UIButton *btnLogin;
+@property (weak, nonatomic) IBOutlet UIButton *btnRegister;
+@property (weak, nonatomic) IBOutlet UIButton *btnGetHelp;
+
+@end
+
 @implementation CHLoginController
+
+
+
+
+
+
 
 @end
