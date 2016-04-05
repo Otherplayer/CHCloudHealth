@@ -8,6 +8,7 @@
 
 #import "CHRegisterController.h"
 #import "CHTextField.h"
+#import "UIButton+countDown.h"
 
 @interface CHRegisterController ()
 
@@ -59,7 +60,11 @@
         
         if (mobile && [mobile isMobileNumberString]) {
             [[NetworkingManager sharedManager] getCaptchaWithMobile:mobile type:@"register" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-                
+                if (success) {
+                    [self.btnGetCaptcha startTime:60 title:@"获取验证码" waitTittle:@"s"];
+                }else{
+                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                }
             }];
         }else{
             [HYQShowTip showTipTextOnly:@"输入的手机号有误" dealy:2];
@@ -74,7 +79,11 @@
     
     if ([self canGo] && [self check]) {
         [[NetworkingManager sharedManager] registerWithMobile:mobile password:psd captcha:captcha completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-            
+            if (success) {
+                
+            }else{
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
         }];
     }
 }

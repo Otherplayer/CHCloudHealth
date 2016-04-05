@@ -20,7 +20,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 //设置界面的按钮显示 根据自己需求设置
                 [self setEnabled:YES];
-                [self setBackgroundColor:[UIColor redColor]];
+                [self setBackgroundColor:[UIColor defaultColor]];
                 [self setTitle:tittle forState:UIControlStateNormal];
                 self.userInteractionEnabled = YES;
             });
@@ -30,9 +30,9 @@
             NSString *strTime = [NSString stringWithFormat:@"%.2d", seconds];
             dispatch_async(dispatch_get_main_queue(), ^{
                 //设置界面的按钮显示 根据自己需求设置
-                NSLog(@"____%@",strTime);
+                //NSLog(@"____%@",strTime);
                 [self setEnabled:NO];
-                [self setBackgroundColor:[UIColor redColor]];
+                [self setBackgroundColor:[UIColor defaultColor]];
                 [self setTitle:[NSString stringWithFormat:@"%@%@",strTime,waitTittle] forState:UIControlStateNormal];
                 self.userInteractionEnabled = NO;
                 

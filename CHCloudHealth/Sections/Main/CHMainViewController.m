@@ -121,10 +121,10 @@
     [self presentViewController:nav animated:YES completion:nil];
     
     
-    [[NetworkingManager sharedManager] getUserInfo:@"1234" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-        
-    }];
-//    
+//    [[NetworkingManager sharedManager] getUserInfo:@"1234" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+//        
+//    }];
+//
 //    [[NetworkingManager sharedManager] getCaptchaWithMobile:@"18513149993" type:@"register" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
 //        
 //    }];
