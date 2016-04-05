@@ -504,7 +504,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IdentifierMainHeader" rowHeight="221" id="55o-bA-V2H">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IdentifierMainHeader" rowHeight="221" id="55o-bA-V2H" customClass="CHMainHeaderCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="55o-bA-V2H" id="cVc-Jc-nMc">
@@ -1112,6 +1112,17 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ivAvatar" destination="4hN-dQ-mNg" id="xIv-3M-nE1"/>
+                                            <outlet property="labHeartRate" destination="gk3-fh-KAc" id="Tr8-Lz-9go"/>
+                                            <outlet property="labLocation" destination="vHR-Gh-8PU" id="q5S-Hx-c5I"/>
+                                            <outlet property="labMedicine" destination="qvO-Mh-iwH" id="oCW-kt-SoA"/>
+                                            <outlet property="labMobile" destination="rcH-BY-sLh" id="vM2-mP-NDB"/>
+                                            <outlet property="labName" destination="Mar-05-NdM" id="gDh-EG-dUc"/>
+                                            <outlet property="labReleationNum" destination="O20-bt-h2y" id="4R9-Dh-p1W"/>
+                                            <outlet property="labSOS" destination="c2u-3s-gsm" id="9fI-gP-iWK"/>
+                                            <outlet property="labStep" destination="jeI-DU-tLo" id="lI2-so-HZl"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdentifierMainState" rowHeight="154" id="Rbe-8b-hjN" customClass="CHMainStateCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

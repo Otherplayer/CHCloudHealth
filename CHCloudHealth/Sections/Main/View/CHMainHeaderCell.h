@@ -10,4 +10,6 @@
 
 @interface CHMainHeaderCell : UITableViewCell
 
+- (void)configure:(NSDictionary *)info;
+
 @end

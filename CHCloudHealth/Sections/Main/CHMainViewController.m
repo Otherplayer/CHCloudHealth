@@ -64,11 +64,10 @@
 - (void)getDatas{
     
     self.tableView.loading = YES;
-    [[NetworkingManager sharedManager] getDeviceInfo:@"" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+    [[NetworkingManager sharedManager] getDeviceInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.datas addObject:@""];
-                [self.datas addObject:@""];
+                [self.datas addObject:responseData[@"data"]];
                 self.tableView.loading = NO;
                 [self.tableView reloadData];
             });
@@ -97,6 +96,10 @@
     if (indexPath.row == 0) {
         static NSString *identifierMenuHeader = @"IdentifierMainHeader";
         CHMainHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMenuHeader forIndexPath:indexPath];
+        
+        NSDictionary *info = [self.datas objectAtIndex:indexPath.row];
+        [cell configure:info];
+        
         return cell;
     }
     
