@@ -62,19 +62,20 @@
 #pragma mark -
 
 - (void)getDatas{
+    
     self.tableView.loading = YES;
-    [self.datas addObject:@""];
-    [self.datas addObject:@""];
-    self.tableView.loading = NO;
-    [self.tableView reloadData];
-    
-    if ([self canGo]) {
-        [[NetworkingManager sharedManager] getDeviceInfo:@"" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-            
-        }];
-    }
-    
-    
+    [[NetworkingManager sharedManager] getDeviceInfo:@"" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        if (success) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.datas addObject:@""];
+                [self.datas addObject:@""];
+                self.tableView.loading = NO;
+                [self.tableView reloadData];
+            });
+        }else{
+            [HYQShowTip showTipTextOnly:errDesc dealy:2];
+        }
+    }];
     
 }
 
