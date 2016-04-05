@@ -22,6 +22,10 @@
 #define IS_IPHONE6      ([UIScreen mainScreen].bounds.size.height == 667.0f)//375w
 #define IS_IPHONE6_PLUS ([UIScreen mainScreen].bounds.size.height == 736.0f)//414w
 
+#define IS_IOS7    ((([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)&&([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0))? (YES):(NO))
+#define IS_IOS8    ((([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0)&&([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0))? (YES):(NO))
+#define IS_IOS9    ((([[[UIDevice currentDevice] systemVersion] floatValue] < 10.0)&&([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0))? (YES):(NO))
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -46,6 +50,8 @@
 #import <UIImageView+UIActivityIndicatorForSDWebImage.h>
 #import "HYQHelperHUD.h"
 #import "CHUser.h"
+#import "HYQActionSheet.h"
+#import "HYQAlertView.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////

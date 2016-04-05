@@ -9,6 +9,7 @@
 #import "CHUserInfoController.h"
 #import "CHUnitCell.h"
 #import "CHUnitAvatarCell.h"
+#import "HYQHelperCamera.h"
 
 @interface CHUserInfoController ()
 @property (nonatomic, strong) NSArray *datas;
@@ -64,12 +65,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        
+        [[HYQHelperCamera sharedInstance] showCustomCameraPickerWithResultBlock:^(UIImage *image) {
+            
+        }];
     }else{
         if (indexPath.row == 0) {
             
         }else if (indexPath.row == 1){
-            
+            HYQActionSheet *actionSheet = [[HYQActionSheet alloc] initWithTitle:@"请选择性别" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"男",@"女", nil];
+            [actionSheet handlerClickedButton:^(NSInteger btnIndex) {
+                
+            }];
+            [actionSheet showInView:self.view];
         }else if (indexPath.row == 2){
             
         }

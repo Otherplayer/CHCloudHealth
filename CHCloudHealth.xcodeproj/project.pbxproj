@@ -100,6 +100,9 @@
 		84B1E32B1CB38A8D004573F4 /* CHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E32A1CB38A8D004573F4 /* CHTextField.m */; };
 		84B1E3301CB3C698004573F4 /* CHUnitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E32F1CB3C698004573F4 /* CHUnitCell.m */; };
 		84B1E3331CB3C7E2004573F4 /* CHUnitAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E3321CB3C7E2004573F4 /* CHUnitAvatarCell.m */; };
+		84B1E3381CB3CDF6004573F4 /* HYQActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E3351CB3CDF6004573F4 /* HYQActionSheet.m */; };
+		84B1E3391CB3CDF6004573F4 /* HYQAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E3371CB3CDF6004573F4 /* HYQAlertView.m */; };
+		84B1E33C1CB3CF0D004573F4 /* HYQHelperCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E33B1CB3CF0D004573F4 /* HYQHelperCamera.m */; };
 		84F1F4BE1CAD2CB60061AACC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F1F4BD1CAD2CB60061AACC /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -289,6 +292,12 @@
 		84B1E32F1CB3C698004573F4 /* CHUnitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUnitCell.m; sourceTree = "<group>"; };
 		84B1E3311CB3C7E2004573F4 /* CHUnitAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUnitAvatarCell.h; sourceTree = "<group>"; };
 		84B1E3321CB3C7E2004573F4 /* CHUnitAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUnitAvatarCell.m; sourceTree = "<group>"; };
+		84B1E3341CB3CDF6004573F4 /* HYQActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQActionSheet.h; sourceTree = "<group>"; };
+		84B1E3351CB3CDF6004573F4 /* HYQActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQActionSheet.m; sourceTree = "<group>"; };
+		84B1E3361CB3CDF6004573F4 /* HYQAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQAlertView.h; sourceTree = "<group>"; };
+		84B1E3371CB3CDF6004573F4 /* HYQAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQAlertView.m; sourceTree = "<group>"; };
+		84B1E33A1CB3CF0D004573F4 /* HYQHelperCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQHelperCamera.h; sourceTree = "<group>"; };
+		84B1E33B1CB3CF0D004573F4 /* HYQHelperCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQHelperCamera.m; sourceTree = "<group>"; };
 		84F1F4BD1CAD2CB60061AACC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EA12FFC0D604A8243CDEE906 /* Pods-CHCloudHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHCloudHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHCloudHealth/Pods-CHCloudHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -610,10 +619,16 @@
 		84B1E2111CAE7197004573F4 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				84B1E3341CB3CDF6004573F4 /* HYQActionSheet.h */,
+				84B1E3351CB3CDF6004573F4 /* HYQActionSheet.m */,
+				84B1E3361CB3CDF6004573F4 /* HYQAlertView.h */,
+				84B1E3371CB3CDF6004573F4 /* HYQAlertView.m */,
 				63412E3E1CB2860700FAD0DA /* DZNEmptyDataSetView.h */,
 				63412E3F1CB2860700FAD0DA /* DZNEmptyDataSetView.m */,
 				63A29B451CB0D23C009C61B2 /* HYQHelperHUD.h */,
 				63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */,
+				84B1E33A1CB3CF0D004573F4 /* HYQHelperCamera.h */,
+				84B1E33B1CB3CF0D004573F4 /* HYQHelperCamera.m */,
 				84B1E3291CB38A8D004573F4 /* CHTextField.h */,
 				84B1E32A1CB38A8D004573F4 /* CHTextField.m */,
 			);
@@ -892,6 +907,7 @@
 				8464DE181CAA48C7000B987E /* ViewController.m in Sources */,
 				84B1E2FB1CAE77BA004573F4 /* NSDictionary+Categories.m in Sources */,
 				8472D20A1CAE53930003E35A /* FQAHURLResponse.m in Sources */,
+				84B1E3381CB3CDF6004573F4 /* HYQActionSheet.m in Sources */,
 				84B1E20A1CAE5E84004573F4 /* CHMenuViewController.m in Sources */,
 				8472D1FF1CAE53930003E35A /* FQAHCache.m in Sources */,
 				8472D2071CAE53930003E35A /* UIDevice+FQAHCategories.m in Sources */,
@@ -908,6 +924,7 @@
 				8472D1FD1CAE53930003E35A /* FQAHDiskCachedObject.m in Sources */,
 				8472D2081CAE53930003E35A /* FQAHLogger.m in Sources */,
 				63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */,
+				84B1E3391CB3CDF6004573F4 /* HYQAlertView.m in Sources */,
 				84B1E3091CAE77BA004573F4 /* UIButton+CountDown.m in Sources */,
 				84B1E3001CAE77BA004573F4 /* NSString+HYQCategory.m in Sources */,
 				8472D2001CAE53930003E35A /* FQAHCachedObject.m in Sources */,
@@ -950,6 +967,7 @@
 				84B1E30A1CAE77BA004573F4 /* UIButton+UIButton_BackgroundImageButton.m in Sources */,
 				84B1E3081CAE77BA004573F4 /* NSString+Size.m in Sources */,
 				63412E501CB2A2E800FAD0DA /* CHMonitorCareController.m in Sources */,
+				84B1E33C1CB3CF0D004573F4 /* HYQHelperCamera.m in Sources */,
 				8472D2061CAE53930003E35A /* NSURLRequest+FQAHCategories.m in Sources */,
 				84B1E2FC1CAE77BA004573F4 /* NSFileManager+Ghost.m in Sources */,
 				84B1E30C1CAE77BA004573F4 /* UIImage+Blur.m in Sources */,
