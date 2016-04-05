@@ -29,8 +29,6 @@
     
     self.mobilTextField.leftViewMode = UITextFieldViewModeAlways;
     self.mobilTextField.leftView = ivMobile;
-//    self.mobilTextField.layer.borderWidth = 0;
-//    self.mobilTextField.layer.borderColor = [UIColor clearColor].CGColor;
     
     UIImageView *ivPsd = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
     [ivPsd setImage:[UIImage imageNamed:@"ios_icon_2"]];
@@ -63,12 +61,55 @@
 
 - (IBAction)loginAction:(id)sender {
     
+    NSString *mobile = [self.mobilTextField.text trimmingWhitespace];
+    NSString *psd = [self.passwordTextField.text trimmingWhitespace];
+    
+    if ([self canGo] && [self check]) {
+        [[NetworkingManager sharedManager] loginWithMobile:mobile password:psd completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            if (success) {
+                
+            }else{
+                
+            }
+        }];
+    }
+    
 }
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self hidenKeyboard];
 }
+
+
+#pragma mark - Private
+
+- (BOOL)check{
+    NSString *mobile = [self.mobilTextField.text trimmingWhitespace];
+    NSString *psd = [self.passwordTextField.text trimmingWhitespace];
+    
+    if (!mobile || mobile.length == 0) {
+        [HYQShowTip showTipTextOnly:@"请输入电话号码" dealy:2];
+        return NO;
+    }
+    
+    if (![mobile isMobileNumberString]) {
+        [HYQShowTip showTipTextOnly:@"电话号码有误" dealy:2];
+        return NO;
+    }
+    
+    if (!psd || psd.length == 0) {
+        [HYQShowTip showTipTextOnly:@"请输入密码" dealy:2];
+        return NO;
+    }
+    
+    return YES;
+}
+
+
+
+
+
 
 
 
