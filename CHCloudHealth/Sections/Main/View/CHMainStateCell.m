@@ -7,6 +7,7 @@
 //
 
 #import "CHMainStateCell.h"
+#import "NSDate+HYQFormatter.h"
 
 @interface CHMainStateCell ()
 
@@ -22,7 +23,7 @@
 
 - (void)configure:(NSDictionary *)info{
     NSString *title = info[@"name"];
-    NSString *date = [NSString stringWithFormat:@"%@",info[@"createDate"]];
+    NSString *date = [NSDate dateFromStr:[NSString stringWithFormat:@"%@",info[@"createDate"]]];
     [self.labTitle setText:title];
 ////    [self.labState setText:info[@"state"]];
     [self.labDate setText:date];
