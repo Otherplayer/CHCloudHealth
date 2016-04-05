@@ -18,20 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
-    [[NetworkingManager sharedManager] registerWithMobile:@"18513149993" password:@"123455" captcha:@"12345" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-        
-    }];
-    
-    self.view.backgroundColor = [UIColor redColor];
-    
-//    [[HYQNetworkingManager sharedManager] getCaptchaWithMobile:@"18513149993" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-//        
-//    }];
-    
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

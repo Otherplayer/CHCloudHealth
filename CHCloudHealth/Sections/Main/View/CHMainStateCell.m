@@ -41,8 +41,10 @@
         [self.labValue setAttributedText:[self fixColorText:value]];
         [self.labValue setAdjustsFontSizeToFitWidth:YES];
     }else{
+        NSString *description = info[@"description"];
         [self.labValue setNumberOfLines:0];
         [self.labValue setLineBreakMode:NSLineBreakByWordWrapping];
+        [self.labValue setText:description];
         [self.labValue setText:@"asfasasdf;ljf;sdaksdaffsdakjlasfdasdfasfafdadsfasdfffsdfafds"];
     }
 }
@@ -67,7 +69,7 @@
 //            return @"";
 //            break;
         default:
-            return @"error";
+            return @"--";
             break;
     }
 }
