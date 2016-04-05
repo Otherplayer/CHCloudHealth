@@ -29,6 +29,8 @@
     
     self.mobilTextField.leftViewMode = UITextFieldViewModeAlways;
     self.mobilTextField.leftView = ivMobile;
+//    self.mobilTextField.layer.borderWidth = 0;
+//    self.mobilTextField.layer.borderColor = [UIColor clearColor].CGColor;
     
     UIImageView *ivPsd = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
     [ivPsd setImage:[UIImage imageNamed:@"ios_icon_2"]];
@@ -59,6 +61,9 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)loginAction:(id)sender {
+    
+}
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

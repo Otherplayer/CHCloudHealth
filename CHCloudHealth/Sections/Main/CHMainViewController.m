@@ -117,8 +117,8 @@
 }
 
 - (IBAction)mailAction:(id)sender {
-//    CHBaseNavigationController *nav = [[UIStoryboard loginStoryboard] loginController];
-//    [self presentViewController:nav animated:YES completion:nil];
+    CHBaseNavigationController *nav = [[UIStoryboard loginStoryboard] loginController];
+    [self presentViewController:nav animated:YES completion:nil];
     
 //    
 //    [[NetworkingManager sharedManager] getCaptchaWithMobile:@"18513149993" type:@"register" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
@@ -129,9 +129,9 @@
 //        
 //    }];
     
-    [[NetworkingManager sharedManager] registerWithMobile:@"18513149993" password:@"000000" captcha:@"0000" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-        
-    }];
+//    [[NetworkingManager sharedManager] registerWithMobile:@"18513149993" password:@"000000" captcha:@"0000" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+//        
+//    }];
     
 }
 
