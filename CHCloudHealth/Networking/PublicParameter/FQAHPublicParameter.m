@@ -69,7 +69,7 @@
     NSString *deviceIdentifier = [NSString UUIDString];
     
     NSDictionary *publicParameter = [NSDictionary dictionaryWithObjectsAndKeys:
-                                     appToken, @"token",
+                                     appToken, kAppToken,
                                      deviceIdentifier,@"deviceIdentifier",
                                      @"ios",@"device",
                                      nil];

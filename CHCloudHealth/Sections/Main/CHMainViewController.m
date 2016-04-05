@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *mailButtonItem;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *datas;
 
 @end
 
@@ -25,31 +26,31 @@
     // Do any additional setup after loading the view.
     [self installRevealGesture];
     [self setTitle:@"慈海云健康"];
+    self.datas = [[NSMutableArray alloc] init];
     
-    [self setAutomaticallyAdjustsScrollViewInsets:YES];
+    
     [self.tableView blankTableFooterView];
-    
     self.tableView.descriptionText = @"连接设备后\n才会显示数据哦";
     self.tableView.loadedImageName = @"ios_icon_17";
     self.tableView.buttonText = @"绑定设备";
     [self.tableView clickLoading:^{
-        
+        [self getDatas];
     }];
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldGotoSubMenuController:) name:kNotificationMenuController object:nil];
     
-    [self getDatas];
     
-    double delayInSeconds = 3;
-    dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-    // 得到全局队列
-    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    // 延期执行
-    dispatch_after(delayInNanoSeconds, concurrentQueue, ^(void){
-        self.tableView.loading = NO;
-    });
     
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (![self isLogin]) {
+        [self gotoLogin];
+    }else{
+        [self getDatas];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,6 +63,18 @@
 
 - (void)getDatas{
     self.tableView.loading = YES;
+    [self.datas addObject:@""];
+    [self.datas addObject:@""];
+    self.tableView.loading = NO;
+    [self.tableView reloadData];
+    
+    if ([self canGo]) {
+        [[NetworkingManager sharedManager] getDeviceInfo:@"" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            
+        }];
+    }
+    
+    
     
 }
 
@@ -69,7 +82,7 @@
 #pragma mark - Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return self.datas.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
@@ -121,21 +134,6 @@
     [self presentViewController:nav animated:YES completion:nil];
     
     
-//    [[NetworkingManager sharedManager] getUserInfo:@"1234" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-//        
-//    }];
-//
-//    [[NetworkingManager sharedManager] getCaptchaWithMobile:@"18513149993" type:@"register" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-//        
-//    }];
-    
-//    [[NetworkingManager sharedManager] loginWithMobile:@"18513149993" password:@"000000" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-//        
-//    }];
-    
-//    [[NetworkingManager sharedManager] registerWithMobile:@"18513149993" password:@"000000" captcha:@"0000" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-//        
-//    }];
     
 }
 

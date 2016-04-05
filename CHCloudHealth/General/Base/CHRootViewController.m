@@ -47,6 +47,10 @@
 - (BOOL)isLogin{
     return [CHUser sharedInstance].islogin;
 }
+- (void)gotoLogin{
+    CHBaseNavigationController *nav = [[UIStoryboard loginStoryboard] loginController];
+    [self presentViewController:nav animated:YES completion:nil];
+}
 - (BOOL)canGo{
     BOOL isReachable = [self isReachable];
     if (isReachable) {

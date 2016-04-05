@@ -9,7 +9,6 @@
 #import "CHUser.h"
 
 NSString *const kUSER_ID = @"user_id";
-NSString *const kAPP_TOKEN = @"app_token";
 NSString *const kUSER_NAME = @"username";
 NSString *const kUSER_AVATAR = @"avatar";
 NSString *const kUSER_PHONE = @"phone";
@@ -34,10 +33,10 @@ NSString *const kUSER_SEX = @"sex";
     
     /// 1.保存用户信息
     NSString *uid = [NSString stringWithFormat:@"%@",info[@"data"]];
-    NSString *app_token = [NSString stringWithFormat:@"%@",info[@"token"]];
+    NSString *app_token = [NSString stringWithFormat:@"%@",info[kAppToken]];
     
     [self.userDefaults setObject:uid forKey:kUSER_ID];
-    [self.userDefaults setObject:app_token forKey:kAPP_TOKEN];
+    [self.userDefaults setObject:app_token forKey:kAppToken];
     [self.userDefaults synchronize];
     
 }
@@ -64,7 +63,7 @@ NSString *const kUSER_SEX = @"sex";
     return [self.userDefaults objectForKey:kUSER_SEX];
 }
 - (NSString *)token{
-    return [self.userDefaults objectForKey:kAPP_TOKEN];
+    return [self.userDefaults objectForKey:kAppToken];
 }
 
 
@@ -73,10 +72,10 @@ NSString *const kUSER_SEX = @"sex";
 }
 
 - (void)getUserInfo:(NSString *)userId{
-    NSLog(@"%@",userId);
     [[NetworkingManager sharedManager] getUserInfo:userId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
-//            [self loginWithInformation:modelObject];
+            self.name = [NSString stringWithFormat:@"%@",responseData[@"data"][@"nickname"]];
+            self.phoneNumber = [NSString stringWithFormat:@"%@",responseData[@"data"][@"mobile"]];
         }else{
             [HYQShowTip showTipTextOnly:errDesc dealy:1.2];
         }
@@ -96,7 +95,7 @@ NSString *const kUSER_SEX = @"sex";
 
 
 - (void)logout{
-    [self.userDefaults removeObjectForKey:kAPP_TOKEN];
+    [self.userDefaults removeObjectForKey:kAppToken];
     [self.userDefaults removeObjectForKey:kUSER_ID];
     [self.userDefaults removeObjectForKey:kUSER_NAME];
     [self.userDefaults removeObjectForKey:kUSER_AVATAR];

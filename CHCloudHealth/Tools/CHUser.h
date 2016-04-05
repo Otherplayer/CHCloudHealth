@@ -20,8 +20,11 @@
 
 
 + (instancetype)sharedInstance;
+
 - (void)loginWithInfo:(NSDictionary *)info;
-- (BOOL)islogin;
 - (void)getUserInformation;
+
+
+- (BOOL)islogin;
 
 @end

@@ -22,6 +22,7 @@
 - (BOOL)isReachable;
 /// 是否登录
 - (BOOL)isLogin;
+- (void)gotoLogin;
 /// 判断网络是否连接，未连接时有提示
 - (BOOL)canGo;
 
