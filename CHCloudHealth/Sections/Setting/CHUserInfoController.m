@@ -7,6 +7,12 @@
 //
 
 #import "CHUserInfoController.h"
+#import "CHUnitCell.h"
+#import "CHUnitAvatarCell.h"
+
+@interface CHUserInfoController ()
+@property (nonatomic, strong) NSArray *datas;
+@end
 
 @implementation CHUserInfoController
 
@@ -15,16 +21,21 @@
     [super viewDidLoad];
     [self addBackButton];
     
+    self.datas = @[@[@{@"title":@"头像"}],@[@{@"title":@"昵称"},@{@"title":@"性别"},@{@"title":@"手机号"}]];
+    
 }
 
 
 #pragma mark - Delegate
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return [self.datas count];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return [self.datas[section] count];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         return 100;
     }
     return 64;
@@ -32,14 +43,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row == 0) {
+    NSDictionary *info = self.datas[indexPath.section][indexPath.row];
+    if (indexPath.section == 0) {
         static NSString *identifierUserinfoHeader = @"IdentifierUserinfoHeader";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoHeader forIndexPath:indexPath];
+        CHUnitAvatarCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoHeader forIndexPath:indexPath];
         return cell;
     }
     
     static NSString *identifierUserinfoBody = @"IdentifierUserinfoBody";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoBody forIndexPath:indexPath];
+    CHUnitCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoBody forIndexPath:indexPath];
+    
     return cell;
 }
 

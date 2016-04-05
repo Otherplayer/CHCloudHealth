@@ -249,7 +249,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IdentifierUserinfoHeader" rowHeight="100" id="PpA-Eu-zln">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IdentifierUserinfoHeader" rowHeight="100" id="PpA-Eu-zln" customClass="CHUnitAvatarCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PpA-Eu-zln" id="Gwc-8u-59c">
@@ -308,7 +308,9 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="lyr-cD-Ezp" secondAttribute="trailing" constant="-8" id="Q6E-wK-6DO"/>
                                                 <constraint firstItem="r7p-dZ-Yyn" firstAttribute="top" secondItem="Gwc-8u-59c" secondAttribute="topMargin" constant="31" id="QMw-K6-La8"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="r7p-dZ-Yyn" secondAttribute="leading" id="sWM-ZT-biI"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="r7p-dZ-Yyn" secondAttribute="leading" id="sWM-ZT-biI">
+                                                    <variation key="widthClass=compact" constant="-8"/>
+                                                </constraint>
                                                 <constraint firstItem="lyr-cD-Ezp" firstAttribute="top" secondItem="Gwc-8u-59c" secondAttribute="topMargin" constant="2" id="vRj-iI-kMX"/>
                                             </constraints>
                                             <variation key="default">
@@ -336,8 +338,12 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ivAvatar" destination="lyr-cD-Ezp" id="UDC-1n-7aN"/>
+                                            <outlet property="labTitle" destination="r7p-dZ-Yyn" id="cai-cF-r0j"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IdentifierUserinfoBody" rowHeight="64" id="8r1-xz-Xah">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IdentifierUserinfoBody" rowHeight="64" id="8r1-xz-Xah" customClass="CHUnitCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8r1-xz-Xah" id="uz3-ET-neV">
@@ -390,7 +396,9 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="leadingMargin" secondItem="VG0-Fm-ZKY" secondAttribute="leading" id="Cpu-Qs-Dik"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="VG0-Fm-ZKY" secondAttribute="leading" id="Cpu-Qs-Dik">
+                                                    <variation key="widthClass=compact" constant="-8"/>
+                                                </constraint>
                                                 <constraint firstItem="VG0-Fm-ZKY" firstAttribute="top" secondItem="uz3-ET-neV" secondAttribute="topMargin" constant="13" id="Rfx-aC-QU3"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Gq0-rq-15K" secondAttribute="trailing" constant="-9" id="SPK-Wl-RWK">
                                                     <variation key="widthClass=compact" constant="-2"/>
@@ -422,6 +430,10 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labDetail" destination="Gq0-rq-15K" id="w09-FL-3mv"/>
+                                            <outlet property="labTitle" destination="VG0-Fm-ZKY" id="3DN-70-OjC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

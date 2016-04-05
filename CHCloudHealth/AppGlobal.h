@@ -43,6 +43,7 @@
 #import "SWRevealViewController.h"
 #import "GlobalCategoryHeader.h"
 #import "CHBaseNavigationController.h"
+#import <UIImageView+UIActivityIndicatorForSDWebImage.h>
 #import "HYQHelperHUD.h"
 #import "CHUser.h"
 

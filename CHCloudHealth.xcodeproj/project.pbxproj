@@ -98,6 +98,8 @@
 		84B1E3191CAE77BA004573F4 /* UIViewController+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E2F51CAE77BA004573F4 /* UIViewController+Swizzle.m */; };
 		84B1E31A1CAE77BA004573F4 /* UIWebView+JavaScriptAlertCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E2F71CAE77BA004573F4 /* UIWebView+JavaScriptAlertCategory.m */; };
 		84B1E32B1CB38A8D004573F4 /* CHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E32A1CB38A8D004573F4 /* CHTextField.m */; };
+		84B1E3301CB3C698004573F4 /* CHUnitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E32F1CB3C698004573F4 /* CHUnitCell.m */; };
+		84B1E3331CB3C7E2004573F4 /* CHUnitAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E3321CB3C7E2004573F4 /* CHUnitAvatarCell.m */; };
 		84F1F4BE1CAD2CB60061AACC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F1F4BD1CAD2CB60061AACC /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -283,6 +285,10 @@
 		84B1E2F71CAE77BA004573F4 /* UIWebView+JavaScriptAlertCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+JavaScriptAlertCategory.m"; sourceTree = "<group>"; };
 		84B1E3291CB38A8D004573F4 /* CHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTextField.h; sourceTree = "<group>"; };
 		84B1E32A1CB38A8D004573F4 /* CHTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTextField.m; sourceTree = "<group>"; };
+		84B1E32E1CB3C698004573F4 /* CHUnitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUnitCell.h; sourceTree = "<group>"; };
+		84B1E32F1CB3C698004573F4 /* CHUnitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUnitCell.m; sourceTree = "<group>"; };
+		84B1E3311CB3C7E2004573F4 /* CHUnitAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUnitAvatarCell.h; sourceTree = "<group>"; };
+		84B1E3321CB3C7E2004573F4 /* CHUnitAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUnitAvatarCell.m; sourceTree = "<group>"; };
 		84F1F4BD1CAD2CB60061AACC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EA12FFC0D604A8243CDEE906 /* Pods-CHCloudHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHCloudHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHCloudHealth/Pods-CHCloudHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -328,6 +334,8 @@
 		63412E411CB2A22200FAD0DA /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				84B1E32C1CB3C66F004573F4 /* Model */,
+				84B1E32D1CB3C66F004573F4 /* View */,
 				63412E421CB2A24700FAD0DA /* CHUserInfoController.h */,
 				63412E431CB2A24700FAD0DA /* CHUserInfoController.m */,
 				63412E451CB2A28100FAD0DA /* CHRelationShipController.h */,
@@ -720,6 +728,24 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		84B1E32C1CB3C66F004573F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84B1E32D1CB3C66F004573F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84B1E32E1CB3C698004573F4 /* CHUnitCell.h */,
+				84B1E32F1CB3C698004573F4 /* CHUnitCell.m */,
+				84B1E3311CB3C7E2004573F4 /* CHUnitAvatarCell.h */,
+				84B1E3321CB3C7E2004573F4 /* CHUnitAvatarCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9EA6CF6E1056A669C882E269 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -856,6 +882,7 @@
 				84B1E3191CAE77BA004573F4 /* UIViewController+Swizzle.m in Sources */,
 				63412E441CB2A24700FAD0DA /* CHUserInfoController.m in Sources */,
 				8472D20E1CAE53930003E35A /* BASEModel.m in Sources */,
+				84B1E3331CB3C7E2004573F4 /* CHUnitAvatarCell.m in Sources */,
 				84B1E20D1CAE5FEA004573F4 /* CHRootViewController.m in Sources */,
 				63412E3A1CB285B100FAD0DA /* UITableView+Empty.m in Sources */,
 				84B1E2FA1CAE77BA004573F4 /* NSDate+HYQFormatter.m in Sources */,
@@ -910,6 +937,7 @@
 				8472D2051CAE53930003E35A /* NSObject+FQAHCategories.m in Sources */,
 				84B1E3051CAE77BA004573F4 /* UIControl+Categories.m in Sources */,
 				84B1E2FF1CAE77BA004573F4 /* NSString+Ghost.m in Sources */,
+				84B1E3301CB3C698004573F4 /* CHUnitCell.m in Sources */,
 				8472D2031CAE53930003E35A /* NSFileManager+FQAHCategories.m in Sources */,
 				63412E231CB2628B00FAD0DA /* UIStoryboard+Categories.m in Sources */,
 				63412E531CB2A33F00FAD0DA /* CHMedicineReminderController.m in Sources */,
