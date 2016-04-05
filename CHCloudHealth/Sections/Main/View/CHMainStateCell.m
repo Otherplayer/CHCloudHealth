@@ -20,10 +20,14 @@
 
 @implementation CHMainStateCell
 
+//0001心率
+//0002血压
+//0003血糖
+//0004位置
+//0005健康
 
 - (void)configure:(NSDictionary *)info{
     NSString *title = info[@"name"];
-    NSLog(@"%@",info);
     NSString *date = [NSDate dateFromStr:[NSString stringWithFormat:@"%@",info[@"createDate"]]];
     NSString *state = [NSString stringWithFormat:@"%@",info[@"state"]];
     [self.labTitle setText:title];
