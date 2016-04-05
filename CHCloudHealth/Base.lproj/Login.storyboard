@@ -580,6 +580,13 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="Ixf-UE-0lI"/>
+                    <connections>
+                        <outlet property="btnGetCaptcha" destination="9j8-FV-BqN" id="Nut-sT-X2q"/>
+                        <outlet property="btnRegister" destination="j3H-9J-Nho" id="VSs-5u-e4U"/>
+                        <outlet property="captchaTextField" destination="Dm0-27-fT0" id="nXC-3l-RiN"/>
+                        <outlet property="mobileTextField" destination="GBR-ZY-MCa" id="p3z-ID-r7u"/>
+                        <outlet property="passwordTextField" destination="A1v-cz-g3I" id="KKu-fT-BcH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wk1-J5-rgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
