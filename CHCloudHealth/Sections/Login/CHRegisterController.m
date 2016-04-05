@@ -53,10 +53,17 @@
 #pragma mark - Action
 
 - (IBAction)getCaptchaAction:(id)sender {
-    if ([self canGo]) {
-        [[NetworkingManager sharedManager] getCaptchaWithMobile:@"18513149993" type:@"register" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
     
-        }];
+    if ([self canGo]) {
+        NSString *mobile = [self.mobileTextField.text trimmingWhitespace];
+        
+        if (mobile && [mobile isMobileNumberString]) {
+            [[NetworkingManager sharedManager] getCaptchaWithMobile:mobile type:@"register" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+                
+            }];
+        }else{
+            [HYQShowTip showTipTextOnly:@"输入的手机号有误" dealy:2];
+        }
     }
 }
 

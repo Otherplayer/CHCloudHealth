@@ -111,7 +111,7 @@ NSString *const kIMGKey = @"kIMGKey";
     }
     NSDictionary *targetParameters;
     if (allparameters) {
-        targetParameters = @{@"data":allparameters};
+        targetParameters = @{@"data":[allparameters jsonString]};
     }
     
     NSLog(@"参数：%@\n\n url:%@",targetParameters,URLString);
@@ -119,9 +119,9 @@ NSString *const kIMGKey = @"kIMGKey";
         return;
     }
     
-    [[FQAHBaseNetwork sharedNetwork] POST:URLString parameters:allparameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[FQAHBaseNetwork sharedNetwork] POST:URLString parameters:targetParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        [self isSuccessedOnCallingAPIOperation:operation object:responseObject url:URLString params:allparameters memoryCache:memoryCache diskCache:diskCache completedHandler:completed];
+        [self isSuccessedOnCallingAPIOperation:operation object:responseObject url:URLString params:targetParameters memoryCache:memoryCache diskCache:diskCache completedHandler:completed];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
