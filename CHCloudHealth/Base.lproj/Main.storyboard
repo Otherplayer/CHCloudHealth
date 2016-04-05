@@ -263,7 +263,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="rQU-x4-cVY"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -357,7 +357,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="SIe-qT-OLy"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -556,7 +556,7 @@
                                                         <constraint firstAttribute="width" constant="188" id="QVV-Uu-8jK"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.31830841302871704" green="0.61763226985931396" blue="0.91251415014266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.054901960784313725" green="0.40000000000000002" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -578,7 +578,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="lt3-k0-9bO"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.31830841302871704" green="0.61763226985931396" blue="0.91251415014266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.054901960780000002" green="0.40000000000000002" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -595,6 +595,7 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios_icon_11" translatesAutoresizingMaskIntoConstraints="NO" id="CkT-GM-71h">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <color key="tintColor" red="0.054901960780000002" green="0.40000000000000002" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="KcT-VN-X6y"/>
                                                         <constraint firstAttribute="width" constant="30" id="jDP-k4-PQW"/>
@@ -619,7 +620,7 @@
                                                         <constraint firstAttribute="height" constant="27" id="Lya-l8-iY1"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -641,7 +642,7 @@
                                                         <constraint firstAttribute="width" constant="100" id="hSB-SX-tLS"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -663,7 +664,7 @@
                                                         <constraint firstAttribute="height" constant="27" id="ei5-Z0-9Gf"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -685,7 +686,7 @@
                                                         <constraint firstAttribute="width" constant="100" id="bBS-Y2-l5a"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -707,7 +708,7 @@
                                                         <constraint firstAttribute="width" constant="100" id="q0I-nF-9aO"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -729,7 +730,7 @@
                                                         <constraint firstAttribute="width" constant="100" id="HLo-me-PEb"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -751,7 +752,7 @@
                                                         <constraint firstAttribute="width" constant="45" id="et7-NA-yUk"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -773,7 +774,7 @@
                                                         <constraint firstAttribute="width" constant="45" id="7tD-Xc-esf"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -795,7 +796,7 @@
                                                         <constraint firstAttribute="width" constant="45" id="yNd-8O-HBh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -812,7 +813,7 @@
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5x1-8b-u4z" userLabel="linecenter">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.64313725490196083" green="0.64313725490196083" blue="0.64313725490196083" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="1" id="0vH-5G-EBf"/>
                                                         <constraint firstAttribute="height" constant="110" id="G7U-KR-vAZ"/>
@@ -837,7 +838,7 @@
                                                         <constraint firstAttribute="width" constant="45" id="nIH-sX-YDN"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -859,7 +860,7 @@
                                                         <constraint firstAttribute="width" constant="45" id="JML-iM-0tA"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -881,7 +882,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="Ir2-0j-SkA"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -898,7 +899,7 @@
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZc-EX-wgA" userLabel="lineup">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.64313725489999995" green="0.64313725489999995" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="Gwe-Rv-gF3"/>
                                                     </constraints>
@@ -915,7 +916,7 @@
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOs-Y0-hXL" userLabel="linedown">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.64313725489999995" green="0.64313725489999995" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="275" id="9vl-Wu-D7v"/>
                                                         <constraint firstAttribute="height" constant="1" id="Dlo-vZ-sWs"/>
@@ -1013,46 +1014,46 @@
                                                     <exclude reference="lOs-Y0-hXL"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="fWG-F3-X0B"/>
-                                                    <exclude reference="xet-he-sTr"/>
+                                                    <exclude reference="6Pi-q5-5dO"/>
+                                                    <exclude reference="FF7-mb-7Lm"/>
+                                                    <exclude reference="GYb-Hl-mVL"/>
+                                                    <exclude reference="Mhk-Zi-Lzb"/>
+                                                    <exclude reference="2PF-ln-KbY"/>
                                                     <exclude reference="ieN-89-Ya6"/>
                                                     <exclude reference="sBb-HA-dVV"/>
-                                                    <exclude reference="Cgq-0v-qwK"/>
-                                                    <exclude reference="goU-ZC-MRK"/>
-                                                    <exclude reference="2PF-ln-KbY"/>
-                                                    <exclude reference="NHy-yQ-7Un"/>
-                                                    <exclude reference="Wf0-1d-Qi2"/>
-                                                    <exclude reference="SGg-Qp-xSx"/>
-                                                    <exclude reference="Y2x-5l-emu"/>
-                                                    <exclude reference="ctH-kq-W7y"/>
-                                                    <exclude reference="Mmu-lV-lTk"/>
-                                                    <exclude reference="RTO-kE-8iQ"/>
-                                                    <exclude reference="h3d-0w-tNX"/>
-                                                    <exclude reference="owQ-15-IMg"/>
+                                                    <exclude reference="Euc-L7-s3a"/>
+                                                    <exclude reference="HT9-uE-XgX"/>
                                                     <exclude reference="0hL-jL-x7U"/>
                                                     <exclude reference="DCk-Gw-va5"/>
                                                     <exclude reference="oga-jK-aur"/>
+                                                    <exclude reference="Lwn-56-erM"/>
+                                                    <exclude reference="hn5-9e-smt"/>
+                                                    <exclude reference="gOH-LB-qni"/>
+                                                    <exclude reference="jRq-7S-jSj"/>
+                                                    <exclude reference="fln-ob-4hc"/>
+                                                    <exclude reference="NHy-yQ-7Un"/>
+                                                    <exclude reference="Wf0-1d-Qi2"/>
+                                                    <exclude reference="E4k-mo-Xya"/>
+                                                    <exclude reference="hAh-6C-ctg"/>
                                                     <exclude reference="0cH-Et-L1F"/>
                                                     <exclude reference="ARA-Vd-G2S"/>
+                                                    <exclude reference="Mmu-lV-lTk"/>
+                                                    <exclude reference="fWG-F3-X0B"/>
+                                                    <exclude reference="xet-he-sTr"/>
                                                     <exclude reference="2G6-ye-fuQ"/>
                                                     <exclude reference="4BR-RQ-Icf"/>
                                                     <exclude reference="86C-XR-SuE"/>
                                                     <exclude reference="GLM-6l-1ft"/>
                                                     <exclude reference="LM7-Dh-9Ow"/>
                                                     <exclude reference="j19-Sp-T1R"/>
-                                                    <exclude reference="GYb-Hl-mVL"/>
-                                                    <exclude reference="Mhk-Zi-Lzb"/>
-                                                    <exclude reference="fln-ob-4hc"/>
-                                                    <exclude reference="6Pi-q5-5dO"/>
-                                                    <exclude reference="FF7-mb-7Lm"/>
-                                                    <exclude reference="E4k-mo-Xya"/>
-                                                    <exclude reference="hAh-6C-ctg"/>
-                                                    <exclude reference="Lwn-56-erM"/>
-                                                    <exclude reference="hn5-9e-smt"/>
-                                                    <exclude reference="Euc-L7-s3a"/>
-                                                    <exclude reference="HT9-uE-XgX"/>
-                                                    <exclude reference="gOH-LB-qni"/>
-                                                    <exclude reference="jRq-7S-jSj"/>
+                                                    <exclude reference="Cgq-0v-qwK"/>
+                                                    <exclude reference="goU-ZC-MRK"/>
+                                                    <exclude reference="SGg-Qp-xSx"/>
+                                                    <exclude reference="Y2x-5l-emu"/>
+                                                    <exclude reference="ctH-kq-W7y"/>
+                                                    <exclude reference="RTO-kE-8iQ"/>
+                                                    <exclude reference="h3d-0w-tNX"/>
+                                                    <exclude reference="owQ-15-IMg"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -1078,46 +1079,46 @@
                                                     <include reference="lOs-Y0-hXL"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="fWG-F3-X0B"/>
-                                                    <include reference="xet-he-sTr"/>
+                                                    <include reference="6Pi-q5-5dO"/>
+                                                    <include reference="FF7-mb-7Lm"/>
+                                                    <include reference="GYb-Hl-mVL"/>
+                                                    <include reference="Mhk-Zi-Lzb"/>
+                                                    <include reference="2PF-ln-KbY"/>
                                                     <include reference="ieN-89-Ya6"/>
                                                     <include reference="sBb-HA-dVV"/>
-                                                    <include reference="Cgq-0v-qwK"/>
-                                                    <include reference="goU-ZC-MRK"/>
-                                                    <include reference="2PF-ln-KbY"/>
-                                                    <include reference="NHy-yQ-7Un"/>
-                                                    <include reference="Wf0-1d-Qi2"/>
-                                                    <include reference="SGg-Qp-xSx"/>
-                                                    <include reference="Y2x-5l-emu"/>
-                                                    <include reference="ctH-kq-W7y"/>
-                                                    <include reference="Mmu-lV-lTk"/>
-                                                    <include reference="RTO-kE-8iQ"/>
-                                                    <include reference="h3d-0w-tNX"/>
-                                                    <include reference="owQ-15-IMg"/>
+                                                    <include reference="Euc-L7-s3a"/>
+                                                    <include reference="HT9-uE-XgX"/>
                                                     <include reference="0hL-jL-x7U"/>
                                                     <include reference="DCk-Gw-va5"/>
                                                     <include reference="oga-jK-aur"/>
+                                                    <include reference="Lwn-56-erM"/>
+                                                    <include reference="hn5-9e-smt"/>
+                                                    <include reference="gOH-LB-qni"/>
+                                                    <include reference="jRq-7S-jSj"/>
+                                                    <include reference="fln-ob-4hc"/>
+                                                    <include reference="NHy-yQ-7Un"/>
+                                                    <include reference="Wf0-1d-Qi2"/>
+                                                    <include reference="E4k-mo-Xya"/>
+                                                    <include reference="hAh-6C-ctg"/>
                                                     <include reference="0cH-Et-L1F"/>
                                                     <include reference="ARA-Vd-G2S"/>
+                                                    <include reference="Mmu-lV-lTk"/>
+                                                    <include reference="fWG-F3-X0B"/>
+                                                    <include reference="xet-he-sTr"/>
                                                     <include reference="2G6-ye-fuQ"/>
                                                     <include reference="4BR-RQ-Icf"/>
                                                     <include reference="86C-XR-SuE"/>
                                                     <include reference="GLM-6l-1ft"/>
                                                     <include reference="LM7-Dh-9Ow"/>
                                                     <include reference="j19-Sp-T1R"/>
-                                                    <include reference="GYb-Hl-mVL"/>
-                                                    <include reference="Mhk-Zi-Lzb"/>
-                                                    <include reference="fln-ob-4hc"/>
-                                                    <include reference="6Pi-q5-5dO"/>
-                                                    <include reference="FF7-mb-7Lm"/>
-                                                    <include reference="E4k-mo-Xya"/>
-                                                    <include reference="hAh-6C-ctg"/>
-                                                    <include reference="Lwn-56-erM"/>
-                                                    <include reference="hn5-9e-smt"/>
-                                                    <include reference="Euc-L7-s3a"/>
-                                                    <include reference="HT9-uE-XgX"/>
-                                                    <include reference="gOH-LB-qni"/>
-                                                    <include reference="jRq-7S-jSj"/>
+                                                    <include reference="Cgq-0v-qwK"/>
+                                                    <include reference="goU-ZC-MRK"/>
+                                                    <include reference="SGg-Qp-xSx"/>
+                                                    <include reference="Y2x-5l-emu"/>
+                                                    <include reference="ctH-kq-W7y"/>
+                                                    <include reference="RTO-kE-8iQ"/>
+                                                    <include reference="h3d-0w-tNX"/>
+                                                    <include reference="owQ-15-IMg"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1256,7 +1257,7 @@
                                                         <constraint firstAttribute="height" constant="48" id="aQS-u6-aA4"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                                    <color key="textColor" red="0.31830841302871704" green="0.61763226985931396" blue="0.91251415014266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.054901960780000002" green="0.40000000000000002" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
