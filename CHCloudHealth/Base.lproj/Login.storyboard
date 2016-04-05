@@ -478,6 +478,9 @@
                                         <include reference="S0K-Rg-47V"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="getCaptchaAction:" destination="N0Q-ZL-URZ" eventType="touchUpInside" id="oqD-RG-ZIZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3H-9J-Nho">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -505,6 +508,9 @@
                                         <include reference="JIc-y5-Dax"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="registerAction:" destination="N0Q-ZL-URZ" eventType="touchUpInside" id="Qly-RE-A7m"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

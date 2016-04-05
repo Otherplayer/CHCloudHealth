@@ -50,7 +50,13 @@
 
 
 
+#pragma mark - Action
 
+- (IBAction)getCaptchaAction:(id)sender {
+}
+
+- (IBAction)registerAction:(id)sender {
+}
 
 
 
