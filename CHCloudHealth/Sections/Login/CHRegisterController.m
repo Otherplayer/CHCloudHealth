@@ -53,9 +53,23 @@
 #pragma mark - Action
 
 - (IBAction)getCaptchaAction:(id)sender {
+    if ([self canGo]) {
+        [[NetworkingManager sharedManager] getCaptchaWithMobile:@"18513149993" type:@"register" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+    
+        }];
+    }
 }
 
 - (IBAction)registerAction:(id)sender {
+    NSString *mobile = [self.mobileTextField.text trimmingWhitespace];
+    NSString *psd = [self.passwordTextField.text trimmingWhitespace];
+    NSString *captcha = [self.captchaTextField.text trimmingWhitespace];
+    
+    if ([self canGo] && [self check]) {
+        [[NetworkingManager sharedManager] registerWithMobile:mobile password:psd captcha:captcha completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            
+        }];
+    }
 }
 
 
@@ -64,6 +78,39 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self hidenKeyboard];
 }
+
+
+#pragma mark - Private
+
+- (BOOL)check{
+    NSString *mobile = [self.mobileTextField.text trimmingWhitespace];
+    NSString *psd = [self.passwordTextField.text trimmingWhitespace];
+    NSString *captcha = [self.captchaTextField.text trimmingWhitespace];
+    
+    if (!mobile || mobile.length == 0) {
+        [HYQShowTip showTipTextOnly:@"请输入电话号码" dealy:2];
+        return NO;
+    }
+    
+    if (![mobile isMobileNumberString]) {
+        [HYQShowTip showTipTextOnly:@"电话号码有误" dealy:2];
+        return NO;
+    }
+    
+    if (!psd || psd.length == 0) {
+        [HYQShowTip showTipTextOnly:@"请输入密码" dealy:2];
+        return NO;
+    }
+    
+    if (!captcha || captcha.length == 0) {
+        [HYQShowTip showTipTextOnly:@"请输入验证码" dealy:2];
+        return NO;
+    }
+    
+    return YES;
+}
+
+
 
 @end
 
