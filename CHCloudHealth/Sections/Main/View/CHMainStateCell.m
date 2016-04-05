@@ -19,4 +19,10 @@
 
 @implementation CHMainStateCell
 
+
+- (void)configure:(NSDictionary *)info{
+    
+}
+
+
 @end

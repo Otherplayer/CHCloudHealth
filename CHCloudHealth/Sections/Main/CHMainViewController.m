@@ -72,6 +72,7 @@
                 [self.tableView reloadData];
             });
         }else{
+            self.tableView.loading = NO;
             [HYQShowTip showTipTextOnly:errDesc dealy:2];
         }
     }];
@@ -92,19 +93,18 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *info = [self.datas objectAtIndex:indexPath.row];
     
     if (indexPath.row == 0) {
         static NSString *identifierMenuHeader = @"IdentifierMainHeader";
         CHMainHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMenuHeader forIndexPath:indexPath];
-        
-        NSDictionary *info = [self.datas objectAtIndex:indexPath.row];
         [cell configure:info];
-        
         return cell;
     }
     
     static NSString *identifierMainState = @"IdentifierMainState";
     CHMainStateCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMainState forIndexPath:indexPath];
+    [cell configure:info];
     return cell;
 }
 
