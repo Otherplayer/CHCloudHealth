@@ -17,12 +17,20 @@
 #pragma mark - 登录注册
 
 - (void)loginWithMobile:(NSString *)mobile password:(NSString *)password completedHandler:(GGRequestCallbackBlock)completed;
+
 - (void)registerWithMobile:(NSString *)mobile password:(NSString *)password captcha:(NSString *)captcha completedHandler:(GGRequestCallbackBlock)completed;
-//register  注册
-//reset      找回密码
-//bind      绑定亲情号
+
+// (register注册reset找回密码bind绑定亲情号)
 - (void)getCaptchaWithMobile:(NSString *)mobile type:(NSString *)type completedHandler:(GGRequestCallbackBlock)completed;
 
+- (void)logoutWithUserId:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
 
+- (void)findBackPasswordCompletedHandler:(GGRequestCallbackBlock)completed;
+
+- (void)updatePsd:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
+
+- (void)getUserInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
+
+- (void)updateUserInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
 
 @end

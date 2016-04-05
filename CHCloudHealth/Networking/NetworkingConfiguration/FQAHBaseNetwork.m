@@ -212,7 +212,7 @@ NSString *const kIMGKey = @"kIMGKey";
         return;
     }
     
-    GGResponseErrCodeType reponseCode = [object[@"state_code"] intValue];
+    GGResponseErrCodeType reponseCode = [object[@"statusCode"] intValue];
     
     
 #ifdef SHOULD_USE_JSONMODEL
@@ -227,7 +227,7 @@ NSString *const kIMGKey = @"kIMGKey";
     }
 #else
     id resultData = object[@"data"];
-    completed(reponseCode == GGServiceResponseErrCodeTypeNone, object, resultData);
+    completed(reponseCode == GGServiceResponseErrCodeTypeNone, object[@"message"], resultData);
 #endif
     
     

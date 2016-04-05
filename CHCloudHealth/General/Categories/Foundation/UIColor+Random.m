@@ -21,4 +21,24 @@
     return [UIColor colorFromHexRGB:@"0097ff"];
 }
 
++ (UIColor *)color_33333{
+    return [UIColor colorFromHexRGB:@"333333"];
+}//暗灰色
+
++ (UIColor *)color_66666{
+    return [UIColor colorFromHexRGB:@"666666"];
+}//淡灰色
+
++ (UIColor *)color_b3b3b3{
+    return [UIColor colorFromHexRGB:@"b3b3b3"];
+}//浅字和灰线
+
++ (UIColor *)color_f2f2f2{
+    return [UIColor colorFromHexRGB:@"f2f2f2"];
+}//背景色，淡白
+
++ (UIColor *)color_ca4341{
+    return [UIColor colorFromHexRGB:@"ca4341"];
+}//红色
+
 @end
