@@ -21,7 +21,10 @@
     [super viewDidLoad];
     [self addBackButton];
     
-    self.datas = @[@[@{@"title":@"头像"}],@[@{@"title":@"昵称"},@{@"title":@"性别"},@{@"title":@"手机号"}]];
+    self.datas = @[@[@{@"title":@"头像",@"detail":[CHUser sharedInstance].avatarurl}],
+                   @[@{@"title":@"昵称",@"detail":[CHUser sharedInstance].name},
+                     @{@"title":@"性别",@"detail":@""},
+                     @{@"title":@"手机号",@"detail":[CHUser sharedInstance].phoneNumber}]];
     
 }
 
@@ -44,15 +47,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSDictionary *info = self.datas[indexPath.section][indexPath.row];
+    NSString *title = info[@"title"];
+    NSString *detail = info[@"detail"];
     if (indexPath.section == 0) {
         static NSString *identifierUserinfoHeader = @"IdentifierUserinfoHeader";
         CHUnitAvatarCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoHeader forIndexPath:indexPath];
+        [cell setTitle:title avatar:detail];
         return cell;
     }
     
     static NSString *identifierUserinfoBody = @"IdentifierUserinfoBody";
     CHUnitCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoBody forIndexPath:indexPath];
-    
+    [cell setTitle:title detail:detail];
     return cell;
 }
 
