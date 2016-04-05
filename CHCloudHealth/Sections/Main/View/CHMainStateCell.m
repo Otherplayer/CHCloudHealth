@@ -31,12 +31,20 @@
     NSString *title = info[@"name"];
     NSString *date = [NSDate dateFromStr:[NSString stringWithFormat:@"%@",info[@"createDate"]]];
     NSString *state = [NSString stringWithFormat:@"%@",info[@"state"]];
-    NSString *value = [NSString stringWithFormat:@"%@ %@",info[@"val"],[self unitWithType:info[@"typeCode"]]];
     [self.labTitle setText:title];
     [self.labState setText:state];
     [self.labDate setText:date];
-    [self.labValue setAttributedText:[self fixColorText:value]];
-    [self.labValue setAdjustsFontSizeToFitWidth:YES];
+    
+    NSString *type = info[@"typeCode"];
+    if (type.integerValue < 4) {
+        NSString *value = [NSString stringWithFormat:@"%@ %@",info[@"val"],[self unitWithType:type]];
+        [self.labValue setAttributedText:[self fixColorText:value]];
+        [self.labValue setAdjustsFontSizeToFitWidth:YES];
+    }else{
+        [self.labValue setNumberOfLines:0];
+        [self.labValue setLineBreakMode:NSLineBreakByWordWrapping];
+        [self.labValue setText:@"asfasasdf;ljf;sdaksdaffsdakjlasfdasdfasfafdadsfasdfffsdfafds"];
+    }
 }
 
 

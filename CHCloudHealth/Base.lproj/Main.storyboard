@@ -1209,12 +1209,6 @@
                                                         <constraint firstAttribute="width" constant="68" id="jXU-Me-vJU"/>
                                                         <constraint firstAttribute="height" constant="68" id="myY-5j-A4C"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="34"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="jXU-Me-vJU"/>
