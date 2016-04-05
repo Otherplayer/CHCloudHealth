@@ -70,6 +70,9 @@
                 [self.datas addObject:responseData[@"data"]];
                 self.tableView.loading = NO;
                 [self.tableView reloadData];
+                
+                [self getHealthTypeInfo];
+                
             });
         }else{
             self.tableView.loading = NO;
@@ -77,6 +80,19 @@
         }
     }];
     
+}
+
+- (void)getHealthTypeInfo{
+    [[NetworkingManager sharedManager] getHealthTypeInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        if (success) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.datas addObjectsFromArray:responseData[@"data"]];
+                [self.tableView reloadData];
+            });
+        }else{
+            [HYQShowTip showTipTextOnly:errDesc dealy:2];
+        }
+    }];
 }
 
 

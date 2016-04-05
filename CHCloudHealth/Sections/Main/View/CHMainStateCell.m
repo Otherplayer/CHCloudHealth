@@ -21,6 +21,11 @@
 
 
 - (void)configure:(NSDictionary *)info{
+    NSString *title = info[@"name"];
+    NSString *date = [NSString stringWithFormat:@"%@",info[@"createDate"]];
+    [self.labTitle setText:title];
+////    [self.labState setText:info[@"state"]];
+    [self.labDate setText:date];
     
 }
 
