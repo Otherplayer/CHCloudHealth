@@ -33,4 +33,23 @@
 
 - (void)updateUserInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
 
+- (void)getDeviceInfo:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed;
+
+- (void)getHealthTypeInfo:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed;
+
+// yyyy-MM-dd
+- (void)getHeartRateInfo:(NSString *)deviceUserId date:(NSString *)date completedHandler:(GGRequestCallbackBlock)completed;
+
+- (void)getBloodPressureInfo:(NSString *)deviceUserId date:(NSString *)date completedHandler:(GGRequestCallbackBlock)completed;
+
+- (void)getBloodSugarInfo:(NSString *)deviceUserId date:(NSString *)date completedHandler:(GGRequestCallbackBlock)completed;
+
+- (void)getLocationInfo:(NSString *)deviceUserId date:(NSString *)date completedHandler:(GGRequestCallbackBlock)completed;
+
+- (void)getHealthRecordInfo:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed;
+- (void)getHealthRecordDetailInfo:(NSString *)heathRecordId completedHandler:(GGRequestCallbackBlock)completed;
+
+
+
+
 @end
