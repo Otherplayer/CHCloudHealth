@@ -226,8 +226,8 @@ NSString *const kIMGKey = @"kIMGKey";
         NSLog(@"%zd %@",GGServiceResponseErrCodeTypeNone,object[@"desc"]);
     }
 #else
-    id resultData = object[@"data"];
-    completed(reponseCode == GGServiceResponseErrCodeTypeNone, object[@"message"], resultData);
+    //id resultData = object[@"data"];
+    completed(reponseCode == GGServiceResponseErrCodeTypeNone, object[@"message"], object);
 #endif
     
     

@@ -33,15 +33,11 @@ NSString *const kUSER_SEX = @"sex";
 - (void)loginWithInfo:(NSDictionary *)info{
     
     /// 1.保存用户信息
-//    NSString *uid = [NSString stringWithFormat:@"%@",info[kUSER_ID]];
-//    NSString *app_token = [NSString stringWithFormat:@"%@",info[kAPP_TOKEN]];
-//    NSString *rongyun_token = [NSString stringWithFormat:@"%@",info[kUSER_RONGYUN_TOKEN]];
-//    NSString *isPerfect = [NSString stringWithFormat:@"%@",info[kUSER_PERFECT]];
-//    
-//    [self.userDefaults setObject:uid forKey:kUSER_ID];
-//    [self.userDefaults setObject:app_token forKey:kAPP_TOKEN];
-//    [self.userDefaults setObject:rongyun_token forKey:kUSER_RONGYUN_TOKEN];
-//    [self.userDefaults setObject:isPerfect forKey:kUSER_PERFECT];
+    NSString *uid = [NSString stringWithFormat:@"%@",info[@"data"]];
+    NSString *app_token = [NSString stringWithFormat:@"%@",info[@"token"]];
+    
+    [self.userDefaults setObject:uid forKey:kUSER_ID];
+    [self.userDefaults setObject:app_token forKey:kAPP_TOKEN];
     [self.userDefaults synchronize];
     
 }
@@ -72,7 +68,20 @@ NSString *const kUSER_SEX = @"sex";
 }
 
 
+- (void)getUserInformation{
+    [self getUserInfo:self.uid];
+}
 
+- (void)getUserInfo:(NSString *)userId{
+    NSLog(@"%@",userId);
+    [[NetworkingManager sharedManager] getUserInfo:userId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        if (success) {
+//            [self loginWithInformation:modelObject];
+        }else{
+            [HYQShowTip showTipTextOnly:errDesc dealy:1.2];
+        }
+    }];
+}
 
 
 

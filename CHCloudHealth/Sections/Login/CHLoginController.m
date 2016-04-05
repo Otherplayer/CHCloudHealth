@@ -66,9 +66,13 @@
     if ([self canGo] && [self check]) {
         [[NetworkingManager sharedManager] loginWithMobile:mobile password:psd completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
-                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[CHUser sharedInstance] loginWithInfo:responseData];
+                    [[CHUser sharedInstance] getUserInformation];
+                    [self cancelAction:nil];
+                });
             }else{
-                
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
             }
         }];
     }
