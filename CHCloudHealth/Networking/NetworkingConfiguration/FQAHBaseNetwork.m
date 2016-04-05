@@ -227,8 +227,7 @@ NSString *const kIMGKey = @"kIMGKey";
     }
 #else
     id resultData = object[@"data"];
-    completed(reponseCode == GGServiceResponseErrCodeTypeNone, baseModel.description, resultData);
-    NSLog(@"dddddddddddd%@",baseModel.description);
+    completed(reponseCode == GGServiceResponseErrCodeTypeNone, object, resultData);
 #endif
     
     

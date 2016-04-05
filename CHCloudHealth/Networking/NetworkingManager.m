@@ -17,7 +17,7 @@
 
 NSString *const kAPI_Login = HOTYQ_JAVA_API @"user/login";
 NSString *const kAPI_Register = HOTYQ_JAVA_API @"user/register";
-NSString *const kAPI_GetCaptcha = HOTYQ_JAVA_API @"user/sendSmsCapctha";
+NSString *const kAPI_GetCaptcha = HOTYQ_JAVA_API @"sendSMS";
 
 
 NSString *const kAPI_PAGE = @"page";
@@ -51,8 +51,8 @@ NSString *const kAPI_SIZE = @"size";
     [self POST:kAPI_Register params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
-- (void)getCaptchaWithMobile:(NSString *)mobile completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"mobile":mobile};
+- (void)getCaptchaWithMobile:(NSString *)mobile type:(NSString *)type completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"mobile":mobile,@"type":type};
     [self POST:kAPI_GetCaptcha params:params memoryCache:NO diskCache:NO completed:completed];
 }
 

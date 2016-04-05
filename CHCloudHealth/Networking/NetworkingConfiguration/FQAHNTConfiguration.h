@@ -10,7 +10,7 @@
 #define FQAHNTConfiguration_h
 
 
-#define SHOULD_USE_JSONMODEL   /*是否调用JSONModel*/
+//#define SHOULD_USE_JSONMODEL   /*是否调用JSONModel*/
 
 #import "BASEModel.h"
 
@@ -24,9 +24,9 @@
 
 
 #ifdef IS_OFF_LINE
-#define HOTYQ_JAVA_API @"http://123.57.54.62:8081/healthcloud-core/"
+#define HOTYQ_JAVA_API @"http://123.57.54.62:8081/healthcloud-mobile/"
 #else
-#define HOTYQ_JAVA_API @"http://123.57.54.62:8081/healthcloud-core/"          //线上接口
+#define HOTYQ_JAVA_API @"http://123.57.54.62:8081/healthcloud-mobile/"          //线上接口
 #endif
 
 
@@ -54,14 +54,9 @@ typedef NS_ENUM(NSUInteger, GGURLResponseStatus){
 
 
 #ifdef SHOULD_USE_JSONMODEL
-
-typedef void (^HYQNetWorkBlock) (BOOL success,id modelObject);
 typedef void (^GGRequestCallbackBlock)(BOOL success, NSString *errDesc, BASEModel *model);
-typedef void (^HYQNetWorkBlock) (BOOL success,id modelObject);
 #else
 typedef void (^GGRequestCallbackBlock)(BOOL success, NSString *errDesc, id responseData);
 #endif
-
-//typedef void (^GGRequestTimeoutBlock)(NSInteger errCode, NSString *localizedDescription);
 
 #endif /* FQAHNTConfiguration_h */
