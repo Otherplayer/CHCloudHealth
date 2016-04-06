@@ -516,7 +516,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IdentifierMainHeader" rowHeight="221" id="55o-bA-V2H" customClass="CHMainHeaderCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="IdentifierMainHeaderCell" rowHeight="221" id="55o-bA-V2H" customClass="CHMainHeaderCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="55o-bA-V2H" id="cVc-Jc-nMc">
@@ -1134,7 +1134,7 @@
                                             <outlet property="labStep" destination="jeI-DU-tLo" id="lI2-so-HZl"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdentifierMainState" rowHeight="154" id="Rbe-8b-hjN" customClass="CHMainStateCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="IdentifierMainStateCell" rowHeight="154" id="Rbe-8b-hjN" customClass="CHMainStateCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rbe-8b-hjN" id="70n-fF-hh4">
@@ -1284,16 +1284,28 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObS-cG-G2w">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="10"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="10" id="Jqw-Ob-lgJ"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Jqw-Ob-lgJ"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="Jqw-Ob-lgJ"/>
+                                                        </mask>
                                                     </variation>
                                                 </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="8Hn-f4-p4F" firstAttribute="leading" secondItem="MU5-yQ-E8p" secondAttribute="trailing" constant="3" id="0wS-6B-EfB"/>
                                                 <constraint firstItem="Oig-4Q-eic" firstAttribute="leading" secondItem="70n-fF-hh4" secondAttribute="leadingMargin" constant="12" id="2Sm-p5-c2a"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ObS-cG-G2w" secondAttribute="trailing" constant="-6" id="3mE-AZ-xZ6"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="PWc-JK-Gvh" secondAttribute="trailing" constant="21" id="FYH-ZO-FyH"/>
                                                 <constraint firstItem="8Hn-f4-p4F" firstAttribute="top" secondItem="Mb4-Qn-4bP" secondAttribute="bottom" constant="44" id="IwF-AO-8Zp"/>
+                                                <constraint firstItem="ObS-cG-G2w" firstAttribute="leading" secondItem="70n-fF-hh4" secondAttribute="leadingMargin" constant="-8" id="JK1-L3-mj7"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Mb4-Qn-4bP" secondAttribute="trailing" constant="72" id="JLm-hU-OG3">
                                                     <variation key="widthClass=compact" constant="0.0"/>
                                                 </constraint>
@@ -1302,6 +1314,7 @@
                                                 <constraint firstAttribute="topMargin" secondItem="PWc-JK-Gvh" secondAttribute="top" id="Vyc-vg-fBI">
                                                     <variation key="widthClass=compact" constant="-10"/>
                                                 </constraint>
+                                                <constraint firstItem="ObS-cG-G2w" firstAttribute="top" secondItem="70n-fF-hh4" secondAttribute="topMargin" constant="-8" id="XoN-yg-Pev"/>
                                                 <constraint firstItem="MU5-yQ-E8p" firstAttribute="top" secondItem="KkY-mo-uDP" secondAttribute="bottom" constant="-1" id="Ycz-hR-Bh4">
                                                     <variation key="widthClass=compact" constant="7"/>
                                                 </constraint>
@@ -1347,6 +1360,9 @@
                                                     <exclude reference="JLm-hU-OG3"/>
                                                     <exclude reference="TWq-24-gPm"/>
                                                     <exclude reference="den-pg-MeJ"/>
+                                                    <exclude reference="3mE-AZ-xZ6"/>
+                                                    <exclude reference="JK1-L3-mj7"/>
+                                                    <exclude reference="XoN-yg-Pev"/>
                                                     <exclude reference="2Sm-p5-c2a"/>
                                                     <exclude reference="hmY-EJ-c3Z"/>
                                                 </mask>
@@ -1377,6 +1393,9 @@
                                                     <include reference="JLm-hU-OG3"/>
                                                     <include reference="TWq-24-gPm"/>
                                                     <include reference="den-pg-MeJ"/>
+                                                    <include reference="3mE-AZ-xZ6"/>
+                                                    <include reference="JK1-L3-mj7"/>
+                                                    <include reference="XoN-yg-Pev"/>
                                                     <include reference="2Sm-p5-c2a"/>
                                                     <include reference="hmY-EJ-c3Z"/>
                                                 </mask>

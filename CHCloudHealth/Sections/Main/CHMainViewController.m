@@ -12,7 +12,7 @@
 #import "CHMainHeaderCell.h"
 #import "CHMainStateCell.h"
 
-@interface CHMainViewController ()
+@interface CHMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *mailButtonItem;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -29,7 +29,6 @@
     [self setTitle:@"慈海云健康"];
     self.datas = [[NSMutableArray alloc] init];
     
-    
     [self.tableView blankTableFooterView];
     self.tableView.descriptionText = @"连接设备后\n才会显示数据哦";
     self.tableView.loadedImageName = @"ios_icon_17";
@@ -37,7 +36,6 @@
     [self.tableView clickLoading:^{
         [self getDatas];
     }];
-    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldGotoSubMenuController:) name:kNotificationMenuController object:nil];
     
@@ -68,12 +66,9 @@
     [[NetworkingManager sharedManager] getDeviceInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self.datas removeAllObjects];
                 [self.datas addObject:responseData[@"data"]];
-                self.tableView.loading = NO;
-                [self.tableView reloadData];
-                
                 [self getHealthTypeInfo];
-                
             });
         }else{
             self.tableView.loading = NO;
@@ -87,6 +82,7 @@
     [[NetworkingManager sharedManager] getHealthTypeInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                self.tableView.loading = NO;
                 [self.datas addObjectsFromArray:responseData[@"data"]];
                 [self.tableView reloadData];
             });
@@ -98,7 +94,9 @@
 
 
 #pragma mark - Delegate
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.datas.count;
 }
@@ -111,15 +109,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *info = [self.datas objectAtIndex:indexPath.row];
-    
     if (indexPath.row == 0) {
-        static NSString *identifierMenuHeader = @"IdentifierMainHeader";
-        CHMainHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMenuHeader forIndexPath:indexPath];
+        static NSString *identifierMainHeader = @"IdentifierMainHeaderCell";
+        CHMainHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMainHeader forIndexPath:indexPath];
         [cell configure:info];
         return cell;
     }
-    
-    static NSString *identifierMainState = @"IdentifierMainState";
+    static NSString *identifierMainState = @"IdentifierMainStateCell";
     CHMainStateCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMainState forIndexPath:indexPath];
     [cell configure:info];
     return cell;
@@ -155,19 +151,19 @@
 - (IBAction)mailAction:(id)sender {
     CHBaseNavigationController *nav = [[UIStoryboard loginStoryboard] loginController];
     [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    Get the new view controller using [segue destinationViewController].
+//    Pass the selected object to the new view controller.
     
     
     
 }
-
 /*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 */
 
 @end
