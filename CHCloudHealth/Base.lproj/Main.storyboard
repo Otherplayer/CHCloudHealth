@@ -1620,7 +1620,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPb-Ae-ixT" customClass="JRGraphView">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="188" id="7F3-AB-jCq">
                                         <variation key="widthClass=compact" constant="200"/>
@@ -1637,31 +1637,64 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="心率：86 次/分钟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yo-Wh-BaI">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="9GM-uf-an7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9GM-uf-an7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="9GM-uf-an7"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="7yo-Wh-BaI" secondAttribute="leading" id="4nk-nP-q3V"/>
                             <constraint firstAttribute="trailing" secondItem="dPb-Ae-ixT" secondAttribute="trailing" id="5UZ-hl-ddK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7yo-Wh-BaI" secondAttribute="trailing" id="IDv-7m-Alx"/>
                             <constraint firstItem="dPb-Ae-ixT" firstAttribute="top" secondItem="ye9-fa-MLC" secondAttribute="bottom" constant="20" id="LSJ-Yo-e7N"/>
                             <constraint firstItem="dPb-Ae-ixT" firstAttribute="leading" secondItem="lrh-zx-jae" secondAttribute="leading" id="NP1-4T-Whl"/>
+                            <constraint firstItem="7yo-Wh-BaI" firstAttribute="top" secondItem="dPb-Ae-ixT" secondAttribute="bottom" constant="70" id="wMW-7r-duo">
+                                <variation key="widthClass=compact" constant="47"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="dPb-Ae-ixT"/>
+                                <exclude reference="7yo-Wh-BaI"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="5UZ-hl-ddK"/>
                                 <exclude reference="LSJ-Yo-e7N"/>
                                 <exclude reference="NP1-4T-Whl"/>
+                                <exclude reference="4nk-nP-q3V"/>
+                                <exclude reference="IDv-7m-Alx"/>
+                                <exclude reference="wMW-7r-duo"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="dPb-Ae-ixT"/>
+                                <include reference="7yo-Wh-BaI"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="5UZ-hl-ddK"/>
                                 <include reference="LSJ-Yo-e7N"/>
                                 <include reference="NP1-4T-Whl"/>
+                                <include reference="4nk-nP-q3V"/>
+                                <include reference="IDv-7m-Alx"/>
+                                <include reference="wMW-7r-duo"/>
                             </mask>
                         </variation>
                     </view>

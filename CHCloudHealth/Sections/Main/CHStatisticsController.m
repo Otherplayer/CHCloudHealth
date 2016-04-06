@@ -42,22 +42,6 @@ static int i = 1;
     [self.graphView refresh];
 }
 
-- (void)addAction{
-    
-    NSNumber *x = @(i);
-    i = i + 1;
-    NSNumber *y = @((arc4random() % 280) + 1);
-    [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
-    
-    [self.graphView.plotDatasDictionary setObject:self.dataArr forKey:kDataLine];
-    [self.graphView refresh];
-    //
-    //    if (i > 10) {
-    //        NSDictionary *dic = @"";
-    //        [dic objectForKey:@"x"];
-    //    }
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
