@@ -1,19 +1,18 @@
 //
-//  ViewController.m
+//  CHStatisticsController.m
 //  CHCloudHealth
 //
-//  Created by __无邪_ on 3/29/16.
-//  Copyright © 2016 fqah. All rights reserved.
+//  Created by __无邪_ on 16/4/5.
+//  Copyright © 2016年 fqah. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CHStatisticsController.h"
 
-@interface ViewController ()
+@interface CHStatisticsController ()
 
 @end
 
-@implementation ViewController
-
+@implementation CHStatisticsController
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.

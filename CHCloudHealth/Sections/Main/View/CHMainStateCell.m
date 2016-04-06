@@ -25,6 +25,7 @@
 //0003血糖
 //0004位置
 //0005健康
+//typeCode
 
 - (void)configure:(NSDictionary *)info{
     NSString *title = info[@"name"];
@@ -34,6 +35,54 @@
     [self.labState setText:state];
     [self.labDate setText:date];
     
+    NSString *type = info[@"typeCode"];
+    if (type.integerValue < 4) {
+        NSString *value = [NSString stringWithFormat:@"%@ %@",info[@"val"],[self unitWithType:type]];
+        [self.labValue setAttributedText:[self fixColorText:value]];
+        [self.labValue setAdjustsFontSizeToFitWidth:YES];
+    }else{
+        NSString *description = info[@"description"];
+        [self.labValue setNumberOfLines:0];
+        [self.labValue setLineBreakMode:NSLineBreakByWordWrapping];
+        [self.labValue setText:description];
+        [self.labValue setText:@"asfasasdf;ljf;sdaksdaffsdakjlasfdasdfasfafdadsfasdfffsdfafds"];
+    }
+}
+
+
+
+- (NSString *)unitWithType:(NSString *)type{
+    switch (type.integerValue) {
+            case 1:
+            return @"次/分钟";
+            break;
+            case 2:
+            return @"mmHg";
+            break;
+            case 3:
+            return @"mmol/L";
+            break;
+//            case 4:
+//            return @"";
+//            break;
+//            case 5:
+//            return @"";
+//            break;
+        default:
+            return @"--";
+            break;
+    }
+}
+
+- (NSAttributedString *)fixColorText:(NSString *)value{
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:value];
+    NSRange valueRange = NSMakeRange(0, [value rangeOfString:@" "].location);
+    NSRange unitRange = NSMakeRange(valueRange.length, value.length - valueRange.length);
+    [attributedString setAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:50]} range:valueRange];
+    [attributedString setAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]} range:unitRange];
+    
+    return attributedString;
 }
 
 

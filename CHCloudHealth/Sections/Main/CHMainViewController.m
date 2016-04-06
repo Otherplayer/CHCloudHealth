@@ -7,6 +7,7 @@
 //
 
 #import "CHMainViewController.h"
+#import "CHStatisticsController.h"
 #import "ViewController.h"
 #import "CHMainHeaderCell.h"
 #import "CHMainStateCell.h"
@@ -126,7 +127,8 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    CHStatisticsController *controller = [[CHStatisticsController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 
