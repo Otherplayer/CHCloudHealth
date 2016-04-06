@@ -1776,7 +1776,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="188" id="7F3-AB-jCq">
-                                        <variation key="widthClass=compact" constant="200"/>
+                                        <variation key="widthClass=compact" constant="300"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="default">
@@ -1816,10 +1816,12 @@
                             <constraint firstAttribute="leadingMargin" secondItem="7yo-Wh-BaI" secondAttribute="leading" id="4nk-nP-q3V"/>
                             <constraint firstAttribute="trailing" secondItem="dPb-Ae-ixT" secondAttribute="trailing" id="5UZ-hl-ddK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7yo-Wh-BaI" secondAttribute="trailing" id="IDv-7m-Alx"/>
-                            <constraint firstItem="dPb-Ae-ixT" firstAttribute="top" secondItem="ye9-fa-MLC" secondAttribute="bottom" constant="20" id="LSJ-Yo-e7N"/>
+                            <constraint firstItem="dPb-Ae-ixT" firstAttribute="top" secondItem="ye9-fa-MLC" secondAttribute="bottom" constant="20" id="LSJ-Yo-e7N">
+                                <variation key="widthClass=compact" constant="-20"/>
+                            </constraint>
                             <constraint firstItem="dPb-Ae-ixT" firstAttribute="leading" secondItem="lrh-zx-jae" secondAttribute="leading" id="NP1-4T-Whl"/>
                             <constraint firstItem="7yo-Wh-BaI" firstAttribute="top" secondItem="dPb-Ae-ixT" secondAttribute="bottom" constant="70" id="wMW-7r-duo">
-                                <variation key="widthClass=compact" constant="47"/>
+                                <variation key="widthClass=compact" constant="17"/>
                             </constraint>
                         </constraints>
                         <variation key="default">

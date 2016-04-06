@@ -26,20 +26,20 @@
     
     [self addBackButton];
     [self setFullScreenPopGestureDisabled:YES];
-    
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     
     self.dataArr = [[NSMutableArray alloc] init];
     
     for ( NSUInteger i = 0; i < 60; i++ ) {
         NSNumber *x = @(i);
         i = i + 1;
-        NSNumber *y = @((arc4random() % 280) + 1);
+        NSNumber *y = @((arc4random() % 120) + 41);
         [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
     }
     
     [self.graphView.plotDatasDictionary setObject:self.dataArr forKey:kDataLine];
-    [self.graphView setLowerwarningValue:35];
-    [self.graphView setUpwarningValue:170];
+    [self.graphView setLowerwarningValue:86];
+    [self.graphView setUpwarningValue:110];
     
     [self.graphView refresh];
 }
