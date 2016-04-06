@@ -19,7 +19,7 @@
 
 - (void)hidenKeyboard;
 
-
+- (void)setNavBarClear:(BOOL)flag;
 
 /// 网络是否连接
 - (BOOL)isReachable;

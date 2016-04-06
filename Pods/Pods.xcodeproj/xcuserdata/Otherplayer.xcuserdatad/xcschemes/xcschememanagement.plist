@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>CorePlot.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>JDStatusBarNotification.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>JECorePlotDigester.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 		<key>JRSwizzle.xcscheme</key>
 		<dict>
@@ -82,6 +92,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6DDD59A921C191DC5D8E3238220B7CF2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>777C6D33FEF84D13A8801FF0B8A83210</key>
 		<dict>
 			<key>primary</key>
@@ -97,12 +112,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7FE7CDCFA93C07A1BB5063FD814F439C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8F74D9EA91F4C43190670066BAC37D44</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B1581F9CD8FA7089FC47FCEE30C6462A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7D0BE257544CDE960D6B8F48E2C0233</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CC69F157ADFE6B6635258B149730DD70</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D54AB3ECEB9A8FBA15D4F73CBE326692</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDBA78370F5A4652B2F4DD59008A1EF8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -45,7 +45,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mrf-34-ygN" id="c9t-WH-Kqa">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios_icon_18" translatesAutoresizingMaskIntoConstraints="NO" id="CYc-Ia-Cwl">
@@ -251,6 +251,7 @@
                         <viewControllerLayoutGuide type="bottom" id="nol-Au-P0d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Q6p-pK-8bN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="方式一：扫描说明书上的IMEI号的二维码，进行绑定。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiE-vG-uG0">
@@ -357,18 +358,18 @@
                                 <exclude reference="wi0-QN-eEL"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="2sF-fL-tRm"/>
-                                <exclude reference="3aI-KM-U4D"/>
-                                <exclude reference="fu6-c7-DkY"/>
                                 <exclude reference="LpB-ja-2gA"/>
                                 <exclude reference="U37-aR-662"/>
                                 <exclude reference="v40-Av-p87"/>
-                                <exclude reference="4Bn-Gl-koH"/>
-                                <exclude reference="BAI-Ir-MzA"/>
-                                <exclude reference="tDH-Zb-rmG"/>
                                 <exclude reference="9Hi-9K-4v0"/>
                                 <exclude reference="DQd-4L-KfE"/>
                                 <exclude reference="fiv-r1-1h7"/>
+                                <exclude reference="2sF-fL-tRm"/>
+                                <exclude reference="3aI-KM-U4D"/>
+                                <exclude reference="fu6-c7-DkY"/>
+                                <exclude reference="4Bn-Gl-koH"/>
+                                <exclude reference="BAI-Ir-MzA"/>
+                                <exclude reference="tDH-Zb-rmG"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -379,18 +380,18 @@
                                 <include reference="wi0-QN-eEL"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="2sF-fL-tRm"/>
-                                <include reference="3aI-KM-U4D"/>
-                                <include reference="fu6-c7-DkY"/>
                                 <include reference="LpB-ja-2gA"/>
                                 <include reference="U37-aR-662"/>
                                 <include reference="v40-Av-p87"/>
-                                <include reference="4Bn-Gl-koH"/>
-                                <include reference="BAI-Ir-MzA"/>
-                                <include reference="tDH-Zb-rmG"/>
                                 <include reference="9Hi-9K-4v0"/>
                                 <include reference="DQd-4L-KfE"/>
                                 <include reference="fiv-r1-1h7"/>
+                                <include reference="2sF-fL-tRm"/>
+                                <include reference="3aI-KM-U4D"/>
+                                <include reference="fu6-c7-DkY"/>
+                                <include reference="4Bn-Gl-koH"/>
+                                <include reference="BAI-Ir-MzA"/>
+                                <include reference="tDH-Zb-rmG"/>
                             </mask>
                         </variation>
                     </view>
@@ -657,6 +658,7 @@
                         <viewControllerLayoutGuide type="bottom" id="QNL-SM-CTb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aQO-Wz-oTY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="填写昵称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YU6-hW-iph" customClass="CHTextField">
@@ -752,8 +754,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pmS-JY-Rqe">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IdentifierMainHeaderCell" rowHeight="221" id="Mlf-cU-5jL" customClass="CHMainHeaderCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1361,6 +1362,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="ivAvatar" destination="owg-Ui-9EP" id="Igv-EW-iID"/>
                                             <outlet property="labHeartRate" destination="c6A-uB-uhp" id="jqf-yO-Iyd"/>
@@ -1619,6 +1621,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="ivAvatar" destination="1DE-e5-i4P" id="0uK-Vz-SaH"/>
                                             <outlet property="labDate" destination="wQ3-8H-kLo" id="K3a-jG-dxJ"/>
@@ -1697,6 +1700,7 @@
                         <viewControllerLayoutGuide type="bottom" id="LaG-W1-mTM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ICN-ce-OHF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DAN-qQ-yHk">
@@ -1707,6 +1711,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UPo-Rf-zPg" id="lZc-7E-V8S">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1725,10 +1730,10 @@
                                 <exclude reference="DAN-qQ-yHk"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="LPA-6N-eK2"/>
                                 <exclude reference="VxT-w7-muV"/>
                                 <exclude reference="e1z-9E-Lph"/>
                                 <exclude reference="xw6-Qh-3wN"/>
-                                <exclude reference="LPA-6N-eK2"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1736,10 +1741,10 @@
                                 <include reference="DAN-qQ-yHk"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="LPA-6N-eK2"/>
                                 <include reference="VxT-w7-muV"/>
                                 <include reference="e1z-9E-Lph"/>
                                 <include reference="xw6-Qh-3wN"/>
-                                <include reference="LPA-6N-eK2"/>
                             </mask>
                         </variation>
                     </view>
@@ -1761,6 +1766,7 @@
                         <viewControllerLayoutGuide type="bottom" id="waE-Dd-FiI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lrh-zx-jae">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPb-Ae-ixT" customClass="JRGraphView">
@@ -1820,12 +1826,12 @@
                                 <exclude reference="7yo-Wh-BaI"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5UZ-hl-ddK"/>
-                                <exclude reference="LSJ-Yo-e7N"/>
-                                <exclude reference="NP1-4T-Whl"/>
                                 <exclude reference="4nk-nP-q3V"/>
                                 <exclude reference="IDv-7m-Alx"/>
                                 <exclude reference="wMW-7r-duo"/>
+                                <exclude reference="5UZ-hl-ddK"/>
+                                <exclude reference="LSJ-Yo-e7N"/>
+                                <exclude reference="NP1-4T-Whl"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1834,12 +1840,12 @@
                                 <include reference="7yo-Wh-BaI"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5UZ-hl-ddK"/>
-                                <include reference="LSJ-Yo-e7N"/>
-                                <include reference="NP1-4T-Whl"/>
                                 <include reference="4nk-nP-q3V"/>
                                 <include reference="IDv-7m-Alx"/>
                                 <include reference="wMW-7r-duo"/>
+                                <include reference="5UZ-hl-ddK"/>
+                                <include reference="LSJ-Yo-e7N"/>
+                                <include reference="NP1-4T-Whl"/>
                             </mask>
                         </variation>
                     </view>

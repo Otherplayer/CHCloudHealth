@@ -12,6 +12,8 @@
 #import "ViewController.h"
 #import "CHMainHeaderCell.h"
 #import "CHMainStateCell.h"
+#import "UIColor+Gradient.h"
+
 
 @interface CHMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
@@ -29,6 +31,8 @@
     [self installRevealGesture];
     [self setTitle:@"慈海云健康"];
     self.datas = [[NSMutableArray alloc] init];
+    
+    [self.view setBackgroundColor:[UIColor gradientFromColor:[UIColor defaultColor] toColor:[UIColor whiteColor] height:kMainHeight]];
     
     [self.tableView blankTableFooterView];
     self.tableView.descriptionText = @"连接设备后\n才会显示数据哦";
@@ -51,11 +55,17 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self setNavBarClear:YES];
     if (![self isLogin]) {
         [self gotoLogin];
     }else{
         [self getDatas];
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self setNavBarClear:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,7 +127,7 @@
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, 10)];
-    view.backgroundColor = [UIColor color_f2f2f2];
+    view.backgroundColor = [UIColor clearColor];
     return view;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{

@@ -10,6 +10,7 @@
 
 #import "CHRootViewController.h"
 #import "UIApplication+Categories.h"
+#import "UINavigationBar+Awesome.h"
 
 @interface CHRootViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
@@ -47,6 +48,16 @@
     //To disable this pop gesture of a view controller:
     self.fd_interactivePopDisabled = fullScreenPopGestureDisabled;
 }
+
+- (void)setNavBarClear:(BOOL)flag{
+    if (flag) {
+        [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
+        [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    }else{
+        [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor defaultColor]];
+    }
+}
+
 - (void)hidenKeyboard{
     [UIApplication hideKeyboard];
 }
