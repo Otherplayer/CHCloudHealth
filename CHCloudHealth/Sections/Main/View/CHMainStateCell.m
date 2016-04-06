@@ -36,6 +36,7 @@
     [self.labDate setText:date];
     
     NSString *type = info[@"typeCode"];
+    [self.ivAvatar setImage:[UIImage imageNamed:[self imageWithType:type]]];
     if (type.integerValue < 4) {
         NSString *value = [NSString stringWithFormat:@"%@ %@",info[@"val"],[self unitWithType:type]];
         [self.labValue setAttributedText:[self fixColorText:value]];
@@ -46,6 +47,7 @@
         [self.labValue setLineBreakMode:NSLineBreakByWordWrapping];
         [self.labValue setText:description];
         [self.labValue setText:@"asfasasdf;ljf;sdaksdaffsdakjlasfdasdfasfafdadsfasdfffsdfafds"];
+        [self.labValue setFont:[UIFont systemFontOfSize:20]];
     }
 }
 
@@ -68,6 +70,29 @@
 //            case 5:
 //            return @"";
 //            break;
+        default:
+            return @"--";
+            break;
+    }
+}
+
+- (NSString *)imageWithType:(NSString *)type{
+    switch (type.integerValue) {
+        case 1:
+            return @"ios_icon_5";
+            break;
+        case 2:
+            return @"ios_icon_13";
+            break;
+        case 3:
+            return @"ios_icon_20";
+            break;
+        case 4:
+            return @"ios_icon_21";
+            break;
+        case 5:
+            return @"ios_icon_22";
+            break;
         default:
             return @"--";
             break;
