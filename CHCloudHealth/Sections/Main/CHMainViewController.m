@@ -67,7 +67,7 @@
         if (success) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.datas removeAllObjects];
-                [self.datas addObject:responseData[@"data"]];
+                [self.datas addObject:@[responseData[@"data"]]];
                 [self getHealthTypeInfo];
             });
         }else{
@@ -83,7 +83,9 @@
         if (success) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.tableView.loading = NO;
-                [self.datas addObjectsFromArray:responseData[@"data"]];
+                for (NSDictionary *info in responseData[@"data"]) {
+                    [self.datas addObject:@[info]];
+                }
                 [self.tableView reloadData];
             });
         }else{
@@ -95,21 +97,28 @@
 
 #pragma mark - Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.datas.count;
 }
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.datas[section] count];
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         return 221;
     }
-    return 154;
+    return 144;
 }
-
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, 10)];
+    view.backgroundColor = [UIColor color_f2f2f2];
+    return view;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 10;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary *info = [self.datas objectAtIndex:indexPath.row];
-    if (indexPath.row == 0) {
+    NSDictionary *info = self.datas[indexPath.section][indexPath.row];
+    if (indexPath.section == 0) {
         static NSString *identifierMainHeader = @"IdentifierMainHeaderCell";
         CHMainHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMainHeader forIndexPath:indexPath];
         [cell configure:info];
