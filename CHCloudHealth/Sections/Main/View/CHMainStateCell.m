@@ -53,6 +53,13 @@
         }
         [self.labValue setFont:[UIFont systemFontOfSize:20]];
     }
+    
+    if ([self isNormalWithType:type]) {
+        [self.labState setTextColor:[UIColor color_66666]];
+    }else{
+        [self.labState setTextColor:[UIColor color_ca4341]];
+    }
+    
 }
 
 
@@ -102,6 +109,31 @@
             break;
     }
 }
+
+- (BOOL)isNormalWithType:(NSString *)type{
+    switch (type.integerValue) {
+        case 1:
+            return YES;
+            break;
+        case 2:
+            return YES;
+            break;
+        case 3:
+            return NO;
+            break;
+        case 4:
+            return YES;
+            break;
+        case 5:
+            return NO;
+            break;
+        default:
+            return YES;
+            break;
+    }
+}
+
+
 
 - (NSAttributedString *)fixColorText:(NSString *)value{
     
