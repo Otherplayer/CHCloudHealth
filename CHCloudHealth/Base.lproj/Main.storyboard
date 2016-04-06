@@ -1628,7 +1628,6 @@
                                             <outlet property="labState" destination="ift-Tg-eFw" id="mTh-ZC-MWP"/>
                                             <outlet property="labTitle" destination="BuZ-au-sWt" id="bDQ-5K-dlU"/>
                                             <outlet property="labValue" destination="iMv-xs-o1C" id="z7P-VI-93w"/>
-                                            <segue destination="Xca-TB-arD" kind="custom" id="tik-Ul-aQw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1685,8 +1684,9 @@
                         <outlet property="mailButtonItem" destination="FyH-m0-vO3" id="b9Y-71-9LW"/>
                         <outlet property="revealButtonItem" destination="og5-Ae-hjF" id="ROq-A8-GCA"/>
                         <outlet property="tableView" destination="pmS-JY-Rqe" id="59z-c1-L2x"/>
-                        <segue destination="Wy0-ze-wLn" kind="custom" id="oik-b8-I4Z"/>
-                        <segue destination="PHq-zh-wkE" kind="custom" id="Vc0-K7-ZU3"/>
+                        <segue destination="Wy0-ze-wLn" kind="showDetail" id="O76-6b-wXO"/>
+                        <segue destination="PHq-zh-wkE" kind="showDetail" id="oXF-tD-lrX"/>
+                        <segue destination="Xca-TB-arD" kind="showDetail" id="7AB-4H-vRX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dxn-JO-h9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
