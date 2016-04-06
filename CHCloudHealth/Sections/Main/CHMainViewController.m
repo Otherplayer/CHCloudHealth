@@ -125,12 +125,13 @@
     return cell;
 }
 
-
+#pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelected:NO];
     CHStatisticsController *controller = [[CHStatisticsController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
-
 
 
 

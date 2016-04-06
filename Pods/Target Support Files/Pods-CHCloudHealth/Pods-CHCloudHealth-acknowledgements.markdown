@@ -52,6 +52,10 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 (MIT License)
 
+## JPush
+
+Copyright jpush.cn
+
 ## JSONModel
 
 JSONModel

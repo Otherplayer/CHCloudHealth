@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D94CAA9E78B8E364E9809543'
+               BlueprintIdentifier = '361052672AB4A23E3783922F'
                BlueprintName = 'JDStatusBarNotification'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libJDStatusBarNotification.a'>

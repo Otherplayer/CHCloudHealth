@@ -1392,8 +1392,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="alt-9q-Gf8" id="fXI-tV-mhz"/>
-                                    <outlet property="delegate" destination="alt-9q-Gf8" id="JWL-6x-IsA"/>
+                                    <outlet property="dataSource" destination="alt-9q-Gf8" id="Bao-JV-WYm"/>
+                                    <outlet property="delegate" destination="alt-9q-Gf8" id="4tj-uL-VdL"/>
                                 </connections>
                             </tableView>
                         </subviews>
