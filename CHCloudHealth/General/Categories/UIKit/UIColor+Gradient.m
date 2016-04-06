@@ -47,7 +47,11 @@ static inline UIColor *GradientFromColor(UIColor *fromColor,UIColor *toColor,int
     
     NSArray* colors = [NSArray arrayWithObjects:(id)fromColor.CGColor, (id)toColor.CGColor, nil];
     CGGradientRef gradient = CGGradientCreateWithColors(colorspace, (__bridge CFArrayRef)colors, NULL);
-    CGContextDrawLinearGradient(context, gradient, CGPointMake(0, 0), CGPointMake(0, size.height), 0);
+    NSArray* colors2 = [NSArray arrayWithObjects:(id)toColor.CGColor, (id)toColor.CGColor, nil];
+    CGGradientRef gradient2 = CGGradientCreateWithColors(colorspace, (__bridge CFArrayRef)colors2, NULL);
+    CGContextDrawLinearGradient(context, gradient, CGPointMake(0, 0), CGPointMake(0, size.height / 3.0), 0);
+    
+    CGContextDrawLinearGradient(context, gradient2, CGPointMake(0, size.height / 3.0), CGPointMake(0, size.height), 0);
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     
