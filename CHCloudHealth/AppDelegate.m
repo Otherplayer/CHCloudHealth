@@ -9,6 +9,15 @@
 #import "AppDelegate.h"
 #import <JPUSHService.h>
 
+
+
+#define kAPPKEY_JPUSH @""
+#define kAPPKEY_BAIDU_MAP @"rYSPcaBk64BaO4lWZnhVfS7za1UKssE0"
+
+
+
+
+
 @interface AppDelegate ()
 
 @end
@@ -21,7 +30,6 @@
     // Register Splite
     [[FQAHReachibility sharedInstance] startMonitoringInternetStates];
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"FQAHNetworking.sqlite"];
-    
     [self installJPUSH:launchOptions];
     
     
@@ -112,7 +120,12 @@
     
     // Required
     //如需兼容旧版本的方式，请依旧使用[JPUSHService setupWithOption:launchOptions]方式初始化和同时使用pushConfig.plist文件声明appKey等配置内容。
-    [JPUSHService setupWithOption:launchOptions appKey:@"" channel:nil apsForProduction:YES];
+    //isProduction 是否生产环境. 如果为开发状态,设置为 NO; 如果为生产状态,应改为 YES.
+    BOOL isProduction = YES;
+    if (DEBUG) {
+        isProduction = NO;
+    }
+    [JPUSHService setupWithOption:launchOptions appKey:kAPPKEY_JPUSH channel:nil apsForProduction:isProduction];
 }
 
 
