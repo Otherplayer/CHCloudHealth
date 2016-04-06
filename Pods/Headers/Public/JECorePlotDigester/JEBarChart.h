@@ -1,0 +1,1 @@
+../../../JECorePlotDigester/Classes/JEBarChart.h

@@ -1,0 +1,1 @@
+../../../JECorePlotDigester/Classes/CurvedScatterPlot.h

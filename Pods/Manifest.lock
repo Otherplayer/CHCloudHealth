@@ -20,7 +20,11 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - BaiduMapKit (2.10.2)
+  - CorePlot (1.6)
   - JDStatusBarNotification (1.5.3)
+  - JECorePlotDigester (0.1.8):
+    - CorePlot (~> 1.6)
   - JPush (2.1.0)
   - JRSwizzle (1.0)
   - JSONModel (1.1.2)
@@ -38,7 +42,9 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.0)
+  - BaiduMapKit (~> 2.10.2)
   - JDStatusBarNotification (~> 1.5.3)
+  - JECorePlotDigester (~> 0.1.8)
   - JPush (~> 2.1.0)
   - JRSwizzle (~> 1.0)
   - JSONModel (~> 1.1.0)
@@ -50,7 +56,10 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  BaiduMapKit: b1706a062597c70ec62a0cca93212cba1d3017e1
+  CorePlot: 820901f6c147f2d84549ffa1f0902869f980d74d
   JDStatusBarNotification: 29413865af11c862c17180610b0f46a21118b412
+  JECorePlotDigester: 86ef945daea8d955f5e39ec701c183412f72cfaf
   JPush: 92cb879829f0d81ab17b2c9ad009fdb88c6cf6e5
   JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
   JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc

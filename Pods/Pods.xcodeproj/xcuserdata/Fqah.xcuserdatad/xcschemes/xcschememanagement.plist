@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CorePlot.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JDStatusBarNotification.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JECorePlotDigester.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -72,12 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>44C91F216CA7D75DB9D4D896FBEA6103</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5F4EA1D99C8EC2F86D5AC5FDC0232EE5</key>
+		<key>6DDD59A921C191DC5D8E3238220B7CF2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7A8C07AE127F7F76336F79A23B66BC3F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7AE83E474B356C2273F57605DB10DE1F</key>
+		<key>7FE7CDCFA93C07A1BB5063FD814F439C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +102,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B1581F9CD8FA7089FC47FCEE30C6462A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7D0BE257544CDE960D6B8F48E2C0233</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CC69F157ADFE6B6635258B149730DD70</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D54AB3ECEB9A8FBA15D4F73CBE326692</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDBA78370F5A4652B2F4DD59008A1EF8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

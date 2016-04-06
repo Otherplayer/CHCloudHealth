@@ -70,9 +70,14 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // Required
+    
+    
     [JPUSHService registerDeviceToken:deviceToken];
+    
+    
+    NSString *token = [[deviceToken description] trimCharacterToToken];
     NSUserDefaults *standUserDefaults = [NSUserDefaults standardUserDefaults];
-    [standUserDefaults setObject:deviceToken forKey:kAppToken];
+    [standUserDefaults setObject:token forKey:kAppToken];
     [standUserDefaults synchronize];
 }
 
