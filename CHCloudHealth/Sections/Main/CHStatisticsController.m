@@ -9,7 +9,6 @@
 #import "CHStatisticsController.h"
 #import "JRGraphView.h"
 
-static int i = 1;
 @interface CHStatisticsController ()
 
 @property (nonatomic, strong)NSMutableArray *dataArr;

@@ -108,6 +108,7 @@
 		84FEA6D21CB5082E00ADA967 /* CHBindController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6D11CB5082E00ADA967 /* CHBindController.m */; };
 		84FEA6D71CB50B8000ADA967 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FEA6D61CB50B8000ADA967 /* CoreGraphics.framework */; };
 		84FEA6DD1CB50C8400ADA967 /* JRGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6DC1CB50C8400ADA967 /* JRGraphView.m */; };
+		84FEA6E01CB516F600ADA967 /* CHMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6DF1CB516F600ADA967 /* CHMessageController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -310,6 +311,8 @@
 		84FEA6D61CB50B8000ADA967 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		84FEA6DB1CB50C8400ADA967 /* JRGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRGraphView.h; sourceTree = "<group>"; };
 		84FEA6DC1CB50C8400ADA967 /* JRGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRGraphView.m; sourceTree = "<group>"; };
+		84FEA6DE1CB516F600ADA967 /* CHMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMessageController.h; sourceTree = "<group>"; };
+		84FEA6DF1CB516F600ADA967 /* CHMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMessageController.m; sourceTree = "<group>"; };
 		EA12FFC0D604A8243CDEE906 /* Pods-CHCloudHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHCloudHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHCloudHealth/Pods-CHCloudHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -617,6 +620,8 @@
 				63A447601CB4087B00046DC7 /* CHStatisticsController.m */,
 				84FEA6D01CB5082E00ADA967 /* CHBindController.h */,
 				84FEA6D11CB5082E00ADA967 /* CHBindController.m */,
+				84FEA6DE1CB516F600ADA967 /* CHMessageController.h */,
+				84FEA6DF1CB516F600ADA967 /* CHMessageController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -927,6 +932,7 @@
 				84B1E2FB1CAE77BA004573F4 /* NSDictionary+Categories.m in Sources */,
 				8472D20A1CAE53930003E35A /* FQAHURLResponse.m in Sources */,
 				84B1E3381CB3CDF6004573F4 /* HYQActionSheet.m in Sources */,
+				84FEA6E01CB516F600ADA967 /* CHMessageController.m in Sources */,
 				84B1E20A1CAE5E84004573F4 /* CHMenuViewController.m in Sources */,
 				8472D1FF1CAE53930003E35A /* FQAHCache.m in Sources */,
 				8472D2071CAE53930003E35A /* UIDevice+FQAHCategories.m in Sources */,
