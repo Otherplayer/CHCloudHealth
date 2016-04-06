@@ -16,6 +16,6 @@
 
 - (CHBaseNavigationController *)loginController;
 - (CHBaseNavigationController *)bindController;
-
+- (UIViewController *)statisticsController;
 
 @end

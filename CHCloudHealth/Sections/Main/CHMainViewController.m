@@ -141,8 +141,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:NO];
-    CHStatisticsController *controller = [[CHStatisticsController alloc] init];
-    [self.navigationController pushViewController:controller animated:YES];
+    if (indexPath.section > 0) {
+        UIViewController *controller = [[UIStoryboard mainStoryboard] statisticsController];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
 
@@ -169,13 +171,13 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    Get the new view controller using [segue destinationViewController].
-//    Pass the selected object to the new view controller.
-    
-    
-    
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+////    Get the new view controller using [segue destinationViewController].
+////    Pass the selected object to the new view controller.
+//    
+//    
+//    
+//}
 /*
 #pragma mark - Navigation
 

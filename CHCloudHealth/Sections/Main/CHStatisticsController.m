@@ -7,8 +7,16 @@
 //
 
 #import "CHStatisticsController.h"
+#import "JRGraphView.h"
 
+static int i = 1;
 @interface CHStatisticsController ()
+
+@property (nonatomic, strong)NSMutableArray *dataArr;
+
+@property (weak, nonatomic) IBOutlet JRGraphView *graphView;
+
+
 
 @end
 
@@ -17,6 +25,37 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    [self addBackButton];
+    self.dataArr = [[NSMutableArray alloc] init];
+    
+    for ( NSUInteger i = 0; i < 60; i++ ) {
+        NSNumber *x = @(i);
+        i = i + 1;
+        NSNumber *y = @((arc4random() % 280) + 1);
+        [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
+    }
+    
+    [self.graphView.plotDatasDictionary setObject:self.dataArr forKey:kDataLine];
+    [self.graphView setLowerwarningValue:35];
+    [self.graphView setUpwarningValue:170];
+    
+    [self.graphView refresh];
+}
+
+- (void)addAction{
+    
+    NSNumber *x = @(i);
+    i = i + 1;
+    NSNumber *y = @((arc4random() % 280) + 1);
+    [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
+    
+    [self.graphView.plotDatasDictionary setObject:self.dataArr forKey:kDataLine];
+    [self.graphView refresh];
+    //
+    //    if (i > 10) {
+    //        NSDictionary *dic = @"";
+    //        [dic objectForKey:@"x"];
+    //    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -18,6 +18,10 @@
 
 #pragma mark - Entry
 
+- (UIViewController *)statisticsController{
+    return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHStatisticsController"];
+}
+
 - (CHBaseNavigationController *)bindController{
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHNavBindController"];
 }
