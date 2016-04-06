@@ -12,6 +12,9 @@
 
 @interface CHRootViewController: UIViewController
 
+@property (nonatomic, assign) BOOL fullScreenPopGestureDisabled; //To disable this pop gesture of a view controller:
+
+
 - (void)installRevealGesture;
 
 - (void)hidenKeyboard;

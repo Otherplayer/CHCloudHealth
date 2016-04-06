@@ -25,6 +25,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self addBackButton];
+    [self setFullScreenPopGestureDisabled:YES];
+    
+    
     self.dataArr = [[NSMutableArray alloc] init];
     
     for ( NSUInteger i = 0; i < 60; i++ ) {

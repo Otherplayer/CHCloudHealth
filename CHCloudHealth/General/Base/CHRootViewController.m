@@ -43,6 +43,10 @@
 #pragma mark - Delegate
 
 #pragma mark - Private
+- (void)setFullScreenPopGestureDisabled:(BOOL)fullScreenPopGestureDisabled{
+    //To disable this pop gesture of a view controller:
+    self.fd_interactivePopDisabled = fullScreenPopGestureDisabled;
+}
 - (void)hidenKeyboard{
     [UIApplication hideKeyboard];
 }
