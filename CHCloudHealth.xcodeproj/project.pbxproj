@@ -109,6 +109,7 @@
 		84FEA6D71CB50B8000ADA967 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FEA6D61CB50B8000ADA967 /* CoreGraphics.framework */; };
 		84FEA6DD1CB50C8400ADA967 /* JRGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6DC1CB50C8400ADA967 /* JRGraphView.m */; };
 		84FEA6E01CB516F600ADA967 /* CHMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6DF1CB516F600ADA967 /* CHMessageController.m */; };
+		84FEA6E31CB51EA500ADA967 /* CHChangeNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6E21CB51EA500ADA967 /* CHChangeNameController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -313,6 +314,8 @@
 		84FEA6DC1CB50C8400ADA967 /* JRGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRGraphView.m; sourceTree = "<group>"; };
 		84FEA6DE1CB516F600ADA967 /* CHMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMessageController.h; sourceTree = "<group>"; };
 		84FEA6DF1CB516F600ADA967 /* CHMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMessageController.m; sourceTree = "<group>"; };
+		84FEA6E11CB51EA500ADA967 /* CHChangeNameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHChangeNameController.h; sourceTree = "<group>"; };
+		84FEA6E21CB51EA500ADA967 /* CHChangeNameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHChangeNameController.m; sourceTree = "<group>"; };
 		EA12FFC0D604A8243CDEE906 /* Pods-CHCloudHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHCloudHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHCloudHealth/Pods-CHCloudHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -376,6 +379,8 @@
 				63412E551CB2A35100FAD0DA /* CHSOSSetController.m */,
 				63412E571CB2A36700FAD0DA /* CHAPPManagerController.h */,
 				63412E581CB2A36700FAD0DA /* CHAPPManagerController.m */,
+				84FEA6E11CB51EA500ADA967 /* CHChangeNameController.h */,
+				84FEA6E21CB51EA500ADA967 /* CHChangeNameController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1001,6 +1006,7 @@
 				84B1E30C1CAE77BA004573F4 /* UIImage+Blur.m in Sources */,
 				84B1E3171CAE77BA004573F4 /* UIView+Extension.m in Sources */,
 				84B1E3071CAE77BA004573F4 /* UIResponder+Ghost.m in Sources */,
+				84FEA6E31CB51EA500ADA967 /* CHChangeNameController.m in Sources */,
 				84B1E30D1CAE77BA004573F4 /* UIImage+Color.m in Sources */,
 				84B1E3151CAE77BA004573F4 /* UIView+BlockGesture.m in Sources */,
 				63412E4A1CB2A29F00FAD0DA /* CHCareAreaController.m in Sources */,

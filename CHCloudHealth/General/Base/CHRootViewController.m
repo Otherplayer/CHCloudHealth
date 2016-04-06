@@ -19,6 +19,11 @@
 
 #pragma mark - LifeCircle
 
+- (void)loadView{
+    [super loadView];
+    self.view.backgroundColor = [UIColor color_f2f2f2];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

@@ -78,7 +78,8 @@
             }];
             [actionSheet showInView:self.view];
         }else if (indexPath.row == 2){
-            
+            UIViewController *controller = [[UIStoryboard mainStoryboard] changeNameController];
+            [self.navigationController pushViewController:controller animated:YES];
         }
     }
 }

@@ -26,6 +26,11 @@
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHMessageController"];
 }
 
+- (UIViewController *)changeNameController{
+    return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHChangeNameController"];
+}
+
+
 - (CHBaseNavigationController *)bindController{
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHNavBindController"];
 }

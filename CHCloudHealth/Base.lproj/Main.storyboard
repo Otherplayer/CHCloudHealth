@@ -632,10 +632,87 @@
                         </variation>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <segue destination="8ng-8Z-7PC" kind="show" id="17h-B9-SgV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfk-7E-GWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-492" y="1271"/>
+        </scene>
+        <!--修改昵称-->
+        <scene sceneID="cyN-Kn-otH">
+            <objects>
+                <viewController storyboardIdentifier="CHChangeNameController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8ng-8Z-7PC" customClass="CHChangeNameController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RKZ-RG-60I"/>
+                        <viewControllerLayoutGuide type="bottom" id="QNL-SM-CTb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aQO-Wz-oTY">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YU6-hW-iph" customClass="CHTextField">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Ug4-O6-Eiu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ug4-O6-Eiu"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Ug4-O6-Eiu"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YU6-hW-iph" firstAttribute="leading" secondItem="aQO-Wz-oTY" secondAttribute="leadingMargin" constant="-8" id="8yz-Ua-SQe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YU6-hW-iph" secondAttribute="trailing" constant="-8" id="Cnq-5I-Ko5"/>
+                            <constraint firstItem="YU6-hW-iph" firstAttribute="top" secondItem="RKZ-RG-60I" secondAttribute="bottom" constant="46" id="WPR-it-dDD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="YU6-hW-iph"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="8yz-Ua-SQe"/>
+                                <exclude reference="Cnq-5I-Ko5"/>
+                                <exclude reference="WPR-it-dDD"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="YU6-hW-iph"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="8yz-Ua-SQe"/>
+                                <include reference="Cnq-5I-Ko5"/>
+                                <include reference="WPR-it-dDD"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="修改昵称" id="PRp-aY-Fy2"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="YU6-hW-iph" id="tlP-wh-UbH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ykh-EL-n8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298.5" y="1271"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="H5W-fS-QLG">
