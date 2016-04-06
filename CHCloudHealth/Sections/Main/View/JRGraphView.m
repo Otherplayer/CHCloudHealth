@@ -79,7 +79,7 @@ static int standardLengthOfY = 200;
     
     // 设置图表 线 的样式
     CPTMutableLineStyle *lineStyle = [CPTMutableLineStyle lineStyle];
-    lineStyle.lineColor = [CPTColor redColor];
+    lineStyle.lineColor = [CPTColor colorWithCGColor:[UIColor defaultColor].CGColor];
     lineStyle.lineWidth = 1.f;
     // 设置关键 点 的样式
     CPTPlotSymbol * plotSymbol = [CPTPlotSymbol ellipsePlotSymbol];
@@ -135,7 +135,7 @@ static int standardLengthOfY = 200;
     // Warning lines
     CPTScatterPlot *warningUpLinePlot = [[CPTScatterPlot alloc] init];
     warningUpLinePlot.identifier = kWarningUpLine;
-    lineStyle.lineColor           = [CPTColor blueColor];
+    lineStyle.lineColor           = [CPTColor colorWithCGColor:[UIColor color_ca4341].CGColor];
     warningUpLinePlot.dataLineStyle = lineStyle;
     warningUpLinePlot.dataSource = self;
     [graph addPlot:warningUpLinePlot];
