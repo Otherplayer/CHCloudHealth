@@ -22,6 +22,10 @@
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHStatisticsController"];
 }
 
+- (UIViewController *)healthReportController{
+    return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHHealthReportController"];
+}
+
 - (UIViewController *)messageController{
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHMessageController"];
 }

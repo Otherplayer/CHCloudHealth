@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D28232D7C0428A043614F48 /* libPods-CHCloudHealth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7A51FD90EC5FD877E25B1E /* libPods-CHCloudHealth.a */; };
+		6315228F1CB55A4F00D8B160 /* CHHealthReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315228E1CB55A4F00D8B160 /* CHHealthReportController.m */; };
 		63412E231CB2628B00FAD0DA /* UIStoryboard+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E221CB2628B00FAD0DA /* UIStoryboard+Categories.m */; };
 		63412E271CB2634600FAD0DA /* CHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E261CB2634600FAD0DA /* CHLoginController.m */; };
 		63412E2A1CB2717B00FAD0DA /* CHRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E291CB2717B00FAD0DA /* CHRegisterController.m */; };
@@ -115,6 +116,8 @@
 /* Begin PBXFileReference section */
 		32E958EE73A4318A56D03553 /* Pods-CHCloudHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHCloudHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHCloudHealth/Pods-CHCloudHealth.release.xcconfig"; sourceTree = "<group>"; };
 		5A7A51FD90EC5FD877E25B1E /* libPods-CHCloudHealth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CHCloudHealth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6315228D1CB55A4F00D8B160 /* CHHealthReportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHHealthReportController.h; sourceTree = "<group>"; };
+		6315228E1CB55A4F00D8B160 /* CHHealthReportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHHealthReportController.m; sourceTree = "<group>"; };
 		63412E211CB2628B00FAD0DA /* UIStoryboard+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+Categories.h"; sourceTree = "<group>"; };
 		63412E221CB2628B00FAD0DA /* UIStoryboard+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+Categories.m"; sourceTree = "<group>"; };
 		63412E251CB2634600FAD0DA /* CHLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLoginController.h; sourceTree = "<group>"; };
@@ -627,6 +630,8 @@
 				84FEA6D11CB5082E00ADA967 /* CHBindController.m */,
 				84FEA6DE1CB516F600ADA967 /* CHMessageController.h */,
 				84FEA6DF1CB516F600ADA967 /* CHMessageController.m */,
+				6315228D1CB55A4F00D8B160 /* CHHealthReportController.h */,
+				6315228E1CB55A4F00D8B160 /* CHHealthReportController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -975,6 +980,7 @@
 				8472D2011CAE53930003E35A /* NSArray+FQAHCategories.m in Sources */,
 				84B1E30E1CAE77BA004573F4 /* UIImage+Extention.m in Sources */,
 				84B1E3121CAE77BA004573F4 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				6315228F1CB55A4F00D8B160 /* CHHealthReportController.m in Sources */,
 				8472D1FC1CAE53930003E35A /* FQAHDiskCachedObject+CoreDataProperties.m in Sources */,
 				8472D2021CAE53930003E35A /* NSDictionary+FQAHCategories.m in Sources */,
 				8464DE151CAA48C7000B987E /* AppDelegate.m in Sources */,

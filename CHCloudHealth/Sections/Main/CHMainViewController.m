@@ -7,7 +7,10 @@
 //
 
 #import "CHMainViewController.h"
+
 #import "CHStatisticsController.h"
+#import "CHHealthReportController.h"
+
 #import "CHBindController.h"
 #import "ViewController.h"
 #import "CHMainHeaderCell.h"
@@ -152,7 +155,24 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:NO];
     if (indexPath.section > 0) {
-        UIViewController *controller = [[UIStoryboard mainStoryboard] statisticsController];
+        
+        NSDictionary *info = self.datas[indexPath.section][indexPath.row];
+        NSString *type = info[@"typeCode"];
+        
+        //0001心率
+        //0002血压
+        //0003血糖
+        //0004位置
+        //0005健康
+        UIViewController *controller;
+        if (type.integerValue == 5) {
+            controller = [[UIStoryboard mainStoryboard] healthReportController];
+        }else if (type.integerValue == 4){
+            controller = [[UIStoryboard mainStoryboard] healthReportController];
+        }else{
+            controller = [[UIStoryboard mainStoryboard] statisticsController];
+        }
+        
         [self.navigationController pushViewController:controller animated:YES];
     }
 }
@@ -177,8 +197,8 @@
 }
 
 - (IBAction)mailAction:(id)sender {
-    CHBaseNavigationController *nav = [[UIStoryboard loginStoryboard] loginController];
-    [self presentViewController:nav animated:YES completion:nil];
+//    CHBaseNavigationController *nav = [[UIStoryboard loginStoryboard] loginController];
+//    [self presentViewController:nav animated:YES completion:nil];
 }
 
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

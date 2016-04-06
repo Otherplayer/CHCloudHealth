@@ -240,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UeP-CS-nkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="247.5" y="270"/>
+            <point key="canvasLocation" x="-214.5" y="332"/>
         </scene>
         <!--绑定设备-->
         <scene sceneID="S7f-cD-TQ4">
@@ -399,7 +399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTA-yW-lLS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2152.5" y="392"/>
+            <point key="canvasLocation" x="3493.5" y="56"/>
         </scene>
         <!--基础信息-->
         <scene sceneID="0lp-o2-PGs">
@@ -647,7 +647,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfk-7E-GWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-492" y="1271"/>
+            <point key="canvasLocation" x="-1584" y="1459"/>
         </scene>
         <!--昵称-->
         <scene sceneID="cyN-Kn-otH">
@@ -716,7 +716,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykh-EL-n8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298.5" y="1271"/>
+            <point key="canvasLocation" x="-793.5" y="1459"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="H5W-fS-QLG">
@@ -738,7 +738,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q7E-9Q-6zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-967.5" y="-180"/>
+            <point key="canvasLocation" x="-1543.5" y="332"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="TXi-au-XW2">
@@ -1628,7 +1628,7 @@
                                             <outlet property="labState" destination="ift-Tg-eFw" id="mTh-ZC-MWP"/>
                                             <outlet property="labTitle" destination="BuZ-au-sWt" id="bDQ-5K-dlU"/>
                                             <outlet property="labValue" destination="iMv-xs-o1C" id="z7P-VI-93w"/>
-                                            <segue destination="Wy0-ze-wLn" kind="show" trigger="accessoryAction" id="wUY-Tv-Bic"/>
+                                            <segue destination="Xca-TB-arD" kind="custom" id="tik-Ul-aQw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1677,7 +1677,7 @@
                         <barButtonItem key="rightBarButtonItem" image="ios_icon_16" id="FyH-m0-vO3">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="gje-8u-1Fd" kind="push" id="9eI-ch-54F"/>
+                                <segue destination="gje-8u-1Fd" kind="push" id="hj1-nG-Wo7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1685,6 +1685,8 @@
                         <outlet property="mailButtonItem" destination="FyH-m0-vO3" id="b9Y-71-9LW"/>
                         <outlet property="revealButtonItem" destination="og5-Ae-hjF" id="ROq-A8-GCA"/>
                         <outlet property="tableView" destination="pmS-JY-Rqe" id="59z-c1-L2x"/>
+                        <segue destination="Wy0-ze-wLn" kind="custom" id="oik-b8-I4Z"/>
+                        <segue destination="PHq-zh-wkE" kind="custom" id="Vc0-K7-ZU3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dxn-JO-h9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1755,7 +1757,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="orJ-cQ-k8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2182.5" y="-1174"/>
+            <point key="canvasLocation" x="4027.5" y="-1618"/>
         </scene>
         <!--Statistics Controller-->
         <scene sceneID="q6I-d6-ymr">
@@ -1855,7 +1857,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gp-JW-iSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2182.5" y="-469"/>
+            <point key="canvasLocation" x="2635.5" y="-917"/>
         </scene>
         <!--Base Navigation Controller-->
         <scene sceneID="IwR-t5-9Ew">
@@ -1873,7 +1875,80 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbU-3q-3cz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1324.5" y="392"/>
+            <point key="canvasLocation" x="2665.5" y="56"/>
+        </scene>
+        <!--健康报告-->
+        <scene sceneID="5cE-Xy-5EN">
+            <objects>
+                <viewController storyboardIdentifier="CHHealthReportController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PHq-zh-wkE" userLabel="健康报告" customClass="CHHealthReportController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kVE-Km-fHE"/>
+                        <viewControllerLayoutGuide type="bottom" id="eYu-T9-uaJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6eK-AA-dDB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WQr-Y2-Sr1">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdentifierHealthReportCell" id="hC8-Qe-C2E">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hC8-Qe-C2E" id="pxO-oq-9Ds">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="63.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="536"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="PHq-zh-wkE" id="kA4-3l-Uyu"/>
+                                    <outlet property="delegate" destination="PHq-zh-wkE" id="yOb-du-iWN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WQr-Y2-Sr1" firstAttribute="top" secondItem="kVE-Km-fHE" secondAttribute="bottom" id="JFv-6f-Ypy"/>
+                            <constraint firstItem="eYu-T9-uaJ" firstAttribute="top" secondItem="WQr-Y2-Sr1" secondAttribute="bottom" id="WAu-Xx-f3C"/>
+                            <constraint firstAttribute="trailing" secondItem="WQr-Y2-Sr1" secondAttribute="trailing" id="d0k-fh-TLg"/>
+                            <constraint firstItem="WQr-Y2-Sr1" firstAttribute="leading" secondItem="6eK-AA-dDB" secondAttribute="leading" id="tu2-2d-yvW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="WQr-Y2-Sr1"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="JFv-6f-Ypy"/>
+                                <exclude reference="d0k-fh-TLg"/>
+                                <exclude reference="tu2-2d-yvW"/>
+                                <exclude reference="WAu-Xx-f3C"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="WQr-Y2-Sr1"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="JFv-6f-Ypy"/>
+                                <include reference="d0k-fh-TLg"/>
+                                <include reference="tu2-2d-yvW"/>
+                                <include reference="WAu-Xx-f3C"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="健康报告" id="aJH-Cu-dxp"/>
+                    <connections>
+                        <outlet property="tableView" destination="WQr-Y2-Sr1" id="VqW-tr-7CW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9IW-g7-qpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3394.5" y="-917"/>
         </scene>
     </scenes>
     <resources>

@@ -18,5 +18,8 @@
 - (CHBaseNavigationController *)bindController;
 - (UIViewController *)statisticsController;
 - (UIViewController *)changeNameController;
+- (UIViewController *)healthReportController;
+
+
 
 @end
