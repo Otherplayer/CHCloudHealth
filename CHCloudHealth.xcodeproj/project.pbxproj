@@ -105,6 +105,7 @@
 		84B1E3391CB3CDF6004573F4 /* HYQAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E3371CB3CDF6004573F4 /* HYQAlertView.m */; };
 		84B1E33C1CB3CF0D004573F4 /* HYQHelperCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E33B1CB3CF0D004573F4 /* HYQHelperCamera.m */; };
 		84F1F4BE1CAD2CB60061AACC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F1F4BD1CAD2CB60061AACC /* CoreData.framework */; };
+		84FEA6D21CB5082E00ADA967 /* CHBindController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6D11CB5082E00ADA967 /* CHBindController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -302,6 +303,8 @@
 		84B1E33A1CB3CF0D004573F4 /* HYQHelperCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQHelperCamera.h; sourceTree = "<group>"; };
 		84B1E33B1CB3CF0D004573F4 /* HYQHelperCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQHelperCamera.m; sourceTree = "<group>"; };
 		84F1F4BD1CAD2CB60061AACC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		84FEA6D01CB5082E00ADA967 /* CHBindController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBindController.h; sourceTree = "<group>"; };
+		84FEA6D11CB5082E00ADA967 /* CHBindController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBindController.m; sourceTree = "<group>"; };
 		EA12FFC0D604A8243CDEE906 /* Pods-CHCloudHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHCloudHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHCloudHealth/Pods-CHCloudHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -604,6 +607,8 @@
 				84B1E2061CAE5B58004573F4 /* CHMainViewController.m */,
 				63A4475F1CB4087B00046DC7 /* CHStatisticsController.h */,
 				63A447601CB4087B00046DC7 /* CHStatisticsController.m */,
+				84FEA6D01CB5082E00ADA967 /* CHBindController.h */,
+				84FEA6D11CB5082E00ADA967 /* CHBindController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -933,6 +938,7 @@
 				84B1E3091CAE77BA004573F4 /* UIButton+CountDown.m in Sources */,
 				84B1E3001CAE77BA004573F4 /* NSString+HYQCategory.m in Sources */,
 				8472D2001CAE53930003E35A /* FQAHCachedObject.m in Sources */,
+				84FEA6D21CB5082E00ADA967 /* CHBindController.m in Sources */,
 				63412E471CB2A28100FAD0DA /* CHRelationShipController.m in Sources */,
 				84B1E30F1CAE77BA004573F4 /* UIImage+Orientation.m in Sources */,
 				8472D2041CAE53930003E35A /* NSMutableString+FQAHCategories.m in Sources */,

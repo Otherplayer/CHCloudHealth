@@ -8,6 +8,7 @@
 
 #import "CHMainViewController.h"
 #import "CHStatisticsController.h"
+#import "CHBindController.h"
 #import "ViewController.h"
 #import "CHMainHeaderCell.h"
 #import "CHMainStateCell.h"
@@ -34,7 +35,12 @@
     self.tableView.loadedImageName = @"ios_icon_17";
     self.tableView.buttonText = @"绑定设备";
     [self.tableView clickLoading:^{
-        [self getDatas];
+        CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
+        [self presentViewController:nav animated:YES completion:nil];
+//        if ([self isReachable]) {
+//        }else{
+//            [self getDatas];
+//        }
     }];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldGotoSubMenuController:) name:kNotificationMenuController object:nil];
@@ -89,6 +95,7 @@
                 [self.tableView reloadData];
             });
         }else{
+            self.tableView.loading = NO;
             [HYQShowTip showTipTextOnly:errDesc dealy:2];
         }
     }];

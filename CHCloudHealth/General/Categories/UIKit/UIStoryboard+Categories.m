@@ -18,6 +18,10 @@
 
 #pragma mark - Entry
 
+- (CHBaseNavigationController *)bindController{
+    return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHNavBindController"];
+}
+
 - (CHBaseNavigationController *)loginController{
     return [[UIStoryboard loginStoryboard] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
 }

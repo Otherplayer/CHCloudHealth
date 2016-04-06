@@ -15,7 +15,7 @@
 
 
 - (CHBaseNavigationController *)loginController;
-
+- (CHBaseNavigationController *)bindController;
 
 
 @end
