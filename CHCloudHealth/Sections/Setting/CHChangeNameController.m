@@ -23,6 +23,15 @@
     
     [self addRightButton2NavWithTitle:@"保存"];
     
+    
+    if (self.type == 1) {
+        self.title = @"电话";
+        self.nameTextField.placeholder = @"填写电话";
+    }else{
+        self.title = @"昵称";
+        self.nameTextField.placeholder = @"填写昵称";
+    }
+    
 }
 
 #pragma mark - Action

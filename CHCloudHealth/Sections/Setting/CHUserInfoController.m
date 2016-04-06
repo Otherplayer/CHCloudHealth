@@ -10,6 +10,7 @@
 #import "CHUnitCell.h"
 #import "CHUnitAvatarCell.h"
 #import "HYQHelperCamera.h"
+#import "CHChangeNameController.h"
 
 @interface CHUserInfoController ()
 @property (nonatomic, strong) NSArray *datas;
@@ -70,7 +71,9 @@
         }];
     }else{
         if (indexPath.row == 0) {
-            
+            CHChangeNameController *controller = (CHChangeNameController *)[[UIStoryboard mainStoryboard] changeNameController];
+            controller.type = 0;
+            [self.navigationController pushViewController:controller animated:YES];
         }else if (indexPath.row == 1){
             HYQActionSheet *actionSheet = [[HYQActionSheet alloc] initWithTitle:@"请选择性别" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"男",@"女", nil];
             [actionSheet handlerClickedButton:^(NSInteger btnIndex) {
@@ -78,7 +81,8 @@
             }];
             [actionSheet showInView:self.view];
         }else if (indexPath.row == 2){
-            UIViewController *controller = [[UIStoryboard mainStoryboard] changeNameController];
+            CHChangeNameController *controller = (CHChangeNameController *)[[UIStoryboard mainStoryboard] changeNameController];
+            controller.type = 1;
             [self.navigationController pushViewController:controller animated:YES];
         }
     }

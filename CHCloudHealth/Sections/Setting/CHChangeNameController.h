@@ -10,4 +10,6 @@
 
 @interface CHChangeNameController : CHRootViewController
 
+@property (nonatomic, assign) NSInteger type;//0是昵称，1是电话
+
 @end

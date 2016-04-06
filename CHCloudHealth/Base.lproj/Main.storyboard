@@ -640,7 +640,7 @@
             </objects>
             <point key="canvasLocation" x="-492" y="1271"/>
         </scene>
-        <!--修改昵称-->
+        <!--昵称-->
         <scene sceneID="cyN-Kn-otH">
             <objects>
                 <viewController storyboardIdentifier="CHChangeNameController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8ng-8Z-7PC" customClass="CHChangeNameController" sceneMemberID="viewController">
@@ -651,46 +651,40 @@
                     <view key="view" contentMode="scaleToFill" id="aQO-Wz-oTY">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YU6-hW-iph" customClass="CHTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="填写昵称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YU6-hW-iph" customClass="CHTextField">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Ug4-O6-Eiu"/>
+                                    <constraint firstAttribute="height" constant="53" id="JmG-EZ-r5I"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <real key="value" value="22.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Ug4-O6-Eiu"/>
+                                        <exclude reference="JmG-EZ-r5I"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="Ug4-O6-Eiu"/>
+                                        <include reference="JmG-EZ-r5I"/>
                                     </mask>
                                 </variation>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YU6-hW-iph" firstAttribute="leading" secondItem="aQO-Wz-oTY" secondAttribute="leadingMargin" constant="-8" id="8yz-Ua-SQe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YU6-hW-iph" secondAttribute="trailing" constant="-8" id="Cnq-5I-Ko5"/>
-                            <constraint firstItem="YU6-hW-iph" firstAttribute="top" secondItem="RKZ-RG-60I" secondAttribute="bottom" constant="46" id="WPR-it-dDD"/>
+                            <constraint firstItem="YU6-hW-iph" firstAttribute="top" secondItem="RKZ-RG-60I" secondAttribute="bottom" constant="46" id="FEv-rN-GVA"/>
+                            <constraint firstItem="YU6-hW-iph" firstAttribute="leading" secondItem="aQO-Wz-oTY" secondAttribute="leading" id="HA5-Vd-1pP"/>
+                            <constraint firstAttribute="trailing" secondItem="YU6-hW-iph" secondAttribute="trailing" id="S2J-US-ytu"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="YU6-hW-iph"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="8yz-Ua-SQe"/>
-                                <exclude reference="Cnq-5I-Ko5"/>
-                                <exclude reference="WPR-it-dDD"/>
+                                <exclude reference="FEv-rN-GVA"/>
+                                <exclude reference="HA5-Vd-1pP"/>
+                                <exclude reference="S2J-US-ytu"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -698,13 +692,13 @@
                                 <include reference="YU6-hW-iph"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="8yz-Ua-SQe"/>
-                                <include reference="Cnq-5I-Ko5"/>
-                                <include reference="WPR-it-dDD"/>
+                                <include reference="FEv-rN-GVA"/>
+                                <include reference="HA5-Vd-1pP"/>
+                                <include reference="S2J-US-ytu"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="修改昵称" id="PRp-aY-Fy2"/>
+                    <navigationItem key="navigationItem" title="昵称" id="PRp-aY-Fy2"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="nameTextField" destination="YU6-hW-iph" id="tlP-wh-UbH"/>
