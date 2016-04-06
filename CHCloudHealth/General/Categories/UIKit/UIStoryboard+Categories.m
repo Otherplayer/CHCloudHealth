@@ -26,6 +26,10 @@
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHHealthReportController"];
 }
 
+- (UIViewController *)locationAreaController{
+    return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHLocationAreaController"];
+}
+
 - (UIViewController *)messageController{
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHMessageController"];
 }

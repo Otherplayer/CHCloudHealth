@@ -1687,6 +1687,7 @@
                         <segue destination="Wy0-ze-wLn" kind="showDetail" id="O76-6b-wXO"/>
                         <segue destination="PHq-zh-wkE" kind="showDetail" id="oXF-tD-lrX"/>
                         <segue destination="Xca-TB-arD" kind="showDetail" id="7AB-4H-vRX"/>
+                        <segue destination="g5w-d5-lvB" kind="showDetail" id="voD-xb-Kg8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dxn-JO-h9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1952,10 +1953,10 @@
             </objects>
             <point key="canvasLocation" x="3394.5" y="-917"/>
         </scene>
-        <!--View Controller-->
+        <!--Location Area Controller-->
         <scene sceneID="X0y-ae-IDk">
             <objects>
-                <viewController id="g5w-d5-lvB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CHLocationAreaController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g5w-d5-lvB" customClass="CHLocationAreaController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Il-Eh-YTK"/>
                         <viewControllerLayoutGuide type="bottom" id="UH1-RU-ZNz"/>

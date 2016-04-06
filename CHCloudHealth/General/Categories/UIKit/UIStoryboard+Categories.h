@@ -19,7 +19,7 @@
 - (UIViewController *)statisticsController;
 - (UIViewController *)changeNameController;
 - (UIViewController *)healthReportController;
-
+- (UIViewController *)locationAreaController;
 
 
 @end

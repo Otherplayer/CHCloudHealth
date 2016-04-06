@@ -168,7 +168,7 @@
         if (type.integerValue == 5) {
             controller = [[UIStoryboard mainStoryboard] healthReportController];
         }else if (type.integerValue == 4){
-            controller = [[UIStoryboard mainStoryboard] healthReportController];
+            controller = [[UIStoryboard mainStoryboard] locationAreaController];
         }else{
             controller = [[UIStoryboard mainStoryboard] statisticsController];
         }
