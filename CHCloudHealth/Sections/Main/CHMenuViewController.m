@@ -21,6 +21,7 @@
     // Do any additional setup after loading the view.
     self.datas = [[NSMutableArray alloc] init];
     //self.tableView.tableHeaderView = self.tableHeaderView;
+    [self.view setBackgroundColor:[UIColor defaultColor]];
     [self.tableView blankTableFooterView];
     [self.tableView setBackgroundColor:[UIColor defaultColor]];
     // section first
