@@ -236,6 +236,8 @@
                     <connections>
                         <outlet property="tableView" destination="wQL-mQ-taH" id="t9d-b2-z1e"/>
                         <segue destination="fd9-W1-a8j" kind="custom" id="74Z-x8-Q9F"/>
+                        <segue destination="Yxn-UT-deK" kind="showDetail" id="Qtg-bG-0h6"/>
+                        <segue destination="WcM-8J-SIJ" kind="showDetail" id="7fe-9s-IeC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UeP-CS-nkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -649,6 +651,40 @@
             </objects>
             <point key="canvasLocation" x="-1584" y="1459"/>
         </scene>
+        <!--Location Monitor Controller-->
+        <scene sceneID="ohO-CN-4x4">
+            <objects>
+                <viewController storyboardIdentifier="CHLocationMonitorController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yxn-UT-deK" customClass="CHLocationMonitorController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CJO-0h-7ny"/>
+                        <viewControllerLayoutGuide type="bottom" id="tGw-qe-mKK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bhG-iG-Kac">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j1N-ZP-yTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-856.5" y="1457"/>
+        </scene>
+        <!--Monitor Care Controller-->
+        <scene sceneID="BfR-T8-zJZ">
+            <objects>
+                <viewController storyboardIdentifier="CHMonitorCareController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WcM-8J-SIJ" customClass="CHMonitorCareController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z94-gD-8tV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vbl-ON-5sa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oKB-Bi-Smr">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7oe-1g-d91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-160.5" y="1459"/>
+        </scene>
         <!--昵称-->
         <scene sceneID="cyN-Kn-otH">
             <objects>
@@ -716,7 +752,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykh-EL-n8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-793.5" y="1459"/>
+            <point key="canvasLocation" x="-1063.5" y="2313"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="H5W-fS-QLG">
