@@ -201,7 +201,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.054901960780000002" green="0.40000000000000002" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wQL-mQ-taH" firstAttribute="top" secondItem="7Rl-fw-hYH" secondAttribute="top" id="AVn-A2-IaB"/>
                             <constraint firstAttribute="trailing" secondItem="wQL-mQ-taH" secondAttribute="trailing" id="JQr-zk-uwX">
@@ -1905,9 +1905,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="536"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="PHq-zh-wkE" id="kA4-3l-Uyu"/>
                                     <outlet property="delegate" destination="PHq-zh-wkE" id="yOb-du-iWN"/>
@@ -1926,10 +1923,10 @@
                                 <exclude reference="WQr-Y2-Sr1"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="WAu-Xx-f3C"/>
                                 <exclude reference="JFv-6f-Ypy"/>
                                 <exclude reference="d0k-fh-TLg"/>
                                 <exclude reference="tu2-2d-yvW"/>
-                                <exclude reference="WAu-Xx-f3C"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1937,10 +1934,10 @@
                                 <include reference="WQr-Y2-Sr1"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="WAu-Xx-f3C"/>
                                 <include reference="JFv-6f-Ypy"/>
                                 <include reference="d0k-fh-TLg"/>
                                 <include reference="tu2-2d-yvW"/>
-                                <include reference="WAu-Xx-f3C"/>
                             </mask>
                         </variation>
                     </view>
@@ -1962,6 +1959,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UH1-RU-ZNz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="f8N-bh-N7Q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
