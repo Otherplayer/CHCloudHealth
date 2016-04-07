@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CHMonitorCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *labLeftTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labLeftDetail;
+@property (weak, nonatomic) IBOutlet UILabel *labTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labRightTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labRightDetail;
 
 @end
