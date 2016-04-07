@@ -15,10 +15,9 @@
 #define kAPPKEY_BAIDU_MAP @"rYSPcaBk64BaO4lWZnhVfS7za1UKssE0"
 
 
-
-
-
-@interface AppDelegate ()
+@interface AppDelegate (){
+    BMKMapManager* _mapManager;
+}
 
 @end
 
@@ -31,7 +30,7 @@
     [[FQAHReachibility sharedInstance] startMonitoringInternetStates];
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"FQAHNetworking.sqlite"];
     [self installJPUSH:launchOptions];
-    
+    [self installBaiduMap];
     
     
     return YES;
@@ -132,7 +131,15 @@
     }
     [JPUSHService setupWithOption:launchOptions appKey:kAPPKEY_JPUSH channel:nil apsForProduction:isProduction];
 }
-
+- (void)installBaiduMap{
+    // 要使用百度地图，请先启动BaiduMapManager
+    _mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [_mapManager start:kAPPKEY_BAIDU_MAP generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+}
 
 
 
