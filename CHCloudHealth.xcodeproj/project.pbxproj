@@ -30,6 +30,8 @@
 		63412E591CB2A36700FAD0DA /* CHAPPManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E581CB2A36700FAD0DA /* CHAPPManagerController.m */; };
 		63412E5E1CB2A58400FAD0DA /* CHMainHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */; };
 		63412E611CB2B31900FAD0DA /* CHMainStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E601CB2B31900FAD0DA /* CHMainStateCell.m */; };
+		637339A41CB69F750018FE46 /* CHSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 637339A31CB69F750018FE46 /* CHSwitchCell.m */; };
+		637339A71CB6A2C50018FE46 /* CHMonitorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 637339A61CB6A2C50018FE46 /* CHMonitorCell.m */; };
 		63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */; };
 		63A447611CB4087B00046DC7 /* CHStatisticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A447601CB4087B00046DC7 /* CHStatisticsController.m */; };
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
@@ -161,6 +163,10 @@
 		63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMainHeaderCell.m; sourceTree = "<group>"; };
 		63412E5F1CB2B31900FAD0DA /* CHMainStateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMainStateCell.h; sourceTree = "<group>"; };
 		63412E601CB2B31900FAD0DA /* CHMainStateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMainStateCell.m; sourceTree = "<group>"; };
+		637339A21CB69F750018FE46 /* CHSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSwitchCell.h; sourceTree = "<group>"; };
+		637339A31CB69F750018FE46 /* CHSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSwitchCell.m; sourceTree = "<group>"; };
+		637339A51CB6A2C50018FE46 /* CHMonitorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMonitorCell.h; sourceTree = "<group>"; };
+		637339A61CB6A2C50018FE46 /* CHMonitorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMonitorCell.m; sourceTree = "<group>"; };
 		63A29B451CB0D23C009C61B2 /* HYQHelperHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQHelperHUD.h; sourceTree = "<group>"; };
 		63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQHelperHUD.m; sourceTree = "<group>"; };
 		63A4475F1CB4087B00046DC7 /* CHStatisticsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHStatisticsController.h; sourceTree = "<group>"; };
@@ -795,6 +801,10 @@
 				84B1E32F1CB3C698004573F4 /* CHUnitCell.m */,
 				84B1E3311CB3C7E2004573F4 /* CHUnitAvatarCell.h */,
 				84B1E3321CB3C7E2004573F4 /* CHUnitAvatarCell.m */,
+				637339A21CB69F750018FE46 /* CHSwitchCell.h */,
+				637339A31CB69F750018FE46 /* CHSwitchCell.m */,
+				637339A51CB6A2C50018FE46 /* CHMonitorCell.h */,
+				637339A61CB6A2C50018FE46 /* CHMonitorCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1010,6 +1020,7 @@
 				84B1E3031CAE77BA004573F4 /* UIColor+HexRGB.m in Sources */,
 				84B1E30A1CAE77BA004573F4 /* UIButton+UIButton_BackgroundImageButton.m in Sources */,
 				84B1E3081CAE77BA004573F4 /* NSString+Size.m in Sources */,
+				637339A71CB6A2C50018FE46 /* CHMonitorCell.m in Sources */,
 				63412E501CB2A2E800FAD0DA /* CHMonitorCareController.m in Sources */,
 				63A447611CB4087B00046DC7 /* CHStatisticsController.m in Sources */,
 				84B1E33C1CB3CF0D004573F4 /* HYQHelperCamera.m in Sources */,
@@ -1022,6 +1033,7 @@
 				84B1E30D1CAE77BA004573F4 /* UIImage+Color.m in Sources */,
 				84B1E3151CAE77BA004573F4 /* UIView+BlockGesture.m in Sources */,
 				63412E4A1CB2A29F00FAD0DA /* CHCareAreaController.m in Sources */,
+				637339A41CB69F750018FE46 /* CHSwitchCell.m in Sources */,
 				84B1E3021CAE77BA004573F4 /* UIApplication+Categories.m in Sources */,
 				63412E2D1CB273CA00FAD0DA /* CHBaseNavigationController.m in Sources */,
 				8464DE121CAA48C7000B987E /* main.m in Sources */,

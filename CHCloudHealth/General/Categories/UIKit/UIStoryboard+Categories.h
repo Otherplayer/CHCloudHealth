@@ -18,6 +18,7 @@
 - (CHBaseNavigationController *)bindController;
 - (UIViewController *)statisticsController;
 - (UIViewController *)changeNameController;
+- (UIViewController *)locationMonitorController;
 - (UIViewController *)healthReportController;
 - (UIViewController *)locationAreaController;
 

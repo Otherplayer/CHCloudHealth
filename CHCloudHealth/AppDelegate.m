@@ -137,7 +137,7 @@
     // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
     BOOL ret = [_mapManager start:kAPPKEY_BAIDU_MAP generalDelegate:nil];
     if (!ret) {
-        NSLog(@"manager start failed!");
+        NSLog(@"Baidu map manager start failed!");
     }
 }
 

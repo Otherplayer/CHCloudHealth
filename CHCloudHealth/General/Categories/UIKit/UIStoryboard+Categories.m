@@ -38,6 +38,10 @@
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHChangeNameController"];
 }
 
+- (UIViewController *)locationMonitorController{
+    return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHLocationMonitorController"];
+}
+
 
 - (CHBaseNavigationController *)bindController{
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHNavBindController"];
