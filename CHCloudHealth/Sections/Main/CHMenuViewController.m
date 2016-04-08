@@ -16,7 +16,8 @@
 
 @implementation CHMenuViewController
 
-- (voidviewDidLoad];
+- (void)viewDidLoad {
+    [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.datas = [[NSMutableArray alloc] init];
     //self.tableView.tableHeaderView = self.tableHeaderView;
@@ -24,8 +25,7 @@
     [self.tableView blankTableFooterView];
     [self.tableView setBackgroundColor:[UIColor defaultColor]];
     // section first
-)viewDidLoad {
-    [super     [self.datas addObject:@[@{@"title":@"设置",@"image":@"ios_icon_18"}]];
+   [self.datas addObject:@[@{@"title":@"设置",@"image":@"ios_icon_18"}]];
     // section second
     [self.datas addObject:@[@{@"title":@"基础信息",@"identifier":@"CHUserInfoController"},
                             @{@"title":@"亲情号码"},
