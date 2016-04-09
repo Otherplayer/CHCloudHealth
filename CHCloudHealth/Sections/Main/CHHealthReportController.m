@@ -35,15 +35,18 @@
 #pragma mark -
 
 - (void)getDatas{
-    double delayInSeconds = 1;
-    dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-    // 得到全局队列
-    dispatch_queue_t concurrentQueue = dispatch_get_main_queue();
-    // 延期执行
-    dispatch_after(delayInNanoSeconds, concurrentQueue, ^(void){
-        self.tableView.loading = NO;
-        [self.tableView reloadData];
-    });
+    
+    [[NetworkingManager sharedManager] getHealthRecordInfo:@"deviceUserId" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        if (success) {
+            
+            self.tableView.loading = NO;
+            [self.tableView reloadData];
+        }else{
+            self.tableView.loading = NO;
+            [HYQShowTip showTipTextOnly:errDesc dealy:2];
+        }
+    }];
+    
 }
 
 
