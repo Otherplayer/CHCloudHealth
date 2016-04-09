@@ -22,11 +22,8 @@
     [super viewDidLoad];
     
     [self addBackButton];
-//    
-//    self.mobileTextField.layer.borderWidth = 0.5;
-//    self.mobileTextField.layer.borderColor = [UIColor color_33333].CGColor;
-    
-     self.view.backgroundColor = [UIColor color_f2f2f2];
+
+    self.view.backgroundColor = [UIColor color_f2f2f2];
 }
 
 

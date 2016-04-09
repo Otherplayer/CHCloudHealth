@@ -28,14 +28,7 @@
     
     [self addBackButton];
     
-//    self.captchaTextField.layer.borderWidth = 0.5;
-//    self.captchaTextField.layer.borderColor = [UIColor color_33333].CGColor;
-//    self.psdTextField.layer.borderWidth = 0.5;
-//    self.psdTextField.layer.borderColor = [UIColor color_33333].CGColor;
-//    self.psdAgainTextField.layer.borderWidth = 0.5;
-//    self.psdAgainTextField.layer.borderColor = [UIColor color_33333].CGColor;
-//    
-     self.view.backgroundColor = [UIColor color_f2f2f2];
+    self.view.backgroundColor = [UIColor color_f2f2f2];
     
 }
 
@@ -45,6 +38,15 @@
 - (IBAction)confirmAction:(id)sender {
 }
 - (IBAction)getCaptchaAction:(id)sender {
+    
+    [[NetworkingManager sharedManager] getCaptchaWithMobile:self.mobileNum type:@"" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        if (success) {
+            
+        }else{
+            [HYQShowTip showTipTextOnly:errDesc dealy:2];
+        }
+    }];
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
