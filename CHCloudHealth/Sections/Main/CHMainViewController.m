@@ -16,6 +16,7 @@
 #import "CHMainHeaderCell.h"
 #import "CHMainStateCell.h"
 #import "UIColor+Gradient.h"
+#import "NSObject+FQAHCategories.h"
 
 
 @interface CHMainViewController ()<UITableViewDelegate,UITableViewDataSource>{
@@ -43,7 +44,7 @@
     self.tableView.loadedImageName = @"ios_icon_17";
     self.tableView.buttonText = @"绑定设备";
     [self.tableView clickLoading:^{
-        if ([[CHUser sharedInstance].deviceId isBlackString]) {
+        if ([[CHUser sharedInstance].deviceId isEmptyObject]) {
             CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
             [self presentViewController:nav animated:YES completion:nil];
         }else{
@@ -67,7 +68,11 @@
         [self gotoLogin];
     }else{
         [self getDatas];
+//        [[NetworkingManager sharedManager] getBindDeviceListInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+//            
+//        }];
     }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -87,7 +92,8 @@
     
     self.tableView.loading = YES;
     
-    if ([[CHUser sharedInstance].deviceId isBlackString]) {
+    NSLog(@"%@",[CHUser sharedInstance].deviceId);
+    if (![CHUser sharedInstance].deviceId || [CHUser sharedInstance].deviceId.length == 0) {
         self.tableView.loading = NO;
         [self.tableView reloadData];
         return;

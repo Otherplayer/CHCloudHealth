@@ -155,8 +155,8 @@ NSString *const kAPI_SIZE = @"size";
     [self POST:kAPI_HealthRecordDetail params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
-- (void)getNoticeListInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"userId":userId};
+- (void)getNoticeListInfo:(NSString *)userId page:(NSInteger)page size:(NSInteger)size completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"userId":userId,kAPI_PAGE:@(page),kAPI_SIZE:@(size)};
     [self POST:kAPI_NoticeList params:params memoryCache:NO diskCache:NO completed:completed];
 }
 - (void)getNoticeDetailInfo:(NSString *)noticeId completedHandler:(GGRequestCallbackBlock)completed{

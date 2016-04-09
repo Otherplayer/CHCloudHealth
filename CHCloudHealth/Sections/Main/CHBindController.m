@@ -39,7 +39,9 @@
         NSString *deviceNumber = [self.numTextField.text trimmingWhitespace];
         [[NetworkingManager sharedManager] bindDevice:[CHUser sharedInstance].uid number:deviceNumber completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
+                [CHUser sharedInstance].deviceId = deviceNumber;
                 [self dismissViewControllerAnimated:YES completion:nil];
+                [HYQShowTip showTipTextOnly:@"绑定成功" dealy:2];
             }else{
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];
             }

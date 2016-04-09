@@ -29,12 +29,13 @@
     // section second
     [self.datas addObject:@[
                             @{@"title":@"基础信息",@"identifier":@"CHUserInfoController"},
-                            @{@"title":@"亲情号码"},
+                            @{@"title":@"亲情号码",@"identifier":@"CHRelationShipController"},
 //                            @{@"title":@"监护区域",@"identifier":@"CHMonitorCareController"},
                             @{@"title":@"位置监测",@"identifier":@"CHLocationMonitorController"},
                             @{@"title":@"心率监测",@"identifier":@"CHMonitorCareController"},
                             @{@"title":@"血糖监测",@"identifier":@"CHMonitorCareController"},
                             @{@"title":@"血压监测",@"identifier":@"CHMonitorCareController"},
+                            @{@"title":@"设备管理",@"identifier":@"CHDeviceManagerController"},
 //                            @{@"title":@"服药提醒"},
                             @{@"title":@"紧急求助"},
 //                            @{@"title":@"SOS设置"}

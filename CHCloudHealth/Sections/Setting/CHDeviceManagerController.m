@@ -1,22 +1,22 @@
 //
-//  CHMessageController.m
+//  CHDeviceManagerController.m
 //  CHCloudHealth
 //
-//  Created by __无邪_ on 4/6/16.
-//  Copyright © 2016 fqah. All rights reserved.
+//  Created by __无邪_ on 16/4/9.
+//  Copyright © 2016年 fqah. All rights reserved.
 //
 
-#import "CHMessageController.h"
+#import "CHDeviceManagerController.h"
 #import "CMMessageCell.h"
 
-@interface CHMessageController ()
-
+@interface CHDeviceManagerController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *datas;
 
 @end
 
-@implementation CHMessageController
+@implementation CHDeviceManagerController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +26,7 @@
     self.datas = [[NSMutableArray alloc] init];
     
     [self.tableView blankTableFooterView];
-    self.tableView.descriptionText = @"还没有消息哦";
+    self.tableView.descriptionText = @"还没有绑定设备哦哦";
     self.tableView.loadedImageName = @"ios_icon_17";
     
     self.tableView.loading = YES;
@@ -38,7 +38,7 @@
 
 - (void)getDatas{
     
-    [[NetworkingManager sharedManager] getNoticeListInfo:[CHUser sharedInstance].uid page:1 size:12 completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+    [[NetworkingManager sharedManager] getBindDeviceListInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
             
             self.tableView.loading = NO;
@@ -71,13 +71,15 @@
 }
 
 /*
-#pragma mark - Navigation
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

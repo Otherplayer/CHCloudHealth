@@ -30,6 +30,7 @@
 		63412E591CB2A36700FAD0DA /* CHAPPManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E581CB2A36700FAD0DA /* CHAPPManagerController.m */; };
 		63412E5E1CB2A58400FAD0DA /* CHMainHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */; };
 		63412E611CB2B31900FAD0DA /* CHMainStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E601CB2B31900FAD0DA /* CHMainStateCell.m */; };
+		634131861CB8EBEB0072C8DA /* CHDeviceManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634131851CB8EBEB0072C8DA /* CHDeviceManagerController.m */; };
 		637339A41CB69F750018FE46 /* CHSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 637339A31CB69F750018FE46 /* CHSwitchCell.m */; };
 		637339A71CB6A2C50018FE46 /* CHMonitorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 637339A61CB6A2C50018FE46 /* CHMonitorCell.m */; };
 		63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */; };
@@ -165,6 +166,8 @@
 		63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMainHeaderCell.m; sourceTree = "<group>"; };
 		63412E5F1CB2B31900FAD0DA /* CHMainStateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMainStateCell.h; sourceTree = "<group>"; };
 		63412E601CB2B31900FAD0DA /* CHMainStateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMainStateCell.m; sourceTree = "<group>"; };
+		634131841CB8EBEB0072C8DA /* CHDeviceManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHDeviceManagerController.h; sourceTree = "<group>"; };
+		634131851CB8EBEB0072C8DA /* CHDeviceManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHDeviceManagerController.m; sourceTree = "<group>"; };
 		637339A21CB69F750018FE46 /* CHSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSwitchCell.h; sourceTree = "<group>"; };
 		637339A31CB69F750018FE46 /* CHSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSwitchCell.m; sourceTree = "<group>"; };
 		637339A51CB6A2C50018FE46 /* CHMonitorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMonitorCell.h; sourceTree = "<group>"; };
@@ -401,6 +404,8 @@
 				84FEA6E21CB51EA500ADA967 /* CHChangeNameController.m */,
 				63B983901CB8AF3400150EA2 /* CHSetTimeIntervalController.h */,
 				63B983911CB8AF3400150EA2 /* CHSetTimeIntervalController.m */,
+				634131841CB8EBEB0072C8DA /* CHDeviceManagerController.h */,
+				634131851CB8EBEB0072C8DA /* CHDeviceManagerController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -962,6 +967,7 @@
 				84B1E2FA1CAE77BA004573F4 /* NSDate+HYQFormatter.m in Sources */,
 				63412E5E1CB2A58400FAD0DA /* CHMainHeaderCell.m in Sources */,
 				63412E301CB279B300FAD0DA /* CHResetPsdStep1Controller.m in Sources */,
+				634131861CB8EBEB0072C8DA /* CHDeviceManagerController.m in Sources */,
 				8472D1FE1CAE53930003E35A /* FQAHNetworking.xcdatamodeld in Sources */,
 				8464DE181CAA48C7000B987E /* ViewController.m in Sources */,
 				84B1E2FB1CAE77BA004573F4 /* NSDictionary+Categories.m in Sources */,

@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CHCloudHealth/Sections/Main/CHBindController.m"
-            timestampString = "481879301.58335"
+            filePath = "CHCloudHealth/Sections/Setting/CHDeviceManagerController.m"
+            timestampString = "481881682.960854"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "-rightBarButtonPressed:"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-getDatas"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CHCloudHealth/Sections/Setting/CHDeviceManagerController.m"
+            timestampString = "481881685.688946"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-getDatas"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
