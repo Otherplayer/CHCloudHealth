@@ -164,13 +164,17 @@
         //0003血糖
         //0004位置
         //0005健康
-        UIViewController *controller;
+        id controller;
         if (type.integerValue == 5) {
             controller = [[UIStoryboard mainStoryboard] healthReportController];
         }else if (type.integerValue == 4){
             controller = [[UIStoryboard mainStoryboard] locationAreaController];
         }else{
-            controller = [[UIStoryboard mainStoryboard] statisticsController];
+            
+            controller = (CHStatisticsController *)[[UIStoryboard mainStoryboard] statisticsController];
+            CHStatisticsController *tempController = (CHStatisticsController *)controller;
+            tempController.type = indexPath.section;
+            controller = tempController;
         }
         
         [self.navigationController pushViewController:controller animated:YES];
