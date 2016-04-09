@@ -213,7 +213,7 @@
                                     <segue destination="N0Q-ZL-URZ" kind="push" id="uoe-VR-Pxk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vv-iI-eyo">
+                            <button opaque="NO" alpha="0.0" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vv-iI-eyo">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="34" id="3Yc-9Z-PgR"/>

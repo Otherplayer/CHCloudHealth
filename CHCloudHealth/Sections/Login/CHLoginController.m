@@ -64,9 +64,11 @@
     NSString *psd = [self.passwordTextField.text trimmingWhitespace];
     
     if ([self canGo] && [self check]) {
+        [HYQShowTip showProgressWithText:@"" dealy:30];
         [[NetworkingManager sharedManager] loginWithMobile:mobile password:psd completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [HYQShowTip hideImmediately];
                     [[CHUser sharedInstance] loginWithInfo:responseData];
                     [[CHUser sharedInstance] getUserInformation];
                     [self cancelAction:nil];

@@ -69,7 +69,7 @@
 }
 - (void)gotoLogin{
     CHBaseNavigationController *nav = [[UIStoryboard loginStoryboard] loginController];
-    [self presentViewController:nav animated:YES completion:nil];
+    [self presentViewController:nav animated:NO completion:nil];
 }
 - (BOOL)canGo{
     BOOL isReachable = [self isReachable];

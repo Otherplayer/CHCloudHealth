@@ -32,17 +32,17 @@
     
     [self addBackButton];
     
+    self.view.backgroundColor = [UIColor color_f2f2f2];
     
-    
-    self.mobileTextField.layer.borderColor = [UIColor color_f2f2f2].CGColor;
-    self.mobileTextField.layer.borderWidth = 1;
-    
-    self.passwordTextField.layer.borderColor = [UIColor color_f2f2f2].CGColor;
-    self.passwordTextField.layer.borderWidth = 1;
-    
-    self.captchaTextField.layer.borderColor = [UIColor color_f2f2f2].CGColor;
-    self.captchaTextField.layer.borderWidth = 1;
-    
+//    self.mobileTextField.layer.borderColor = [UIColor color_f2f2f2].CGColor;
+//    self.mobileTextField.layer.borderWidth = 1;
+//    
+//    self.passwordTextField.layer.borderColor = [UIColor color_f2f2f2].CGColor;
+//    self.passwordTextField.layer.borderWidth = 1;
+//    
+//    self.captchaTextField.layer.borderColor = [UIColor color_f2f2f2].CGColor;
+//    self.captchaTextField.layer.borderWidth = 1;
+//    
     
     
     
@@ -60,11 +60,14 @@
         
         if (mobile && [mobile isMobileNumberString]) {
             [[NetworkingManager sharedManager] getCaptchaWithMobile:mobile type:@"register" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-                if (success) {
-                    [self.btnGetCaptcha startTime:60 title:@"获取验证码" waitTittle:@"s"];
-                }else{
-                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
-                }
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (success) {
+                        [self.btnGetCaptcha startTime:60 title:@"获取验证码" waitTittle:@"s"];
+                    }else{
+                        [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                    }
+                });
             }];
         }else{
             [HYQShowTip showTipTextOnly:@"输入的手机号有误" dealy:2];
@@ -79,11 +82,14 @@
     
     if ([self canGo] && [self check]) {
         [[NetworkingManager sharedManager] registerWithMobile:mobile password:psd captcha:captcha completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-            if (success) {
+            dispatch_async(dispatch_get_main_queue(), ^{
                 
-            }else{
-                [HYQShowTip showTipTextOnly:errDesc dealy:2];
-            }
+                if (success) {
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                }else{
+                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                }
+            });
         }];
     }
 }
