@@ -10,4 +10,7 @@
 
 @interface CMMessageCell : UITableViewCell
 
+
+- (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time;
+
 @end

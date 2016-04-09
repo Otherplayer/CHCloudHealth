@@ -21,4 +21,10 @@
 
 @implementation CMMessageCell
 
+- (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time{
+    [self.labTitle setText:title];
+    [self.labDetail setText:detail];
+    [self.labTime setText:time];
+}
+
 @end

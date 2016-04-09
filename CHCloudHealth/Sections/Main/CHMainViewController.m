@@ -43,19 +43,19 @@
     self.tableView.loadedImageName = @"ios_icon_17";
     self.tableView.buttonText = @"绑定设备";
     [self.tableView clickLoading:^{
-        CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
-        [self presentViewController:nav animated:YES completion:nil];
-//        if ([self isReachable]) {
-//        }else{
-//            [self getDatas];
-//        }
+//        CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
+//        [self presentViewController:nav animated:YES completion:nil];
+        if ([self isReachable]) {
+        }else{
+            [self getDatas];
+        }
     }];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldGotoSubMenuController:) name:kNotificationMenuController object:nil];
     
     
     //获取绑定信息
-    [self getBindDeviceList];
+//    [self getBindDeviceList];
     
     
 }
@@ -66,7 +66,6 @@
     if (![self isLogin]) {
         [self gotoLogin];
     }
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -83,18 +82,18 @@
 #pragma mark -
 
 
-- (void)getBindDeviceList{
-    [[NetworkingManager sharedManager] getBindDeviceListInfo:@"" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-        if (success) {
-            self.tableView.loading = NO;
-            [self.tableView reloadData];
-            
-        }else{
-            self.tableView.loading = NO;
-            [HYQShowTip showTipTextOnly:errDesc dealy:2];
-        }
-    }];
-}
+//- (void)getBindDeviceList{
+//    [[NetworkingManager sharedManager] getBindDeviceListInfo:@"" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+//        if (success) {
+//            self.tableView.loading = NO;
+//            [self.tableView reloadData];
+//            
+//        }else{
+//            self.tableView.loading = NO;
+//            [HYQShowTip showTipTextOnly:errDesc dealy:2];
+//        }
+//    }];
+//}
 
 - (void)getDatas{
     

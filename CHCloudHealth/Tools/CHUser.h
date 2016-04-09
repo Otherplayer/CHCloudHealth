@@ -10,11 +10,14 @@
 
 @interface CHUser : NSObject
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *avatarurl;
 @property (nonatomic, strong) NSString *uid;
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSString *phoneNumber;
+@property (nonatomic, strong) NSString *deviceId;
+
+
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *avatarurl;
 @property (nonatomic, strong) NSString *sex;
 
 

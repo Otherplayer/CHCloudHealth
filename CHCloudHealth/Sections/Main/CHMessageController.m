@@ -59,6 +59,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifierMessageCell = @"IdentifierMessageCell";
     CMMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMessageCell forIndexPath:indexPath];
+    [cell configureTitle:@"" detail:@"" time:@""];
     return cell;
 }
 
