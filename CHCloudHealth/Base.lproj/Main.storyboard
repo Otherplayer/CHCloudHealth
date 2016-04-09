@@ -1307,7 +1307,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdentifierMessageCell" rowHeight="100" id="w45-iI-B46" customClass="CMMessageCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IdentifierMessageCell" rowHeight="100" id="w45-iI-B46" customClass="CMMessageCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w45-iI-B46" id="ASR-Qy-f4P">
@@ -1319,7 +1319,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="L6D-jZ-FDx"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -1338,7 +1338,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24.5" id="mQs-TZ-qoP"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -1357,7 +1357,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25.5" id="Tnu-U8-5Lc"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -1376,7 +1376,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25.5" id="Z0r-4Y-VPj"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -1392,17 +1392,27 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="leadingMargin" secondItem="0Dx-FC-ner" secondAttribute="leading" id="5bd-FB-yjH"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="0Dx-FC-ner" secondAttribute="leading" id="5bd-FB-yjH">
+                                                    <variation key="widthClass=compact" constant="-8"/>
+                                                </constraint>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0Dx-FC-ner" secondAttribute="trailing" id="6BY-a2-LOg"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="tOT-9Q-fGT" secondAttribute="trailing" constant="41" id="OWS-0x-GB0"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="eEl-b0-ukw" secondAttribute="leading" id="UMr-6K-GMN"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="eEl-b0-ukw" secondAttribute="leading" id="UMr-6K-GMN">
+                                                    <variation key="widthClass=compact" constant="-8"/>
+                                                </constraint>
                                                 <constraint firstItem="eEl-b0-ukw" firstAttribute="top" secondItem="0Dx-FC-ner" secondAttribute="bottom" constant="-5" id="Y48-DW-KfX"/>
                                                 <constraint firstItem="fZV-a2-FV0" firstAttribute="top" secondItem="ASR-Qy-f4P" secondAttribute="topMargin" constant="2" id="iQj-ca-VoL"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="fZV-a2-FV0" secondAttribute="leading" id="jQY-ww-dT2"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="fZV-a2-FV0" secondAttribute="leading" id="jQY-ww-dT2">
+                                                    <variation key="widthClass=compact" constant="-8"/>
+                                                </constraint>
                                                 <constraint firstAttribute="trailingMargin" secondItem="eEl-b0-ukw" secondAttribute="trailing" id="nXb-Ps-vpZ"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="tOT-9Q-fGT" secondAttribute="leading" id="tjE-Ji-UZt"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="tOT-9Q-fGT" secondAttribute="leading" id="tjE-Ji-UZt">
+                                                    <variation key="widthClass=compact" constant="-8"/>
+                                                </constraint>
                                                 <constraint firstItem="0Dx-FC-ner" firstAttribute="top" secondItem="tOT-9Q-fGT" secondAttribute="bottom" constant="-4.5" id="ugT-aU-D7G"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="fZV-a2-FV0" secondAttribute="trailing" id="vdZ-HP-2l4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fZV-a2-FV0" secondAttribute="trailing" id="vdZ-HP-2l4">
+                                                    <variation key="widthClass=compact" constant="6"/>
+                                                </constraint>
                                                 <constraint firstItem="tOT-9Q-fGT" firstAttribute="top" secondItem="fZV-a2-FV0" secondAttribute="bottom" constant="-2" id="yNU-aO-Okw"/>
                                             </constraints>
                                             <variation key="default">
