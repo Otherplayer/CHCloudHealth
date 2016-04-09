@@ -18,7 +18,9 @@
 #import "UIColor+Gradient.h"
 
 
-@interface CHMainViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface CHMainViewController ()<UITableViewDelegate,UITableViewDataSource>{
+    BOOL alreadyHaveDeviceInfo;
+}
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *mailButtonItem;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -53,6 +55,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldGotoSubMenuController:) name:kNotificationMenuController object:nil];
     
     
+    //获取绑定信息
+    alreadyHaveDeviceInfo = NO;
+    [self getBindDeviceList];
+    
     
 }
 
@@ -84,8 +90,10 @@
     [[NetworkingManager sharedManager] getBindDeviceListInfo:@"" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
             
+            alreadyHaveDeviceInfo = YES;
             self.tableView.loading = NO;
             [self.tableView reloadData];
+            
         }else{
             self.tableView.loading = NO;
             [HYQShowTip showTipTextOnly:errDesc dealy:2];

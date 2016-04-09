@@ -63,12 +63,9 @@
     return 1;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
+    return 3;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 2) {
-        return 150;
-    }
     return 44;
 }
 
@@ -76,10 +73,6 @@
     if (indexPath.section == 0){
         static NSString *IdentifierLocationHeaderCell = @"IdentifierLocationHeaderCell";
         CHSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationHeaderCell forIndexPath:indexPath];
-        return cell;
-    }else if (indexPath.section == 2){
-        static NSString *IdentifierLocationMonitorCell = @"IdentifierLocationMonitorCell";
-        CHMonitorCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationMonitorCell forIndexPath:indexPath];
         return cell;
     }
     static NSString *IdentifierLocationRadiusCell = @"IdentifierLocationRadiusCell";
