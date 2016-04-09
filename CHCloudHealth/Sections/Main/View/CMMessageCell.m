@@ -25,13 +25,20 @@
 - (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time{
     [self.labTitle setText:title];
     [self.labDetail setText:detail];
-    [self.labTime setText:time];
+    
+    NSString *date = [NSDate dateFromStr:time];
+    
+    [self.labTime setText:date];
 }
 
 - (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time state:(NSInteger)state{
+    
+    NSString *date = [NSDate dateMMSSFromStr:time];
+    
     [self.labTitle setText:title];
     [self.labDetail setText:detail];
-    [self.labTime setText:time];
+    [self.labTime setText:date];
+    
     if (state == 0) {
         [self.labState setText:@"当前状态：未绑定"];
     }else{

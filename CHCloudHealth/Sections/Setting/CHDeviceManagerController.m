@@ -63,11 +63,7 @@
     static NSString *identifierMessageCell = @"IdentifierMessageCell";
     CMMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMessageCell forIndexPath:indexPath];
     NSDictionary *info = self.datas[indexPath.row];
-//    bindDate = 1460131200000;
-//    deviceId = "55dd6896-494a-47a0-b67a-45eb00552b75";
-//    deviceName = "\U624b\U8868\U4e00\U53f7";
-//    imei = 12345678;
-//    status = 0;
+    
     [cell configureTitle:info[@"deviceName"] detail:info[@"imei"] time:[NSString stringWithFormat:@"%@",info[@"bindDate"]] state:[info[@"status"] integerValue]];
     
     
@@ -78,7 +74,21 @@
 }
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+        
+        NSDictionary *info = self.datas[indexPath.row];
+        NSString *deviceId = [NSString stringWithFormat:@"%@",info[@"deviceId"]];
+        
+        [[NetworkingManager sharedManager] unbindDevice:[CHUser sharedInstance].uid number:deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (success) {
+                    [self.datas removeObjectAtIndex:indexPath.row];
+                    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+                }else{
+                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                }
+            });
+        }];
+        
     }
 }
 
