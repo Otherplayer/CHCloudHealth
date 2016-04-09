@@ -238,6 +238,7 @@
                         <segue destination="fd9-W1-a8j" kind="custom" id="74Z-x8-Q9F"/>
                         <segue destination="Yxn-UT-deK" kind="showDetail" id="Qtg-bG-0h6"/>
                         <segue destination="WcM-8J-SIJ" kind="showDetail" id="7fe-9s-IeC"/>
+                        <segue destination="dsG-uq-ihR" kind="showDetail" id="T8Y-p2-4KT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UeP-CS-nkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -598,6 +599,25 @@
             </objects>
             <point key="canvasLocation" x="-1584" y="1459"/>
         </scene>
+        <!--亲情号码-->
+        <scene sceneID="bAv-X3-fj3">
+            <objects>
+                <viewController storyboardIdentifier="CHRelationShipController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dsG-uq-ihR" customClass="CHRelationShipController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1e5-s0-mit"/>
+                        <viewControllerLayoutGuide type="bottom" id="FSM-JP-6uv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e3c-w8-pvl">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="亲情号码" id="15H-QR-ICn"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XfN-L6-xJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-898.5" y="1459"/>
+        </scene>
         <!--位置监测-->
         <scene sceneID="ohO-CN-4x4">
             <objects>
@@ -840,7 +860,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1N-ZP-yTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-856.5" y="1457"/>
+            <point key="canvasLocation" x="136.5" y="1447"/>
         </scene>
         <!--Title-->
         <scene sceneID="BfR-T8-zJZ">
@@ -1269,7 +1289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oe-1g-d91" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-160.5" y="1459"/>
+            <point key="canvasLocation" x="832.5" y="1449"/>
         </scene>
         <!--昵称-->
         <scene sceneID="cyN-Kn-otH">

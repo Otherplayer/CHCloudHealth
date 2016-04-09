@@ -43,11 +43,11 @@
     self.tableView.loadedImageName = @"ios_icon_17";
     self.tableView.buttonText = @"绑定设备";
     [self.tableView clickLoading:^{
-        if ([CHUser sharedInstance].deviceId) {
-            [self getDatas];
-        }else{
+        if ([[CHUser sharedInstance].deviceId isBlackString]) {
             CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
             [self presentViewController:nav animated:YES completion:nil];
+        }else{
+            [self getDatas];
         }
         
     }];
@@ -87,7 +87,7 @@
     
     self.tableView.loading = YES;
     
-    if (![CHUser sharedInstance].deviceId) {
+    if ([[CHUser sharedInstance].deviceId isBlackString]) {
         self.tableView.loading = NO;
         [self.tableView reloadData];
         return;

@@ -35,12 +35,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)rightBarButtonPressed:(id)rightBarButtonPressed{
-    [CHUser sharedInstance].deviceId = @"1234567";
     if ([self canGo]) {
         NSString *deviceNumber = [self.numTextField.text trimmingWhitespace];
         [[NetworkingManager sharedManager] bindDevice:[CHUser sharedInstance].uid number:deviceNumber completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
-                [CHUser sharedInstance].deviceId = @"1234567";
                 [self dismissViewControllerAnimated:YES completion:nil];
             }else{
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];

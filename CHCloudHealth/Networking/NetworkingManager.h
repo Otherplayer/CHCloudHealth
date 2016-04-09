@@ -55,7 +55,8 @@
 
 - (void)getBindDeviceListInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
 - (void)bindDevice:(NSString *)userId number:(NSString *)number completedHandler:(GGRequestCallbackBlock)completed;
-
+- (void)unbindDevice:(NSString *)userId number:(NSString *)number completedHandler:(GGRequestCallbackBlock)completed;
+- (void)chnageDevice:(NSString *)userId number:(NSString *)number completedHandler:(GGRequestCallbackBlock)completed;
 
 
 

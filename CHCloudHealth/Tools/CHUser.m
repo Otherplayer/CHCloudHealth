@@ -11,7 +11,7 @@
 NSString *const kUSER_ID = @"user_id";
 NSString *const kUSER_NAME = @"username";
 NSString *const kUSER_AVATAR = @"avatar";
-NSString *const kUSER_DEVICE_ID = @"deviceId";
+NSString *const kUSER_DEVICE_ID = @"curDeviceId";
 NSString *const kUSER_PHONE = @"phone";
 NSString *const kUSER_SEX = @"sex";
 
@@ -33,9 +33,9 @@ NSString *const kUSER_SEX = @"sex";
 - (void)loginWithInfo:(NSDictionary *)info{
     
     /// 1.保存用户信息
-    NSString *uid = [NSString stringWithFormat:@"%@",info[@"data"]];
+    NSString *uid = [NSString stringWithFormat:@"%@",info[@"data"][@"userId"]];
     NSString *app_token = [NSString stringWithFormat:@"%@",info[kAppToken]];
-    NSString *deviceId = info[kUSER_DEVICE_ID] ?:@"";
+    NSString *deviceId = info[@"data"][kUSER_DEVICE_ID] ?:@"";
     
     [self.userDefaults setObject:uid forKey:kUSER_ID];
     [self.userDefaults setObject:deviceId forKey:kUSER_DEVICE_ID];

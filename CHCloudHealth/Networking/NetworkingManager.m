@@ -48,7 +48,14 @@ NSString *const kAPI_NoticeList = HOTYQ_JAVA_API @"notice/list";
 NSString *const kAPI_NoticeDetail = HOTYQ_JAVA_API @"notice/getDetail";
 
 //绑定设备列表
-NSString *const kAPI_BindingDeviceList = HOTYQ_JAVA_API @"notice/getDetail";
+NSString *const kAPI_BindingDeviceList = HOTYQ_JAVA_API @"device/listDevice";
+//绑定设备
+NSString *const kAPI_BindingDevice = HOTYQ_JAVA_API @"device/bindDevice";
+//解除绑定
+NSString *const kAPI_UNBindingDevice = HOTYQ_JAVA_API @"device/unbindDevice";
+//切换设备
+NSString *const kAPI_ChangeDevice = HOTYQ_JAVA_API @"device/changeDevice";
+
 
 
 NSString *const kAPI_PAGE = @"page";
@@ -162,8 +169,17 @@ NSString *const kAPI_SIZE = @"size";
     [self POST:kAPI_BindingDeviceList params:params memoryCache:NO diskCache:NO completed:completed];
 }
 - (void)bindDevice:(NSString *)userId number:(NSString *)number completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"userId":userId,@"number":number};
-    [self POST:kAPI_BindingDeviceList params:params memoryCache:NO diskCache:NO completed:completed];
+    NSDictionary *params = @{@"userId":userId,@"imei":number};
+    [self POST:kAPI_BindingDevice params:params memoryCache:NO diskCache:NO completed:completed];
+}
+
+- (void)unbindDevice:(NSString *)userId number:(NSString *)number completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"userId":userId,@"imei":number};
+    [self POST:kAPI_UNBindingDevice params:params memoryCache:NO diskCache:NO completed:completed];
+}
+- (void)chnageDevice:(NSString *)userId number:(NSString *)number completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"userId":userId,@"imei":number};
+    [self POST:kAPI_ChangeDevice params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
 
