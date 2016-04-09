@@ -2791,9 +2791,30 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="心率：86 次/分钟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNg-Kx-9Bz">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="ao1-9w-ash"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ao1-9w-ash"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ao1-9w-ash"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bNg-Kx-9Bz" firstAttribute="top" secondItem="7yo-Wh-BaI" secondAttribute="bottom" constant="18" id="4Pw-XJ-WZz"/>
                             <constraint firstAttribute="leadingMargin" secondItem="7yo-Wh-BaI" secondAttribute="leading" id="4nk-nP-q3V"/>
                             <constraint firstAttribute="trailing" secondItem="dPb-Ae-ixT" secondAttribute="trailing" id="5UZ-hl-ddK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7yo-Wh-BaI" secondAttribute="trailing" id="IDv-7m-Alx"/>
@@ -2801,6 +2822,8 @@
                                 <variation key="widthClass=compact" constant="-20"/>
                             </constraint>
                             <constraint firstItem="dPb-Ae-ixT" firstAttribute="leading" secondItem="lrh-zx-jae" secondAttribute="leading" id="NP1-4T-Whl"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="bNg-Kx-9Bz" secondAttribute="leading" id="Z44-yM-fld"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bNg-Kx-9Bz" secondAttribute="trailing" id="svF-bn-dcd"/>
                             <constraint firstItem="7yo-Wh-BaI" firstAttribute="top" secondItem="dPb-Ae-ixT" secondAttribute="bottom" constant="70" id="wMW-7r-duo">
                                 <variation key="widthClass=compact" constant="17"/>
                             </constraint>
@@ -2809,33 +2832,43 @@
                             <mask key="subviews">
                                 <exclude reference="dPb-Ae-ixT"/>
                                 <exclude reference="7yo-Wh-BaI"/>
+                                <exclude reference="bNg-Kx-9Bz"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4nk-nP-q3V"/>
-                                <exclude reference="IDv-7m-Alx"/>
-                                <exclude reference="wMW-7r-duo"/>
                                 <exclude reference="5UZ-hl-ddK"/>
                                 <exclude reference="LSJ-Yo-e7N"/>
                                 <exclude reference="NP1-4T-Whl"/>
+                                <exclude reference="4nk-nP-q3V"/>
+                                <exclude reference="IDv-7m-Alx"/>
+                                <exclude reference="wMW-7r-duo"/>
+                                <exclude reference="4Pw-XJ-WZz"/>
+                                <exclude reference="Z44-yM-fld"/>
+                                <exclude reference="svF-bn-dcd"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="dPb-Ae-ixT"/>
                                 <include reference="7yo-Wh-BaI"/>
+                                <include reference="bNg-Kx-9Bz"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4nk-nP-q3V"/>
-                                <include reference="IDv-7m-Alx"/>
-                                <include reference="wMW-7r-duo"/>
                                 <include reference="5UZ-hl-ddK"/>
                                 <include reference="LSJ-Yo-e7N"/>
                                 <include reference="NP1-4T-Whl"/>
+                                <include reference="4nk-nP-q3V"/>
+                                <include reference="IDv-7m-Alx"/>
+                                <include reference="wMW-7r-duo"/>
+                                <include reference="4Pw-XJ-WZz"/>
+                                <include reference="Z44-yM-fld"/>
+                                <include reference="svF-bn-dcd"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="graphView" destination="dPb-Ae-ixT" id="sIY-gi-Rst"/>
+                        <outlet property="labFirst" destination="7yo-Wh-BaI" id="4JE-ZX-D9C"/>
+                        <outlet property="labSecond" destination="bNg-Kx-9Bz" id="UVn-FG-Oj9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gp-JW-iSR" userLabel="First Responder" sceneMemberID="firstResponder"/>

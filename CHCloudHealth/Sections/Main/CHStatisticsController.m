@@ -14,6 +14,8 @@
 @property (nonatomic, strong)NSMutableArray *dataArr;
 
 @property (weak, nonatomic) IBOutlet JRGraphView *graphView;
+@property (weak, nonatomic) IBOutlet UILabel *labFirst;
+@property (weak, nonatomic) IBOutlet UILabel *labSecond;
 
 
 
@@ -73,7 +75,7 @@
 - (void)getDatas{
     
     if (self.type == 1) {
-        [[NetworkingManager sharedManager] getHeartRateInfo:[CHUser sharedInstance].uid date:@"2016-4-23" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        [[NetworkingManager sharedManager] getHeartRateInfo:[CHUser sharedInstance].uid date:@"2016-04-09" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
                 
             }else{
@@ -81,7 +83,7 @@
             }
         }];
     }else if (self.type == 2){
-        [[NetworkingManager sharedManager] getBloodPressureInfo:@"deviceUserId" date:@"2016-4-23" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        [[NetworkingManager sharedManager] getBloodPressureInfo:@"deviceUserId" date:@"2016-04-09" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
                 
             }else{
