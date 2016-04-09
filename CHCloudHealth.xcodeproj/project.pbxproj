@@ -35,6 +35,7 @@
 		63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */; };
 		63A447611CB4087B00046DC7 /* CHStatisticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A447601CB4087B00046DC7 /* CHStatisticsController.m */; };
 		63B983921CB8AF3400150EA2 /* CHSetTimeIntervalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B983911CB8AF3400150EA2 /* CHSetTimeIntervalController.m */; };
+		63B983951CB8D69500150EA2 /* CMMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B983941CB8D69500150EA2 /* CMMessageCell.m */; };
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
 		63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7EB1CB0C52A009BF266 /* Login.storyboard */; };
 		8464DE121CAA48C7000B987E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8464DE111CAA48C7000B987E /* main.m */; };
@@ -174,6 +175,8 @@
 		63A447601CB4087B00046DC7 /* CHStatisticsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHStatisticsController.m; sourceTree = "<group>"; };
 		63B983901CB8AF3400150EA2 /* CHSetTimeIntervalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSetTimeIntervalController.h; sourceTree = "<group>"; };
 		63B983911CB8AF3400150EA2 /* CHSetTimeIntervalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSetTimeIntervalController.m; sourceTree = "<group>"; };
+		63B983931CB8D69500150EA2 /* CMMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMessageCell.h; sourceTree = "<group>"; };
+		63B983941CB8D69500150EA2 /* CMMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMessageCell.m; sourceTree = "<group>"; };
 		63D9F7E71CB0C47E009BF266 /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
 		63D9F7EC1CB0C52A009BF266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		8464DE0D1CAA48C7000B987E /* CHCloudHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHCloudHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -418,6 +421,8 @@
 				63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */,
 				63412E5F1CB2B31900FAD0DA /* CHMainStateCell.h */,
 				63412E601CB2B31900FAD0DA /* CHMainStateCell.m */,
+				63B983931CB8D69500150EA2 /* CMMessageCell.h */,
+				63B983941CB8D69500150EA2 /* CMMessageCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1015,6 +1020,7 @@
 				84B1E3051CAE77BA004573F4 /* UIControl+Categories.m in Sources */,
 				84B1E2FF1CAE77BA004573F4 /* NSString+Ghost.m in Sources */,
 				84B1E3301CB3C698004573F4 /* CHUnitCell.m in Sources */,
+				63B983951CB8D69500150EA2 /* CMMessageCell.m in Sources */,
 				8472D2031CAE53930003E35A /* NSFileManager+FQAHCategories.m in Sources */,
 				63412E231CB2628B00FAD0DA /* UIStoryboard+Categories.m in Sources */,
 				63412E531CB2A33F00FAD0DA /* CHMedicineReminderController.m in Sources */,

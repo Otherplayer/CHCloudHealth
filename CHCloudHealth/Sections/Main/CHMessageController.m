@@ -7,6 +7,7 @@
 //
 
 #import "CHMessageController.h"
+#import "CMMessageCell.h"
 
 @interface CHMessageController ()
 
@@ -57,7 +58,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifierMessageCell = @"IdentifierMessageCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMessageCell forIndexPath:indexPath];
+    CMMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMessageCell forIndexPath:indexPath];
     return cell;
 }
 
