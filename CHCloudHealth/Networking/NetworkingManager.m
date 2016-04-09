@@ -94,8 +94,9 @@ NSString *const kAPI_SIZE = @"size";
 
 
 
-- (void)findBackPasswordCompletedHandler:(GGRequestCallbackBlock)completed{
-    [self POST:kAPI_ForgetPsd params:nil memoryCache:NO diskCache:NO completed:completed];
+- (void)findBackPasswordWithMobile:(NSString *)mobile password:(NSString *)password captcha:(NSString *)captcha completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"mobile":mobile,@"password":password,@"mobileCaptcha":captcha};
+    [self POST:kAPI_ForgetPsd params:params memoryCache:NO diskCache:NO completed:completed];
 }
 - (void)updatePsd:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed{
     NSDictionary *params = @{@"userId":userId};

@@ -37,15 +37,29 @@
 #pragma mark - Action
 
 - (IBAction)confirmAction:(id)sender {
+    
     if ([self check]) {
-//        [NetworkingManager sharedManager] reset
+        NSString *psd = [self.psdTextField.text trimmingWhitespace];
+        NSString *captcha = [self.captchaTextField.text trimmingWhitespace];
+        [[NetworkingManager sharedManager] findBackPasswordWithMobile:self.mobileNum password:psd captcha:captcha completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            if (success) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                    [HYQShowTip showTipTextOnly:@"设置密码成功" dealy:2];
+                });
+            }else{
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+        }];
     }
 }
 - (IBAction)getCaptchaAction:(id)sender {
     
     [[NetworkingManager sharedManager] getCaptchaWithMobile:self.mobileNum type:@"reset" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
-            [self.btnGetCaptcha startTime:60 title:@"获取验证码" waitTittle:@"s"];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.btnGetCaptcha startTime:60 title:@"获取验证码" waitTittle:@"s"];
+            });
         }else{
             [HYQShowTip showTipTextOnly:errDesc dealy:2];
         }

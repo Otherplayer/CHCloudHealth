@@ -25,7 +25,7 @@
 
 - (void)logoutWithUserId:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
 
-- (void)findBackPasswordCompletedHandler:(GGRequestCallbackBlock)completed;
+- (void)findBackPasswordWithMobile:(NSString *)mobile password:(NSString *)password captcha:(NSString *)captcha completedHandler:(GGRequestCallbackBlock)completed;
 
 - (void)updatePsd:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
 
