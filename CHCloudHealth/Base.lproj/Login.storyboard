@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Alo-WS-rGB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F18b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Alo-WS-rGB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -609,7 +609,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2fy-p6-VHW">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2fy-p6-VHW" customClass="CHTextField">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -662,8 +662,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="nextAction:" destination="IWf-7y-EIw" eventType="touchUpInside" id="n38-hG-w4x"/>
-                                    <segue destination="taU-Nc-idX" kind="push" id="tQa-yl-PXa"/>
+                                    <action selector="nextAction:" destination="IWf-7y-EIw" eventType="touchUpInside" id="AtV-wG-Twx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -707,8 +706,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="重置密码(1/2)" id="DUF-Ww-sBV"/>
                     <connections>
-                        <outlet property="btnNext" destination="wRW-Nc-Mo0" id="TpM-N2-1tb"/>
+                        <outlet property="btnNext" destination="wRW-Nc-Mo0" id="mb1-Bd-L84"/>
                         <outlet property="mobileTextField" destination="2fy-p6-VHW" id="y9A-vM-7jt"/>
+                        <segue destination="taU-Nc-idX" kind="showDetail" id="1Nd-3u-n3z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjm-Ec-vQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -727,7 +727,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入新密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MQo-JU-BxS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入新密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MQo-JU-BxS" customClass="CHTextField">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -753,7 +753,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请再次验证新密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nwl-Uq-YZo">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请再次验证新密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nwl-Uq-YZo" customClass="CHTextField">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -779,7 +779,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输验证码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RrJ-Hd-dFD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输验证码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RrJ-Hd-dFD" customClass="CHTextField">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -834,6 +834,9 @@
                                         <include reference="s2G-yd-trH"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="getCaptchaAction:" destination="taU-Nc-idX" eventType="touchUpInside" id="sGD-Uf-mB5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAk-lc-W7M">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -880,11 +883,15 @@
                             <constraint firstItem="MQo-JU-BxS" firstAttribute="trailing" secondItem="nwl-Uq-YZo" secondAttribute="trailing" id="KnZ-uR-wQL"/>
                             <constraint firstItem="MQo-JU-BxS" firstAttribute="leading" secondItem="nwl-Uq-YZo" secondAttribute="leading" id="NGU-VF-yLt"/>
                             <constraint firstItem="MQo-JU-BxS" firstAttribute="leading" secondItem="YAk-lc-W7M" secondAttribute="leading" id="WUe-np-tJK"/>
-                            <constraint firstItem="yOn-ao-q2w" firstAttribute="top" secondItem="mGL-Re-dvN" secondAttribute="bottom" constant="41" id="f9U-zq-nEi"/>
+                            <constraint firstItem="yOn-ao-q2w" firstAttribute="top" secondItem="mGL-Re-dvN" secondAttribute="bottom" constant="41" id="f9U-zq-nEi">
+                                <variation key="widthClass=compact" constant="85"/>
+                            </constraint>
                             <constraint firstItem="YAk-lc-W7M" firstAttribute="leading" secondItem="RMM-nk-PlT" secondAttribute="leadingMargin" constant="27" id="iqq-u1-DFd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yOn-ao-q2w" secondAttribute="trailing" constant="27" id="k07-Fv-a6p"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YAk-lc-W7M" secondAttribute="trailing" constant="27" id="tT9-iY-lkh"/>
-                            <constraint firstItem="RrJ-Hd-dFD" firstAttribute="top" secondItem="mGL-Re-dvN" secondAttribute="bottom" constant="41" id="zzo-jg-zs7"/>
+                            <constraint firstItem="RrJ-Hd-dFD" firstAttribute="top" secondItem="mGL-Re-dvN" secondAttribute="bottom" constant="41" id="zzo-jg-zs7">
+                                <variation key="widthClass=compact" constant="85"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -948,8 +955,6 @@
                         <outlet property="btnConfirm" destination="YAk-lc-W7M" id="2t6-hN-3wU"/>
                         <outlet property="btnGetCaptcha" destination="yOn-ao-q2w" id="2Eq-Z3-KGQ"/>
                         <outlet property="captchaTextField" destination="RrJ-Hd-dFD" id="HoZ-zM-OPt"/>
-                        <outlet property="newPsdAgainTextField" destination="nwl-Uq-YZo" id="jQ3-6f-3H0"/>
-                        <outlet property="newPsdTextField" destination="MQo-JU-BxS" id="mPU-Wi-e4t"/>
                         <outlet property="psdAgainTextField" destination="nwl-Uq-YZo" id="WUI-j3-Dx5"/>
                         <outlet property="psdTextField" destination="MQo-JU-BxS" id="r2r-H4-3w2"/>
                     </connections>

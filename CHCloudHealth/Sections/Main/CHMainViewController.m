@@ -19,7 +19,6 @@
 
 
 @interface CHMainViewController ()<UITableViewDelegate,UITableViewDataSource>{
-    BOOL alreadyHaveDeviceInfo;
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *mailButtonItem;
@@ -56,7 +55,6 @@
     
     
     //获取绑定信息
-    alreadyHaveDeviceInfo = NO;
     [self getBindDeviceList];
     
     
@@ -67,9 +65,8 @@
     [self setNavBarClear:YES];
     if (![self isLogin]) {
         [self gotoLogin];
-    }else{
-        [self getDatas];
     }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -89,8 +86,6 @@
 - (void)getBindDeviceList{
     [[NetworkingManager sharedManager] getBindDeviceListInfo:@"" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
-            
-            alreadyHaveDeviceInfo = YES;
             self.tableView.loading = NO;
             [self.tableView reloadData];
             
@@ -193,10 +188,10 @@
             controller = [[UIStoryboard mainStoryboard] locationAreaController];
         }else{
             
-            controller = (CHStatisticsController *)[[UIStoryboard mainStoryboard] statisticsController];
-            CHStatisticsController *tempController = (CHStatisticsController *)controller;
+            CHStatisticsController *tempController = (CHStatisticsController *)[[UIStoryboard mainStoryboard] statisticsController];
             tempController.type = indexPath.section;
             controller = tempController;
+            
         }
         
         [self.navigationController pushViewController:controller animated:YES];

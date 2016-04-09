@@ -42,9 +42,12 @@
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHLocationMonitorController"];
 }
 
-
 - (CHBaseNavigationController *)bindController{
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHNavBindController"];
+}
+
+- (UIViewController *)resetPsdStep2Controller{
+    return [[UIStoryboard loginStoryboard] instantiateViewControllerWithIdentifier:@"CHResetPsdStep2Controller"];
 }
 
 - (CHBaseNavigationController *)loginController{

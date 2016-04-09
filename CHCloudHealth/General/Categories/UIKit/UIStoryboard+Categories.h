@@ -23,4 +23,8 @@
 - (UIViewController *)locationAreaController;
 
 
+
+
+- (UIViewController *)resetPsdStep2Controller;
+
 @end
