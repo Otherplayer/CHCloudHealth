@@ -81,7 +81,7 @@
             }
         }];
     }else if (self.type == 2){
-        [[NetworkingManager sharedManager] getHeartRateInfo:@"deviceUserId" date:@"2016-4-23" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        [[NetworkingManager sharedManager] getBloodPressureInfo:@"deviceUserId" date:@"2016-4-23" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
                 
             }else{
@@ -89,7 +89,7 @@
             }
         }];
     }else if (self.type == 3){
-        [[NetworkingManager sharedManager] getHeartRateInfo:@"deviceUserId" date:@"2016-4-23" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        [[NetworkingManager sharedManager] getBloodSugarInfo:@"deviceUserId" date:@"2016-4-23" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
                 
             }else{
