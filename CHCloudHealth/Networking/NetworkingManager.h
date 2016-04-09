@@ -57,7 +57,8 @@
 - (void)unbindDevice:(NSString *)userId number:(NSString *)number completedHandler:(GGRequestCallbackBlock)completed;
 - (void)chnageDevice:(NSString *)userId number:(NSString *)number completedHandler:(GGRequestCallbackBlock)completed;
 
-
+- (void)getLocationSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
+- (void)setLocationSetting:(NSString *)deviceId locationSwitch:(NSInteger)locationSwitch completedHandler:(GGRequestCallbackBlock)completed;
 
 
 

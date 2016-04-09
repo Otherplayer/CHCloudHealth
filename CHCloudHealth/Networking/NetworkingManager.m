@@ -243,6 +243,16 @@ NSString *const kAPI_SIZE = @"size";
 }
 
 
+- (void)getLocationSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId};
+    [self POST:kAPI_GetLocationSetting params:params memoryCache:NO diskCache:NO completed:completed];
+}
+- (void)setLocationSetting:(NSString *)deviceId locationSwitch:(NSInteger)locationSwitch completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId,@"locationSwitch":@(locationSwitch)};
+    [self POST:kAPI_SetLocationSetting params:params memoryCache:NO diskCache:NO completed:completed];
+}
+
+
 
 
 

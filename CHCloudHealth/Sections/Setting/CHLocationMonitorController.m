@@ -36,18 +36,36 @@
 #pragma mark -
 
 - (void)getDatas{
-    double delayInSeconds = 1;
-    dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-    // 得到全局队列
-    dispatch_queue_t concurrentQueue = dispatch_get_main_queue();
-    // 延期执行
-    dispatch_after(delayInNanoSeconds, concurrentQueue, ^(void){
-        [self.datas addObject:@""];
-        [self.tableView reloadData];
-    });
+    
+    [[NetworkingManager sharedManager] getLocationSetting:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                
+                self.tableView.loading = NO;
+                [self.tableView reloadData];
+            }else{
+                self.tableView.loading = NO;
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+        });
+        
+    }];
+    
 }
 - (void)rightBarButtonPressed:(id)rightBarButtonPressed{
-    
+    [[NetworkingManager sharedManager] setLocationSetting:[CHUser sharedInstance].deviceId locationSwitch:0 completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                
+                self.tableView.loading = NO;
+                [self.tableView reloadData];
+            }else{
+                self.tableView.loading = NO;
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+        });
+        
+    }];
 }
 
 #pragma mark - Delegate
