@@ -33,10 +33,11 @@
 
 - (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time state:(NSInteger)state{
     
-    NSString *date = [NSDate dateMMSSFromStr:time];
+    NSString *date = [NSString stringWithFormat:@"绑定时间：%@",[NSDate dateMMSSFromStr:time]];
+    NSString *imei = [NSString stringWithFormat:@"IMEI：%@",[NSDate dateMMSSFromStr:time]];
     
     [self.labTitle setText:title];
-    [self.labDetail setText:detail];
+    [self.labDetail setText:imei];
     [self.labTime setText:date];
     
     if (state == 0) {
