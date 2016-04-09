@@ -8,6 +8,7 @@
 
 #import "CHResetPsdStep2Controller.h"
 #import "CHTextField.h"
+#import "UIButton+countDown.h"
 
 @interface CHResetPsdStep2Controller ()
 
@@ -36,12 +37,15 @@
 #pragma mark - Action
 
 - (IBAction)confirmAction:(id)sender {
+    if ([self check]) {
+//        [NetworkingManager sharedManager] reset
+    }
 }
 - (IBAction)getCaptchaAction:(id)sender {
     
-    [[NetworkingManager sharedManager] getCaptchaWithMobile:self.mobileNum type:@"" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+    [[NetworkingManager sharedManager] getCaptchaWithMobile:self.mobileNum type:@"reset" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
-            
+            [self.btnGetCaptcha startTime:60 title:@"获取验证码" waitTittle:@"s"];
         }else{
             [HYQShowTip showTipTextOnly:errDesc dealy:2];
         }
@@ -53,6 +57,31 @@
     [self hidenKeyboard];
 }
 
+#pragma mark - Private
+
+- (BOOL)check{
+    NSString *psd = [self.psdTextField.text trimmingWhitespace];
+    NSString *psdAgain = [self.psdAgainTextField.text trimmingWhitespace];
+    NSString *captcha = [self.captchaTextField.text trimmingWhitespace];
+    
+    
+    if (!psd || psd.length == 0) {
+        [HYQShowTip showTipTextOnly:@"请输入密码" dealy:2];
+        return NO;
+    }
+    
+    if (!captcha || captcha.length == 0) {
+        [HYQShowTip showTipTextOnly:@"请输入验证码" dealy:2];
+        return NO;
+    }
+    
+    if (![psd isEqualToString:psdAgain]) {
+        [HYQShowTip showTipTextOnly:@"两次密码输入不一样" dealy:2];
+        return NO;
+    }
+    
+    return YES;
+}
 
 
 @end
