@@ -77,7 +77,7 @@
         }];
     }else if (self.type == 3){
         [HYQShowTip showProgressWithText:@"" dealy:30];
-        [[NetworkingManager sharedManager] getBloodPressureInfo:@"deviceUserId" date:@"2016-04-09" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        [[NetworkingManager sharedManager] getBloodPressureInfo:@"222222" date:@"2016-04-09" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
                 [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
                 [self refreshGraph];
@@ -88,7 +88,7 @@
         }];
     }else if (self.type == 4){
         [HYQShowTip showProgressWithText:@"" dealy:30];
-        [[NetworkingManager sharedManager] getBloodSugarInfo:@"deviceUserId" date:@"2016-4-23" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        [[NetworkingManager sharedManager] getBloodSugarInfo:@"222222" date:@"2016-04-09" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
                 [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
                 [self refreshGraph];
