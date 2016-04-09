@@ -42,6 +42,10 @@ NSString *const kAPI_HealthRecord = HOTYQ_JAVA_API @"deviceUser/getHealthRecordL
 //查看健康档案详细
 NSString *const kAPI_HealthRecordDetail = HOTYQ_JAVA_API @"deviceUser/getHealthRecordDetail";
 
+//公告列表
+NSString *const kAPI_NoticeList = HOTYQ_JAVA_API @"notice/list";
+//公告列表
+NSString *const kAPI_NoticeDetail = HOTYQ_JAVA_API @"notice/getDetail";
 
 
 
@@ -141,6 +145,14 @@ NSString *const kAPI_SIZE = @"size";
     [self POST:kAPI_HealthRecordDetail params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
+- (void)getNoticeListInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"userId":userId};
+    [self POST:kAPI_NoticeDetail params:params memoryCache:NO diskCache:NO completed:completed];
+}
+- (void)getNoticeDetailInfo:(NSString *)noticeId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"noticeId":noticeId};
+    [self POST:kAPI_NoticeDetail params:params memoryCache:NO diskCache:NO completed:completed];
+}
 
 
 

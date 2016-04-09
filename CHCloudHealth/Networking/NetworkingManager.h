@@ -49,7 +49,9 @@
 - (void)getHealthRecordInfo:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed;
 - (void)getHealthRecordDetailInfo:(NSString *)heathRecordId completedHandler:(GGRequestCallbackBlock)completed;
 
+- (void)getNoticeListInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
 
+- (void)getNoticeDetailInfo:(NSString *)noticeId completedHandler:(GGRequestCallbackBlock)completed;
 
 
 @end
