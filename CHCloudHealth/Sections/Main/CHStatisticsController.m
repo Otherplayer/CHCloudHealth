@@ -73,7 +73,7 @@
 - (void)getDatas{
     
     if (self.type == 1) {
-        [[NetworkingManager sharedManager] getHeartRateInfo:@"deviceUserId" date:@"2016-4-23" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        [[NetworkingManager sharedManager] getHeartRateInfo:[CHUser sharedInstance].uid date:@"2016-4-23" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
                 
             }else{
