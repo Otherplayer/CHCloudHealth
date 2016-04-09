@@ -299,13 +299,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Gij-O8-EIE" secondAttribute="trailing" constant="-5" id="2kc-Ho-iBK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gij-O8-EIE" secondAttribute="trailing" constant="-5" id="2kc-Ho-iBK">
+                                <variation key="widthClass=compact" constant="-20"/>
+                            </constraint>
                             <constraint firstAttribute="leadingMargin" secondItem="ZiE-vG-uG0" secondAttribute="leading" id="2sF-fL-tRm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZiE-vG-uG0" secondAttribute="trailing" constant="6" id="3aI-KM-U4D"/>
                             <constraint firstItem="Gij-O8-EIE" firstAttribute="top" secondItem="ZiE-vG-uG0" secondAttribute="bottom" constant="15" id="NXI-ZG-kIS">
                                 <variation key="widthClass=compact" constant="8"/>
                             </constraint>
-                            <constraint firstItem="Gij-O8-EIE" firstAttribute="leading" secondItem="Q6p-pK-8bN" secondAttribute="leadingMargin" constant="-4" id="UKT-cZ-C4V"/>
+                            <constraint firstItem="Gij-O8-EIE" firstAttribute="leading" secondItem="Q6p-pK-8bN" secondAttribute="leadingMargin" constant="-4" id="UKT-cZ-C4V">
+                                <variation key="widthClass=compact" constant="-20"/>
+                            </constraint>
                             <constraint firstItem="ZiE-vG-uG0" firstAttribute="top" secondItem="064-So-kw1" secondAttribute="bottom" constant="24" id="fu6-c7-DkY"/>
                         </constraints>
                         <variation key="default">

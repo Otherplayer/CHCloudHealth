@@ -35,8 +35,10 @@ NSString *const kUSER_SEX = @"sex";
     /// 1.保存用户信息
     NSString *uid = [NSString stringWithFormat:@"%@",info[@"data"]];
     NSString *app_token = [NSString stringWithFormat:@"%@",info[kAppToken]];
+    NSString *deviceId = info[kUSER_DEVICE_ID] ?:@"";
     
     [self.userDefaults setObject:uid forKey:kUSER_ID];
+    [self.userDefaults setObject:deviceId forKey:kUSER_DEVICE_ID];
     [self.userDefaults setObject:app_token forKey:kAppToken];
     [self.userDefaults synchronize];
     
