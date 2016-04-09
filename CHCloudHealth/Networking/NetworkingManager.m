@@ -161,6 +161,10 @@ NSString *const kAPI_SIZE = @"size";
     NSDictionary *params = @{@"userId":userId};
     [self POST:kAPI_BindingDeviceList params:params memoryCache:NO diskCache:NO completed:completed];
 }
+- (void)bindDevice:(NSString *)userId number:(NSString *)number completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"userId":userId,@"number":number};
+    [self POST:kAPI_BindingDeviceList params:params memoryCache:NO diskCache:NO completed:completed];
+}
 
 
 

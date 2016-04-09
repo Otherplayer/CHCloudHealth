@@ -65,6 +65,8 @@
     [self setNavBarClear:YES];
     if (![self isLogin]) {
         [self gotoLogin];
+    }else{
+        [self getDatas];
     }
 }
 
