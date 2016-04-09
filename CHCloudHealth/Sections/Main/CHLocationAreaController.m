@@ -10,4 +10,32 @@
 
 @implementation CHLocationAreaController
 
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [self addBackButton];
+}
+
+
+
+
+#pragma mark -
+
+- (void)getDatas{
+    
+    [[NetworkingManager sharedManager] getHealthRecordInfo:@"deviceUserId" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        if (success) {
+            
+        }else{
+            [HYQShowTip showTipTextOnly:errDesc dealy:2];
+        }
+    }];
+    
+}
+
+
+
+
 @end
