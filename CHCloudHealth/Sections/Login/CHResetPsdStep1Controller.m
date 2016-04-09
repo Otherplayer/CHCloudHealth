@@ -35,6 +35,7 @@
     NSString *mobile = [self.mobileTextField.text trimmingWhitespace];
     if ([mobile isPureNumberString]) {
         CHResetPsdStep2Controller *controller = (CHResetPsdStep2Controller *)[[UIStoryboard loginStoryboard] resetPsdStep2Controller];
+        controller.mobileNum = mobile;
         [self.navigationController pushViewController:controller animated:YES];
     }else{
         [HYQShowTip showTipTextOnly:@"手机号有误" dealy:2];

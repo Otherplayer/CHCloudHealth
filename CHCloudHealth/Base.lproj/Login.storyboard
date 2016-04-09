@@ -835,7 +835,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="getCaptchaAction:" destination="taU-Nc-idX" eventType="touchUpInside" id="sGD-Uf-mB5"/>
+                                    <action selector="getCaptchaAction:" destination="taU-Nc-idX" eventType="touchUpInside" id="Kif-sh-Z0N"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAk-lc-W7M">
@@ -953,7 +953,7 @@
                     <navigationItem key="navigationItem" title="重置密码(2/2)" id="OQW-5C-R4G"/>
                     <connections>
                         <outlet property="btnConfirm" destination="YAk-lc-W7M" id="2t6-hN-3wU"/>
-                        <outlet property="btnGetCaptcha" destination="yOn-ao-q2w" id="2Eq-Z3-KGQ"/>
+                        <outlet property="btnGetCaptcha" destination="yOn-ao-q2w" id="Pv1-y3-usr"/>
                         <outlet property="captchaTextField" destination="RrJ-Hd-dFD" id="HoZ-zM-OPt"/>
                         <outlet property="psdAgainTextField" destination="nwl-Uq-YZo" id="WUI-j3-Dx5"/>
                         <outlet property="psdTextField" destination="MQo-JU-BxS" id="r2r-H4-3w2"/>

@@ -36,7 +36,7 @@
     self.passwordTextField.leftViewMode = UITextFieldViewModeAlways;
     self.passwordTextField.leftView = ivPsd;
     
-    
+    [self.btnGetHelp setHidden:YES];
 }
 
 
