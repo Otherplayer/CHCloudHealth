@@ -11,7 +11,7 @@
 
 
 
-#define kAPPKEY_JPUSH @""
+#define kAPPKEY_JPUSH @"3dff2d45c49d8708ec01be57"
 #define kAPPKEY_BAIDU_MAP @"rYSPcaBk64BaO4lWZnhVfS7za1UKssE0"
 
 
