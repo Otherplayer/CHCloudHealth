@@ -206,8 +206,8 @@ NSString *const kAPI_SIZE = @"size";
     [self POST:kAPI_LocationInfo params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
-- (void)getHealthRecordInfo:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"deviceUserId":deviceUserId};
+- (void)getHealthRecordInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"userId":userId};
     [self POST:kAPI_HealthRecord params:params memoryCache:NO diskCache:NO completed:completed];
 }
 - (void)getHealthRecordDetailInfo:(NSString *)heathRecordId completedHandler:(GGRequestCallbackBlock)completed{

@@ -7,6 +7,7 @@
 //
 
 #import "CHHealthReportController.h"
+#import "CMMessageCell.h"
 
 @interface CHHealthReportController ()
 
@@ -36,16 +37,19 @@
 
 - (void)getDatas{
     
-    [[NetworkingManager sharedManager] getHealthRecordInfo:@"deviceUserId" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-        if (success) {
-            
-            self.tableView.loading = NO;
-            [self.tableView reloadData];
-        }else{
-            self.tableView.loading = NO;
-            [HYQShowTip showTipTextOnly:errDesc dealy:2];
-        }
-    }];
+    if ([self canGo]) {
+        
+        [[NetworkingManager sharedManager] getHealthRecordInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            if (success) {
+                self.tableView.loading = NO;
+                [self.tableView reloadData];
+            }else{
+                self.tableView.loading = NO;
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+        }];
+        
+    }
     
 }
 
@@ -57,7 +61,8 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifierHealthReportCell = @"IdentifierHealthReportCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierHealthReportCell forIndexPath:indexPath];
+    CMMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierHealthReportCell forIndexPath:indexPath];
+    [cell configureTitle:@"" detail:@"" time:@""];
     return cell;
 }
 
