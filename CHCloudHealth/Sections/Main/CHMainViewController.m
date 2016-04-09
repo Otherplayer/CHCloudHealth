@@ -176,10 +176,10 @@
         NSDictionary *info = self.datas[indexPath.section][indexPath.row];
         NSString *type = info[@"typeCode"];
         
+        //0004位置
         //0001心率
         //0002血压
         //0003血糖
-        //0004位置
         //0005健康
         id controller;
         if (type.integerValue == 5) {
