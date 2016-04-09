@@ -55,6 +55,66 @@ NSString *const kAPI_BindingDevice = HOTYQ_JAVA_API @"device/bindDevice";
 NSString *const kAPI_UNBindingDevice = HOTYQ_JAVA_API @"device/unbindDevice";
 //切换设备
 NSString *const kAPI_ChangeDevice = HOTYQ_JAVA_API @"device/changeDevice";
+//获取位置检测设置
+NSString *const kAPI_GetLocationSetting = HOTYQ_JAVA_API @"deviceUser/getLocationSetting";
+//设置位置检测
+NSString *const kAPI_SetLocationSetting = HOTYQ_JAVA_API @"deviceUser/setLocationSetting";
+
+
+
+//#####4.7获取位置检测设置
+//* URL:/deviceUser/getLocationSetting
+//* Params:
+//
+//1.deviceId
+//
+//#####4.8设置位置检测
+//* URL:/deviceUser/setLocationSetting
+//* Params:
+//
+//1.deviceId
+//2.locationSwitch
+//
+//#####4.9获取心率检测配置
+//* URL:/deviceUser/getHeartRateSetting
+//* Params:
+//
+//1.deviceId
+//
+//#####4.10设置心率检测
+//* URL:/deviceUser/setHeartRateSetting
+//* Params:
+//
+//1.deviceId
+//2.heartRateSwitch
+//#####4.11获取服药提醒设置
+//* URL:/deviceUser/getMedicationSetting
+//* Params:
+//
+//1.deviceId
+//
+//#####4.12设置服药提醒
+//* URL:/deviceUser/setMedicationSetting
+//* Params:
+//
+//1.deviceId
+//2.medicationSwitch
+//3.medicationTime1
+//4.medicationTime2
+//5.medicationTime3
+//#####4.13获取SOS号
+//* URL:/deviceUser/getSOSNumber
+//* Params:
+//
+//1.deviceId
+//
+//#####4.14设置SOS号
+//* URL:/deviceUser/setSOSNumber
+//* Params:
+//
+//1.deviceId
+//2.sosNum
+//
 
 
 

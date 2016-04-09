@@ -12,5 +12,7 @@
 
 
 - (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time;
+- (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time state:(NSInteger)state;
+
 
 @end

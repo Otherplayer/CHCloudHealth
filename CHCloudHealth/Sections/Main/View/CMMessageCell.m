@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labDetail;
 @property (weak, nonatomic) IBOutlet UILabel *labTime;
+@property (weak, nonatomic) IBOutlet UILabel *labState;
 
 
 
@@ -25,6 +26,18 @@
     [self.labTitle setText:title];
     [self.labDetail setText:detail];
     [self.labTime setText:time];
+}
+
+- (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time state:(NSInteger)state{
+    [self.labTitle setText:title];
+    [self.labDetail setText:detail];
+    [self.labTime setText:time];
+    if (state == 0) {
+        [self.labState setText:@"当前状态：未绑定"];
+    }else{
+        [self.labState setText:@"当前状态：已绑定"];
+        
+    }
 }
 
 @end

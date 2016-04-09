@@ -41,7 +41,7 @@
     [[NetworkingManager sharedManager] getBindDeviceListInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
-                
+                [self.datas addObjectsFromArray:responseData[@"data"]];
                 self.tableView.loading = NO;
                 [self.tableView reloadData];
             }else{
@@ -62,7 +62,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifierMessageCell = @"IdentifierMessageCell";
     CMMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMessageCell forIndexPath:indexPath];
-    [cell configureTitle:@"" detail:@"" time:@""];
+    NSDictionary *info = self.datas[indexPath.row];
+//    bindDate = 1460131200000;
+//    deviceId = "55dd6896-494a-47a0-b67a-45eb00552b75";
+//    deviceName = "\U624b\U8868\U4e00\U53f7";
+//    imei = 12345678;
+//    status = 0;
+    [cell configureTitle:info[@"deviceName"] detail:info[@"imei"] time:[NSString stringWithFormat:@"%@",info[@"bindDate"]] state:[info[@"status"] integerValue]];
+    
+    
     return cell;
 }
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{

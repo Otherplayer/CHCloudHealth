@@ -73,7 +73,7 @@
                                      appToken, kAppToken,
                                      deviceIdentifier,@"deviceIdentifier",
                                      @"ios",@"device",
-                                     @"userId",userId,
+//                                     @"userId",userId,
                                      nil];
     return publicParameter;
 }
