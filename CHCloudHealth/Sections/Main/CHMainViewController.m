@@ -79,6 +79,20 @@
 
 #pragma mark -
 
+
+- (void)getBindDeviceList{
+    [[NetworkingManager sharedManager] getBindDeviceListInfo:@"" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        if (success) {
+            
+            self.tableView.loading = NO;
+            [self.tableView reloadData];
+        }else{
+            self.tableView.loading = NO;
+            [HYQShowTip showTipTextOnly:errDesc dealy:2];
+        }
+    }];
+}
+
 - (void)getDatas{
     
     self.tableView.loading = YES;

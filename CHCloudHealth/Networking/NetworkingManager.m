@@ -47,6 +47,8 @@ NSString *const kAPI_NoticeList = HOTYQ_JAVA_API @"notice/list";
 //公告列表
 NSString *const kAPI_NoticeDetail = HOTYQ_JAVA_API @"notice/getDetail";
 
+//绑定设备列表
+NSString *const kAPI_BindingDeviceList = HOTYQ_JAVA_API @"notice/getDetail";
 
 
 NSString *const kAPI_PAGE = @"page";
@@ -147,11 +149,16 @@ NSString *const kAPI_SIZE = @"size";
 
 - (void)getNoticeListInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed{
     NSDictionary *params = @{@"userId":userId};
-    [self POST:kAPI_NoticeDetail params:params memoryCache:NO diskCache:NO completed:completed];
+    [self POST:kAPI_NoticeList params:params memoryCache:NO diskCache:NO completed:completed];
 }
 - (void)getNoticeDetailInfo:(NSString *)noticeId completedHandler:(GGRequestCallbackBlock)completed{
     NSDictionary *params = @{@"noticeId":noticeId};
     [self POST:kAPI_NoticeDetail params:params memoryCache:NO diskCache:NO completed:completed];
+}
+
+- (void)getBindDeviceListInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"userId":userId};
+    [self POST:kAPI_BindingDeviceList params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
 

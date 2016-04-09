@@ -53,5 +53,15 @@
 
 - (void)getNoticeDetailInfo:(NSString *)noticeId completedHandler:(GGRequestCallbackBlock)completed;
 
+- (void)getBindDeviceListInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
+
+
+
+
+
+
+
+
+
 
 @end
