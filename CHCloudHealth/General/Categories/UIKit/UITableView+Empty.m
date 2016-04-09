@@ -295,7 +295,7 @@ id (^block)();
 }
 
 - (BOOL)isReachable{
-    return [FQAHReachibility sharedInstance].isReachable;
+    return YES;
 }
 
 
