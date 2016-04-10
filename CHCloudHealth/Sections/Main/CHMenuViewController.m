@@ -68,7 +68,16 @@
         
         NSString *identifier = self.datas[indexPath.section][indexPath.row][@"identifier"];
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationMenuController object:identifier];
+        if ([identifier isEqualToString:@"CHMonitorCareController"]) {
+            NSDictionary *info = @{@"identifier":identifier,@"type":@(indexPath.row)};
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationMenuController object:info];
+        }else{
+            NSDictionary *info = @{@"identifier":identifier};
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationMenuController object:info];
+            
+        }
     }
     
 }

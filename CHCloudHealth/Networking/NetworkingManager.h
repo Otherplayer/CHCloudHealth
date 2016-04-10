@@ -62,7 +62,11 @@
 
 - (void)getHeartRateSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
 - (void)setHeartRateSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed;
+- (void)getBloodSugarSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
 
+- (void)setBloodSugarSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed;
+- (void)getBloodPressureSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
+- (void)setBloodPressureSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed;
 
 - (void)getSOSSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
 - (void)setSOSSetting:(NSString *)deviceId sosNum:(NSString *)sosNum completedHandler:(GGRequestCallbackBlock)completed;

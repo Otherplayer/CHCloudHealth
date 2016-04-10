@@ -10,6 +10,7 @@
 
 #import "CHStatisticsController.h"
 #import "CHHealthReportController.h"
+#import "CHMonitorCareController.h"
 
 #import "CHBindController.h"
 #import "ViewController.h"
@@ -208,10 +209,22 @@
         
         NSLog(@"%@",notification);
         
-        NSString *identifier = notification.object;
+        NSDictionary *info = notification.object;
+        NSString *identifier = info[@"identifier"];
+        NSString *type = info[@"type"];
+        
         if (identifier) {
+        if (type) {
+            CHMonitorCareController *controller = (CHMonitorCareController *)[[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:identifier];
+            controller.type = type.integerValue;
+            [self.navigationController pushViewController:controller animated:NO];
+
+        }else{
+            
             UIViewController *controller = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:identifier];
             [self.navigationController pushViewController:controller animated:NO];
+        }
+        
         }
         
     });

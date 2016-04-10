@@ -36,18 +36,104 @@
 #pragma mark -
 
 - (void)getDatas{
-    double delayInSeconds = 1;
-    dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-    // 得到全局队列
-    dispatch_queue_t concurrentQueue = dispatch_get_main_queue();
-    // 延期执行
-    dispatch_after(delayInNanoSeconds, concurrentQueue, ^(void){
-        [self.datas addObject:@""];
-        [self.tableView reloadData];
-    });
+    if (self.type == 3) {//心率
+        [[NetworkingManager sharedManager] getHeartRateSetting:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (success) {
+                    
+                    NSDictionary *info = responseData[@"data"];
+                    NSInteger value = [info[@"heartRateSwitch"] isEmptyObject] ? 0 : 1;
+                    NSDictionary *section1 = @{@"title":@"心率报警",@"value":[NSString stringWithFormat:@"%@",@(value)]};
+                    [self.datas addObject:section1];
+                    
+                    self.tableView.loading = NO;
+                    [self.tableView reloadData];
+                }else{
+                    self.tableView.loading = NO;
+                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                }
+            });
+            
+        }];
+
+    }else if (self.type == 4){//血糖
+        [[NetworkingManager sharedManager] getBloodSugarSetting:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (success) {
+                    
+                    NSDictionary *info = responseData[@"data"];
+                    NSInteger value = [info[@"heartRateSwitch"] isEmptyObject] ? 0 : 1;
+                    NSDictionary *section1 = @{@"title":@"心率报警",@"value":[NSString stringWithFormat:@"%@",@(value)]};
+                    [self.datas addObject:section1];
+                    
+                    self.tableView.loading = NO;
+                    [self.tableView reloadData];
+                }else{
+                    self.tableView.loading = NO;
+                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                }
+            });
+            
+        }];
+    }else if (self.type == 5){//血压
+        [[NetworkingManager sharedManager] getBloodPressureSetting:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (success) {
+                    
+                    NSDictionary *info = responseData[@"data"];
+                    NSInteger value = [info[@"heartRateSwitch"] isEmptyObject] ? 0 : 1;
+                    NSDictionary *section1 = @{@"title":@"心率报警",@"value":[NSString stringWithFormat:@"%@",@(value)]};
+                    [self.datas addObject:section1];
+                    
+                    self.tableView.loading = NO;
+                    [self.tableView reloadData];
+                }else{
+                    self.tableView.loading = NO;
+                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                }
+            });
+            
+        }];
+    }
 }
 - (void)rightBarButtonPressed:(id)rightBarButtonPressed{
+    NSDictionary *section1 = [self.datas objectAtIndex:0];
+    NSInteger state = [section1[@"value"] integerValue];
     
+    if (self.type == 3) {//心率
+        [[NetworkingManager sharedManager] setHeartRateSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (success) {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }else{
+                    self.tableView.loading = NO;
+                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                }
+            });
+        }];
+    }else if (self.type == 4){//血糖
+        [[NetworkingManager sharedManager] setBloodSugarSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (success) {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }else{
+                    self.tableView.loading = NO;
+                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                }
+            });
+        }];
+    }else if (self.type == 5){//血压
+        [[NetworkingManager sharedManager] setBloodPressureSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (success) {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }else{
+                    self.tableView.loading = NO;
+                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                }
+            });
+        }];
+    }
 }
 
 #pragma mark - Delegate
@@ -63,7 +149,7 @@
     return 1;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return self.datas.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 2 || indexPath.section == 0) {
@@ -73,9 +159,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSDictionary *info = [self.datas objectAtIndex:indexPath.section];
     if (indexPath.section == 0){
         static NSString *IdentifierLocationHeaderCell = @"IdentifierLocationHeaderCell";
         CHSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationHeaderCell forIndexPath:indexPath];
+        [cell configureTitle:info[@"title"] state:[info[@"value"] integerValue]];
         return cell;
     }else if (indexPath.section == 2){
         static NSString *IdentifierLocationRadiusCell = @"IdentifierLocationRadiusCell";

@@ -65,6 +65,16 @@ NSString *const kAPI_SetLocationSetting = HOTYQ_JAVA_API @"device/setLocationSet
 NSString *const kAPI_HeartRateSetting = HOTYQ_JAVA_API @"device/getHeartRateSetting";
 //设置心率检测
 NSString *const kAPI_SetHeartRateSetting = HOTYQ_JAVA_API @"device/setHeartRateSetting";
+//获取血糖
+NSString *const kAPI_getBloodSugarSetting = HOTYQ_JAVA_API @"device/getBloodSugarSetting";
+//设置血糖
+NSString *const kAPI_setBloodSugarSetting = HOTYQ_JAVA_API @"device/setBloodSugarSetting";
+//获取血压
+NSString *const kAPI_getBloodPressureSetting = HOTYQ_JAVA_API @"device/getBloodPressureSetting";
+//设置血压
+NSString *const kAPI_setBloodPressureSetting = HOTYQ_JAVA_API @"device/setBloodPressureSetting";
+
+
 //获取服药提醒设置
 NSString *const kAPI_GetMedicineTipSetting = HOTYQ_JAVA_API @"device/getMedicationSetting";
 //设置服药提醒
@@ -225,6 +235,24 @@ NSString *const kAPI_SIZE = @"size";
 - (void)setHeartRateSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed{
     NSDictionary *params = @{@"deviceId":deviceId,@"heartRateSwitch":@(heartRateSwitch)};
     [self POST:kAPI_SetHeartRateSetting params:params memoryCache:NO diskCache:NO completed:completed];
+}
+
+- (void)getBloodSugarSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId};
+    [self POST:kAPI_getBloodSugarSetting params:params memoryCache:NO diskCache:NO completed:completed];
+}
+- (void)setBloodSugarSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId,@"bloodSugarSwitch":@(heartRateSwitch)};
+    [self POST:kAPI_setBloodSugarSetting params:params memoryCache:NO diskCache:NO completed:completed];
+}
+
+- (void)getBloodPressureSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId};
+    [self POST:kAPI_getBloodPressureSetting params:params memoryCache:NO diskCache:NO completed:completed];
+}
+- (void)setBloodPressureSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId,@"bloodPressureSwitch":@(heartRateSwitch)};
+    [self POST:kAPI_setBloodPressureSetting params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
 - (void)getSOSSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed{
