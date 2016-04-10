@@ -10,4 +10,10 @@
 
 @implementation CHSwitchCell
 
+
+- (void)configureTitle:(NSString *)title state:(NSInteger)state{
+    [self.labTitle setText:title];
+    [self.sSwitch setOn:state];
+}
+
 @end

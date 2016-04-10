@@ -12,4 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labTitle;
 @property (weak, nonatomic) IBOutlet UISwitch *sSwitch;
 
+
+- (void)configureTitle:(NSString *)title state:(NSInteger)state;
+
 @end

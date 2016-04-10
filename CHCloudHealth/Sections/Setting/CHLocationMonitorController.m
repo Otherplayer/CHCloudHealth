@@ -41,6 +41,11 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
                 
+                NSDictionary *info = responseData[@"data"];
+                NSDictionary *section1 = @{@"title":@"电子围栏",@"value":[NSString stringWithFormat:@"%@",info[@"locationSwitch"]]};
+                [self.datas addObject:section1];
+                
+                
                 self.tableView.loading = NO;
                 [self.tableView reloadData];
             }else{
@@ -53,12 +58,14 @@
     
 }
 - (void)rightBarButtonPressed:(id)rightBarButtonPressed{
-    [[NetworkingManager sharedManager] setLocationSetting:[CHUser sharedInstance].deviceId locationSwitch:0 completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+    
+    NSDictionary *section1 = [self.datas objectAtIndex:0];
+    NSInteger state = [section1[@"value"] integerValue];
+    
+    [[NetworkingManager sharedManager] setLocationSetting:[CHUser sharedInstance].deviceId locationSwitch:state completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
-                
-                self.tableView.loading = NO;
-                [self.tableView reloadData];
+                [self.navigationController popViewControllerAnimated:YES];
             }else{
                 self.tableView.loading = NO;
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];
@@ -81,16 +88,19 @@
     return 1;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return self.datas.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 44;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSDictionary *info = [self.datas objectAtIndex:indexPath.section];
     if (indexPath.section == 0){
         static NSString *IdentifierLocationHeaderCell = @"IdentifierLocationHeaderCell";
         CHSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationHeaderCell forIndexPath:indexPath];
+        [cell configureTitle:info[@"title"] state:[info[@"value"] integerValue]];
         return cell;
     }
     static NSString *IdentifierLocationRadiusCell = @"IdentifierLocationRadiusCell";
