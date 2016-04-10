@@ -1649,91 +1649,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="紧急求助号码:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5U-wo-1cV">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="Ypk-ys-dHh">
-                                        <variation key="widthClass=compact" constant="111"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="45" id="u6t-5a-l6j"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Ypk-ys-dHh"/>
-                                        <exclude reference="u6t-5a-l6j"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Ypk-ys-dHh"/>
-                                        <include reference="u6t-5a-l6j"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gas-gi-Tnd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="紧急求助号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gas-gi-Tnd" customClass="CHTextField">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="QGJ-uH-PaM"/>
+                                    <constraint firstAttribute="height" constant="45" id="tQM-Xo-nOV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="QGJ-uH-PaM"/>
+                                        <exclude reference="tQM-Xo-nOV"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="QGJ-uH-PaM"/>
+                                        <include reference="tQM-Xo-nOV"/>
                                     </mask>
                                 </variation>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gas-gi-Tnd" firstAttribute="leading" secondItem="l5U-wo-1cV" secondAttribute="trailing" constant="3" id="0ja-cV-f8q">
-                                <variation key="widthClass=compact" constant="8"/>
-                            </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="gas-gi-Tnd" secondAttribute="trailing" constant="-20" id="74y-wa-aCi"/>
-                            <constraint firstItem="l5U-wo-1cV" firstAttribute="top" secondItem="B5u-MN-ohl" secondAttribute="bottom" constant="54" id="7WS-Em-i6a"/>
-                            <constraint firstItem="l5U-wo-1cV" firstAttribute="top" secondItem="gas-gi-Tnd" secondAttribute="top" id="BTR-72-Dut"/>
-                            <constraint firstItem="gas-gi-Tnd" firstAttribute="top" secondItem="B5u-MN-ohl" secondAttribute="bottom" constant="54" id="PA3-tY-fxc"/>
-                            <constraint firstItem="l5U-wo-1cV" firstAttribute="bottom" secondItem="gas-gi-Tnd" secondAttribute="bottom" id="cQS-be-JRk"/>
-                            <constraint firstItem="l5U-wo-1cV" firstAttribute="leading" secondItem="wX1-Tz-FDo" secondAttribute="leading" id="ghE-jj-ZzM"/>
+                            <constraint firstItem="gas-gi-Tnd" firstAttribute="top" secondItem="B5u-MN-ohl" secondAttribute="bottom" constant="54" id="43r-f5-Ihg"/>
+                            <constraint firstItem="gas-gi-Tnd" firstAttribute="leading" secondItem="wX1-Tz-FDo" secondAttribute="leadingMargin" constant="-20" id="5Ea-TC-Igm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gas-gi-Tnd" secondAttribute="trailing" constant="-20" id="PP4-q0-wCf"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="l5U-wo-1cV"/>
                                 <exclude reference="gas-gi-Tnd"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0ja-cV-f8q"/>
-                                <exclude reference="74y-wa-aCi"/>
-                                <exclude reference="PA3-tY-fxc"/>
-                                <exclude reference="7WS-Em-i6a"/>
-                                <exclude reference="BTR-72-Dut"/>
-                                <exclude reference="cQS-be-JRk"/>
-                                <exclude reference="ghE-jj-ZzM"/>
+                                <exclude reference="43r-f5-Ihg"/>
+                                <exclude reference="5Ea-TC-Igm"/>
+                                <exclude reference="PP4-q0-wCf"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="l5U-wo-1cV"/>
                                 <include reference="gas-gi-Tnd"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0ja-cV-f8q"/>
-                                <include reference="74y-wa-aCi"/>
-                                <include reference="PA3-tY-fxc"/>
-                                <include reference="7WS-Em-i6a"/>
-                                <include reference="BTR-72-Dut"/>
-                                <include reference="cQS-be-JRk"/>
-                                <include reference="ghE-jj-ZzM"/>
+                                <include reference="43r-f5-Ihg"/>
+                                <include reference="5Ea-TC-Igm"/>
+                                <include reference="PP4-q0-wCf"/>
                             </mask>
                         </variation>
                     </view>

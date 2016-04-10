@@ -7,10 +7,11 @@
 //
 
 #import "CHSOSSetController.h"
+#import "CHTextField.h"
 
 @interface CHSOSSetController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *num;
+@property (weak, nonatomic) IBOutlet CHTextField *num;
 
 @end
 
