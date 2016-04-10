@@ -21,7 +21,7 @@
 - (UIViewController *)locationMonitorController;
 - (UIViewController *)healthReportController;
 - (UIViewController *)locationAreaController;
-
+- (UIViewController *)setTimeIntervalController;
 
 
 

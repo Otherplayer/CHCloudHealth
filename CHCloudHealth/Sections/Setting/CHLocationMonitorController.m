@@ -10,6 +10,7 @@
 #import "CHSwitchCell.h"
 #import "CHUnitCell.h"
 #import "CHMonitorCell.h"
+#import "CHSetTimeIntervalController.h"
 
 @interface CHLocationMonitorController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -46,6 +47,15 @@
                 [self.datas addObject:section1];
                 
                 
+//                NSDictionary *section2 = @{@"title":@"围栏半径",@"value":[NSString stringWithFormat:@"%@",info[@"locationSwitch"]]};
+//                [self.datas addObject:section1];
+//                
+                NSString *time = info[@"interval"] ? : @"";
+                NSDictionary *section2 = @{@"title":@"时间间隔",@"value":time};
+                [self.datas addObject:section2];
+                
+                
+                
                 self.tableView.loading = NO;
                 [self.tableView reloadData];
             }else{
@@ -61,8 +71,10 @@
     
     NSDictionary *section1 = [self.datas objectAtIndex:0];
     NSInteger state = [section1[@"value"] integerValue];
+    NSDictionary *section2 = [self.datas objectAtIndex:1];
     
-    [[NetworkingManager sharedManager] setLocationSetting:[CHUser sharedInstance].deviceId locationSwitch:state completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+    
+    [[NetworkingManager sharedManager] setLocationSetting:[CHUser sharedInstance].deviceId locationSwitch:state interval:section2[@"value"] completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
                 [self.navigationController popViewControllerAnimated:YES];
@@ -100,13 +112,39 @@
     if (indexPath.section == 0){
         static NSString *IdentifierLocationHeaderCell = @"IdentifierLocationHeaderCell";
         CHSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationHeaderCell forIndexPath:indexPath];
+        WS(weakSelf);
         [cell configureTitle:info[@"title"] state:[info[@"value"] integerValue]];
+        [cell setDidChangeValueBlock:^(NSString *isOn) {
+            NSDictionary *section1 = @{@"title":@"电子围栏",@"value":[NSString stringWithFormat:@"%@",isOn]};
+            [weakSelf.datas replaceObjectAtIndex:0 withObject:section1];
+            [weakSelf.tableView reloadData];
+        }];
         return cell;
     }
+    
     static NSString *IdentifierLocationRadiusCell = @"IdentifierLocationRadiusCell";
     CHUnitCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationRadiusCell forIndexPath:indexPath];
+    [cell setTitle:info[@"title"] detail:info[@"value"]];
     return cell;
     
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *info = [self.datas objectAtIndex:indexPath.section];
+    NSString *title = info[@"title"];
+    
+    if ([title isEqualToString:@"时间间隔"]) {
+        CHSetTimeIntervalController *controller = (CHSetTimeIntervalController *)[[UIStoryboard mainStoryboard] setTimeIntervalController];
+        [controller setDidSelectedTimeBlock:^(NSString *timeStr) {
+            NSDictionary *section2 = @{@"title":@"时间间隔",@"value":timeStr};
+            [self.datas replaceObjectAtIndex:1 withObject:section2];
+            [self.tableView reloadData];
+        }];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    
+    
+}
+
 
 @end

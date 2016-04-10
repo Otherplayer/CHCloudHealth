@@ -58,7 +58,7 @@
 - (void)chnageDevice:(NSString *)userId number:(NSString *)number completedHandler:(GGRequestCallbackBlock)completed;
 
 - (void)getLocationSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
-- (void)setLocationSetting:(NSString *)deviceId locationSwitch:(NSInteger)locationSwitch completedHandler:(GGRequestCallbackBlock)completed;
+- (void)setLocationSetting:(NSString *)deviceId locationSwitch:(NSInteger)locationSwitch interval:(NSString *)timeInterval completedHandler:(GGRequestCallbackBlock)completed;
 
 - (void)getHeartRateSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
 - (void)setHeartRateSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed;

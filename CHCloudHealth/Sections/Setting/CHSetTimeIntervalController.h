@@ -10,4 +10,6 @@
 
 @interface CHSetTimeIntervalController : CHRootViewController
 
+@property (nonatomic, copy) void(^didSelectedTimeBlock)(NSString *timeStr);
+
 @end

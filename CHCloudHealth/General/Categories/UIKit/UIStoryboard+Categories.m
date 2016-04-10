@@ -42,6 +42,10 @@
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHLocationMonitorController"];
 }
 
+- (UIViewController *)setTimeIntervalController{
+    return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHSetTimeIntervalController"];
+}
+
 - (CHBaseNavigationController *)bindController{
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHNavBindController"];
 }

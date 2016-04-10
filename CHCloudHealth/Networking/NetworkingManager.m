@@ -222,8 +222,11 @@ NSString *const kAPI_SIZE = @"size";
     NSDictionary *params = @{@"deviceId":deviceId};
     [self POST:kAPI_GetLocationSetting params:params memoryCache:NO diskCache:NO completed:completed];
 }
-- (void)setLocationSetting:(NSString *)deviceId locationSwitch:(NSInteger)locationSwitch completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"deviceId":deviceId,@"locationSwitch":@(locationSwitch)};
+- (void)setLocationSetting:(NSString *)deviceId locationSwitch:(NSInteger)locationSwitch interval:(NSString *)timeInterval completedHandler:(GGRequestCallbackBlock)completed{
+    if (timeInterval) {
+        timeInterval = @"";
+    }
+    NSDictionary *params = @{@"deviceId":deviceId,@"locationSwitch":@(locationSwitch),@"interval":timeInterval};
     [self POST:kAPI_SetLocationSetting params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
