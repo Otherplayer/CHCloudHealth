@@ -240,6 +240,7 @@
                         <segue destination="WcM-8J-SIJ" kind="showDetail" id="7fe-9s-IeC"/>
                         <segue destination="dsG-uq-ihR" kind="showDetail" id="T8Y-p2-4KT"/>
                         <segue destination="r08-qg-86v" kind="showDetail" id="Err-KI-Xqn"/>
+                        <segue destination="afq-cf-aau" kind="showDetail" id="X3l-DQ-2lc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UeP-CS-nkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1517,6 +1518,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Lv-P7-3Qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1630.5" y="1447"/>
+        </scene>
+        <!--Set Controller-->
+        <scene sceneID="JI0-Cm-c0B">
+            <objects>
+                <viewController storyboardIdentifier="CHSOSSetController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="afq-cf-aau" customClass="CHSOSSetController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B5u-MN-ohl"/>
+                        <viewControllerLayoutGuide type="bottom" id="hB6-pX-28w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wX1-Tz-FDo">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LgB-JU-APd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2365.5" y="1449"/>
         </scene>
         <!--昵称-->
         <scene sceneID="cyN-Kn-otH">
