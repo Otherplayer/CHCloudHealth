@@ -63,23 +63,23 @@
 
 - (BOOL)check{
     
-    if ([self.tfName isEmptyObject]) {
+    if ([self.tfName.text isEmptyObject]) {
         [HYQShowTip showTipTextOnly:@"名字不能为空" dealy:2];
         return NO;
     }
-    if ([self.tfRelation isEmptyObject]) {
+    if ([self.tfRelation.text isEmptyObject]) {
         [HYQShowTip showTipTextOnly:@"关系不能为空" dealy:2];
         return NO;
     }
-    if ([self.tfMobile isEmptyObject]) {
+    if ([self.tfMobile.text isEmptyObject]) {
         [HYQShowTip showTipTextOnly:@"电话不能为空" dealy:2];
         return NO;
     }
-    if ([self.tfAddress isEmptyObject]) {
+    if ([self.tfAddress.text isEmptyObject]) {
         [HYQShowTip showTipTextOnly:@"地址不能为空" dealy:2];
         return NO;
     }
-    if ([self.tfRemark isEmptyObject]) {
+    if ([self.tfRemark.text isEmptyObject]) {
         [HYQShowTip showTipTextOnly:@"备注不能为空" dealy:2];
         return NO;
     }
