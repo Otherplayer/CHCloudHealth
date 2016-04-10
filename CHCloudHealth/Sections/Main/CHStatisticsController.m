@@ -51,8 +51,6 @@
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     
-    [self.graphView removeFromSuperview];
-    self.graphView = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,8 +71,8 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
-                    [self refreshGraph];
                     [HYQShowTip hideImmediately];
+                    [self refreshGraph];
                 }else{
                     [HYQShowTip showTipTextOnly:errDesc dealy:2];
                 }
@@ -83,24 +81,30 @@
     }else if (self.type == 3){
         [HYQShowTip showProgressWithText:@"" dealy:30];
         [[NetworkingManager sharedManager] getBloodPressureInfo:@"222222" date:@"2016-04-09" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-            if (success) {
-                [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
-                [self refreshGraph];
-                [HYQShowTip hideImmediately];
-            }else{
-                [HYQShowTip showTipTextOnly:errDesc dealy:2];
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if (success) {
+                    [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
+                    [self refreshGraph];
+                    [HYQShowTip hideImmediately];
+                }else{
+                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                }
+            });
         }];
     }else if (self.type == 4){
         [HYQShowTip showProgressWithText:@"" dealy:30];
         [[NetworkingManager sharedManager] getBloodSugarInfo:@"222222" date:@"2016-04-09" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-            if (success) {
-                [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
-                [self refreshGraph];
-                [HYQShowTip hideImmediately];
-            }else{
-                [HYQShowTip showTipTextOnly:errDesc dealy:2];
-            }
+           dispatch_async(dispatch_get_main_queue(), ^{
+               
+               if (success) {
+                   [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
+                   [self refreshGraph];
+                   [HYQShowTip hideImmediately];
+               }else{
+                   [HYQShowTip showTipTextOnly:errDesc dealy:2];
+               }
+           });
         }];
     }
     
