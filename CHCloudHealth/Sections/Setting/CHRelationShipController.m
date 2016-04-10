@@ -7,6 +7,7 @@
 //
 
 #import "CHRelationShipController.h"
+#import "CHAddRelationNumController.h"
 
 @interface CHRelationShipController ()
 
@@ -21,6 +22,8 @@
     [super viewDidLoad];
     [self addBackButton];
     
+    [self addRightButton2NavWithTitle:@"添加"];
+    
     self.datas = [[NSMutableArray alloc] init];
     
     [self.tableView blankTableFooterView];
@@ -29,6 +32,10 @@
     
     self.tableView.loading = YES;
     [self getDatas];
+    
+    
+    
+    
 }
 
 
@@ -36,7 +43,12 @@
 #pragma mark - 
 
 - (void)rightBarButtonPressed:(id)rightBarButtonPressed{
-    
+    CHAddRelationNumController *controller = (CHAddRelationNumController *)[[UIStoryboard mainStoryboard] addRelationNumController];
+    [controller setDidAddReleationNumBlock:^{
+        
+    }];
+    CHBaseNavigationController *nav = [[CHBaseNavigationController alloc] initWithRootViewController:controller];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)getDatas{

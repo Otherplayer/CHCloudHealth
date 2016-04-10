@@ -42,6 +42,10 @@
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHLocationMonitorController"];
 }
 
+- (UIViewController *)addRelationNumController{
+    return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHAddRelationNumController"];
+}
+
 - (UIViewController *)setTimeIntervalController{
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHSetTimeIntervalController"];
 }

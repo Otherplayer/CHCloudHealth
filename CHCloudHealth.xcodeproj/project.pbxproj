@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D28232D7C0428A043614F48 /* libPods-CHCloudHealth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7A51FD90EC5FD877E25B1E /* libPods-CHCloudHealth.a */; };
+		63106CF21CBA84AC001B7D9F /* CHAddRelationNumController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63106CF11CBA84AC001B7D9F /* CHAddRelationNumController.m */; };
 		6315228F1CB55A4F00D8B160 /* CHHealthReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315228E1CB55A4F00D8B160 /* CHHealthReportController.m */; };
 		631522921CB56BD900D8B160 /* CHLocationAreaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631522911CB56BD900D8B160 /* CHLocationAreaController.m */; };
 		63412E231CB2628B00FAD0DA /* UIStoryboard+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E221CB2628B00FAD0DA /* UIStoryboard+Categories.m */; };
@@ -122,6 +123,8 @@
 /* Begin PBXFileReference section */
 		32E958EE73A4318A56D03553 /* Pods-CHCloudHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHCloudHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHCloudHealth/Pods-CHCloudHealth.release.xcconfig"; sourceTree = "<group>"; };
 		5A7A51FD90EC5FD877E25B1E /* libPods-CHCloudHealth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CHCloudHealth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63106CF01CBA84AC001B7D9F /* CHAddRelationNumController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAddRelationNumController.h; sourceTree = "<group>"; };
+		63106CF11CBA84AC001B7D9F /* CHAddRelationNumController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAddRelationNumController.m; sourceTree = "<group>"; };
 		6315228D1CB55A4F00D8B160 /* CHHealthReportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHHealthReportController.h; sourceTree = "<group>"; };
 		6315228E1CB55A4F00D8B160 /* CHHealthReportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHHealthReportController.m; sourceTree = "<group>"; };
 		631522901CB56BD900D8B160 /* CHLocationAreaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLocationAreaController.h; sourceTree = "<group>"; };
@@ -406,6 +409,8 @@
 				63B983911CB8AF3400150EA2 /* CHSetTimeIntervalController.m */,
 				634131841CB8EBEB0072C8DA /* CHDeviceManagerController.h */,
 				634131851CB8EBEB0072C8DA /* CHDeviceManagerController.m */,
+				63106CF01CBA84AC001B7D9F /* CHAddRelationNumController.h */,
+				63106CF11CBA84AC001B7D9F /* CHAddRelationNumController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1015,6 +1020,7 @@
 				6315228F1CB55A4F00D8B160 /* CHHealthReportController.m in Sources */,
 				8472D1FC1CAE53930003E35A /* FQAHDiskCachedObject+CoreDataProperties.m in Sources */,
 				8472D2021CAE53930003E35A /* NSDictionary+FQAHCategories.m in Sources */,
+				63106CF21CBA84AC001B7D9F /* CHAddRelationNumController.m in Sources */,
 				8464DE151CAA48C7000B987E /* AppDelegate.m in Sources */,
 				63412E271CB2634600FAD0DA /* CHLoginController.m in Sources */,
 				8472D20D1CAE53930003E35A /* FQAHReachibility.m in Sources */,

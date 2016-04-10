@@ -661,6 +661,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="LUD-8D-hPY" id="otg-64-l9k"/>
+                        <segue destination="feu-H1-4ri" kind="showDetail" id="8dT-8U-JAx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfN-L6-xJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1813,6 +1814,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykh-EL-n8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1063.5" y="2313"/>
+        </scene>
+        <!--Add Relation Num Controller-->
+        <scene sceneID="Yra-7W-gHY">
+            <objects>
+                <viewController storyboardIdentifier="CHAddRelationNumController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="feu-H1-4ri" customClass="CHAddRelationNumController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7B8-BI-Dj2"/>
+                        <viewControllerLayoutGuide type="bottom" id="491-fp-BrM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W4D-DK-5ev">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W0F-HP-ibI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-316.5" y="2313"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="H5W-fS-QLG">
