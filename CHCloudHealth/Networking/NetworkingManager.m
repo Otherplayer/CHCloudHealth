@@ -56,21 +56,21 @@ NSString *const kAPI_UNBindingDevice = HOTYQ_JAVA_API @"device/unbindDevice";
 //切换设备
 NSString *const kAPI_ChangeDevice = HOTYQ_JAVA_API @"device/changeDevice";
 //获取位置检测设置
-NSString *const kAPI_GetLocationSetting = HOTYQ_JAVA_API @"deviceUser/getLocationSetting";
+NSString *const kAPI_GetLocationSetting = HOTYQ_JAVA_API @"device/getLocationSetting";
 //设置位置检测
-NSString *const kAPI_SetLocationSetting = HOTYQ_JAVA_API @"deviceUser/setLocationSetting";
+NSString *const kAPI_SetLocationSetting = HOTYQ_JAVA_API @"device/setLocationSetting";
 
 
 //获取心率检测配置
-NSString *const kAPI_HeartRateSetting = HOTYQ_JAVA_API @"deviceUser/getHeartRateSetting";
+NSString *const kAPI_HeartRateSetting = HOTYQ_JAVA_API @"device/getHeartRateSetting";
 //设置心率检测
-NSString *const kAPI_SetHeartRateSetting = HOTYQ_JAVA_API @"deviceUser/setHeartRateSetting";
+NSString *const kAPI_SetHeartRateSetting = HOTYQ_JAVA_API @"device/setHeartRateSetting";
 //获取服药提醒设置
-NSString *const kAPI_GetMedicineTipSetting = HOTYQ_JAVA_API @"deviceUser/getMedicationSetting";
+NSString *const kAPI_GetMedicineTipSetting = HOTYQ_JAVA_API @"device/getMedicationSetting";
 //设置服药提醒
-NSString *const kAPI_SetMedicineTipSetting = HOTYQ_JAVA_API @"deviceUser/setMedicationSetting";
+NSString *const kAPI_SetMedicineTipSetting = HOTYQ_JAVA_API @"device/setMedicationSetting";
 //获取SOS号
-NSString *const kAPI_GetSOS = HOTYQ_JAVA_API @"deviceUser/getSOSNumber";
+NSString *const kAPI_GetSOS = HOTYQ_JAVA_API @"device/getSOSNumber";
 //* Params:
 //
 //1.deviceId
