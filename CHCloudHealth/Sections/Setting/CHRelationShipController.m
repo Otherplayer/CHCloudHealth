@@ -44,8 +44,9 @@
 
 - (void)rightBarButtonPressed:(id)rightBarButtonPressed{
     CHAddRelationNumController *controller = (CHAddRelationNumController *)[[UIStoryboard mainStoryboard] addRelationNumController];
+    WS(weakSelf);
     [controller setDidAddReleationNumBlock:^{
-        
+        [weakSelf getDatas];
     }];
     CHBaseNavigationController *nav = [[CHBaseNavigationController alloc] initWithRootViewController:controller];
     [self presentViewController:nav animated:YES completion:nil];
@@ -56,7 +57,7 @@
     [[NetworkingManager sharedManager] getListFamliyNumber:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
-                
+                [self.datas removeAllObjects];
                 self.tableView.loading = NO;
                 [self.tableView reloadData];
             }else{

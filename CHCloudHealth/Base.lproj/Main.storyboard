@@ -1825,9 +1825,182 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="W4D-DK-5ev">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="名字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kg0-2g-AaY" customClass="CHTextField">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="D7U-LQ-Ald"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="D7U-LQ-Ald"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="D7U-LQ-Ald"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="关系" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPA-RA-gRM" customClass="CHTextField">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="nCJ-5L-f1d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="nCJ-5L-f1d"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="nCJ-5L-f1d"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="电话" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lvm-6C-RDx" customClass="CHTextField">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="QOv-xf-4Z2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QOv-xf-4Z2"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="QOv-xf-4Z2"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="地址" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8WO-tP-jhl" customClass="CHTextField">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Tiz-6G-g4C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Tiz-6G-g4C"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Tiz-6G-g4C"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="备注" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ms5-2D-OES" customClass="CHTextField">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="3X6-li-g3c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3X6-li-g3c"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="3X6-li-g3c"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lvm-6C-RDx" firstAttribute="top" secondItem="SPA-RA-gRM" secondAttribute="bottom" constant="8" id="3XN-yF-S88"/>
+                            <constraint firstItem="Kg0-2g-AaY" firstAttribute="leading" secondItem="W4D-DK-5ev" secondAttribute="leadingMargin" constant="-20" id="6t9-h3-kUP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ms5-2D-OES" secondAttribute="trailing" constant="-20" id="8pI-ea-GdB"/>
+                            <constraint firstItem="SPA-RA-gRM" firstAttribute="top" secondItem="7B8-BI-Dj2" secondAttribute="bottom" constant="60" id="CZU-EC-ZbK"/>
+                            <constraint firstItem="Lvm-6C-RDx" firstAttribute="leading" secondItem="W4D-DK-5ev" secondAttribute="leadingMargin" constant="-20" id="Gpq-sd-e3T"/>
+                            <constraint firstItem="Kg0-2g-AaY" firstAttribute="top" secondItem="7B8-BI-Dj2" secondAttribute="bottom" constant="7" id="Ifx-Ak-vUL"/>
+                            <constraint firstItem="8WO-tP-jhl" firstAttribute="leading" secondItem="W4D-DK-5ev" secondAttribute="leadingMargin" constant="-20" id="OgZ-w6-UXn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SPA-RA-gRM" secondAttribute="trailing" constant="-20" id="Q84-mf-K11"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kg0-2g-AaY" secondAttribute="trailing" constant="-20" id="QD1-Lh-sto"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lvm-6C-RDx" secondAttribute="trailing" constant="-20" id="XkZ-Je-ePa"/>
+                            <constraint firstItem="ms5-2D-OES" firstAttribute="leading" secondItem="W4D-DK-5ev" secondAttribute="leadingMargin" constant="-20" id="aRk-JV-puA"/>
+                            <constraint firstItem="8WO-tP-jhl" firstAttribute="top" secondItem="Lvm-6C-RDx" secondAttribute="bottom" constant="8" id="bxC-Fz-TIZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8WO-tP-jhl" secondAttribute="trailing" constant="-20" id="mma-Zg-HP1"/>
+                            <constraint firstItem="ms5-2D-OES" firstAttribute="top" secondItem="8WO-tP-jhl" secondAttribute="bottom" constant="8" id="vLT-BW-y6n"/>
+                            <constraint firstItem="SPA-RA-gRM" firstAttribute="leading" secondItem="W4D-DK-5ev" secondAttribute="leadingMargin" constant="-20" id="x4o-7E-Q3d"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Kg0-2g-AaY"/>
+                                <exclude reference="SPA-RA-gRM"/>
+                                <exclude reference="Lvm-6C-RDx"/>
+                                <exclude reference="8WO-tP-jhl"/>
+                                <exclude reference="ms5-2D-OES"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="6t9-h3-kUP"/>
+                                <exclude reference="Ifx-Ak-vUL"/>
+                                <exclude reference="QD1-Lh-sto"/>
+                                <exclude reference="CZU-EC-ZbK"/>
+                                <exclude reference="Q84-mf-K11"/>
+                                <exclude reference="x4o-7E-Q3d"/>
+                                <exclude reference="3XN-yF-S88"/>
+                                <exclude reference="Gpq-sd-e3T"/>
+                                <exclude reference="XkZ-Je-ePa"/>
+                                <exclude reference="OgZ-w6-UXn"/>
+                                <exclude reference="bxC-Fz-TIZ"/>
+                                <exclude reference="mma-Zg-HP1"/>
+                                <exclude reference="8pI-ea-GdB"/>
+                                <exclude reference="aRk-JV-puA"/>
+                                <exclude reference="vLT-BW-y6n"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Kg0-2g-AaY"/>
+                                <include reference="SPA-RA-gRM"/>
+                                <include reference="Lvm-6C-RDx"/>
+                                <include reference="8WO-tP-jhl"/>
+                                <include reference="ms5-2D-OES"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="6t9-h3-kUP"/>
+                                <include reference="Ifx-Ak-vUL"/>
+                                <include reference="QD1-Lh-sto"/>
+                                <include reference="CZU-EC-ZbK"/>
+                                <include reference="Q84-mf-K11"/>
+                                <include reference="x4o-7E-Q3d"/>
+                                <include reference="3XN-yF-S88"/>
+                                <include reference="Gpq-sd-e3T"/>
+                                <include reference="XkZ-Je-ePa"/>
+                                <include reference="OgZ-w6-UXn"/>
+                                <include reference="bxC-Fz-TIZ"/>
+                                <include reference="mma-Zg-HP1"/>
+                                <include reference="8pI-ea-GdB"/>
+                                <include reference="aRk-JV-puA"/>
+                                <include reference="vLT-BW-y6n"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tfAddress" destination="8WO-tP-jhl" id="pf1-Pf-vZm"/>
+                        <outlet property="tfMobile" destination="Lvm-6C-RDx" id="TGo-L6-pAr"/>
+                        <outlet property="tfName" destination="Kg0-2g-AaY" id="hSd-F4-J2W"/>
+                        <outlet property="tfRelation" destination="SPA-RA-gRM" id="AZk-23-ttp"/>
+                        <outlet property="tfRemark" destination="ms5-2D-OES" id="34a-bo-PZV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0F-HP-ibI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
