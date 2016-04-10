@@ -71,18 +71,8 @@ NSString *const kAPI_GetMedicineTipSetting = HOTYQ_JAVA_API @"device/getMedicati
 NSString *const kAPI_SetMedicineTipSetting = HOTYQ_JAVA_API @"device/setMedicationSetting";
 //获取SOS号
 NSString *const kAPI_GetSOS = HOTYQ_JAVA_API @"device/getSOSNumber";
-//* Params:
-//
-//1.deviceId
-//
 //设置SOS号
-NSString *const kAPI_SetSOS = HOTYQ_JAVA_API @"deviceUser/setSOSNumber";
-//* Params:
-//
-//1.deviceId
-//2.sosNum
-//
-
+NSString *const kAPI_SetSOS = HOTYQ_JAVA_API @"device/setSOSNumber";
 
 
 NSString *const kAPI_PAGE = @"page";
@@ -235,6 +225,15 @@ NSString *const kAPI_SIZE = @"size";
 - (void)setHeartRateSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed{
     NSDictionary *params = @{@"deviceId":deviceId,@"heartRateSwitch":@(heartRateSwitch)};
     [self POST:kAPI_SetHeartRateSetting params:params memoryCache:NO diskCache:NO completed:completed];
+}
+
+- (void)getSOSSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId};
+    [self POST:kAPI_GetSOS params:params memoryCache:NO diskCache:NO completed:completed];
+}
+- (void)setSOSSetting:(NSString *)deviceId sosNum:(NSString *)sosNum completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId,@"sosNum":sosNum};
+    [self POST:kAPI_SetSOS params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
 - (void)getMedicineSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed{
