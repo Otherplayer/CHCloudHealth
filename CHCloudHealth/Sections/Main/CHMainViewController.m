@@ -55,9 +55,9 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldGotoSubMenuController:) name:kNotificationMenuController object:nil];
     
-    
-    //获取绑定信息
-    [self getDatas];
+//    
+//    //获取绑定信息
+//    [self getDatas];
     
 }
 
@@ -100,34 +100,34 @@
     }
     
     [[NetworkingManager sharedManager] getDeviceInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-        if (success) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.datas removeAllObjects];
-                [self.datas addObject:@[responseData[@"data"]]];
-                [self getHealthTypeInfo];
-            });
-        }else{
-            self.tableView.loading = NO;
-            [HYQShowTip showTipTextOnly:errDesc dealy:2];
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                    [self.datas removeAllObjects];
+                    [self.datas addObject:@[responseData[@"data"]]];
+                    [self getHealthTypeInfo];
+            }else{
+                self.tableView.loading = NO;
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+        });
     }];
     
 }
 
 - (void)getHealthTypeInfo{
     [[NetworkingManager sharedManager] getHealthTypeInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-        if (success) {
-            dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                    self.tableView.loading = NO;
+                    for (NSDictionary *info in responseData[@"data"]) {
+                        [self.datas addObject:@[info]];
+                    }
+                    [self.tableView reloadData];
+            }else{
                 self.tableView.loading = NO;
-                for (NSDictionary *info in responseData[@"data"]) {
-                    [self.datas addObject:@[info]];
-                }
-                [self.tableView reloadData];
-            });
-        }else{
-            self.tableView.loading = NO;
-            [HYQShowTip showTipTextOnly:errDesc dealy:2];
-        }
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+       });
     }];
 }
 

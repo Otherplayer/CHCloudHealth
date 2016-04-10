@@ -187,6 +187,14 @@ NSString *const kAPI_SIZE = @"size";
     [self POST:kAPI_HealthTypeInfo params:params memoryCache:YES diskCache:YES completed:completed];
 }
 - (void)getHeartRateInfo:(NSString *)deviceUserId date:(NSString *)date completedHandler:(GGRequestCallbackBlock)completed{
+//    
+//#ifdef DEBUG
+//    
+//    
+//#else
+//    
+//#endif
+    
     NSDictionary *params = @{@"deviceUserId":deviceUserId,@"queryDate":date};
     [self POST:kAPI_HeartRateInfo params:params memoryCache:NO diskCache:NO completed:completed];
 }

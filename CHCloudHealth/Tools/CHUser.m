@@ -57,7 +57,7 @@ NSString *const kUSER_SEX = @"sex";
 }
 - (NSString *)deviceId{
     return @"12345678";
-    return [self.userDefaults objectForKey:kUSER_DEVICE_ID] ? : @"";
+    return [self.userDefaults objectForKey:kUSER_DEVICE_ID] ? : @"12345678";
 }
 - (NSString *)avatarurl{
     return [self.userDefaults objectForKey:kUSER_AVATAR];

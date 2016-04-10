@@ -36,11 +36,11 @@
     
     
     
-    if (self.type == 1) {
+    if (self.type == 2) {
         [self setTitle:@"心率统计"];
-    }else if (self.type == 2){
-        [self setTitle:@"血压统计"];
     }else if (self.type == 3){
+        [self setTitle:@"血压统计"];
+    }else if (self.type == 4){
         [self setTitle:@"血糖统计"];
     }
     
@@ -48,7 +48,12 @@
 }
 
 
-
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    
+    [self.graphView removeFromSuperview];
+    self.graphView = nil;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -105,20 +110,20 @@
 
 - (void)refreshGraph{
     
-    for (int i = 0; i < self.originalDataArr.count; i++) {
-        NSDictionary *info = self.originalDataArr[i];
-        NSNumber *x = @(i);
-        NSNumber *y = @([info[@"val"] integerValue] + 60);
-        [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
-    }
-    
-    
-//    for ( NSUInteger i = 0; i < 60; i++ ) {
+//    for (int i = 0; i < self.originalDataArr.count; i++) {
+//        NSDictionary *info = self.originalDataArr[i];
 //        NSNumber *x = @(i);
-//        i = i + 1;
-//        NSNumber *y = @((arc4random() % 120) + 41);
+//        NSNumber *y = @([info[@"val"] integerValue] + 60);
 //        [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
 //    }
+//    
+    
+    for ( NSUInteger i = 0; i < 60; i++ ) {
+        NSNumber *x = @(i);
+        i = i + 1;
+        NSNumber *y = @((arc4random() % 120) + 41);
+        [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
+    }
     
     [self.graphView.plotDatasDictionary setObject:self.dataArr forKey:kDataLine];
     [self.graphView setLowerwarningValue:86];

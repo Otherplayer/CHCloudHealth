@@ -33,6 +33,8 @@ static int startY = 55;
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
+        
         self.hostView = [[CPTGraphHostingView alloc] initWithFrame:frame];
         self.hostView.backgroundColor = [UIColor whiteColor];
         self.plotDatasDictionary = [[NSMutableDictionary alloc] init];
@@ -45,6 +47,12 @@ static int startY = 55;
     return self;
 }
 - (void)awakeFromNib{
+    
+    lengthOfX = 10;
+    lengthOfY = 80;
+    positionOfLeft = 3;
+    startY = 55;
+    
     self.hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, 300)];
     self.hostView.backgroundColor = [UIColor whiteColor];
     self.plotDatasDictionary = [[NSMutableDictionary alloc] init];
