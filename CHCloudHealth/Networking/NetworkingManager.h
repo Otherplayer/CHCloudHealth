@@ -77,4 +77,8 @@
 - (void)getSafeArea:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
 - (void)setSafeArea:(NSString *)deviceId lng:(NSString *)lng lat:(NSString *)lat radius:(NSString *)radius completedHandler:(GGRequestCallbackBlock)completed;
 
+
+- (void)getListFamliyNumber:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed;
+- (void)setFamliyNumber:(NSString *)deviceUserId name:(NSString *)name relation:(NSString *)relation mobile:(NSString *)mobile address:(NSString *)address remark:(NSString *)remark completedHandler:(GGRequestCallbackBlock)completed;
+
 @end

@@ -84,23 +84,20 @@ NSString *const kAPI_GetSOS = HOTYQ_JAVA_API @"device/getSOSNumber";
 //设置SOS号
 NSString *const kAPI_SetSOS = HOTYQ_JAVA_API @"device/setSOSNumber";
 
-
-
-
 //获取电子围栏
 NSString *const kAPI_GetSafeArea = HOTYQ_JAVA_API @"device/getSafeAreaSetting";
-//* Params:
-//
-//1.deviceId
-
 //设置电子围栏
 NSString *const kAPI_SetSafeArea = HOTYQ_JAVA_API @"device/setSafeAreaSetting";
+
+
+
+//设置亲情号码
+NSString *const kAPI_setFamliyNumber = HOTYQ_JAVA_API @"device/setFamliyNumber";
+//获取亲情号码
+NSString *const kAPI_listFamliyNumber = HOTYQ_JAVA_API @"device/listFamliyNumber";
 //* Params:
 //
-//1.deviceId
-//2.lng
-//3.lat
-//4.radius
+//1.deviceUserId
 
 
 
@@ -285,6 +282,15 @@ NSString *const kAPI_SIZE = @"size";
 - (void)setSafeArea:(NSString *)deviceId lng:(NSString *)lng lat:(NSString *)lat radius:(NSString *)radius completedHandler:(GGRequestCallbackBlock)completed{
     NSDictionary *params = @{@"deviceId":deviceId,@"lng":lng,@"lat":lat,@"radius":radius};
     [self POST:kAPI_SetSafeArea params:params memoryCache:NO diskCache:NO completed:completed];
+}
+
+- (void)getListFamliyNumber:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceUserId":deviceUserId};
+    [self POST:kAPI_listFamliyNumber params:params memoryCache:NO diskCache:NO completed:completed];
+}
+- (void)setFamliyNumber:(NSString *)deviceUserId name:(NSString *)name relation:(NSString *)relation mobile:(NSString *)mobile address:(NSString *)address remark:(NSString *)remark completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceUserId":deviceUserId,@"name":name,@"relation":relation,@"mobile":mobile,@"address":address,@"remark":remark};
+    [self POST:kAPI_setFamliyNumber params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
 - (void)getMedicineSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed{
