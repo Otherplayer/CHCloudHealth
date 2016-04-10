@@ -60,9 +60,11 @@
 - (void)getLocationSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
 - (void)setLocationSetting:(NSString *)deviceId locationSwitch:(NSInteger)locationSwitch completedHandler:(GGRequestCallbackBlock)completed;
 
+- (void)getHeartRateSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
+- (void)setHeartRateSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed;
 
-
-
+- (void)getMedicineSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
+- (void)setMedicineSetting:(NSString *)deviceId medicationSwitch:(NSInteger)medicationSwitch t1:(NSString *)t1 t2:(NSString *)t2 t3:(NSString *)t3 completedHandler:(GGRequestCallbackBlock)completed;
 
 
 @end

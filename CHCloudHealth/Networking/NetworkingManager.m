@@ -61,55 +61,22 @@ NSString *const kAPI_GetLocationSetting = HOTYQ_JAVA_API @"deviceUser/getLocatio
 NSString *const kAPI_SetLocationSetting = HOTYQ_JAVA_API @"deviceUser/setLocationSetting";
 
 
-
-//#####4.7获取位置检测设置
-//* URL:/deviceUser/getLocationSetting
+//获取心率检测配置
+NSString *const kAPI_HeartRateSetting = HOTYQ_JAVA_API @"deviceUser/getHeartRateSetting";
+//设置心率检测
+NSString *const kAPI_SetHeartRateSetting = HOTYQ_JAVA_API @"deviceUser/setHeartRateSetting";
+//获取服药提醒设置
+NSString *const kAPI_GetMedicineTipSetting = HOTYQ_JAVA_API @"deviceUser/getMedicationSetting";
+//设置服药提醒
+NSString *const kAPI_SetMedicineTipSetting = HOTYQ_JAVA_API @"deviceUser/setMedicationSetting";
+//获取SOS号
+NSString *const kAPI_GetSOS = HOTYQ_JAVA_API @"deviceUser/getSOSNumber";
 //* Params:
 //
 //1.deviceId
 //
-//#####4.8设置位置检测
-//* URL:/deviceUser/setLocationSetting
-//* Params:
-//
-//1.deviceId
-//2.locationSwitch
-//
-//#####4.9获取心率检测配置
-//* URL:/deviceUser/getHeartRateSetting
-//* Params:
-//
-//1.deviceId
-//
-//#####4.10设置心率检测
-//* URL:/deviceUser/setHeartRateSetting
-//* Params:
-//
-//1.deviceId
-//2.heartRateSwitch
-//#####4.11获取服药提醒设置
-//* URL:/deviceUser/getMedicationSetting
-//* Params:
-//
-//1.deviceId
-//
-//#####4.12设置服药提醒
-//* URL:/deviceUser/setMedicationSetting
-//* Params:
-//
-//1.deviceId
-//2.medicationSwitch
-//3.medicationTime1
-//4.medicationTime2
-//5.medicationTime3
-//#####4.13获取SOS号
-//* URL:/deviceUser/getSOSNumber
-//* Params:
-//
-//1.deviceId
-//
-//#####4.14设置SOS号
-//* URL:/deviceUser/setSOSNumber
+//设置SOS号
+NSString *const kAPI_SetSOS = HOTYQ_JAVA_API @"deviceUser/setSOSNumber";
 //* Params:
 //
 //1.deviceId
@@ -258,6 +225,37 @@ NSString *const kAPI_SIZE = @"size";
 - (void)setLocationSetting:(NSString *)deviceId locationSwitch:(NSInteger)locationSwitch completedHandler:(GGRequestCallbackBlock)completed{
     NSDictionary *params = @{@"deviceId":deviceId,@"locationSwitch":@(locationSwitch)};
     [self POST:kAPI_SetLocationSetting params:params memoryCache:NO diskCache:NO completed:completed];
+}
+
+
+- (void)getHeartRateSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId};
+    [self POST:kAPI_HeartRateSetting params:params memoryCache:NO diskCache:NO completed:completed];
+}
+- (void)setHeartRateSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId,@"heartRateSwitch":@(heartRateSwitch)};
+    [self POST:kAPI_SetHeartRateSetting params:params memoryCache:NO diskCache:NO completed:completed];
+}
+
+- (void)getMedicineSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId};
+    [self POST:kAPI_GetMedicineTipSetting params:params memoryCache:NO diskCache:NO completed:completed];
+}
+- (void)setMedicineSetting:(NSString *)deviceId medicationSwitch:(NSInteger)medicationSwitch t1:(NSString *)t1 t2:(NSString *)t2 t3:(NSString *)t3 completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId,@"medicationSwitch":@(medicationSwitch)};
+    
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithDictionary:params];
+    if (t1) {
+        [parameters setObject:t1 forKey:@"medicationTime1"];
+    }
+    if (t2) {
+        [parameters setObject:t2 forKey:@"medicationTime2"];
+    }
+    if (t3) {
+        [parameters setObject:t3 forKey:@"medicationTime3"];
+    }
+    
+    [self POST:kAPI_SetMedicineTipSetting params:parameters memoryCache:NO diskCache:NO completed:completed];
 }
 
 

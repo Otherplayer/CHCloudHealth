@@ -130,8 +130,8 @@
     }
     
     [self.graphView.plotDatasDictionary setObject:self.dataArr forKey:kDataLine];
-    [self.graphView setLowerwarningValue:86];
-    [self.graphView setUpwarningValue:110];
+//    [self.graphView setLowerwarningValue:86];
+//    [self.graphView setUpwarningValue:110];
     [self.graphView refresh];
 }
 
