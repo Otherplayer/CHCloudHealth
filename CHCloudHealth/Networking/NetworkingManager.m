@@ -85,6 +85,25 @@ NSString *const kAPI_GetSOS = HOTYQ_JAVA_API @"device/getSOSNumber";
 NSString *const kAPI_SetSOS = HOTYQ_JAVA_API @"device/setSOSNumber";
 
 
+
+
+//获取电子围栏
+NSString *const kAPI_GetSafeArea = HOTYQ_JAVA_API @"device/getSafeAreaSetting";
+//* Params:
+//
+//1.deviceId
+
+//设置电子围栏
+NSString *const kAPI_SetSafeArea = HOTYQ_JAVA_API @"device/setSafeAreaSetting";
+//* Params:
+//
+//1.deviceId
+//2.lng
+//3.lat
+//4.radius
+
+
+
 NSString *const kAPI_PAGE = @"page";
 NSString *const kAPI_SIZE = @"size";
 
@@ -154,14 +173,6 @@ NSString *const kAPI_SIZE = @"size";
     [self POST:kAPI_HealthTypeInfo params:params memoryCache:YES diskCache:YES completed:completed];
 }
 - (void)getHeartRateInfo:(NSString *)deviceUserId date:(NSString *)date completedHandler:(GGRequestCallbackBlock)completed{
-//    
-//#ifdef DEBUG
-//    
-//    
-//#else
-//    
-//#endif
-    
     NSDictionary *params = @{@"deviceUserId":deviceUserId,@"queryDate":date};
     [self POST:kAPI_HeartRateInfo params:params memoryCache:NO diskCache:NO completed:completed];
 }
@@ -223,7 +234,7 @@ NSString *const kAPI_SIZE = @"size";
     [self POST:kAPI_GetLocationSetting params:params memoryCache:NO diskCache:NO completed:completed];
 }
 - (void)setLocationSetting:(NSString *)deviceId locationSwitch:(NSInteger)locationSwitch interval:(NSString *)timeInterval completedHandler:(GGRequestCallbackBlock)completed{
-    if (timeInterval) {
+    if (!timeInterval || timeInterval.length == 0) {
         timeInterval = @"";
     }
     NSDictionary *params = @{@"deviceId":deviceId,@"locationSwitch":@(locationSwitch),@"interval":timeInterval};
@@ -265,6 +276,15 @@ NSString *const kAPI_SIZE = @"size";
 - (void)setSOSSetting:(NSString *)deviceId sosNum:(NSString *)sosNum completedHandler:(GGRequestCallbackBlock)completed{
     NSDictionary *params = @{@"deviceId":deviceId,@"sosNum":sosNum};
     [self POST:kAPI_SetSOS params:params memoryCache:NO diskCache:NO completed:completed];
+}
+
+- (void)getSafeArea:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId};
+    [self POST:kAPI_GetSafeArea params:params memoryCache:NO diskCache:NO completed:completed];
+}
+- (void)setSafeArea:(NSString *)deviceId lng:(NSString *)lng lat:(NSString *)lat radius:(NSString *)radius completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId,@"lng":lng,@"lat":lat,@"radius":radius};
+    [self POST:kAPI_SetSafeArea params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
 - (void)getMedicineSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed{

@@ -61,6 +61,8 @@
     [self.mapView addOverlay:circle];
     
 
+    [self getDatas];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -79,7 +81,7 @@
 
 - (void)getDatas{
     
-    [[NetworkingManager sharedManager] getHealthRecordInfo:@"deviceUserId" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+    [[NetworkingManager sharedManager] getSafeArea:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
             
         }else{

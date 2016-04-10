@@ -74,5 +74,7 @@
 - (void)getMedicineSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
 - (void)setMedicineSetting:(NSString *)deviceId medicationSwitch:(NSInteger)medicationSwitch t1:(NSString *)t1 t2:(NSString *)t2 t3:(NSString *)t3 completedHandler:(GGRequestCallbackBlock)completed;
 
+- (void)getSafeArea:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
+- (void)setSafeArea:(NSString *)deviceId lng:(NSString *)lng lat:(NSString *)lat radius:(NSString *)radius completedHandler:(GGRequestCallbackBlock)completed;
 
 @end

@@ -30,6 +30,14 @@
     [self.tableView blankTableFooterView];
     [self getDatas];
     
+    if (self.type == 3) {
+        self.title = @"心率监测设置";
+    }else if (self.type == 4){
+        self.title = @"血糖监测设置";
+    }else if (self.type == 5){
+        self.title = @"血压监测设置";
+    }
+    
     
 }
 
@@ -45,6 +53,10 @@
                     NSInteger value = [info[@"heartRateSwitch"] isEmptyObject] ? 0 : 1;
                     NSDictionary *section1 = @{@"title":@"心率报警",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                     [self.datas addObject:section1];
+                    
+                    
+                    
+                    
                     
                     self.tableView.loading = NO;
                     [self.tableView reloadData];

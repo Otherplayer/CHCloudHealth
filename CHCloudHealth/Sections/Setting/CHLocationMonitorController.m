@@ -73,7 +73,7 @@
     NSInteger state = [section1[@"value"] integerValue];
     NSDictionary *section2 = [self.datas objectAtIndex:1];
     
-    
+    NSLog(@"%@",section2[@"value"]);
     [[NetworkingManager sharedManager] setLocationSetting:[CHUser sharedInstance].deviceId locationSwitch:state interval:section2[@"value"] completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
