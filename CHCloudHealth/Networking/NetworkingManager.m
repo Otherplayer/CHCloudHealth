@@ -156,8 +156,8 @@ NSString *const kAPI_SIZE = @"pageSize";
     NSDictionary *params = @{@"userId":userId};
     [self POST:kAPI_GetUserInfo params:params memoryCache:NO diskCache:NO completed:completed];
 }
-- (void)updateUserInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"userId":userId};
+- (void)updateUserInfo:(NSString *)userId name:(NSString *)name completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"userId":userId,@"nickname":name,@"remark":@""};
     [self POST:kAPI_UpdateUserInfo params:params memoryCache:NO diskCache:NO completed:completed];
 }
 

@@ -31,7 +31,7 @@
 
 - (void)getUserInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
 
-- (void)updateUserInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
+- (void)updateUserInfo:(NSString *)userId name:(NSString *)name completedHandler:(GGRequestCallbackBlock)completed;
 
 - (void)getDeviceInfo:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed;
 
