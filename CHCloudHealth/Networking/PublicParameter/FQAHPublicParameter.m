@@ -66,12 +66,14 @@
     //    NSString *uuid = IDFA;
     
     NSString *appToken  =   [user objectForKey:kAppToken]?:@"";
+    //NSString *userId    =   [user objectForKey:@"userId"]?:@"";
     NSString *deviceIdentifier = [NSString UUIDString];
     
     NSDictionary *publicParameter = [NSDictionary dictionaryWithObjectsAndKeys:
                                      appToken, kAppToken,
                                      deviceIdentifier,@"deviceIdentifier",
                                      @"ios",@"device",
+//                                     @"userId",userId,
                                      nil];
     return publicParameter;
 }

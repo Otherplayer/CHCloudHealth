@@ -10,15 +10,18 @@
 
 #import "CHStatisticsController.h"
 #import "CHHealthReportController.h"
+#import "CHMonitorCareController.h"
 
 #import "CHBindController.h"
 #import "ViewController.h"
 #import "CHMainHeaderCell.h"
 #import "CHMainStateCell.h"
 #import "UIColor+Gradient.h"
+#import "NSObject+FQAHCategories.h"
 
 
-@interface CHMainViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface CHMainViewController ()<UITableViewDelegate,UITableViewDataSource>{
+}
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *mailButtonItem;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -42,17 +45,20 @@
     self.tableView.loadedImageName = @"ios_icon_17";
     self.tableView.buttonText = @"绑定设备";
     [self.tableView clickLoading:^{
-        CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
-        [self presentViewController:nav animated:YES completion:nil];
-//        if ([self isReachable]) {
-//        }else{
-//            [self getDatas];
-//        }
+        if ([[CHUser sharedInstance].deviceId isEmptyObject]) {
+            CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
+            [self presentViewController:nav animated:YES completion:nil];
+        }else{
+            [self getDatas];
+        }
+        
     }];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldGotoSubMenuController:) name:kNotificationMenuController object:nil];
     
-    
+//    
+//    //获取绑定信息
+//    [self getDatas];
     
 }
 
@@ -63,7 +69,11 @@
         [self gotoLogin];
     }else{
         [self getDatas];
+//        [[NetworkingManager sharedManager] getBindDeviceListInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+//            
+//        }];
     }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -82,35 +92,43 @@
 - (void)getDatas{
     
     self.tableView.loading = YES;
+    
+    NSLog(@"%@",[CHUser sharedInstance].deviceId);
+    if (![CHUser sharedInstance].deviceId || [CHUser sharedInstance].deviceId.length == 0) {
+        self.tableView.loading = NO;
+        [self.tableView reloadData];
+        return;
+    }
+    
     [[NetworkingManager sharedManager] getDeviceInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-        if (success) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.datas removeAllObjects];
-                [self.datas addObject:@[responseData[@"data"]]];
-                [self getHealthTypeInfo];
-            });
-        }else{
-            self.tableView.loading = NO;
-            [HYQShowTip showTipTextOnly:errDesc dealy:2];
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                    [self.datas removeAllObjects];
+                    [self.datas addObject:@[responseData[@"data"]]];
+                    [self getHealthTypeInfo];
+            }else{
+                self.tableView.loading = NO;
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+        });
     }];
     
 }
 
 - (void)getHealthTypeInfo{
     [[NetworkingManager sharedManager] getHealthTypeInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-        if (success) {
-            dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                    self.tableView.loading = NO;
+                    for (NSDictionary *info in responseData[@"data"]) {
+                        [self.datas addObject:@[info]];
+                    }
+                    [self.tableView reloadData];
+            }else{
                 self.tableView.loading = NO;
-                for (NSDictionary *info in responseData[@"data"]) {
-                    [self.datas addObject:@[info]];
-                }
-                [self.tableView reloadData];
-            });
-        }else{
-            self.tableView.loading = NO;
-            [HYQShowTip showTipTextOnly:errDesc dealy:2];
-        }
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+       });
     }];
 }
 
@@ -159,18 +177,22 @@
         NSDictionary *info = self.datas[indexPath.section][indexPath.row];
         NSString *type = info[@"typeCode"];
         
+        //0004位置
         //0001心率
         //0002血压
         //0003血糖
-        //0004位置
         //0005健康
-        UIViewController *controller;
+        id controller;
         if (type.integerValue == 5) {
             controller = [[UIStoryboard mainStoryboard] healthReportController];
         }else if (type.integerValue == 4){
             controller = [[UIStoryboard mainStoryboard] locationAreaController];
         }else{
-            controller = [[UIStoryboard mainStoryboard] statisticsController];
+            
+            CHStatisticsController *tempController = (CHStatisticsController *)[[UIStoryboard mainStoryboard] statisticsController];
+            tempController.type = indexPath.section;
+            controller = tempController;
+            
         }
         
         [self.navigationController pushViewController:controller animated:YES];
@@ -187,10 +209,22 @@
         
         NSLog(@"%@",notification);
         
-        NSString *identifier = notification.object;
+        NSDictionary *info = notification.object;
+        NSString *identifier = info[@"identifier"];
+        NSString *type = info[@"type"];
+        
         if (identifier) {
+        if (type) {
+            CHMonitorCareController *controller = (CHMonitorCareController *)[[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:identifier];
+            controller.type = type.integerValue;
+            [self.navigationController pushViewController:controller animated:NO];
+
+        }else{
+            
             UIViewController *controller = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:identifier];
             [self.navigationController pushViewController:controller animated:NO];
+        }
+        
         }
         
     });

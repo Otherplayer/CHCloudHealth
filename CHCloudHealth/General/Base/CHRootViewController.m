@@ -20,10 +20,10 @@
 
 #pragma mark - LifeCircle
 
-- (void)loadView{
-    [super loadView];
-    self.view.backgroundColor = [UIColor color_f2f2f2];
-}
+//- (void)loadView{
+//    [super loadView];
+//    self.view.backgroundColor = [UIColor color_f2f2f2];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -69,7 +69,7 @@
 }
 - (void)gotoLogin{
     CHBaseNavigationController *nav = [[UIStoryboard loginStoryboard] loginController];
-    [self presentViewController:nav animated:YES completion:nil];
+    [self presentViewController:nav animated:NO completion:nil];
 }
 - (BOOL)canGo{
     BOOL isReachable = [self isReachable];

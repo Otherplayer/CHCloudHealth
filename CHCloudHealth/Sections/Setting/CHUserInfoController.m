@@ -23,8 +23,12 @@
     [super viewDidLoad];
     [self addBackButton];
     
-    self.datas = @[@[@{@"title":@"头像",@"detail":[CHUser sharedInstance].avatarurl ? [CHUser sharedInstance].avatarurl : @""}],
-                   @[@{@"title":@"昵称",@"detail":[CHUser sharedInstance].name ? [CHUser sharedInstance].name : @""},
+    self.datas = @[
+  @[
+//  @{@"title":@"头像",@"detail":[CHUser sharedInstance].avatarurl ? [CHUser sharedInstance].avatarurl : @""}
+  ],
+                   
+  @[@{@"title":@"昵称",@"detail":[CHUser sharedInstance].name ? [CHUser sharedInstance].name : @""},
                      @{@"title":@"性别",@"detail":@""},
                      @{@"title":@"手机号",@"detail":[CHUser sharedInstance].phoneNumber ? [CHUser sharedInstance].phoneNumber : @""}]];
     

@@ -7,11 +7,13 @@
 //
 
 #import "CHMessageController.h"
+#import "CMMessageCell.h"
 
 @interface CHMessageController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *datas;
+
 @end
 
 @implementation CHMessageController
@@ -35,15 +37,21 @@
 #pragma mark -
 
 - (void)getDatas{
-    double delayInSeconds = 1;
-    dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-    // 得到全局队列
-    dispatch_queue_t concurrentQueue = dispatch_get_main_queue();
-    // 延期执行
-    dispatch_after(delayInNanoSeconds, concurrentQueue, ^(void){
-        self.tableView.loading = NO;
-        [self.tableView reloadData];
-    });
+    
+    [[NetworkingManager sharedManager] getNoticeListInfo:[CHUser sharedInstance].uid page:1 size:12 completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                
+                self.tableView.loading = NO;
+                [self.tableView reloadData];
+            }else{
+                self.tableView.loading = NO;
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+        });
+
+    }];
+    
 }
 
 
@@ -54,7 +62,8 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifierMessageCell = @"IdentifierMessageCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMessageCell forIndexPath:indexPath];
+    CMMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMessageCell forIndexPath:indexPath];
+    [cell configureTitle:@"" detail:@"" time:@""];
     return cell;
 }
 

@@ -42,9 +42,20 @@
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHLocationMonitorController"];
 }
 
+- (UIViewController *)addRelationNumController{
+    return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHAddRelationNumController"];
+}
+
+- (UIViewController *)setTimeIntervalController{
+    return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHSetTimeIntervalController"];
+}
 
 - (CHBaseNavigationController *)bindController{
     return [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHNavBindController"];
+}
+
+- (UIViewController *)resetPsdStep2Controller{
+    return [[UIStoryboard loginStoryboard] instantiateViewControllerWithIdentifier:@"CHResetPsdStep2Controller"];
 }
 
 - (CHBaseNavigationController *)loginController{

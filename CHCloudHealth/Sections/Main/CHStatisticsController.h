@@ -10,4 +10,6 @@
 
 @interface CHStatisticsController : CHRootViewController
 
+@property (nonatomic, assign) NSInteger type;//1.心率、2.血压、3.血糖
+
 @end

@@ -54,12 +54,17 @@
         [self.labValue setFont:[UIFont systemFontOfSize:20]];
     }
     
-    if ([self isNormalWithType:type]) {
+    if ([state containsString:@"正常"]) {
         [self.labState setTextColor:[UIColor color_66666]];
     }else{
         [self.labState setTextColor:[UIColor color_ca4341]];
-    }
     
+    }
+//    
+//    if ([self isNormalWithType:type]) {
+//    }else{
+//    }
+//    
 }
 
 

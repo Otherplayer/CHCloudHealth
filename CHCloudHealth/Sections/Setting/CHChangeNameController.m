@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self addBackButton];
-    
+    [self.view setBackgroundColor:[UIColor color_f2f2f2]];
     [self addRightButton2NavWithTitle:@"保存"];
     
     

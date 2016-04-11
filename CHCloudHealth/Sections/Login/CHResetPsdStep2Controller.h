@@ -10,4 +10,7 @@
 
 @interface CHResetPsdStep2Controller : CHRootViewController
 
+@property (nonatomic, strong)NSString *mobileNum;
+
 @end
+

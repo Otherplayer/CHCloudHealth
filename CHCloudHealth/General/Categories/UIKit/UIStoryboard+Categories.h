@@ -21,6 +21,10 @@
 - (UIViewController *)locationMonitorController;
 - (UIViewController *)healthReportController;
 - (UIViewController *)locationAreaController;
+- (UIViewController *)setTimeIntervalController;
 
+- (UIViewController *)addRelationNumController;
+
+- (UIViewController *)resetPsdStep2Controller;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "CHHealthReportController.h"
+#import "CMMessageCell.h"
 
 @interface CHHealthReportController ()
 
@@ -35,15 +36,26 @@
 #pragma mark -
 
 - (void)getDatas{
-    double delayInSeconds = 1;
-    dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-    // 得到全局队列
-    dispatch_queue_t concurrentQueue = dispatch_get_main_queue();
-    // 延期执行
-    dispatch_after(delayInNanoSeconds, concurrentQueue, ^(void){
-        self.tableView.loading = NO;
-        [self.tableView reloadData];
-    });
+    
+    if ([self canGo]) {
+        
+        [HYQShowTip showProgressWithText:@"" dealy:30];
+        [[NetworkingManager sharedManager] getHealthRecordInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (success) {
+                    self.tableView.loading = NO;
+                    [self.tableView reloadData];
+                    [HYQShowTip hideImmediately];
+                }else{
+                    self.tableView.loading = NO;
+                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                }
+                
+            });
+        }];
+        
+    }
+    
 }
 
 
@@ -54,7 +66,8 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifierHealthReportCell = @"IdentifierHealthReportCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierHealthReportCell forIndexPath:indexPath];
+    CMMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierHealthReportCell forIndexPath:indexPath];
+    [cell configureTitle:@"" detail:@"" time:@""];
     return cell;
 }
 

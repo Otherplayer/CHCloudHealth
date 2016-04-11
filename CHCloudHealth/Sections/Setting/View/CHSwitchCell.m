@@ -10,4 +10,19 @@
 
 @implementation CHSwitchCell
 
+
+- (void)configureTitle:(NSString *)title state:(NSInteger)state{
+    [self.labTitle setText:title];
+    [self.sSwitch setOn:state];
+    
+    [self.sSwitch addTarget:self action:@selector(didChangeValueAction:) forControlEvents:UIControlEventValueChanged];
+    
+}
+
+- (void)didChangeValueAction:(UISwitch *)sswitch{
+    if (self.didChangeValueBlock) {
+        self.didChangeValueBlock(sswitch.isOn ? @"1" : @"0");
+    }
+}
+
 @end

@@ -10,4 +10,6 @@
 
 @interface CHMonitorCareController : CHRootViewController
 
+@property (nonatomic, assign) NSInteger type;
+
 @end

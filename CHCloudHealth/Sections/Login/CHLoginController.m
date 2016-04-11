@@ -36,7 +36,7 @@
     self.passwordTextField.leftViewMode = UITextFieldViewModeAlways;
     self.passwordTextField.leftView = ivPsd;
     
-    
+    [self.btnGetHelp setHidden:YES];
 }
 
 
@@ -57,6 +57,11 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (IBAction)exAction:(id)sender {
+    self.mobilTextField.text = @"18810013771";
+    self.passwordTextField.text = @"888888";
+    [self loginAction:nil];
+}
 
 - (IBAction)loginAction:(id)sender {
     
@@ -64,9 +69,11 @@
     NSString *psd = [self.passwordTextField.text trimmingWhitespace];
     
     if ([self canGo] && [self check]) {
+        [HYQShowTip showProgressWithText:@"" dealy:30];
         [[NetworkingManager sharedManager] loginWithMobile:mobile password:psd completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [HYQShowTip hideImmediately];
                     [[CHUser sharedInstance] loginWithInfo:responseData];
                     [[CHUser sharedInstance] getUserInformation];
                     [self cancelAction:nil];

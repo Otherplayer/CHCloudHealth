@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D28232D7C0428A043614F48 /* libPods-CHCloudHealth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7A51FD90EC5FD877E25B1E /* libPods-CHCloudHealth.a */; };
+		63106CF21CBA84AC001B7D9F /* CHAddRelationNumController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63106CF11CBA84AC001B7D9F /* CHAddRelationNumController.m */; };
 		6315228F1CB55A4F00D8B160 /* CHHealthReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315228E1CB55A4F00D8B160 /* CHHealthReportController.m */; };
 		631522921CB56BD900D8B160 /* CHLocationAreaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631522911CB56BD900D8B160 /* CHLocationAreaController.m */; };
 		63412E231CB2628B00FAD0DA /* UIStoryboard+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E221CB2628B00FAD0DA /* UIStoryboard+Categories.m */; };
@@ -30,10 +31,13 @@
 		63412E591CB2A36700FAD0DA /* CHAPPManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E581CB2A36700FAD0DA /* CHAPPManagerController.m */; };
 		63412E5E1CB2A58400FAD0DA /* CHMainHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */; };
 		63412E611CB2B31900FAD0DA /* CHMainStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E601CB2B31900FAD0DA /* CHMainStateCell.m */; };
+		634131861CB8EBEB0072C8DA /* CHDeviceManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634131851CB8EBEB0072C8DA /* CHDeviceManagerController.m */; };
 		637339A41CB69F750018FE46 /* CHSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 637339A31CB69F750018FE46 /* CHSwitchCell.m */; };
 		637339A71CB6A2C50018FE46 /* CHMonitorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 637339A61CB6A2C50018FE46 /* CHMonitorCell.m */; };
 		63A29B471CB0D23C009C61B2 /* HYQHelperHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */; };
 		63A447611CB4087B00046DC7 /* CHStatisticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A447601CB4087B00046DC7 /* CHStatisticsController.m */; };
+		63B983921CB8AF3400150EA2 /* CHSetTimeIntervalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B983911CB8AF3400150EA2 /* CHSetTimeIntervalController.m */; };
+		63B983951CB8D69500150EA2 /* CMMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B983941CB8D69500150EA2 /* CMMessageCell.m */; };
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
 		63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7EB1CB0C52A009BF266 /* Login.storyboard */; };
 		8464DE121CAA48C7000B987E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8464DE111CAA48C7000B987E /* main.m */; };
@@ -119,6 +123,8 @@
 /* Begin PBXFileReference section */
 		32E958EE73A4318A56D03553 /* Pods-CHCloudHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHCloudHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHCloudHealth/Pods-CHCloudHealth.release.xcconfig"; sourceTree = "<group>"; };
 		5A7A51FD90EC5FD877E25B1E /* libPods-CHCloudHealth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CHCloudHealth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63106CF01CBA84AC001B7D9F /* CHAddRelationNumController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAddRelationNumController.h; sourceTree = "<group>"; };
+		63106CF11CBA84AC001B7D9F /* CHAddRelationNumController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAddRelationNumController.m; sourceTree = "<group>"; };
 		6315228D1CB55A4F00D8B160 /* CHHealthReportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHHealthReportController.h; sourceTree = "<group>"; };
 		6315228E1CB55A4F00D8B160 /* CHHealthReportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHHealthReportController.m; sourceTree = "<group>"; };
 		631522901CB56BD900D8B160 /* CHLocationAreaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLocationAreaController.h; sourceTree = "<group>"; };
@@ -163,6 +169,8 @@
 		63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMainHeaderCell.m; sourceTree = "<group>"; };
 		63412E5F1CB2B31900FAD0DA /* CHMainStateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMainStateCell.h; sourceTree = "<group>"; };
 		63412E601CB2B31900FAD0DA /* CHMainStateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMainStateCell.m; sourceTree = "<group>"; };
+		634131841CB8EBEB0072C8DA /* CHDeviceManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHDeviceManagerController.h; sourceTree = "<group>"; };
+		634131851CB8EBEB0072C8DA /* CHDeviceManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHDeviceManagerController.m; sourceTree = "<group>"; };
 		637339A21CB69F750018FE46 /* CHSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSwitchCell.h; sourceTree = "<group>"; };
 		637339A31CB69F750018FE46 /* CHSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSwitchCell.m; sourceTree = "<group>"; };
 		637339A51CB6A2C50018FE46 /* CHMonitorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMonitorCell.h; sourceTree = "<group>"; };
@@ -171,6 +179,10 @@
 		63A29B461CB0D23C009C61B2 /* HYQHelperHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQHelperHUD.m; sourceTree = "<group>"; };
 		63A4475F1CB4087B00046DC7 /* CHStatisticsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHStatisticsController.h; sourceTree = "<group>"; };
 		63A447601CB4087B00046DC7 /* CHStatisticsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHStatisticsController.m; sourceTree = "<group>"; };
+		63B983901CB8AF3400150EA2 /* CHSetTimeIntervalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSetTimeIntervalController.h; sourceTree = "<group>"; };
+		63B983911CB8AF3400150EA2 /* CHSetTimeIntervalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSetTimeIntervalController.m; sourceTree = "<group>"; };
+		63B983931CB8D69500150EA2 /* CMMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMessageCell.h; sourceTree = "<group>"; };
+		63B983941CB8D69500150EA2 /* CMMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMessageCell.m; sourceTree = "<group>"; };
 		63D9F7E71CB0C47E009BF266 /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
 		63D9F7EC1CB0C52A009BF266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		8464DE0D1CAA48C7000B987E /* CHCloudHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHCloudHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -393,6 +405,12 @@
 				63412E581CB2A36700FAD0DA /* CHAPPManagerController.m */,
 				84FEA6E11CB51EA500ADA967 /* CHChangeNameController.h */,
 				84FEA6E21CB51EA500ADA967 /* CHChangeNameController.m */,
+				63B983901CB8AF3400150EA2 /* CHSetTimeIntervalController.h */,
+				63B983911CB8AF3400150EA2 /* CHSetTimeIntervalController.m */,
+				634131841CB8EBEB0072C8DA /* CHDeviceManagerController.h */,
+				634131851CB8EBEB0072C8DA /* CHDeviceManagerController.m */,
+				63106CF01CBA84AC001B7D9F /* CHAddRelationNumController.h */,
+				63106CF11CBA84AC001B7D9F /* CHAddRelationNumController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -413,6 +431,8 @@
 				63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */,
 				63412E5F1CB2B31900FAD0DA /* CHMainStateCell.h */,
 				63412E601CB2B31900FAD0DA /* CHMainStateCell.m */,
+				63B983931CB8D69500150EA2 /* CMMessageCell.h */,
+				63B983941CB8D69500150EA2 /* CMMessageCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -854,6 +874,11 @@
 				TargetAttributes = {
 					8464DE0C1CAA48C7000B987E = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -952,6 +977,7 @@
 				84B1E2FA1CAE77BA004573F4 /* NSDate+HYQFormatter.m in Sources */,
 				63412E5E1CB2A58400FAD0DA /* CHMainHeaderCell.m in Sources */,
 				63412E301CB279B300FAD0DA /* CHResetPsdStep1Controller.m in Sources */,
+				634131861CB8EBEB0072C8DA /* CHDeviceManagerController.m in Sources */,
 				8472D1FE1CAE53930003E35A /* FQAHNetworking.xcdatamodeld in Sources */,
 				8464DE181CAA48C7000B987E /* ViewController.m in Sources */,
 				84B1E2FB1CAE77BA004573F4 /* NSDictionary+Categories.m in Sources */,
@@ -999,9 +1025,11 @@
 				6315228F1CB55A4F00D8B160 /* CHHealthReportController.m in Sources */,
 				8472D1FC1CAE53930003E35A /* FQAHDiskCachedObject+CoreDataProperties.m in Sources */,
 				8472D2021CAE53930003E35A /* NSDictionary+FQAHCategories.m in Sources */,
+				63106CF21CBA84AC001B7D9F /* CHAddRelationNumController.m in Sources */,
 				8464DE151CAA48C7000B987E /* AppDelegate.m in Sources */,
 				63412E271CB2634600FAD0DA /* CHLoginController.m in Sources */,
 				8472D20D1CAE53930003E35A /* FQAHReachibility.m in Sources */,
+				63B983921CB8AF3400150EA2 /* CHSetTimeIntervalController.m in Sources */,
 				63412E4D1CB2A2C500FAD0DA /* CHLocationMonitorController.m in Sources */,
 				84FEA6DD1CB50C8400ADA967 /* JRGraphView.m in Sources */,
 				63412E2A1CB2717B00FAD0DA /* CHRegisterController.m in Sources */,
@@ -1009,6 +1037,7 @@
 				84B1E3051CAE77BA004573F4 /* UIControl+Categories.m in Sources */,
 				84B1E2FF1CAE77BA004573F4 /* NSString+Ghost.m in Sources */,
 				84B1E3301CB3C698004573F4 /* CHUnitCell.m in Sources */,
+				63B983951CB8D69500150EA2 /* CMMessageCell.m in Sources */,
 				8472D2031CAE53930003E35A /* NSFileManager+FQAHCategories.m in Sources */,
 				63412E231CB2628B00FAD0DA /* UIStoryboard+Categories.m in Sources */,
 				63412E531CB2A33F00FAD0DA /* CHMedicineReminderController.m in Sources */,
@@ -1115,7 +1144,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "179f7b36-0b07-429e-8cab-995e3126e58e";
+				PROVISIONING_PROFILE = "61173819-548d-4940-984a-d43cb35a7355";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1154,7 +1183,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "179f7b36-0b07-429e-8cab-995e3126e58e";
+				PROVISIONING_PROFILE = "61173819-548d-4940-984a-d43cb35a7355";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
