@@ -36,8 +36,14 @@ NSString *const kUSER_SEX = @"sex";
     /// 1.保存用户信息
     NSString *uid = [NSString stringWithFormat:@"%@",info[@"data"][@"userId"]];
     NSString *app_token = [NSString stringWithFormat:@"%@",info[kAppToken]];
-    NSString *deviceId = info[@"data"][kUSER_DEVICE_ID] ?:@"";
-    NSString *deviceUserId = info[@"data"][kUSER_DEVICE_USER_ID] ?:@"";
+    NSString *deviceId = @"";
+    if (![info[@"data"][kUSER_DEVICE_ID] isEmptyObject]) {
+        deviceId = info[@"data"][kUSER_DEVICE_ID];
+    }
+    NSString *deviceUserId = @"";
+    if (![info[@"data"][kUSER_DEVICE_USER_ID] isEmptyObject]) {
+        deviceUserId = info[@"data"][kUSER_DEVICE_USER_ID];
+    }
     
     [self.userDefaults setObject:uid forKey:kUSER_ID];
     [self.userDefaults setObject:deviceId forKey:kUSER_DEVICE_ID];
