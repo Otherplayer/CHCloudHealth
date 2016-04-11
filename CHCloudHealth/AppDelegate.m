@@ -81,16 +81,19 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    
-    // Required,For systems with less than or equal to iOS6
-    [JPUSHService handleRemoteNotification:userInfo];
+    if (application.applicationState == UIApplicationStateInactive) {
+        
+        // Required,For systems with less than or equal to iOS6
+        [JPUSHService handleRemoteNotification:userInfo];
+    }
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    
-    // IOS 7 Support Required
-    [JPUSHService handleRemoteNotification:userInfo];
-    completionHandler(UIBackgroundFetchResultNewData);
+    if (application.applicationState == UIApplicationStateInactive) {
+        // IOS 7 Support Required
+        [JPUSHService handleRemoteNotification:userInfo];
+        completionHandler(UIBackgroundFetchResultNewData);
+    }
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {

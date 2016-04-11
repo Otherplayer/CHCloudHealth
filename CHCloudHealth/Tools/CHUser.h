@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSString *phoneNumber;
 @property (nonatomic, strong) NSString *deviceId;
+@property (nonatomic, strong) NSString *deviceUserId;
 
 
 @property (nonatomic, strong) NSString *name;

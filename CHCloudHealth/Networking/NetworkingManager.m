@@ -35,7 +35,7 @@ NSString *const kAPI_HeartRateInfo = HOTYQ_JAVA_API @"deviceUser/getHeartRateDat
 NSString *const kAPI_BloodPressureInfo = HOTYQ_JAVA_API @"deviceUser/getBloodPressureData";
 //获取血糖数据
 NSString *const kAPI_BloodSugarInfo = HOTYQ_JAVA_API @"deviceUser/getBloodSugarData";
-//获取血糖数据
+//获取位置数据
 NSString *const kAPI_LocationInfo = HOTYQ_JAVA_API @"deviceUser/getPositionData";
 //获取健康档案列表
 NSString *const kAPI_HealthRecord = HOTYQ_JAVA_API @"deviceUser/getHealthRecordList";
@@ -43,7 +43,7 @@ NSString *const kAPI_HealthRecord = HOTYQ_JAVA_API @"deviceUser/getHealthRecordL
 NSString *const kAPI_HealthRecordDetail = HOTYQ_JAVA_API @"deviceUser/getHealthRecordDetail";
 
 //公告列表
-NSString *const kAPI_NoticeList = HOTYQ_JAVA_API @"notice/list";
+NSString *const kAPI_NoticeList = HOTYQ_JAVA_API @"notice/page";
 //公告列表
 NSString *const kAPI_NoticeDetail = HOTYQ_JAVA_API @"notice/getDetail";
 
@@ -101,8 +101,8 @@ NSString *const kAPI_listFamliyNumber = HOTYQ_JAVA_API @"device/listFamliyNumber
 
 
 
-NSString *const kAPI_PAGE = @"page";
-NSString *const kAPI_SIZE = @"size";
+NSString *const kAPI_PAGE = @"pageNumber";
+NSString *const kAPI_SIZE = @"pageSize";
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
