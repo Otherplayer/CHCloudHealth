@@ -32,7 +32,6 @@
     [self installJPUSH:launchOptions];
     [self installBaiduMap];
     
-    
     return YES;
 }
 
