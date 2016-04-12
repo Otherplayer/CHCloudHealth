@@ -81,12 +81,15 @@
 
 - (void)getDatas{
     
-    [[NetworkingManager sharedManager] getSafeArea:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-        if (success) {
-            
-        }else{
-            [HYQShowTip showTipTextOnly:errDesc dealy:2];
-        }
+    [[NetworkingManager sharedManager] getLocationInfo:[CHUser sharedInstance].deviceUserId date:@"2016-4-11" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                
+            }else{
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+ 
+        });
     }];
     
 }
