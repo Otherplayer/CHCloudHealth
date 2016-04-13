@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F18b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ij2-Za-dBx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ij2-Za-dBx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1000,7 +1000,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdentifierLocationHeaderCell" id="dpu-Lq-vgy" customClass="CHSwitchCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IdentifierLocationHeaderCell" id="dpu-Lq-vgy" customClass="CHSwitchCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dpu-Lq-vgy" id="4Dh-nr-UkB">
@@ -1089,7 +1089,7 @@
                                             <outlet property="sSwitch" destination="ydw-nn-XIJ" id="g7e-cQ-3Xd"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IdentifierLocationRadiusCell" id="ojk-D5-JBJ" customClass="CHUnitCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IdentifierLocationRadiusCell" id="ojk-D5-JBJ" customClass="CHUnitCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ojk-D5-JBJ" id="SEG-t8-XI2">
@@ -1179,7 +1179,7 @@
                                             <outlet property="labTitle" destination="CCi-k5-l9Y" id="OIX-Sm-s0c"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdentifierLocationMonitorCell" rowHeight="150" id="thw-tR-Pjk" customClass="CHMonitorCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IdentifierLocationMonitorCell" rowHeight="150" id="thw-tR-Pjk" customClass="CHMonitorCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="thw-tR-Pjk" id="Omh-Bq-5Ty">
@@ -1190,7 +1190,9 @@
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="hBW-sX-9rX"/>
-                                                        <constraint firstAttribute="width" constant="93" id="xAy-q4-41a"/>
+                                                        <constraint firstAttribute="width" constant="93" id="xAy-q4-41a">
+                                                            <variation key="widthClass=compact" constant="234"/>
+                                                        </constraint>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1295,7 +1297,9 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="Gay-F5-Ijr" secondAttribute="trailing" constant="-14" id="53V-at-gZa"/>
                                                 <constraint firstItem="bFN-oG-gsO" firstAttribute="top" secondItem="Omh-Bq-5Ty" secondAttribute="topMargin" constant="37" id="5vI-Sx-KqJ"/>
                                                 <constraint firstAttribute="topMargin" secondItem="Jqz-ST-2wd" secondAttribute="top" id="8EV-lL-HQD"/>
-                                                <constraint firstItem="Jqz-ST-2wd" firstAttribute="leading" secondItem="Omh-Bq-5Ty" secondAttribute="leadingMargin" constant="9" id="AO2-5f-UhB"/>
+                                                <constraint firstItem="Jqz-ST-2wd" firstAttribute="leading" secondItem="Omh-Bq-5Ty" secondAttribute="leadingMargin" constant="9" id="AO2-5f-UhB">
+                                                    <variation key="widthClass=compact" constant="7"/>
+                                                </constraint>
                                                 <constraint firstItem="h2Z-PE-AZt" firstAttribute="width" secondItem="5nK-WZ-IKQ" secondAttribute="width" id="EkI-9L-fJA"/>
                                                 <constraint firstItem="Gay-F5-Ijr" firstAttribute="top" secondItem="Omh-Bq-5Ty" secondAttribute="topMargin" constant="37" id="Joq-xP-gy9"/>
                                                 <constraint firstItem="Gay-F5-Ijr" firstAttribute="width" secondItem="bFN-oG-gsO" secondAttribute="width" id="NP2-Ov-VUf"/>

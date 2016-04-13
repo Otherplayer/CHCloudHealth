@@ -10,7 +10,7 @@
 #import "CHSwitchCell.h"
 #import "CHUnitCell.h"
 #import "CHMonitorCell.h"
-
+#import "CHSetTimeIntervalController.h"
 
 typedef NS_ENUM(NSUInteger, CHCellType) {
     CHCellType_Switch,
@@ -281,6 +281,26 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
     }
     
     return nil;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *info = [self.datas objectAtIndex:indexPath.section];
+    NSString *title = info[@"title"];
+    NSInteger type = [info[@"type"] integerValue];
+    
+    if ([title isEqualToString:@"提醒时间间隔"]) {
+        CHSetTimeIntervalController *controller = (CHSetTimeIntervalController *)[[UIStoryboard mainStoryboard] setTimeIntervalController];
+        [controller setDidSelectedTimeBlock:^(NSString *timeStr) {
+            if (type == CHCellType_Unit) {
+                NSString *time = timeStr;
+                NSDictionary *section2 = @{@"type":@(CHCellType_Unit),@"title":@"提醒时间间隔",@"value":time};
+                [self.datas replaceObjectAtIndex:indexPath.section withObject:section2];
+                [self.tableView reloadData];
+            }
+        }];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    
+    
 }
 
 @end
