@@ -99,9 +99,22 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
                 if (success) {
                     
                     NSDictionary *info = responseData[@"data"];
-                    NSInteger value = [info[@"heartRateSwitch"] isEmptyObject] ? 0 : 1;
-                    NSDictionary *section1 = @{@"title":@"心率报警",@"value":[NSString stringWithFormat:@"%@",@(value)]};
+                    NSInteger value = [info[@"bloodSugarSwitch"] isEmptyObject] ? 0 : 1;
+                    NSDictionary *section1 = @{@"type":@(CHCellType_Switch),@"title":@"血糖监测",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                     [self.datas addObject:section1];
+                    
+                    
+                    NSString *maxValue = @"";
+                    NSString *minValue = @"";
+                    if (![info[@"maxBs"] isEmptyObject]) {
+                        maxValue = [NSString stringWithFormat:@"%@",info[@"maxBs"]];
+                    }
+                    if (![info[@"minBs"] isEmptyObject]) {
+                        minValue = [NSString stringWithFormat:@"%@",info[@"minBs"]];
+                    }
+                    NSDictionary *section3 = @{@"type":@(CHCellType_Monitor),@"title":@"血糖设置",@"maxValue":maxValue,@"minValue":minValue,@"leftTitle":@"起止",@"rightTitle":@"停止"};
+                    [self.datas addObject:section3];
+                    
                     
                     self.tableView.loading = NO;
                     [self.tableView reloadData];
@@ -118,9 +131,38 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
                 if (success) {
                     
                     NSDictionary *info = responseData[@"data"];
-                    NSInteger value = [info[@"heartRateSwitch"] isEmptyObject] ? 0 : 1;
-                    NSDictionary *section1 = @{@"title":@"心率报警",@"value":[NSString stringWithFormat:@"%@",@(value)]};
+                    NSInteger value = [info[@"bloodPressureSwitch"] isEmptyObject] ? 0 : 1;
+                    NSDictionary *section1 = @{@"title":@"血压监测",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                     [self.datas addObject:section1];
+                    
+                    
+                    
+                    NSString *maxLValue = @"";
+                    NSString *minLValue = @"";
+                    if (![info[@"maxLbp"] isEmptyObject]) {
+                        maxLValue = [NSString stringWithFormat:@"%@",info[@"maxLbp"]];
+                    }
+                    if (![info[@"minLbp"] isEmptyObject]) {
+                        minLValue = [NSString stringWithFormat:@"%@",info[@"minLbp"]];
+                    }
+                    NSDictionary *section2 = @{@"type":@(CHCellType_Monitor),@"title":@"血糖设置",@"maxValue":maxLValue,@"minValue":minLValue,@"leftTitle":@"起止",@"rightTitle":@"停止"};
+                    [self.datas addObject:section2];
+                    
+                    
+                    
+                    NSString *maxValue = @"";
+                    NSString *minValue = @"";
+                    if (![info[@"maxHbp"] isEmptyObject]) {
+                        maxValue = [NSString stringWithFormat:@"%@",info[@"maxHbp"]];
+                    }
+                    if (![info[@"minHbp"] isEmptyObject]) {
+                        minValue = [NSString stringWithFormat:@"%@",info[@"minHbp"]];
+                    }
+                    NSDictionary *section3 = @{@"type":@(CHCellType_Monitor),@"title":@"血糖设置",@"maxValue":maxValue,@"minValue":minValue,@"leftTitle":@"起止",@"rightTitle":@"停止"};
+                    [self.datas addObject:section3];
+                    
+                    
+                    
                     
                     self.tableView.loading = NO;
                     [self.tableView reloadData];
