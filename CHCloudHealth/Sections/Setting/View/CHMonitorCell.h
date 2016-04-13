@@ -15,4 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labRightTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labRightDetail;
 
+
+- (void)setLeftTitle:(NSString *)leftTitle leftDetail:(NSString *)leftDetail title:(NSString *)title rightTitle:(NSString *)rightTitle rightDetail:(NSString *)rightDetail;
+
 @end

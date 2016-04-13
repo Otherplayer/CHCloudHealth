@@ -11,6 +11,13 @@
 #import "CHUnitCell.h"
 #import "CHMonitorCell.h"
 
+
+typedef NS_ENUM(NSUInteger, CHCellType) {
+    CHCellType_Switch,
+    CHCellType_Unit,
+    CHCellType_Monitor,
+};
+
 @interface CHMonitorCareController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *datas;
@@ -51,10 +58,28 @@
                     
                     NSDictionary *info = responseData[@"data"];
                     NSInteger value = [info[@"heartRateSwitch"] isEmptyObject] ? 0 : 1;
-                    NSDictionary *section1 = @{@"title":@"心率报警",@"value":[NSString stringWithFormat:@"%@",@(value)]};
+                    NSDictionary *section1 = @{@"type":@(CHCellType_Switch),@"title":@"心率报警",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                     [self.datas addObject:section1];
                     
                     
+                    NSString *maxValue = @"";
+                    NSString *minValue = @"";
+                    if (![info[@"max"] isEmptyObject]) {
+                        maxValue = [NSString stringWithFormat:@"%@",info[@"max"]];
+                    }
+                    if (![info[@"min"] isEmptyObject]) {
+                        minValue = [NSString stringWithFormat:@"%@",info[@"min"]];
+                    }
+                    NSDictionary *section3 = @{@"type":@(CHCellType_Monitor),@"title":@"心率范围（bpm）",@"maxValue":maxValue,@"minValue":minValue,@"leftTitle":@"最低",@"rightTitle":@"最高"};
+                    [self.datas addObject:section3];
+                    
+                    
+                    NSString *time = @"";
+                    if(![info[@"interval"] isEmptyObject]){
+                        time = [NSString stringWithFormat:@"%@",info[@"interval"]];;
+                    }
+                    NSDictionary *section2 = @{@"type":@(CHCellType_Unit),@"title":@"提醒时间间隔",@"value":time};
+                    [self.datas addObject:section2];
                     
                     
                     
@@ -164,29 +189,38 @@
     return self.datas.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 2 || indexPath.section == 0) {
-        return 44;
+    NSDictionary *info = [self.datas objectAtIndex:indexPath.section];
+    NSInteger type = [info[@"type"] integerValue];
+    
+    if (type == CHCellType_Monitor) {
+        return 150;
     }
-    return 150;
+    return 44;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSDictionary *info = [self.datas objectAtIndex:indexPath.section];
-    if (indexPath.section == 0){
+    NSInteger type = [info[@"type"] integerValue];
+    if (type == CHCellType_Switch) {
         static NSString *IdentifierLocationHeaderCell = @"IdentifierLocationHeaderCell";
         CHSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationHeaderCell forIndexPath:indexPath];
         [cell configureTitle:info[@"title"] state:[info[@"value"] integerValue]];
         return cell;
-    }else if (indexPath.section == 2){
+    }else if (type == CHCellType_Unit){
         static NSString *IdentifierLocationRadiusCell = @"IdentifierLocationRadiusCell";
         CHUnitCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationRadiusCell forIndexPath:indexPath];
+        [cell setTitle:info[@"title"] detail:info[@"value"]];
+        return cell;
+    }else if (type == CHCellType_Monitor){
+        static NSString *IdentifierLocationMonitorCell = @"IdentifierLocationMonitorCell";
+        CHMonitorCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationMonitorCell forIndexPath:indexPath];
+        [cell setLeftTitle:info[@"leftTitle"] leftDetail:info[@"minValue"] title:info[@"title"] rightTitle:info[@"rightTitle"] rightDetail:info[@"maxValue"]];
         return cell;
     }
-    static NSString *IdentifierLocationMonitorCell = @"IdentifierLocationMonitorCell";
-    CHMonitorCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationMonitorCell forIndexPath:indexPath];
-    return cell;
     
+    return nil;
 }
 
 @end
