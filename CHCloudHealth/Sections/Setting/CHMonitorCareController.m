@@ -174,6 +174,7 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
     }
 }
 - (void)rightBarButtonPressed:(id)rightBarButtonPressed{
+    [self hidenKeyboard];
     NSDictionary *section1 = [self.datas objectAtIndex:0];
     NSInteger state = [section1[@"value"] integerValue];
     
@@ -277,6 +278,17 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
         static NSString *IdentifierLocationMonitorCell = @"IdentifierLocationMonitorCell";
         CHMonitorCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationMonitorCell forIndexPath:indexPath];
         [cell setLeftTitle:info[@"leftTitle"] leftDetail:info[@"minValue"] title:info[@"title"] rightTitle:info[@"rightTitle"] rightDetail:info[@"maxValue"]];
+        WS(weakSelf);
+        NSMutableDictionary *newInfo = [[NSMutableDictionary alloc] initWithDictionary:info];
+        [cell setLeftDetailBlock:^(NSString *leftDetail) {
+            [newInfo setObject:leftDetail forKey:@"minValue"];
+            [weakSelf.datas replaceObjectAtIndex:indexPath.section withObject:newInfo];
+        }];
+        [cell setRightDetailBlock:^(NSString *rightDetail) {
+            [newInfo setObject:rightDetail forKey:@"maxValue"];
+            [weakSelf.datas replaceObjectAtIndex:indexPath.section withObject:newInfo];
+        }];
+        
         return cell;
     }
     
@@ -302,5 +314,14 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
     
     
 }
+
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self hidenKeyboard];
+}
+
+
+
 
 @end

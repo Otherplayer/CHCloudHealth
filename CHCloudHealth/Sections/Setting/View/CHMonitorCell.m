@@ -7,6 +7,11 @@
 //
 
 #import "CHMonitorCell.h"
+#import "UIApplication+Categories.h"
+
+@interface CHMonitorCell ()<UITextFieldDelegate>
+
+@end
 
 @implementation CHMonitorCell
 - (void)setLeftTitle:(NSString *)leftTitle leftDetail:(NSString *)leftDetail title:(NSString *)title rightTitle:(NSString *)rightTitle rightDetail:(NSString *)rightDetail{
@@ -14,21 +19,39 @@
     [self.labLeftTitle setText:leftTitle];
 //    [self.labLeftDetail setText:leftDetail];
     [self.tfLeftDetail setText:leftDetail];
+    self.tfLeftDetail.delegate = self;
     [self.labTitle setText:title];
     [self.labRightTitle setText:rightTitle];
 //    [self.labRightDetail setText:rightDetail];
     [self.tfRightDetail setText:rightDetail];
-    
+    self.tfRightDetail.delegate = self;
 }
-
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
+    [UIApplication hideKeyboard];
 }
 
 
-
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{        // return NO to disallow editing.
+    return YES;
+}
+- (void)textFieldDidBeginEditing:(UITextField *)textField{           // became first responder
+}
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+    return YES;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    if ([textField isEqual:self.tfLeftDetail]) {
+        if (self.leftDetailBlock) {
+            self.leftDetailBlock(textField.text);
+        }
+    }else if ([textField isEqual:self.tfRightDetail]){
+        if (self.rightDetailBlock) {
+            self.rightDetailBlock(textField.text);
+        }
+    }
+}
 
 
 

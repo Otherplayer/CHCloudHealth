@@ -214,17 +214,23 @@
         NSString *type = info[@"type"];
         
         if (identifier) {
-        if (type) {
-            CHMonitorCareController *controller = (CHMonitorCareController *)[[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:identifier];
-            controller.type = type.integerValue;
-            [self.navigationController pushViewController:controller animated:NO];
-
-        }else{
             
-            UIViewController *controller = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:identifier];
-            [self.navigationController pushViewController:controller animated:NO];
-        }
-        
+            if ([identifier isEqualToString:@"切换用户"]) {
+                [[CHUser sharedInstance] logout];
+                [self gotoLogin];
+                return ;
+            }
+            
+            if (type) {
+                CHMonitorCareController *controller = (CHMonitorCareController *)[[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:identifier];
+                controller.type = type.integerValue;
+                [self.navigationController pushViewController:controller animated:NO];
+
+            }else{
+                
+                UIViewController *controller = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:identifier];
+                [self.navigationController pushViewController:controller animated:NO];
+            }
         }
         
     });

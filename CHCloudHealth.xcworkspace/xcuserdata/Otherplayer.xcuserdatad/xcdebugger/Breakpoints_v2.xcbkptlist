@@ -9,12 +9,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CHCloudHealth/Sections/Setting/View/CHMonitorCell.m"
-            timestampString = "482250475.725313"
+            filePath = "CHCloudHealth/Sections/Setting/CHMonitorCareController.m"
+            timestampString = "482251382.270388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
             landmarkName = "-touchesBegan:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
