@@ -145,7 +145,7 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
                     if (![info[@"minLbp"] isEmptyObject]) {
                         minLValue = [NSString stringWithFormat:@"%@",info[@"minLbp"]];
                     }
-                    NSDictionary *section2 = @{@"type":@(CHCellType_Monitor),@"title":@"血糖设置",@"maxValue":maxLValue,@"minValue":minLValue,@"leftTitle":@"起止",@"rightTitle":@"停止"};
+                    NSDictionary *section2 = @{@"type":@(CHCellType_Monitor),@"title":@"低压设置",@"maxValue":maxLValue,@"minValue":minLValue,@"leftTitle":@"起止",@"rightTitle":@"停止"};
                     [self.datas addObject:section2];
                     
                     
@@ -158,10 +158,8 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
                     if (![info[@"minHbp"] isEmptyObject]) {
                         minValue = [NSString stringWithFormat:@"%@",info[@"minHbp"]];
                     }
-                    NSDictionary *section3 = @{@"type":@(CHCellType_Monitor),@"title":@"血糖设置",@"maxValue":maxValue,@"minValue":minValue,@"leftTitle":@"起止",@"rightTitle":@"停止"};
+                    NSDictionary *section3 = @{@"type":@(CHCellType_Monitor),@"title":@"高压设置",@"maxValue":maxValue,@"minValue":minValue,@"leftTitle":@"起止",@"rightTitle":@"停止"};
                     [self.datas addObject:section3];
-                    
-                    
                     
                     
                     self.tableView.loading = NO;
