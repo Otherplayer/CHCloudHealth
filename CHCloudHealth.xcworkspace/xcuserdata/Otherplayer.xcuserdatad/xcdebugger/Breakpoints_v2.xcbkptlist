@@ -9,61 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CHCloudHealth/Sections/Setting/CHMonitorCareController.m"
-            timestampString = "481972728.103823"
+            filePath = "CHCloudHealth/Sections/Setting/View/CHMonitorCell.m"
+            timestampString = "482250475.725313"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "-getDatas"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-touchesBegan:withEvent:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__35-[CHMonitorCareController getDatas]_block_invoke_2"
-                  moduleName = "CHCloudHealth"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Otherplayer/Desktop/CHCloudHealth/CHCloudHealth/Sections/Setting/CHMonitorCareController.m"
-                  timestampString = "482248375.997341"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "2480">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_"
-                  moduleName = "CHCloudHealth"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Otherplayer/Desktop/CHCloudHealth/CHCloudHealth/Sections/Setting/CHMonitorCareController.m"
-                  timestampString = "482248375.997597"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "160">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_"
-                  moduleName = "CHCloudHealth"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Otherplayer/Desktop/CHCloudHealth/CHCloudHealth/Sections/Setting/CHMonitorCareController.m"
-                  timestampString = "482248375.997756"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -16,6 +16,8 @@
 @property (nonatomic, strong)BMKMapView* mapView;
 @property (nonatomic, strong)BMKLocationService* locService;
 @property (nonatomic, strong)BMKGeoCodeSearch* geocodesearch;
+@property (strong, nonatomic)UIButton *btnLocation;
+@property (assign, nonatomic)BMKCoordinateRegion viewRegion;
 
 @end
 
@@ -43,7 +45,7 @@
     
     self.view = self.mapView;
     self.mapView.delegate = self;
-    
+    [self.view addSubview:self.btnLocation];
     
     
     [self.mapView setShowMapScaleBar:YES];//设定是否显式比例尺
@@ -73,6 +75,11 @@
         });
     }];
     
+}
+- (void)startLocationAction:(id)sender {
+    BMKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:self.viewRegion];
+//    [self.mapView setRegion:adjustedRegion animated:YES];
+    [self.mapView setCenterCoordinate:adjustedRegion.center animated:YES];
 }
 
 - (void)shouldStartLocation:(id)sender{
@@ -110,15 +117,11 @@
     
     [self.mapView updateLocationData:userLocation];
     [self addPointAnnotationWithCoor:userLocation.location.coordinate];
+    self.viewRegion = BMKCoordinateRegionMake(userLocation.location.coordinate, BMKCoordinateSpanMake(0.02f,0.02f));
     
     
-    BMKCoordinateRegion viewRegion = BMKCoordinateRegionMake(userLocation.location.coordinate, BMKCoordinateSpanMake(0.02f,0.02f));
-    BMKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
-    [self.mapView setRegion:adjustedRegion animated:YES];
     
-    //[self facha:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude];
-    
-    [self startTrailRouteWithUserLocation:userLocation];
+    //[self startTrailRouteWithUserLocation:userLocation];
     
     //[self.locService stopUserLocationService];
     
@@ -179,19 +182,20 @@
 -(void) onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error{
     
     
+//    NSString *detail = [NSString stringWithFormat:@"%@%@%@",result.addressDetail.district,result.addressDetail.streetName,result.addressDetail.streetNumber];
     pointAnnotation.title = result.address;
-//    pointAnnotation.subtitle = result.addressDetail;
+//    pointAnnotation.subtitle = detail;
     
-    NSLog(@"%@",    result.addressDetail);
-    NSLog(@"%@",    result.address);
-    NSLog(@"%@",    result.businessCircle);
-    NSLog(@"%@",    result.poiList);
-    for (BMKPoiInfo *model in result.poiList) {
-        NSLog(@"%@--%@",model.address,model.name);
-    }
-    
-    NSLog(@"详细信息%@省%@市%@区",result.addressDetail.province,result.addressDetail.city,result.addressDetail.district);
-    NSLog(@"本函数 是 解析地址demo   用什么自己取就好了");
+//    NSLog(@"%@",    result.addressDetail);
+//    NSLog(@"%@",    result.address);
+//    NSLog(@"%@",    result.businessCircle);
+//    NSLog(@"%@",    result.poiList);
+//    for (BMKPoiInfo *model in result.poiList) {
+//        NSLog(@"%@--%@",model.address,model.name);
+//    }
+//    
+//    NSLog(@"详细信息%@省%@市%@区",result.addressDetail.province,result.addressDetail.city,result.addressDetail.district);
+//    NSLog(@"本函数 是 解析地址demo   用什么自己取就好了");
 }
 
 
@@ -222,6 +226,15 @@
         _mapView = [[BMKMapView alloc] initWithFrame:self.view.bounds];
     }
     return _mapView;
+}
+
+- (UIButton *)btnLocation{
+    if (!_btnLocation) {
+        _btnLocation = [[UIButton alloc] initWithFrame:CGRectMake(20, kMainHeight - 65, 45, 45)];
+        _btnLocation.backgroundColor = [UIColor redColor];
+        [_btnLocation addTarget:self action:@selector(startLocationAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _btnLocation;
 }
 
 
