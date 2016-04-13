@@ -65,6 +65,7 @@ NSString *const kUSER_SEX = @"sex";
     [self.userDefaults setObject:deviceId forKey:kUSER_DEVICE_ID];
 }
 - (NSString *)deviceId{
+    return @"12345678";
     return [self.userDefaults objectForKey:kUSER_DEVICE_ID] ? : @"12345678";
 }
 

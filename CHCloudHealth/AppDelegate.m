@@ -12,7 +12,7 @@
 
 
 #define kAPPKEY_JPUSH @"3dff2d45c49d8708ec01be57"
-#define kAPPKEY_BAIDU_MAP @"rYSPcaBk64BaO4lWZnhVfS7za1UKssE0"
+#define kAPPKEY_BAIDU_MAP @"V6CCqHQNdGyb127sIAEbqEguHCSdulIa"//rYSPcaBk64BaO4lWZnhVfS7za1UKssE0
 
 
 @interface AppDelegate (){
@@ -31,7 +31,6 @@
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"FQAHNetworking.sqlite"];
     [self installJPUSH:launchOptions];
     [self installBaiduMap];
-    
     
     return YES;
 }

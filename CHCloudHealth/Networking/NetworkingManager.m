@@ -234,6 +234,10 @@ NSString *const kAPI_SIZE = @"pageSize";
     if (!timeInterval || timeInterval.length == 0) {
         timeInterval = @"";
     }
+    
+//    bool bool_true = true ;
+//    bool bool_false = false;
+    
     NSDictionary *params = @{@"deviceId":deviceId,@"locationSwitch":@(locationSwitch),@"interval":timeInterval};
     [self POST:kAPI_SetLocationSetting params:params memoryCache:NO diskCache:NO completed:completed];
 }
@@ -243,8 +247,9 @@ NSString *const kAPI_SIZE = @"pageSize";
     NSDictionary *params = @{@"deviceId":deviceId};
     [self POST:kAPI_HeartRateSetting params:params memoryCache:NO diskCache:NO completed:completed];
 }
-- (void)setHeartRateSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"deviceId":deviceId,@"heartRateSwitch":@(heartRateSwitch)};
+
+- (void)setHeartRateSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch max:(NSString *)max min:(NSString *)min interval:(NSString *)interval completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId,@"heartRateSwitch":@(heartRateSwitch),@"max":max,@"min":min,@"interval":interval};
     [self POST:kAPI_SetHeartRateSetting params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
@@ -252,8 +257,12 @@ NSString *const kAPI_SIZE = @"pageSize";
     NSDictionary *params = @{@"deviceId":deviceId};
     [self POST:kAPI_getBloodSugarSetting params:params memoryCache:NO diskCache:NO completed:completed];
 }
-- (void)setBloodSugarSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"deviceId":deviceId,@"bloodSugarSwitch":@(heartRateSwitch)};
+//1.deviceId
+//2.maxBs
+//3.minBs
+//4.bloodSugarSwitch
+- (void)setBloodSugarSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch max:(NSString *)max min:(NSString *)min completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId,@"bloodSugarSwitch":@(heartRateSwitch),@"maxBs":max,@"minBs":min};
     [self POST:kAPI_setBloodSugarSetting params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
@@ -261,8 +270,15 @@ NSString *const kAPI_SIZE = @"pageSize";
     NSDictionary *params = @{@"deviceId":deviceId};
     [self POST:kAPI_getBloodPressureSetting params:params memoryCache:NO diskCache:NO completed:completed];
 }
-- (void)setBloodPressureSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"deviceId":deviceId,@"bloodPressureSwitch":@(heartRateSwitch)};
+//1.deviceId
+//2.maxHbp
+//3.minHbp
+//4.maxLbp
+//5.minLbp
+//6.bloodPressureSwitch
+
+- (void)setBloodPressureSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch maxHbp:(NSString *)maxHbp minHbp:(NSString *)minHbp maxLbp:(NSString *)maxLbp minLbp:(NSString *)minLbp completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId,@"bloodPressureSwitch":@(heartRateSwitch),@"maxHbp":maxHbp,@"minHbp":minHbp,@"maxLbp":maxLbp,@"minLbp":minLbp};
     [self POST:kAPI_setBloodPressureSetting params:params memoryCache:NO diskCache:NO completed:completed];
 }
 

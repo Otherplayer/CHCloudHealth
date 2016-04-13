@@ -10,6 +10,13 @@
 #import "CHSwitchCell.h"
 #import "CHUnitCell.h"
 #import "CHMonitorCell.h"
+#import "CHSetTimeIntervalController.h"
+
+typedef NS_ENUM(NSUInteger, CHCellType) {
+    CHCellType_Switch,
+    CHCellType_Unit,
+    CHCellType_Monitor,
+};
 
 @interface CHMonitorCareController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -51,10 +58,28 @@
                     
                     NSDictionary *info = responseData[@"data"];
                     NSInteger value = [info[@"heartRateSwitch"] isEmptyObject] ? 0 : 1;
-                    NSDictionary *section1 = @{@"title":@"心率报警",@"value":[NSString stringWithFormat:@"%@",@(value)]};
+                    NSDictionary *section1 = @{@"type":@(CHCellType_Switch),@"title":@"心率报警",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                     [self.datas addObject:section1];
                     
                     
+                    NSString *maxValue = @"";
+                    NSString *minValue = @"";
+                    if (![info[@"max"] isEmptyObject]) {
+                        maxValue = [NSString stringWithFormat:@"%@",info[@"max"]];
+                    }
+                    if (![info[@"min"] isEmptyObject]) {
+                        minValue = [NSString stringWithFormat:@"%@",info[@"min"]];
+                    }
+                    NSDictionary *section3 = @{@"type":@(CHCellType_Monitor),@"title":@"心率范围（bpm）",@"maxValue":maxValue,@"minValue":minValue,@"leftTitle":@"最低",@"rightTitle":@"最高"};
+                    [self.datas addObject:section3];
+                    
+                    
+                    NSString *time = @"";
+                    if(![info[@"interval"] isEmptyObject]){
+                        time = [NSString stringWithFormat:@"%@",info[@"interval"]];;
+                    }
+                    NSDictionary *section2 = @{@"type":@(CHCellType_Unit),@"title":@"提醒时间间隔",@"value":time};
+                    [self.datas addObject:section2];
                     
                     
                     
@@ -74,9 +99,22 @@
                 if (success) {
                     
                     NSDictionary *info = responseData[@"data"];
-                    NSInteger value = [info[@"heartRateSwitch"] isEmptyObject] ? 0 : 1;
-                    NSDictionary *section1 = @{@"title":@"心率报警",@"value":[NSString stringWithFormat:@"%@",@(value)]};
+                    NSInteger value = [info[@"bloodSugarSwitch"] isEmptyObject] ? 0 : 1;
+                    NSDictionary *section1 = @{@"type":@(CHCellType_Switch),@"title":@"血糖监测",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                     [self.datas addObject:section1];
+                    
+                    
+                    NSString *maxValue = @"";
+                    NSString *minValue = @"";
+                    if (![info[@"maxBs"] isEmptyObject]) {
+                        maxValue = [NSString stringWithFormat:@"%@",info[@"maxBs"]];
+                    }
+                    if (![info[@"minBs"] isEmptyObject]) {
+                        minValue = [NSString stringWithFormat:@"%@",info[@"minBs"]];
+                    }
+                    NSDictionary *section3 = @{@"type":@(CHCellType_Monitor),@"title":@"血糖设置",@"maxValue":maxValue,@"minValue":minValue,@"leftTitle":@"起止",@"rightTitle":@"停止"};
+                    [self.datas addObject:section3];
+                    
                     
                     self.tableView.loading = NO;
                     [self.tableView reloadData];
@@ -93,9 +131,36 @@
                 if (success) {
                     
                     NSDictionary *info = responseData[@"data"];
-                    NSInteger value = [info[@"heartRateSwitch"] isEmptyObject] ? 0 : 1;
-                    NSDictionary *section1 = @{@"title":@"心率报警",@"value":[NSString stringWithFormat:@"%@",@(value)]};
+                    NSInteger value = [info[@"bloodPressureSwitch"] isEmptyObject] ? 0 : 1;
+                    NSDictionary *section1 = @{@"title":@"血压监测",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                     [self.datas addObject:section1];
+                    
+                    
+                    
+                    NSString *maxLValue = @"";
+                    NSString *minLValue = @"";
+                    if (![info[@"maxLbp"] isEmptyObject]) {
+                        maxLValue = [NSString stringWithFormat:@"%@",info[@"maxLbp"]];
+                    }
+                    if (![info[@"minLbp"] isEmptyObject]) {
+                        minLValue = [NSString stringWithFormat:@"%@",info[@"minLbp"]];
+                    }
+                    NSDictionary *section2 = @{@"type":@(CHCellType_Monitor),@"title":@"低压设置",@"maxValue":maxLValue,@"minValue":minLValue,@"leftTitle":@"起止",@"rightTitle":@"停止"};
+                    [self.datas addObject:section2];
+                    
+                    
+                    
+                    NSString *maxValue = @"";
+                    NSString *minValue = @"";
+                    if (![info[@"maxHbp"] isEmptyObject]) {
+                        maxValue = [NSString stringWithFormat:@"%@",info[@"maxHbp"]];
+                    }
+                    if (![info[@"minHbp"] isEmptyObject]) {
+                        minValue = [NSString stringWithFormat:@"%@",info[@"minHbp"]];
+                    }
+                    NSDictionary *section3 = @{@"type":@(CHCellType_Monitor),@"title":@"高压设置",@"maxValue":maxValue,@"minValue":minValue,@"leftTitle":@"起止",@"rightTitle":@"停止"};
+                    [self.datas addObject:section3];
+                    
                     
                     self.tableView.loading = NO;
                     [self.tableView reloadData];
@@ -113,7 +178,13 @@
     NSInteger state = [section1[@"value"] integerValue];
     
     if (self.type == 3) {//心率
-        [[NetworkingManager sharedManager] setHeartRateSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        
+        NSDictionary *section2 = self.datas[1];
+        NSString *max = section2[@"maxValue"];
+        NSString *min = section2[@"minValue"];
+        NSString *interval = self.datas[2][@"value"];
+        
+        [[NetworkingManager sharedManager] setHeartRateSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state max:max min:min interval:interval completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     [self.navigationController popViewControllerAnimated:YES];
@@ -124,7 +195,12 @@
             });
         }];
     }else if (self.type == 4){//血糖
-        [[NetworkingManager sharedManager] setBloodSugarSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        
+        NSDictionary *section2 = self.datas[1];
+        NSString *max = section2[@"maxValue"];
+        NSString *min = section2[@"minValue"];
+        
+        [[NetworkingManager sharedManager] setBloodSugarSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state max:max min:min completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     [self.navigationController popViewControllerAnimated:YES];
@@ -135,7 +211,16 @@
             });
         }];
     }else if (self.type == 5){//血压
-        [[NetworkingManager sharedManager] setBloodPressureSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        
+        NSDictionary *section2 = self.datas[1];
+        NSString *max = section2[@"maxValue"];
+        NSString *min = section2[@"minValue"];
+        NSDictionary *section3 = self.datas[2];
+        NSString *maxh = section3[@"maxValue"];
+        NSString *minh = section3[@"minValue"];
+        
+        
+        [[NetworkingManager sharedManager] setBloodPressureSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state maxHbp:maxh minHbp:minh maxLbp:max minLbp:min completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     [self.navigationController popViewControllerAnimated:YES];
@@ -164,28 +249,57 @@
     return self.datas.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 2 || indexPath.section == 0) {
-        return 44;
+    NSDictionary *info = [self.datas objectAtIndex:indexPath.section];
+    NSInteger type = [info[@"type"] integerValue];
+    
+    if (type == CHCellType_Monitor) {
+        return 150;
     }
-    return 150;
+    return 44;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSDictionary *info = [self.datas objectAtIndex:indexPath.section];
-    if (indexPath.section == 0){
+    NSInteger type = [info[@"type"] integerValue];
+    if (type == CHCellType_Switch) {
         static NSString *IdentifierLocationHeaderCell = @"IdentifierLocationHeaderCell";
         CHSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationHeaderCell forIndexPath:indexPath];
         [cell configureTitle:info[@"title"] state:[info[@"value"] integerValue]];
         return cell;
-    }else if (indexPath.section == 2){
+    }else if (type == CHCellType_Unit){
         static NSString *IdentifierLocationRadiusCell = @"IdentifierLocationRadiusCell";
         CHUnitCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationRadiusCell forIndexPath:indexPath];
+        [cell setTitle:info[@"title"] detail:info[@"value"]];
+        return cell;
+    }else if (type == CHCellType_Monitor){
+        static NSString *IdentifierLocationMonitorCell = @"IdentifierLocationMonitorCell";
+        CHMonitorCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationMonitorCell forIndexPath:indexPath];
+        [cell setLeftTitle:info[@"leftTitle"] leftDetail:info[@"minValue"] title:info[@"title"] rightTitle:info[@"rightTitle"] rightDetail:info[@"maxValue"]];
         return cell;
     }
-    static NSString *IdentifierLocationMonitorCell = @"IdentifierLocationMonitorCell";
-    CHMonitorCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationMonitorCell forIndexPath:indexPath];
-    return cell;
+    
+    return nil;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *info = [self.datas objectAtIndex:indexPath.section];
+    NSString *title = info[@"title"];
+    NSInteger type = [info[@"type"] integerValue];
+    
+    if ([title isEqualToString:@"提醒时间间隔"]) {
+        CHSetTimeIntervalController *controller = (CHSetTimeIntervalController *)[[UIStoryboard mainStoryboard] setTimeIntervalController];
+        [controller setDidSelectedTimeBlock:^(NSString *timeStr) {
+            if (type == CHCellType_Unit) {
+                NSString *time = timeStr;
+                NSDictionary *section2 = @{@"type":@(CHCellType_Unit),@"title":@"提醒时间间隔",@"value":time};
+                [self.datas replaceObjectAtIndex:indexPath.section withObject:section2];
+                [self.tableView reloadData];
+            }
+        }];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    
     
 }
 
