@@ -61,12 +61,12 @@
 - (void)setLocationSetting:(NSString *)deviceId locationSwitch:(NSInteger)locationSwitch interval:(NSString *)timeInterval completedHandler:(GGRequestCallbackBlock)completed;
 
 - (void)getHeartRateSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
-- (void)setHeartRateSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed;
+- (void)setHeartRateSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch max:(NSString *)max min:(NSString *)min interval:(NSString *)interval completedHandler:(GGRequestCallbackBlock)completed;
 - (void)getBloodSugarSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
 
-- (void)setBloodSugarSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed;
+- (void)setBloodSugarSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch max:(NSString *)max min:(NSString *)min completedHandler:(GGRequestCallbackBlock)completed;
 - (void)getBloodPressureSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
-- (void)setBloodPressureSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch completedHandler:(GGRequestCallbackBlock)completed;
+- (void)setBloodPressureSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch maxHbp:(NSString *)maxHbp minHbp:(NSString *)minHbp maxLbp:(NSString *)maxLbp minLbp:(NSString *)minLbp completedHandler:(GGRequestCallbackBlock)completed;
 
 - (void)getSOSSetting:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed;
 - (void)setSOSSetting:(NSString *)deviceId sosNum:(NSString *)sosNum completedHandler:(GGRequestCallbackBlock)completed;

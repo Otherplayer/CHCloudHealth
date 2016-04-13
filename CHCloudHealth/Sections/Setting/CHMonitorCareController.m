@@ -178,7 +178,13 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
     NSInteger state = [section1[@"value"] integerValue];
     
     if (self.type == 3) {//心率
-        [[NetworkingManager sharedManager] setHeartRateSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        
+        NSDictionary *section2 = self.datas[1];
+        NSString *max = section2[@"maxValue"];
+        NSString *min = section2[@"minValue"];
+        NSString *interval = self.datas[2][@"value"];
+        
+        [[NetworkingManager sharedManager] setHeartRateSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state max:max min:min interval:interval completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     [self.navigationController popViewControllerAnimated:YES];
@@ -189,7 +195,12 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
             });
         }];
     }else if (self.type == 4){//血糖
-        [[NetworkingManager sharedManager] setBloodSugarSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        
+        NSDictionary *section2 = self.datas[1];
+        NSString *max = section2[@"maxValue"];
+        NSString *min = section2[@"minValue"];
+        
+        [[NetworkingManager sharedManager] setBloodSugarSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state max:max min:min completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     [self.navigationController popViewControllerAnimated:YES];
@@ -200,7 +211,16 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
             });
         }];
     }else if (self.type == 5){//血压
-        [[NetworkingManager sharedManager] setBloodPressureSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        
+        NSDictionary *section2 = self.datas[1];
+        NSString *max = section2[@"maxValue"];
+        NSString *min = section2[@"minValue"];
+        NSDictionary *section3 = self.datas[2];
+        NSString *maxh = section3[@"maxValue"];
+        NSString *minh = section3[@"minValue"];
+        
+        
+        [[NetworkingManager sharedManager] setBloodPressureSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state maxHbp:maxh minHbp:minh maxLbp:max minLbp:min completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     [self.navigationController popViewControllerAnimated:YES];
