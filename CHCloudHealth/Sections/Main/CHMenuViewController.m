@@ -35,7 +35,7 @@
                             @{@"title":@"心率监测",@"identifier":@"CHMonitorCareController"},
                             @{@"title":@"血糖监测",@"identifier":@"CHMonitorCareController"},
                             @{@"title":@"血压监测",@"identifier":@"CHMonitorCareController"},
-                            @{@"title":@"服药提醒",@"identifier":@""},
+                            @{@"title":@"服药提醒",@"identifier":@"CHMedicineReminderController"},
                             @{@"title":@"紧急求助",@"identifier":@"CHSOSSetController"},
                             @{@"title":@"设备管理",@"identifier":@"CHDeviceManagerController"},
                             @{@"title":@"切换用户"}
