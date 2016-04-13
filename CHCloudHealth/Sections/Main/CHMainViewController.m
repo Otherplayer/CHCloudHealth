@@ -20,6 +20,7 @@
 #import "NSObject+FQAHCategories.h"
 
 
+
 @interface CHMainViewController ()<UITableViewDelegate,UITableViewDataSource>{
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
@@ -216,8 +217,14 @@
         if (identifier) {
             
             if ([identifier isEqualToString:@"切换用户"]) {
-                [[CHUser sharedInstance] logout];
-                [self gotoLogin];
+                HYQAlertView *alertView = [[HYQAlertView alloc] initWithTitle:@"确定退出吗？" message:nil delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                [alertView handlerClickedButton:^(NSInteger btnIndex) {
+                    if (1 == btnIndex) {
+                        [[CHUser sharedInstance] logout];
+                        [self gotoLogin];
+                    }
+                }];
+                [alertView show];
                 return ;
             }
             
