@@ -12,9 +12,10 @@
     BMKPointAnnotation* pointAnnotation;
     BMKCircle* circle;
 }
+//@property (weak, nonatomic) IBOutlet BMKMapView *mapView;
+@property (nonatomic, strong)BMKMapView* mapView;
 @property (nonatomic, strong)BMKLocationService* locService;
 @property (nonatomic, strong)BMKGeoCodeSearch* geocodesearch;
-@property (weak, nonatomic) IBOutlet BMKMapView *mapView;
 
 @end
 
@@ -31,16 +32,16 @@
     
     [self setTitle:@"位置区域"];
     
-    //初始化BMKLocationService
-    self.locService.delegate = self;
-    //启动LocationService
-    [self.locService startUserLocationService];
-    
     
     
     
     
     self.mapView.delegate = self;
+    //初始化BMKLocationService
+    self.locService.delegate = self;
+    //启动LocationService
+    [self.locService startUserLocationService];
+    
     
     
     [self.mapView setShowMapScaleBar:YES];//设定是否显式比例尺
@@ -50,7 +51,7 @@
 
     
 
-    [self getDatas];
+    //[self getDatas];
     
 }
 
@@ -79,7 +80,9 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.mapView viewWillAppear];
-    _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+    self.locService.delegate = self;
+    self.geocodesearch.delegate = self;
+    self.mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -93,21 +96,6 @@
 #pragma mark implement BMKMapViewDelegate
 - (void)mapViewDidFinishLoading:(BMKMapView *)mapView{
     NSLog(@"%s",__func__);
-}
-//根据overlay生成对应的View
-- (BMKOverlayView *)mapView:(BMKMapView *)mapView viewForOverlay:(id <BMKOverlay>)overlay
-{
-    if ([overlay isKindOfClass:[BMKCircle class]])
-    {
-        BMKCircleView* circleView = [[BMKCircleView alloc] initWithOverlay:overlay];
-        circleView.fillColor = [[UIColor alloc] initWithRed:0.400 green:1.000 blue:0.400 alpha:0.247];
-        circleView.strokeColor = [[UIColor alloc] initWithRed:0.400 green:1.000 blue:0.400 alpha:1.000];
-        circleView.lineWidth = 1.0;
-        
-        return circleView;
-    }
-    
-    return nil;
 }
 
 //实现相关delegate 处理位置信息更新
@@ -222,6 +210,14 @@
     }
     return _geocodesearch;
 }
+
+- (BMKMapView *)mapView{
+    if (!_mapView) {
+        _mapView = [[BMKMapView alloc]initWithFrame:self.view.bounds];
+    }
+    return _mapView;
+}
+
 
 
 
