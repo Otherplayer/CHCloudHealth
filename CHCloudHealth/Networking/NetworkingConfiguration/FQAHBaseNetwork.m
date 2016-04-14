@@ -156,10 +156,24 @@ NSString *const kIMGKey = @"kIMGKey";
 
 - (void)GET:(NSString *)URLString params:(id)parameters memoryCache:(BOOL)memoryCache diskCache:(BOOL)diskCache completed:(GGRequestCallbackBlock)completed{
     
-    if ([self shouldLoadDataFromCache:URLString params:parameters memoryCache:memoryCache diskCache:diskCache completed:completed]) {
+    
+    NSMutableDictionary *allparameters = [[NSMutableDictionary alloc] initWithDictionary:[FQAHPublicParameter publicParameter]];
+    //在这里统一添加公共参数进来
+    if (parameters) {
+        for (NSString *key in [parameters allKeys]) {
+            id value = [parameters objectForKey:key];
+            [allparameters setObject:value forKey:key];
+        }
+    }
+    NSDictionary *targetParameters;
+    if (allparameters) {
+        targetParameters = @{@"data":[allparameters jsonString]};
+    }
+    NSLog(@"参数：%@\n\n url:%@",targetParameters,URLString);
+    
+    if ([self shouldLoadDataFromCache:URLString params:targetParameters memoryCache:memoryCache diskCache:diskCache completed:completed]) {
         return;
     }
-    
     [[FQAHBaseNetwork sharedNetwork] GET:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [self isSuccessedOnCallingAPIOperation:operation object:responseObject url:URLString params:parameters memoryCache:memoryCache diskCache:diskCache completedHandler:completed];

@@ -31,7 +31,17 @@
     self.tableView.loading = YES;
     [self getDatas];
     
+    
+    [self addRightButton2NavWithTitle:@"hhh"];
+    
 }
+
+- (void)rightBarButtonPressed:(id)rightBarButtonPressed{
+    [[NetworkingManager sharedManager] getHealthRecordDetailInfo:@"5b12780b-21dd-4e42-8ce7-dddbd92699a0" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        
+    }];
+}
+
 
 #pragma mark -
 
