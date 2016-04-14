@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CHCloudHealth/Sections/Setting/CHMonitorCareController.m"
-            timestampString = "481972728.103823"
+            timestampString = "482251382.270388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "-getDatas"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
+            landmarkName = "-touchesBegan:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

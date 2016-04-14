@@ -20,6 +20,7 @@
 #import "NSObject+FQAHCategories.h"
 
 
+
 @interface CHMainViewController ()<UITableViewDelegate,UITableViewDataSource>{
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
@@ -51,7 +52,6 @@
         }else{
             [self getDatas];
         }
-        
     }];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldGotoSubMenuController:) name:kNotificationMenuController object:nil];
@@ -214,17 +214,29 @@
         NSString *type = info[@"type"];
         
         if (identifier) {
-        if (type) {
-            CHMonitorCareController *controller = (CHMonitorCareController *)[[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:identifier];
-            controller.type = type.integerValue;
-            [self.navigationController pushViewController:controller animated:NO];
-
-        }else{
             
-            UIViewController *controller = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:identifier];
-            [self.navigationController pushViewController:controller animated:NO];
-        }
-        
+            if ([identifier isEqualToString:@"切换用户"]) {
+                HYQAlertView *alertView = [[HYQAlertView alloc] initWithTitle:@"确定退出吗？" message:nil delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                [alertView handlerClickedButton:^(NSInteger btnIndex) {
+                    if (1 == btnIndex) {
+                        [[CHUser sharedInstance] logout];
+                        [self gotoLogin];
+                    }
+                }];
+                [alertView show];
+                return ;
+            }
+            
+            if (type) {
+                CHMonitorCareController *controller = (CHMonitorCareController *)[[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:identifier];
+                controller.type = type.integerValue;
+                [self.navigationController pushViewController:controller animated:NO];
+
+            }else{
+                
+                UIViewController *controller = [[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:identifier];
+                [self.navigationController pushViewController:controller animated:NO];
+            }
         }
         
     });

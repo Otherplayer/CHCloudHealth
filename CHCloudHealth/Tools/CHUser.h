@@ -31,4 +31,7 @@
 
 - (BOOL)islogin;
 
+
+- (void)logout;
+
 @end

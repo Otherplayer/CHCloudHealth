@@ -35,10 +35,10 @@
                             @{@"title":@"心率监测",@"identifier":@"CHMonitorCareController"},
                             @{@"title":@"血糖监测",@"identifier":@"CHMonitorCareController"},
                             @{@"title":@"血压监测",@"identifier":@"CHMonitorCareController"},
-//                            @{@"title":@"服药提醒"},
+                            @{@"title":@"服药提醒",@"identifier":@"CHMedicineReminderController"},
                             @{@"title":@"紧急求助",@"identifier":@"CHSOSSetController"},
                             @{@"title":@"设备管理",@"identifier":@"CHDeviceManagerController"},
-//                            @{@"title":@"SOS设置"}
+                            @{@"title":@"切换用户"}
                             ]];
     // section third
 //    [self.datas addObject:@[@{@"title":@"APP管理"}]];
@@ -67,6 +67,10 @@
         
         
         NSString *identifier = self.datas[indexPath.section][indexPath.row][@"identifier"];
+        
+        if (!identifier) {
+            identifier = @"切换用户";
+        }
         
         if ([identifier isEqualToString:@"CHMonitorCareController"]) {
             NSDictionary *info = @{@"identifier":identifier,@"type":@(indexPath.row)};

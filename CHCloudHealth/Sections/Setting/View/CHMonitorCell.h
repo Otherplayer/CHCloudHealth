@@ -14,7 +14,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *labTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labRightTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labRightDetail;
+@property (weak, nonatomic) IBOutlet UITextField *tfLeftDetail;
+@property (weak, nonatomic) IBOutlet UITextField *tfRightDetail;
 
+@property (nonatomic, copy) void(^leftDetailBlock)(NSString *result);
+@property (nonatomic, copy) void(^rightDetailBlock)(NSString *result);
 
 - (void)setLeftTitle:(NSString *)leftTitle leftDetail:(NSString *)leftDetail title:(NSString *)title rightTitle:(NSString *)rightTitle rightDetail:(NSString *)rightDetail;
 
