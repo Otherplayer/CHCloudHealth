@@ -40,7 +40,7 @@
     if ([self canGo]) {
         
         [HYQShowTip showProgressWithText:@"" dealy:30];
-        [[NetworkingManager sharedManager] getHealthRecordInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        [[NetworkingManager sharedManager] getHealthRecordInfo:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     self.tableView.loading = NO;
