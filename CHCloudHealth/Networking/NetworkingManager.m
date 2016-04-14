@@ -195,8 +195,8 @@ NSString *const kAPI_SIZE = @"pageSize";
 }
 - (void)getHealthRecordDetailInfo:(NSString *)heathRecordId completedHandler:(GGRequestCallbackBlock)completed{
     NSDictionary *params = @{@"heathRecordId":heathRecordId};
-    [self GET:kAPI_HealthRecordDetail params:params memoryCache:NO diskCache:NO completed:completed];
-//    [self POST:kAPI_HealthRecordDetail params:params memoryCache:NO diskCache:NO completed:completed];
+//    [self GET:kAPI_HealthRecordDetail params:params memoryCache:NO diskCache:NO completed:completed];
+    [self POST:kAPI_HealthRecordDetail params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
 - (void)getNoticeListInfo:(NSString *)userId page:(NSInteger)page size:(NSInteger)size completedHandler:(GGRequestCallbackBlock)completed{
