@@ -75,7 +75,7 @@
     if (indexPath.section == 0) {
         static NSString *identifierUserinfoHeader = @"IdentifierUserinfoHeader";
         CHUnitAvatarCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoHeader forIndexPath:indexPath];
-        [cell setTitle:title avatar:detail];
+        [cell setTitle:title avatar:self.name];
         return cell;
     }
     
@@ -97,6 +97,7 @@
             controller.type = 0;
             [controller setDidEditSuccessBlock:^(NSString *result) {
                 weakSelf.name = result;
+                [tableView reloadData];
             }];
             [self.navigationController pushViewController:controller animated:YES];
         }else if (indexPath.row == 1){

@@ -42,6 +42,7 @@
         if (self.didEditSuccessBlock) {
             self.didEditSuccessBlock(result);
         }
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

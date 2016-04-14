@@ -65,14 +65,14 @@
     //    NSString *IDFA = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     //    NSString *uuid = IDFA;
     
-    NSString *appToken  =   [user objectForKey:kAppToken]?:@"";
+    NSString *appToken  =   [user objectForKey:kAppToken]?[user objectForKey:kAppToken]:@"";
     //NSString *userId    =   [user objectForKey:@"userId"]?:@"";
     NSString *deviceIdentifier = [NSString UUIDString];
     
     NSDictionary *publicParameter = [NSDictionary dictionaryWithObjectsAndKeys:
-                                     appToken, kAppToken,
-                                     deviceIdentifier,@"deviceIdentifier",
                                      @"ios",@"device",
+                                     appToken, @"token",
+                                     deviceIdentifier,@"deviceIdentifier",
 //                                     @"userId",userId,
                                      nil];
     return publicParameter;

@@ -35,7 +35,7 @@ NSString *const kUSER_SEX = @"sex";
     
     /// 1.保存用户信息
     NSString *uid = [NSString stringWithFormat:@"%@",info[@"data"][@"userId"]];
-    NSString *app_token = [NSString stringWithFormat:@"%@",info[kAppToken]];
+    NSString *app_token = [NSString stringWithFormat:@"%@",info[@"token"]];
     NSString *deviceId = @"";
     if (![info[@"data"][kUSER_DEVICE_ID] isEmptyObject]) {
         deviceId = info[@"data"][kUSER_DEVICE_ID];
