@@ -38,6 +38,7 @@
     ]];
     
     [self addRightButton2NavWithTitle:@"确定"];
+    [self.tableView blankTableFooterView];
     
 }
 #pragma mark - Action
@@ -99,6 +100,7 @@
             CHChangeNameController *controller = (CHChangeNameController *)[[UIStoryboard mainStoryboard] changeNameController];
             controller.type = 0;
             [controller setDidEditSuccessBlock:^(NSString *result) {
+                weakSelf.name = result;
                 [CHUser sharedInstance].name = result;
                 [weakSelf.tableView reloadData];
             }];
