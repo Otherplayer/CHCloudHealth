@@ -39,7 +39,7 @@
     
     
     if ([self check]) {
-        [[NetworkingManager sharedManager] setFamliyNumber:[CHUser sharedInstance].deviceId name:self.tfName.text relation:self.tfRelation.text mobile:self.tfMobile.text address:self.tfAddress.text remark:self.tfRemark.text completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        [[NetworkingManager sharedManager] setFamliyNumber:[CHUser sharedInstance].deviceUserId name:self.tfName.text relation:self.tfRelation.text mobile:self.tfMobile.text address:self.tfAddress.text remark:self.tfRemark.text completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {

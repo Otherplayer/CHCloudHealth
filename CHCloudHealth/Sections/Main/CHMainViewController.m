@@ -100,7 +100,7 @@
         return;
     }
     
-    [[NetworkingManager sharedManager] getDeviceInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+    [[NetworkingManager sharedManager] getDeviceInfo:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
                     [self.datas removeAllObjects];
@@ -116,7 +116,7 @@
 }
 
 - (void)getHealthTypeInfo{
-    [[NetworkingManager sharedManager] getHealthTypeInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+    [[NetworkingManager sharedManager] getHealthTypeInfo:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
                     self.tableView.loading = NO;

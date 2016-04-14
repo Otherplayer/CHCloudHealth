@@ -54,7 +54,7 @@
 
 - (void)getDatas{
     
-    [[NetworkingManager sharedManager] getListFamliyNumber:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+    [[NetworkingManager sharedManager] getListFamliyNumber:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
                 [self.datas removeAllObjects];
