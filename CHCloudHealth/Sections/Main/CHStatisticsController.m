@@ -67,7 +67,7 @@
     
     if (self.type == 2) {
         [HYQShowTip showProgressWithText:@"" dealy:30];
-        [[NetworkingManager sharedManager] getHeartRateInfo:@"222222" date:@"2016-04-09" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        [[NetworkingManager sharedManager] getHeartRateInfo:[CHUser sharedInstance].deviceUserId date:@"2016-04-14" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
@@ -80,7 +80,7 @@
         }];
     }else if (self.type == 3){
         [HYQShowTip showProgressWithText:@"" dealy:30];
-        [[NetworkingManager sharedManager] getBloodPressureInfo:@"222222" date:@"2016-04-09" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        [[NetworkingManager sharedManager] getBloodPressureInfo:[CHUser sharedInstance].deviceUserId date:@"2016-04-14" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 if (success) {
@@ -94,7 +94,7 @@
         }];
     }else if (self.type == 4){
         [HYQShowTip showProgressWithText:@"" dealy:30];
-        [[NetworkingManager sharedManager] getBloodSugarInfo:@"222222" date:@"2016-04-09" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        [[NetworkingManager sharedManager] getBloodSugarInfo:[CHUser sharedInstance].deviceUserId date:@"2016-04-14" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
            dispatch_async(dispatch_get_main_queue(), ^{
                
                if (success) {
