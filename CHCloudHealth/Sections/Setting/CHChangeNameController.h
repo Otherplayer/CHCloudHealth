@@ -11,5 +11,8 @@
 @interface CHChangeNameController : CHRootViewController
 
 @property (nonatomic, assign) NSInteger type;//0是昵称，1是电话
+@property (nonatomic, copy)void(^didEditSuccessBlock)(NSString *result);
+
+
 
 @end

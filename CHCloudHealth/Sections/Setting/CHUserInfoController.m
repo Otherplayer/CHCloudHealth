@@ -14,6 +14,7 @@
 
 @interface CHUserInfoController ()
 @property (nonatomic, strong) NSArray *datas;
+@property (nonatomic, strong) NSString *name;
 @end
 
 @implementation CHUserInfoController
@@ -29,9 +30,25 @@
   ],
                    
   @[@{@"title":@"昵称",@"detail":[CHUser sharedInstance].name ? [CHUser sharedInstance].name : @""},
-                     @{@"title":@"性别",@"detail":@""},
-                     @{@"title":@"手机号",@"detail":[CHUser sharedInstance].phoneNumber ? [CHUser sharedInstance].phoneNumber : @""}]];
+//                     @{@"title":@"性别",@"detail":@""},
+//                     @{@"title":@"手机号",@"detail":[CHUser sharedInstance].phoneNumber ? [CHUser sharedInstance].phoneNumber : @""}
+    ]];
     
+    [self addRightButton2NavWithTitle:@"确定"];
+    
+}
+#pragma mark - Action
+- (void)rightBarButtonPressed:(id)rightBarButtonPressed{
+    if (self.name && self.name.length > 0) {
+        [[NetworkingManager sharedManager] updateUserInfo:[CHUser sharedInstance].uid name:self.name completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+            if (success) {
+                [HYQShowTip showTipTextOnly:@"修改成功" dealy:2];
+            }else{
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+        }];
+        
+    }
 }
 
 
@@ -75,13 +92,16 @@
         }];
     }else{
         if (indexPath.row == 0) {
+            WS(weakSelf);
             CHChangeNameController *controller = (CHChangeNameController *)[[UIStoryboard mainStoryboard] changeNameController];
             controller.type = 0;
+            [controller setDidEditSuccessBlock:^(NSString *result) {
+                weakSelf.name = result;
+            }];
             [self.navigationController pushViewController:controller animated:YES];
         }else if (indexPath.row == 1){
             HYQActionSheet *actionSheet = [[HYQActionSheet alloc] initWithTitle:@"请选择性别" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"男",@"女", nil];
             [actionSheet handlerClickedButton:^(NSInteger btnIndex) {
-                
             }];
             [actionSheet showInView:self.view];
         }else if (indexPath.row == 2){

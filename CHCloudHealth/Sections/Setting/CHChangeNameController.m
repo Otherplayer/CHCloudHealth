@@ -37,7 +37,12 @@
 #pragma mark - Action
 
 - (void)rightBarButtonPressed:(id)rightBarButtonPressed{
-    
+    NSString *result = [self.nameTextField.text trimmingWhitespace];
+    if (result && result.length > 0) {
+        if (self.didEditSuccessBlock) {
+            self.didEditSuccessBlock(result);
+        }
+    }
 }
 
 
