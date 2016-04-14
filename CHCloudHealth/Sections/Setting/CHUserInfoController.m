@@ -84,7 +84,7 @@
     
     static NSString *identifierUserinfoBody = @"IdentifierUserinfoBody";
     CHUnitCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoBody forIndexPath:indexPath];
-    [cell setTitle:title detail:self.name];
+    [cell setTitle:title detail:[CHUser sharedInstance].name];
     return cell;
 }
 
@@ -99,7 +99,7 @@
             CHChangeNameController *controller = (CHChangeNameController *)[[UIStoryboard mainStoryboard] changeNameController];
             controller.type = 0;
             [controller setDidEditSuccessBlock:^(NSString *result) {
-                weakSelf.name = result;
+                [CHUser sharedInstance].name = result;
                 [weakSelf.tableView reloadData];
             }];
             [self.navigationController pushViewController:controller animated:YES];
