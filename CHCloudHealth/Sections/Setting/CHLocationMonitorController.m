@@ -51,7 +51,7 @@
 //                [self.datas addObject:section1];
                 NSString *time = @"";
                 if(![info[@"interval"] isEmptyObject]){
-                    time = [NSString stringWithFormat:@"%@",info[@"interval"]];
+                    time = [NSString stringWithFormat:@"%@分钟",info[@"interval"]];
                 }
                 NSDictionary *section2 = @{@"title":@"时间间隔",@"value":time};
                 [self.datas addObject:section2];
