@@ -15,6 +15,9 @@
 @interface CHUserInfoController ()
 @property (nonatomic, strong) NSArray *datas;
 @property (nonatomic, strong) NSString *name;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+
 @end
 
 @implementation CHUserInfoController
@@ -75,13 +78,13 @@
     if (indexPath.section == 0) {
         static NSString *identifierUserinfoHeader = @"IdentifierUserinfoHeader";
         CHUnitAvatarCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoHeader forIndexPath:indexPath];
-        [cell setTitle:title avatar:self.name];
+        [cell setTitle:title avatar:detail];
         return cell;
     }
     
     static NSString *identifierUserinfoBody = @"IdentifierUserinfoBody";
     CHUnitCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoBody forIndexPath:indexPath];
-    [cell setTitle:title detail:detail];
+    [cell setTitle:title detail:self.name];
     return cell;
 }
 
@@ -97,7 +100,7 @@
             controller.type = 0;
             [controller setDidEditSuccessBlock:^(NSString *result) {
                 weakSelf.name = result;
-                [tableView reloadData];
+                [weakSelf.tableView reloadData];
             }];
             [self.navigationController pushViewController:controller animated:YES];
         }else if (indexPath.row == 1){
