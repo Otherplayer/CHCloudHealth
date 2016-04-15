@@ -3086,6 +3086,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gje-8u-1Fd" id="5MZ-52-z9e"/>
+                                    <outlet property="delegate" destination="gje-8u-1Fd" id="6eC-y5-bAS"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

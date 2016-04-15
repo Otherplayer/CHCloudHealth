@@ -41,9 +41,11 @@
     [[NetworkingManager sharedManager] getNoticeListInfo:[CHUser sharedInstance].uid page:1 size:12 completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
+                [self.datas addObjectsFromArray:responseData[@"data"][@"data"]];
                 
                 self.tableView.loading = NO;
                 [self.tableView reloadData];
+                
             }else{
                 self.tableView.loading = NO;
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];
@@ -54,16 +56,20 @@
     
 }
 
-
 #pragma mark - Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.datas count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *info = self.datas[indexPath.row];
+    NSString *title = [NSString stringWithFormat:@"%@",info[@"title"]];
+    NSString *detail = [NSString stringWithFormat:@"%@",info[@"content"]];
+    NSString *time = [NSString stringWithFormat:@"%@",info[@"createDate"]];
+    //readStatus
     static NSString *identifierMessageCell = @"IdentifierMessageCell";
     CMMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMessageCell forIndexPath:indexPath];
-    [cell configureTitle:@"" detail:@"" time:@""];
+    [cell configureTitle:title detail:detail time:time];
     return cell;
 }
 
