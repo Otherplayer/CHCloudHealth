@@ -3325,25 +3325,6 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm5-Bq-BzR">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="33.5" id="GO1-Wu-VGd"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="GO1-Wu-VGd"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="widthClass=compact">
-                                                        <mask key="constraints">
-                                                            <include reference="GO1-Wu-VGd"/>
-                                                        </mask>
-                                                    </variation>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZZ-lx-aKE">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <constraints>
@@ -3366,21 +3347,48 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm5-Bq-BzR">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33.5" id="GO1-Wu-VGd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="GO1-Wu-VGd"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="GO1-Wu-VGd"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Vm5-Bq-BzR" firstAttribute="top" secondItem="b5w-yF-uPP" secondAttribute="bottom" id="20n-bd-g7q"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Vm5-Bq-BzR" secondAttribute="trailing" id="ATX-my-m8C"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Vm5-Bq-BzR" secondAttribute="trailing" id="ATX-my-m8C">
+                                                    <variation key="widthClass=compact" constant="12"/>
+                                                </constraint>
                                                 <constraint firstItem="b5w-yF-uPP" firstAttribute="top" secondItem="pxO-oq-9Ds" secondAttribute="topMargin" constant="-7" id="I2J-Z1-XLg"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="UZZ-lx-aKE" secondAttribute="trailing" id="JJq-2Z-EpQ"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="Vm5-Bq-BzR" secondAttribute="leading" id="Qe7-99-etY"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="b5w-yF-uPP" secondAttribute="leading" id="VEP-8Z-Iic"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UZZ-lx-aKE" secondAttribute="trailing" id="JJq-2Z-EpQ">
+                                                    <variation key="widthClass=compact" constant="12"/>
+                                                </constraint>
+                                                <constraint firstAttribute="leadingMargin" secondItem="Vm5-Bq-BzR" secondAttribute="leading" id="Qe7-99-etY">
+                                                    <variation key="widthClass=compact" constant="-13"/>
+                                                </constraint>
+                                                <constraint firstAttribute="leadingMargin" secondItem="b5w-yF-uPP" secondAttribute="leading" id="VEP-8Z-Iic">
+                                                    <variation key="widthClass=compact" constant="-13"/>
+                                                </constraint>
                                                 <constraint firstItem="UZZ-lx-aKE" firstAttribute="top" secondItem="pxO-oq-9Ds" secondAttribute="topMargin" constant="-7" id="bOz-9Y-HqH"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="b5w-yF-uPP"/>
-                                                    <exclude reference="Vm5-Bq-BzR"/>
                                                     <exclude reference="UZZ-lx-aKE"/>
+                                                    <exclude reference="Vm5-Bq-BzR"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="I2J-Z1-XLg"/>
@@ -3395,8 +3403,8 @@
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="b5w-yF-uPP"/>
-                                                    <include reference="Vm5-Bq-BzR"/>
                                                     <include reference="UZZ-lx-aKE"/>
+                                                    <include reference="Vm5-Bq-BzR"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="I2J-Z1-XLg"/>

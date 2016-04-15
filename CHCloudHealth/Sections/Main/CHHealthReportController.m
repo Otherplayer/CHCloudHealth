@@ -31,15 +31,10 @@
     self.tableView.loading = YES;
     [self getDatas];
     
-    
-    [self addRightButton2NavWithTitle:@"hhh"];
-    
 }
 
 - (void)rightBarButtonPressed:(id)rightBarButtonPressed{
-    [[NetworkingManager sharedManager] getHealthRecordDetailInfo:@"5b12780b-21dd-4e42-8ce7-dddbd92699a0" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-        
-    }];
+    
 }
 
 
@@ -79,10 +74,25 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *info = self.datas[indexPath.row];
+    NSString *title = [NSString stringWithFormat:@"%@",info[@"title"]];
+    NSString *detail = [NSString stringWithFormat:@"%@",info[@"content"]];
+    NSString *name = [NSString stringWithFormat:@"%@",info[@"name"]];
     static NSString *identifierHealthReportCell = @"IdentifierHealthReportCell";
     CMMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierHealthReportCell forIndexPath:indexPath];
-    [cell configureTitle:info[@"title"] detail:info[@"content"] name:info[@"name"]];
+    [cell configureTitle:title detail:detail name:name];
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *info = self.datas[indexPath.row];
+    NSString *healthDetailId = info[@"healthRecordId"];
+    
+    [[NetworkingManager sharedManager] getHealthRecordDetailInfo:healthDetailId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        if (success) {
+            
+        }else{
+            [HYQShowTip showTipTextOnly:errDesc dealy:2];
+        }
+    }];
 }
 
 
