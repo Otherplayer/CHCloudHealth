@@ -47,6 +47,7 @@
     self.view = self.mapView;
     self.mapView.delegate = self;
     [self.view addSubview:self.btnLocation];
+    [self.view addSubview:self.btnRoad];
     
     
     [self.mapView setShowMapScaleBar:YES];//设定是否显式比例尺
@@ -234,16 +235,16 @@
 
 - (UIButton *)btnLocation{
     if (!_btnLocation) {
-        _btnLocation = [[UIButton alloc] initWithFrame:CGRectMake(20, kMainHeight - 65, 45, 45)];
-        _btnLocation.backgroundColor = [UIColor redColor];
+        _btnLocation = [[UIButton alloc] initWithFrame:CGRectMake(20, kMainHeight - 120, 45, 45)];
+        [_btnLocation setImage:[UIImage imageNamed:@"ios_location2"] forState:UIControlStateNormal];
         [_btnLocation addTarget:self action:@selector(startLocationAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btnLocation;
 }
 - (UIButton *)btnRoad{
     if (!_btnRoad) {
-        _btnRoad = [[UIButton alloc] initWithFrame:CGRectMake(20, kMainHeight - 65 - 60, 45, 45)];
-        _btnRoad.backgroundColor = [UIColor redColor];
+        _btnRoad = [[UIButton alloc] initWithFrame:CGRectMake(20, kMainHeight - 120 - 60, 45, 45)];
+        [_btnRoad setImage:[UIImage imageNamed:@"ios_location3"] forState:UIControlStateNormal];
         [_btnRoad addTarget:self action:@selector(startRoadAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btnRoad;
