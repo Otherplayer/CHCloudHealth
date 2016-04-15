@@ -85,7 +85,6 @@
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];
             }
         });
-        
     }];
 }
 

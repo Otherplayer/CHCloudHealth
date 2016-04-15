@@ -188,7 +188,8 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
         [[NetworkingManager sharedManager] setHeartRateSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state max:max min:min interval:interval completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
-                    [self.navigationController popViewControllerAnimated:YES];
+                    [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
+//                    [self.navigationController popViewControllerAnimated:YES];
                 }else{
                     self.tableView.loading = NO;
                     [HYQShowTip showTipTextOnly:errDesc dealy:2];
@@ -204,7 +205,8 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
         [[NetworkingManager sharedManager] setBloodSugarSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state max:max min:min completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
-                    [self.navigationController popViewControllerAnimated:YES];
+                    [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
+//                    [self.navigationController popViewControllerAnimated:YES];
                 }else{
                     self.tableView.loading = NO;
                     [HYQShowTip showTipTextOnly:errDesc dealy:2];
@@ -224,7 +226,8 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
         [[NetworkingManager sharedManager] setBloodPressureSetting:[CHUser sharedInstance].deviceId heartRateSwitch:state maxHbp:maxh minHbp:minh maxLbp:max minLbp:min completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
-                    [self.navigationController popViewControllerAnimated:YES];
+                    [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
+//                    [self.navigationController popViewControllerAnimated:YES];
                 }else{
                     self.tableView.loading = NO;
                     [HYQShowTip showTipTextOnly:errDesc dealy:2];

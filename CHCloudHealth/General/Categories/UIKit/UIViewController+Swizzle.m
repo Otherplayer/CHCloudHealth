@@ -71,7 +71,7 @@
 
 - (void)HYQuan:(BOOL)animated {
     [self HYQuan:animated];
-    NSLog(@"[当前视图控制器]: %@", self);
+    //NSLog(@"[当前视图控制器]: %@", self);
 
 }
 
