@@ -1370,6 +1370,13 @@
                                             <outlet property="tfRightDetail" destination="ceM-3P-wCz" id="jAB-3H-ivF"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IdentifierSpaceCell" id="BlH-MC-bkH">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BlH-MC-bkH" id="wUa-fd-Jto">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="WcM-8J-SIJ" id="RRA-ne-xeA"/>
@@ -1906,7 +1913,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YU6-hW-iph" firstAttribute="top" secondItem="RKZ-RG-60I" secondAttribute="bottom" constant="46" id="FEv-rN-GVA"/>
+                            <constraint firstItem="YU6-hW-iph" firstAttribute="top" secondItem="RKZ-RG-60I" secondAttribute="bottom" constant="46" id="FEv-rN-GVA">
+                                <variation key="widthClass=compact" constant="11"/>
+                            </constraint>
                             <constraint firstItem="YU6-hW-iph" firstAttribute="leading" secondItem="aQO-Wz-oTY" secondAttribute="leading" id="HA5-Vd-1pP"/>
                             <constraint firstAttribute="trailing" secondItem="YU6-hW-iph" secondAttribute="trailing" id="S2J-US-ytu"/>
                         </constraints>

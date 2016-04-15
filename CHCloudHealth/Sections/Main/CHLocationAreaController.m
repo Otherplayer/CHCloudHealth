@@ -36,7 +36,7 @@
     [self setTitle:@"位置区域"];
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    
+    self.mapView.backgroundColor = [UIColor whiteColor];
     
     
     //初始化BMKLocationService

@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfLeftDetail;
 @property (weak, nonatomic) IBOutlet UITextField *tfRightDetail;
 
+@property (nonatomic, copy) void(^beginEditBlock)(BOOL isBegin);
 @property (nonatomic, copy) void(^leftDetailBlock)(NSString *result);
 @property (nonatomic, copy) void(^rightDetailBlock)(NSString *result);
 

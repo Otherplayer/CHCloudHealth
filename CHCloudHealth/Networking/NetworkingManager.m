@@ -322,7 +322,7 @@ NSString *const kAPI_SIZE = @"pageSize";
     [self POST:kAPI_GetMedicineTipSetting params:params memoryCache:NO diskCache:NO completed:completed];
 }
 - (void)setMedicineSetting:(NSString *)deviceId medicationSwitch:(NSInteger)medicationSwitch t1:(NSString *)t1 t2:(NSString *)t2 t3:(NSString *)t3 completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"deviceId":deviceId,@"medicationSwitch":@(medicationSwitch)};
+    NSDictionary *params = @{@"deviceId":deviceId,@"medicationSwitch":[NSString stringWithFormat:@"%@",@(medicationSwitch)]};
     
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithDictionary:params];
     if (t1) {

@@ -16,11 +16,14 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
     CHCellType_Switch,
     CHCellType_Unit,
     CHCellType_Monitor,
+    CHCellType_Other,
 };
 
 @interface CHMonitorCareController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *datas;
+@property (nonatomic, assign) NSInteger shouldShowSpaceCell;
+
 @end
 
 
@@ -36,6 +39,7 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
     [self.tableView setBackgroundColor:[UIColor color_f2f2f2]];
     [self.tableView blankTableFooterView];
     [self getDatas];
+    [self setShouldShowSpaceCell:0];
     
     if (self.type == 3) {
         self.title = @"心率监测设置";
@@ -258,6 +262,8 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
     
     if (type == CHCellType_Monitor) {
         return 150;
+    }else if (type == CHCellType_Other){
+        return 1000;
     }
     return 44;
     
@@ -283,6 +289,13 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
         [cell setLeftTitle:info[@"leftTitle"] leftDetail:info[@"minValue"] title:info[@"title"] rightTitle:info[@"rightTitle"] rightDetail:info[@"maxValue"]];
         WS(weakSelf);
         NSMutableDictionary *newInfo = [[NSMutableDictionary alloc] initWithDictionary:info];
+        [cell setBeginEditBlock:^(BOOL isBegin) {
+            if (isBegin) {
+                [weakSelf insertRowAtFootOfTableView:indexPath];
+            }else{
+                [weakSelf deleteRowAtFootOfTableView];
+            }
+        }];
         [cell setLeftDetailBlock:^(NSString *leftDetail) {
             [newInfo setObject:leftDetail forKey:@"minValue"];
             [weakSelf.datas replaceObjectAtIndex:indexPath.section withObject:newInfo];
@@ -295,8 +308,45 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
         return cell;
     }
     
-    return nil;
+    static NSString *IdentifierSpaceCell = @"IdentifierSpaceCell";
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:IdentifierSpaceCell];
+    [cell setBackgroundColor:[UIColor clearColor]];
+    return cell;
 }
+
+- (void)insertRowAtFootOfTableView:(NSIndexPath *)indexPath{
+    if (self.shouldShowSpaceCell == 0) {
+        self.shouldShowSpaceCell = 1;
+        NSDictionary *sectionLast = @{@"type":@(CHCellType_Other),@"title":@"",@"value":@""};
+        [self.datas addObject:sectionLast];
+        //    [self.tableView reloadData];
+        [self.tableView insertSections:[NSIndexSet indexSetWithIndex:(self.datas.count - 1)] withRowAnimation:UITableViewRowAnimationTop];
+    }
+    [self.tableView scrollToRowAtIndexPath:indexPath
+                          atScrollPosition:UITableViewScrollPositionTop animated:YES];
+//    [self.tableView setScrollEnabled:NO];
+}
+
+- (void)deleteRowAtFootOfTableView{
+    if (self.shouldShowSpaceCell) {
+        
+        for (NSDictionary *info in self.datas) {
+            NSInteger type = [info[@"type"] integerValue];
+            if (type == CHCellType_Other) {
+                self.shouldShowSpaceCell = 0;
+                [self.datas removeObject:info];
+                [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:(self.datas.count)] withRowAnimation:UITableViewRowAnimationBottom];
+                break;
+            }
+            
+        }
+    }
+    
+    
+//    [self.tableView reloadData];
+//    [self.tableView setScrollEnabled:YES];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *info = [self.datas objectAtIndex:indexPath.section];
     NSString *title = info[@"title"];
@@ -313,6 +363,8 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
             }
         }];
         [self.navigationController pushViewController:controller animated:YES];
+    }else{
+        [self hidenKeyboard];
     }
     
     

@@ -37,11 +37,17 @@
     return YES;
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField{           // became first responder
+    if (self.beginEditBlock) {
+        self.beginEditBlock(YES);
+    }
 }
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
     return YES;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField{
+    if (self.beginEditBlock) {
+        self.beginEditBlock(NO);
+    }
     if ([textField isEqual:self.tfLeftDetail]) {
         if (self.leftDetailBlock) {
             self.leftDetailBlock(textField.text);
