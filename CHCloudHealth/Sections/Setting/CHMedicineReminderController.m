@@ -64,7 +64,25 @@
         
     }];
 }
-
+- (void)rightBarButtonPressed:(id)rightBarButtonPressed{
+    
+    NSDictionary *section1 = [self.datas objectAtIndex:0];
+    NSInteger state = [section1[@"value"] integerValue];
+    
+    NSString *time1 = self.datas[1][@"value"];
+    NSString *time2 = self.datas[2][@"value"];
+    NSString *time3 = self.datas[3][@"value"];
+    
+    [[NetworkingManager sharedManager] setMedicineSetting:[CHUser sharedInstance].deviceId medicationSwitch:state t1:time1 t2:time2 t3:time3 completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        if (success) {
+            self.tableView.loading = NO;
+            [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
+        }else{
+            self.tableView.loading = NO;
+            [HYQShowTip showTipTextOnly:errDesc dealy:2];
+        }
+    }];
+}
 
 #pragma mark - Delegate
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -104,20 +122,21 @@
     return nil;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary *info = [self.datas objectAtIndex:indexPath.section];
+    NSMutableDictionary *info = [[NSMutableDictionary alloc] initWithDictionary:[self.datas objectAtIndex:indexPath.section]];
     NSInteger type = [info[@"type"] integerValue];
     
     if (type == 2) {
         
-        
+        WS(weakSelf);
         
         HYQCPickerView *pickerView = [[HYQCPickerView alloc] init];
         UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
         [pickerView showInView:window items:@[self.pickerDatas]];
         [pickerView setDidClickedOkAction:^(NSString *result) {
-            
+            [info setObject:result forKey:@"value"];
+            [weakSelf.datas replaceObjectAtIndex:indexPath.section withObject:info];
+            [weakSelf.tableView reloadData];
         }];
-        
         
     }
     
