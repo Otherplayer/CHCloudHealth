@@ -31,6 +31,13 @@
     [self.labTime setText:date];
 }
 
+- (void)configureTitle:(NSString *)title detail:(NSString *)detail name:(NSString *)name{
+    [self.labTitle setText:title];
+    [self.labDetail setText:detail];
+    [self.labTime setText:name];
+}
+
+
 - (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time state:(NSInteger)state{
     
     NSString *date = [NSString stringWithFormat:@"绑定时间：%@",[NSDate dateMMSSFromStr:time]];

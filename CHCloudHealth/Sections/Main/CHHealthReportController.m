@@ -54,6 +54,9 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     self.tableView.loading = NO;
+                    [self.datas removeAllObjects];
+                    NSArray *results = responseData[@"data"];
+                    [self.datas addObjectsFromArray:results];
                     [self.tableView reloadData];
                     [HYQShowTip hideImmediately];
                 }else{
@@ -75,9 +78,10 @@
     return [self.datas count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *info = self.datas[indexPath.row];
     static NSString *identifierHealthReportCell = @"IdentifierHealthReportCell";
     CMMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierHealthReportCell forIndexPath:indexPath];
-    [cell configureTitle:@"" detail:@"" time:@""];
+    [cell configureTitle:info[@"title"] detail:info[@"content"] name:info[@"name"]];
     return cell;
 }
 
