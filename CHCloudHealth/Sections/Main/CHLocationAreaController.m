@@ -235,7 +235,7 @@
 
 - (UIButton *)btnLocation{
     if (!_btnLocation) {
-        _btnLocation = [[UIButton alloc] initWithFrame:CGRectMake(20, kMainHeight - 120, 45, 45)];
+        _btnLocation = [[UIButton alloc] initWithFrame:CGRectMake(20, kMainHeight - 120, 40, 40)];
         [_btnLocation setImage:[UIImage imageNamed:@"ios_location2"] forState:UIControlStateNormal];
         [_btnLocation addTarget:self action:@selector(startLocationAction:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -243,7 +243,7 @@
 }
 - (UIButton *)btnRoad{
     if (!_btnRoad) {
-        _btnRoad = [[UIButton alloc] initWithFrame:CGRectMake(20, kMainHeight - 120 - 60, 45, 45)];
+        _btnRoad = [[UIButton alloc] initWithFrame:CGRectMake(20, kMainHeight - 120 - 60, 40, 40)];
         [_btnRoad setImage:[UIImage imageNamed:@"ios_location3"] forState:UIControlStateNormal];
         [_btnRoad addTarget:self action:@selector(startRoadAction:) forControlEvents:UIControlEventTouchUpInside];
     }
