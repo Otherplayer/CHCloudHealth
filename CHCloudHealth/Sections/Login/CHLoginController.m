@@ -58,8 +58,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)exAction:(id)sender {
-    self.mobilTextField.text = @"18810013771";
-    self.passwordTextField.text = @"888888";
+    self.mobilTextField.text = @"18513149993";
+    self.passwordTextField.text = @"000000";
     [self loginAction:nil];
 }
 

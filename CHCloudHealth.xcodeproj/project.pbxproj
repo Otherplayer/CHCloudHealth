@@ -66,6 +66,7 @@
 		8472D20C1CAE53930003E35A /* FQAHPublicParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8472D1F41CAE53930003E35A /* FQAHPublicParameter.m */; };
 		8472D20D1CAE53930003E35A /* FQAHReachibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8472D1F71CAE53930003E35A /* FQAHReachibility.m */; };
 		8472D20E1CAE53930003E35A /* BASEModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8472D1FA1CAE53930003E35A /* BASEModel.m */; };
+		84AB94511CC0E18200D4B41B /* HYQCPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AB94501CC0E18200D4B41B /* HYQCPickerView.m */; };
 		84B1E2041CAE5AC6004573F4 /* CHRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E2031CAE5AC6004573F4 /* CHRevealViewController.m */; };
 		84B1E2071CAE5B58004573F4 /* CHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E2061CAE5B58004573F4 /* CHMainViewController.m */; };
 		84B1E20A1CAE5E84004573F4 /* CHMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1E2091CAE5E84004573F4 /* CHMenuViewController.m */; };
@@ -238,6 +239,8 @@
 		8472D1FA1CAE53930003E35A /* BASEModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BASEModel.m; sourceTree = "<group>"; };
 		8482A3371CACC8280070931B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8482A3381CACC8500070931B /* AppGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppGlobal.h; sourceTree = "<group>"; };
+		84AB944F1CC0E18200D4B41B /* HYQCPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQCPickerView.h; sourceTree = "<group>"; };
+		84AB94501CC0E18200D4B41B /* HYQCPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQCPickerView.m; sourceTree = "<group>"; };
 		84B1E2021CAE5AC6004573F4 /* CHRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRevealViewController.h; sourceTree = "<group>"; };
 		84B1E2031CAE5AC6004573F4 /* CHRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRevealViewController.m; sourceTree = "<group>"; };
 		84B1E2051CAE5B58004573F4 /* CHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMainViewController.h; sourceTree = "<group>"; };
@@ -817,6 +820,8 @@
 		84B1E32D1CB3C66F004573F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84AB944F1CC0E18200D4B41B /* HYQCPickerView.h */,
+				84AB94501CC0E18200D4B41B /* HYQCPickerView.m */,
 				84B1E32E1CB3C698004573F4 /* CHUnitCell.h */,
 				84B1E32F1CB3C698004573F4 /* CHUnitCell.m */,
 				84B1E3311CB3C7E2004573F4 /* CHUnitAvatarCell.h */,
@@ -1023,6 +1028,7 @@
 				84B1E30E1CAE77BA004573F4 /* UIImage+Extention.m in Sources */,
 				84B1E3121CAE77BA004573F4 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				6315228F1CB55A4F00D8B160 /* CHHealthReportController.m in Sources */,
+				84AB94511CC0E18200D4B41B /* HYQCPickerView.m in Sources */,
 				8472D1FC1CAE53930003E35A /* FQAHDiskCachedObject+CoreDataProperties.m in Sources */,
 				8472D2021CAE53930003E35A /* NSDictionary+FQAHCategories.m in Sources */,
 				63106CF21CBA84AC001B7D9F /* CHAddRelationNumController.m in Sources */,
