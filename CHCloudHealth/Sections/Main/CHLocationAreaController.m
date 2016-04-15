@@ -17,6 +17,7 @@
 @property (nonatomic, strong)BMKLocationService* locService;
 @property (nonatomic, strong)BMKGeoCodeSearch* geocodesearch;
 @property (strong, nonatomic)UIButton *btnLocation;
+@property (strong, nonatomic)UIButton *btnRoad;
 @property (assign, nonatomic)BMKCoordinateRegion viewRegion;
 
 @end
@@ -80,6 +81,9 @@
     BMKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:self.viewRegion];
 //    [self.mapView setRegion:adjustedRegion animated:YES];
     [self.mapView setCenterCoordinate:adjustedRegion.center animated:YES];
+}
+- (void)startRoadAction:(id)sender{
+    
 }
 
 - (void)shouldStartLocation:(id)sender{
@@ -236,7 +240,14 @@
     }
     return _btnLocation;
 }
-
+- (UIButton *)btnRoad{
+    if (!_btnRoad) {
+        _btnRoad = [[UIButton alloc] initWithFrame:CGRectMake(20, kMainHeight - 65 - 60, 45, 45)];
+        _btnRoad.backgroundColor = [UIColor redColor];
+        [_btnRoad addTarget:self action:@selector(startRoadAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _btnRoad;
+}
 
 
 

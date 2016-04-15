@@ -114,20 +114,19 @@
 
 - (void)refreshGraph{
     
-//    for (int i = 0; i < self.originalDataArr.count; i++) {
-//        NSDictionary *info = self.originalDataArr[i];
-//        NSNumber *x = @(i);
-//        NSNumber *y = @([info[@"val"] integerValue] + 60);
-//        [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
-//    }
-//    
-    
-    for ( NSUInteger i = 0; i < 60; i++ ) {
+    for (int i = 0; i < self.originalDataArr.count; i++) {
+        NSDictionary *info = self.originalDataArr[i];
         NSNumber *x = @(i);
-        i = i + 1;
-        NSNumber *y = @((arc4random() % 120) + 41);
+        NSNumber *y = @([info[@"val"] integerValue] + 60);
         [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
     }
+    
+//    for ( NSUInteger i = 0; i < 60; i++ ) {
+//        NSNumber *x = @(i);
+//        i = i + 1;
+//        NSNumber *y = @((arc4random() % 120) + 41);
+//        [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
+//    }
     
     [self.graphView.plotDatasDictionary setObject:self.dataArr forKey:kDataLine];
 //    [self.graphView setLowerwarningValue:86];

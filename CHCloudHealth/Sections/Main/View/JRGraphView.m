@@ -432,7 +432,7 @@ static int startY = 55;
     
     // Setup a style for the annotation
     CPTMutableTextStyle *hitAnnotationTextStyle = [CPTMutableTextStyle textStyle];
-    hitAnnotationTextStyle.color    = [CPTColor blackColor];
+    hitAnnotationTextStyle.color    = [CPTColor colorWithCGColor:[UIColor defaultColor].CGColor];
     hitAnnotationTextStyle.fontSize = 16.0;
     hitAnnotationTextStyle.fontName = @"Helvetica-Bold";
     
