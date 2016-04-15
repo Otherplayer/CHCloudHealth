@@ -20,6 +20,17 @@
 @property (strong, nonatomic)UIButton *btnRoad;
 @property (assign, nonatomic)BMKCoordinateRegion viewRegion;
 
+
+
+/** 位置数组 */
+@property (nonatomic, strong) NSMutableArray *locationArrayM;
+
+/** 轨迹线 */
+@property (nonatomic, strong) BMKPolyline *polyLine;
+
+
+
+
 @end
 
 @implementation CHLocationAreaController
@@ -42,6 +53,8 @@
     //初始化BMKLocationService
     self.locService.delegate = self;
     //启动LocationService
+    [self.locService setDistanceFilter:10];
+    [self.locService setDesiredAccuracy:kCLLocationAccuracyBest];
     [self.locService startUserLocationService];
     
     self.view = self.mapView;
@@ -84,7 +97,7 @@
     [self.mapView setCenterCoordinate:adjustedRegion.center animated:YES];
 }
 - (void)startRoadAction:(id)sender{
-    
+    [self drawWalkPolyline];
 }
 
 - (void)shouldStartLocation:(id)sender{
@@ -204,8 +217,53 @@
 }
 
 
-
-
+/**
+ *  绘制轨迹路线
+ */
+- (void)drawWalkPolyline
+{
+    // 轨迹点数组个数
+    NSUInteger count = self.locationArrayM.count;
+    
+    // 动态分配存储空间
+    // BMKMapPoint是个结构体：地理坐标点，用直角地理坐标表示 X：横坐标 Y：纵坐标
+    // Create a c array of points.
+    BMKMapPoint *tempPoints = malloc(sizeof(CLLocationCoordinate2D) * 3);
+    
+    
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(39, 116);
+    CLLocationCoordinate2D location2 = CLLocationCoordinate2DMake(50, 118);
+    CLLocationCoordinate2D location3 = CLLocationCoordinate2DMake(45, 120);
+    
+    
+    BMKMapPoint locationPoint = BMKMapPointForCoordinate(location);
+    tempPoints[0] = locationPoint;
+    BMKMapPoint locationPoint2 = BMKMapPointForCoordinate(location2);
+    tempPoints[1] = locationPoint2;
+    BMKMapPoint locationPoint3 = BMKMapPointForCoordinate(location3);
+    tempPoints[2] = locationPoint3;
+    
+    
+    
+    //移除原有的绘图，避免在原来轨迹上重画
+    if (self.polyLine) {
+        [self.mapView removeOverlay:self.polyLine];
+    }
+    
+    // 通过points构建BMKPolyline
+    self.polyLine = [BMKPolyline polylineWithPoints:tempPoints count:count];
+    
+    //添加路线,绘图
+    if (self.polyLine) {
+        [self.mapView addOverlay:self.polyLine];
+    }
+    
+    free(tempPoints);
+    
+    
+    // 根据polyline设置地图范围
+//    [self mapViewFitPolyLine:self.polyLine];
+}
 
 
 
