@@ -91,7 +91,11 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
-                    [HYQShowTip hideImmediately];
+                    if (self.originalDataArr.count == 0) {
+                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
+                    }else{
+                        [HYQShowTip hideImmediately];
+                    }
                     [self refreshGraph];
                 }else{
                     [HYQShowTip showTipTextOnly:errDesc dealy:2];
@@ -106,7 +110,11 @@
                 if (success) {
                     [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
                     [self refreshGraph];
-                    [HYQShowTip hideImmediately];
+                    if (self.originalDataArr.count == 0) {
+                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
+                    }else{
+                        [HYQShowTip hideImmediately];
+                    }
                 }else{
                     [HYQShowTip showTipTextOnly:errDesc dealy:2];
                 }
@@ -120,7 +128,11 @@
                if (success) {
                    [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
                    [self refreshGraph];
-                   [HYQShowTip hideImmediately];
+                   if (self.originalDataArr.count == 0) {
+                       [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
+                   }else{
+                       [HYQShowTip hideImmediately];
+                   }
                }else{
                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
                }
