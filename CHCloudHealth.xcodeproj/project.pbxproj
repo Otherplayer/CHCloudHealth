@@ -40,6 +40,7 @@
 		63B983951CB8D69500150EA2 /* CMMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B983941CB8D69500150EA2 /* CMMessageCell.m */; };
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
 		63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7EB1CB0C52A009BF266 /* Login.storyboard */; };
+		63FBD81E1CC675DF00457887 /* HYQDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBD81D1CC675DF00457887 /* HYQDatePickerView.m */; };
 		8464DE121CAA48C7000B987E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8464DE111CAA48C7000B987E /* main.m */; };
 		8464DE151CAA48C7000B987E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8464DE141CAA48C7000B987E /* AppDelegate.m */; };
 		8464DE181CAA48C7000B987E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8464DE171CAA48C7000B987E /* ViewController.m */; };
@@ -186,6 +187,8 @@
 		63B983941CB8D69500150EA2 /* CMMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMessageCell.m; sourceTree = "<group>"; };
 		63D9F7E71CB0C47E009BF266 /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
 		63D9F7EC1CB0C52A009BF266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		63FBD81C1CC675DF00457887 /* HYQDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQDatePickerView.h; sourceTree = "<group>"; };
+		63FBD81D1CC675DF00457887 /* HYQDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQDatePickerView.m; sourceTree = "<group>"; };
 		8464DE0D1CAA48C7000B987E /* CHCloudHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHCloudHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8464DE111CAA48C7000B987E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8464DE131CAA48C7000B987E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -686,6 +689,8 @@
 		84B1E2111CAE7197004573F4 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				63FBD81C1CC675DF00457887 /* HYQDatePickerView.h */,
+				63FBD81D1CC675DF00457887 /* HYQDatePickerView.m */,
 				84B1E3341CB3CDF6004573F4 /* HYQActionSheet.h */,
 				84B1E3351CB3CDF6004573F4 /* HYQActionSheet.m */,
 				84B1E3361CB3CDF6004573F4 /* HYQAlertView.h */,
@@ -1068,6 +1073,7 @@
 				84B1E30D1CAE77BA004573F4 /* UIImage+Color.m in Sources */,
 				84B1E3151CAE77BA004573F4 /* UIView+BlockGesture.m in Sources */,
 				63412E4A1CB2A29F00FAD0DA /* CHCareAreaController.m in Sources */,
+				63FBD81E1CC675DF00457887 /* HYQDatePickerView.m in Sources */,
 				637339A41CB69F750018FE46 /* CHSwitchCell.m in Sources */,
 				84B1E3021CAE77BA004573F4 /* UIApplication+Categories.m in Sources */,
 				63412E2D1CB273CA00FAD0DA /* CHBaseNavigationController.m in Sources */,
