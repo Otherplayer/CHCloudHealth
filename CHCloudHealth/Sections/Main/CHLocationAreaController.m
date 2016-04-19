@@ -7,6 +7,7 @@
 //
 
 #import "CHLocationAreaController.h"
+#import "HYQDatePickerView.h"
 
 @interface CHLocationAreaController ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate>{
     BMKPointAnnotation* pointAnnotation;
@@ -20,7 +21,9 @@
 @property (strong, nonatomic)UIButton *btnLocation;
 @property (strong, nonatomic)UIButton *btnRoad;
 @property (assign, nonatomic)BMKCoordinateRegion viewRegion;
+
 @property (strong, nonatomic)NSString *selectedDate;
+@property (nonatomic, strong)NSMutableArray *dataArr;
 
 
 /** 位置数组 */
@@ -49,7 +52,7 @@
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
     self.mapView.backgroundColor = [UIColor whiteColor];
-    
+    self.dataArr = [[NSMutableArray alloc] init];
     
     //初始化BMKLocationService
     self.locService.delegate = self;
@@ -84,31 +87,28 @@
     }
 }
 
-- (void)addLine{
+- (void)refreshLine{
     //添加折线(分段颜色绘制)覆盖物
     [self.mapView removeOverlays:_mapView.overlays];
-    if (colorfulPolyline == nil) {
-        CLLocationCoordinate2D coords[5] = {0};
-        coords[0].latitude = 39.965;
-        coords[0].longitude = 116.404;
-        coords[1].latitude = 39.925;
-        coords[1].longitude = 116.454;
-        coords[2].latitude = 39.955;
-        coords[2].longitude = 116.494;
-        coords[3].latitude = 39.905;
-        coords[3].longitude = 116.554;
-        coords[4].latitude = 39.965;
-        coords[4].longitude = 116.604;
-        //构建分段颜色索引数组
-        NSArray *colorIndexs = [NSArray arrayWithObjects:
-                                [NSNumber numberWithInt:2],
-                                [NSNumber numberWithInt:0],
-                                [NSNumber numberWithInt:1],
-                                [NSNumber numberWithInt:2], nil];
-        
-        //构建BMKPolyline,使用分段颜色索引，其对应的BMKPolylineView必须设置colors属性
-        colorfulPolyline = [BMKPolyline polylineWithCoordinates:coords count:5 textureIndex:colorIndexs];
-    }
+    CLLocationCoordinate2D coords[5] = {0};
+    coords[0].latitude = 39.965;
+    coords[0].longitude = 116.404;
+    coords[1].latitude = 39.925;
+    coords[1].longitude = 116.454;
+    coords[2].latitude = 39.955;
+    coords[2].longitude = 116.494;
+    coords[3].latitude = 39.905;
+    coords[3].longitude = 116.554;
+    coords[4].latitude = 39.965;
+    coords[4].longitude = 116.604;
+    //构建分段颜色索引数组
+    NSArray *colorIndexs = [NSArray arrayWithObjects:
+                            [NSNumber numberWithInt:0], nil];
+    
+    //构建BMKPolyline,使用分段颜色索引，其对应的BMKPolylineView必须设置colors属性
+    colorfulPolyline = [BMKPolyline polylineWithCoordinates:coords count:5 textureIndex:colorIndexs];
+    //    if (colorfulPolyline == nil) {
+    //    }
     [self.mapView addOverlay:colorfulPolyline];
 }
 
@@ -116,11 +116,17 @@
 #pragma mark -
 
 - (void)getDatas{
-    
+    [self.dataArr removeAllObjects];
     [[NetworkingManager sharedManager] getLocationInfo:[CHUser sharedInstance].deviceUserId date:self.selectedDate completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
-                
+                [self.dataArr addObjectsFromArray:responseData[@"data"]];
+                if (self.dataArr.count == 0) {
+                    [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
+                }else{
+                    [HYQShowTip hideImmediately];
+                }
+                [self refreshLine];
             }else{
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];
             }
@@ -129,14 +135,18 @@
     }];
     
 }
+
+
+
+
+
 - (void)startLocationAction:(id)sender {
     BMKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:self.viewRegion];
 //    [self.mapView setRegion:adjustedRegion animated:YES];
     [self.mapView setCenterCoordinate:adjustedRegion.center animated:YES];
 }
 - (void)startRoadAction:(id)sender{
-//    [self drawWalkPolyline];
-    [self addLine];
+    [self showDateAction:nil];
 }
 
 - (void)shouldStartLocation:(id)sender{
@@ -294,6 +304,19 @@
     }
     return annotationView;
 }
+
+#pragma mark - 
+
+- (IBAction)showDateAction:(id)sender {
+    WS(weakSelf);
+    HYQDatePickerView *datePicker = [[HYQDatePickerView alloc] init];
+    [datePicker setDidClickedOkAction:^(NSString *result) {
+        weakSelf.selectedDate = result;
+        [weakSelf getDatas];
+    }];
+    [datePicker showInView:self.view withSelectDate:self.selectedDate timeOnly:YES];
+}
+
 
 #pragma mark - Configure
 
