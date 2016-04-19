@@ -11,6 +11,7 @@
 @interface CHLocationAreaController ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate>{
     BMKPointAnnotation* pointAnnotation;
     BMKCircle* circle;
+    BMKPolyline* colorfulPolyline;
 }
 //@property (weak, nonatomic) IBOutlet BMKMapView *mapView;
 @property (nonatomic, strong)BMKMapView* mapView;
@@ -66,12 +67,43 @@
     [self.mapView setShowMapScaleBar:YES];//设定是否显式比例尺
     [self.mapView setShowsUserLocation:YES];//显示定位图层
     [self.mapView setUserTrackingMode:BMKUserTrackingModeFollow];
-    [self.mapView setZoomLevel:16];
-
+    [self.mapView setZoomLevel:12];
     
-
-    //[self getDatas];
+    [self getDatas];
     
+}
+- (void)dealloc {
+    if (_mapView) {
+        _mapView = nil;
+    }
+}
+
+- (void)addLine{
+    //添加折线(分段颜色绘制)覆盖物
+    [self.mapView removeOverlays:_mapView.overlays];
+    if (colorfulPolyline == nil) {
+        CLLocationCoordinate2D coords[5] = {0};
+        coords[0].latitude = 39.965;
+        coords[0].longitude = 116.404;
+        coords[1].latitude = 39.925;
+        coords[1].longitude = 116.454;
+        coords[2].latitude = 39.955;
+        coords[2].longitude = 116.494;
+        coords[3].latitude = 39.905;
+        coords[3].longitude = 116.554;
+        coords[4].latitude = 39.965;
+        coords[4].longitude = 116.604;
+        //构建分段颜色索引数组
+        NSArray *colorIndexs = [NSArray arrayWithObjects:
+                                [NSNumber numberWithInt:2],
+                                [NSNumber numberWithInt:0],
+                                [NSNumber numberWithInt:1],
+                                [NSNumber numberWithInt:2], nil];
+        
+        //构建BMKPolyline,使用分段颜色索引，其对应的BMKPolylineView必须设置colors属性
+        colorfulPolyline = [BMKPolyline polylineWithCoordinates:coords count:5 textureIndex:colorIndexs];
+    }
+    [self.mapView addOverlay:colorfulPolyline];
 }
 
 
@@ -97,7 +129,8 @@
     [self.mapView setCenterCoordinate:adjustedRegion.center animated:YES];
 }
 - (void)startRoadAction:(id)sender{
-    [self drawWalkPolyline];
+//    [self drawWalkPolyline];
+    [self addLine];
 }
 
 - (void)shouldStartLocation:(id)sender{
@@ -121,6 +154,23 @@
 
 #pragma mark -
 #pragma mark implement BMKMapViewDelegate
+//根据overlay生成对应的View
+- (BMKOverlayView *)mapView:(BMKMapView *)mapView viewForOverlay:(id <BMKOverlay>)overlay{
+    
+    
+    if ([overlay isKindOfClass:[BMKPolyline class]])
+    {
+        BMKPolylineView* polylineView = [[BMKPolylineView alloc] initWithOverlay:overlay];
+        polylineView.lineWidth = 5;
+        /// 使用分段颜色绘制时，必须设置（内容必须为UIColor）
+        polylineView.colors = [NSArray arrayWithObjects:
+                               [UIColor defaultColor],
+                               [UIColor defaultColor],
+                               [UIColor defaultColor], nil];
+        return polylineView;
+    }
+    return nil;
+}
 - (void)mapViewDidFinishLoading:(BMKMapView *)mapView{
     NSLog(@"%s",__func__);
 }
@@ -157,6 +207,7 @@
     if (pointAnnotation == nil) {
         pointAnnotation = [[BMKPointAnnotation alloc]init];
     }
+    
     pointAnnotation.coordinate = coor;
     [_mapView addAnnotation:pointAnnotation];
 }
@@ -215,58 +266,28 @@
 //    NSLog(@"详细信息%@省%@市%@区",result.addressDetail.province,result.addressDetail.city,result.addressDetail.district);
 //    NSLog(@"本函数 是 解析地址demo   用什么自己取就好了");
 }
-
-
-/**
- *  绘制轨迹路线
- */
-- (void)drawWalkPolyline
+// 当点击annotation view弹出的泡泡时，调用此接口
+- (void)mapView:(BMKMapView *)mapView annotationViewForBubble:(BMKAnnotationView *)view;
 {
-    // 轨迹点数组个数
-    NSUInteger count = self.locationArrayM.count;
-    
-    // 动态分配存储空间
-    // BMKMapPoint是个结构体：地理坐标点，用直角地理坐标表示 X：横坐标 Y：纵坐标
-    // Create a c array of points.
-    BMKMapPoint *tempPoints = malloc(sizeof(CLLocationCoordinate2D) * 3);
-    
-    
-    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(39, 116);
-    CLLocationCoordinate2D location2 = CLLocationCoordinate2DMake(50, 118);
-    CLLocationCoordinate2D location3 = CLLocationCoordinate2DMake(45, 120);
-    
-    
-    BMKMapPoint locationPoint = BMKMapPointForCoordinate(location);
-    tempPoints[0] = locationPoint;
-    BMKMapPoint locationPoint2 = BMKMapPointForCoordinate(location2);
-    tempPoints[1] = locationPoint2;
-    BMKMapPoint locationPoint3 = BMKMapPointForCoordinate(location3);
-    tempPoints[2] = locationPoint3;
-    
-    
-    
-    //移除原有的绘图，避免在原来轨迹上重画
-    if (self.polyLine) {
-        [self.mapView removeOverlay:self.polyLine];
-    }
-    
-    // 通过points构建BMKPolyline
-    self.polyLine = [BMKPolyline polylineWithPoints:tempPoints count:count];
-    
-    //添加路线,绘图
-    if (self.polyLine) {
-        [self.mapView addOverlay:self.polyLine];
-    }
-    
-    free(tempPoints);
-    
-    
-    // 根据polyline设置地图范围
-//    [self mapViewFitPolyLine:self.polyLine];
+    NSLog(@"paopaoclick");
 }
-
-
-
+// 根据anntation生成对应的View
+- (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id <BMKAnnotation>)annotation
+{
+    //普通annotation
+    NSString *AnnotationViewID = @"renameMark";
+    BMKPinAnnotationView *annotationView = (BMKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
+    if (annotationView == nil) {
+        annotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+        // 设置颜色
+        annotationView.pinColor = BMKPinAnnotationColorPurple;
+        // 从天上掉下效果
+        annotationView.animatesDrop = YES;
+        // 设置可拖拽
+        annotationView.draggable = YES;
+    }
+    return annotationView;
+}
 
 #pragma mark - Configure
 
