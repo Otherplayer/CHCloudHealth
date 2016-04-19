@@ -75,14 +75,14 @@
         [HYQShowTip showTipTextOnly:@"电话不能为空" dealy:2];
         return NO;
     }
-    if ([self.tfAddress.text isEmptyObject]) {
-        [HYQShowTip showTipTextOnly:@"地址不能为空" dealy:2];
-        return NO;
-    }
-    if ([self.tfRemark.text isEmptyObject]) {
-        [HYQShowTip showTipTextOnly:@"备注不能为空" dealy:2];
-        return NO;
-    }
+//    if ([self.tfAddress.text isEmptyObject]) {
+//        [HYQShowTip showTipTextOnly:@"地址不能为空" dealy:2];
+//        return NO;
+//    }
+//    if ([self.tfRemark.text isEmptyObject]) {
+//        [HYQShowTip showTipTextOnly:@"备注不能为空" dealy:2];
+//        return NO;
+//    }
     
     return YES;
 }

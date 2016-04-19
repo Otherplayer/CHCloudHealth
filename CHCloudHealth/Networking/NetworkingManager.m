@@ -313,7 +313,7 @@ NSString *const kAPI_SIZE = @"pageSize";
     [self POST:kAPI_listFamliyNumber params:params memoryCache:NO diskCache:NO completed:completed];
 }
 - (void)setFamliyNumber:(NSString *)deviceUserId name:(NSString *)name relation:(NSString *)relation mobile:(NSString *)mobile address:(NSString *)address remark:(NSString *)remark completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"deviceUserId":deviceUserId,@"name":name,@"relation":relation,@"mobile":mobile,@"address":address,@"remark":remark};
+    NSDictionary *params = @{@"deviceUserId":deviceUserId,@"name":name,@"relation":relation,@"mobile":mobile,@"address":@"",@"remark":@""};
     [self POST:kAPI_setFamliyNumber params:params memoryCache:NO diskCache:NO completed:completed];
 }
 

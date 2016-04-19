@@ -8,6 +8,7 @@
 
 #import "CHRelationShipController.h"
 #import "CHAddRelationNumController.h"
+#import "CHUnitCell.h"
 
 @interface CHRelationShipController ()
 
@@ -58,6 +59,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
                 [self.datas removeAllObjects];
+                [self.datas addObjectsFromArray:responseData[@"data"]];
                 self.tableView.loading = NO;
                 [self.tableView reloadData];
             }else{
@@ -77,9 +79,11 @@
     return [self.datas count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *info = self.datas[indexPath.row];
     static NSString *identifierMessageCell = @"IdentifierRelationShipCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMessageCell forIndexPath:indexPath];
-//    [cell configureTitle:@"" detail:@"" time:@""];
+    CHUnitCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMessageCell forIndexPath:indexPath];
+    //mobile  name relation
+    [cell setTitle:info[@"name"] detail:info[@"relation"] mobile:info[@"mobile"]];
     return cell;
 }
 

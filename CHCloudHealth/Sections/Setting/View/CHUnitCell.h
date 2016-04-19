@@ -13,5 +13,6 @@
 @interface CHUnitCell : UITableViewCell
 
 - (void)setTitle:(NSString *)title detail:(NSString *)detail;
+- (void)setTitle:(NSString *)title detail:(NSString *)detail mobile:(NSString *)mobile;
 
 @end

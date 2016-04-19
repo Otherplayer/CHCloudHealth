@@ -13,6 +13,7 @@
 @interface CHUnitCell ()
 @property (weak, nonatomic) IBOutlet UILabel *labTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labDetail;
+@property (weak, nonatomic) IBOutlet UILabel *labMobile;
 
 @end
 
@@ -22,6 +23,12 @@
     [self.labTitle setText:title];
     [self.labDetail setText:detail];
 }
+- (void)setTitle:(NSString *)title detail:(NSString *)detail mobile:(NSString *)mobile{
+    [self.labTitle setText:title];
+    [self.labDetail setText:detail];
+    [self.labMobile setText:mobile];
+}
+
 
 
 
