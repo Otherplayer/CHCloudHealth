@@ -30,6 +30,12 @@
     [self addRightButton2NavWithTitle:@"完成"];
     
     
+    if (self.originalInfo) {
+        [self.tfName setText:self.originalInfo[@"name"]];
+        [self.tfRelation setText:self.originalInfo[@"relation"]];
+        [self.tfMobile setText:self.originalInfo[@"mobile"]];
+    }
+    
 }
 
 - (void)leftBarButtonPressed:(id)leftBarButtonPressed{

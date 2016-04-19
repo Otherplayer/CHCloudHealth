@@ -83,10 +83,21 @@
     static NSString *identifierMessageCell = @"IdentifierRelationShipCell";
     CHUnitCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMessageCell forIndexPath:indexPath];
     //mobile  name relation
-    [cell setTitle:info[@"name"] detail:info[@"relation"] mobile:info[@"mobile"]];
+    [cell setTitle:[NSString stringWithFormat:@"%@",info[@"name"]] detail:[NSString stringWithFormat:@"关系：%@",info[@"relation"]] mobile:[NSString stringWithFormat:@"电话：%@",info[@"mobile"]]];
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *info = self.datas[indexPath.row];
+    CHAddRelationNumController *controller = (CHAddRelationNumController *)[[UIStoryboard mainStoryboard] addRelationNumController];
+    controller.originalInfo = info;
+    WS(weakSelf);
+    [controller setDidAddReleationNumBlock:^{
+        [weakSelf getDatas];
+    }];
+    CHBaseNavigationController *nav = [[CHBaseNavigationController alloc] initWithRootViewController:controller];
+    [self presentViewController:nav animated:YES completion:nil];
+}
 
 
 @end

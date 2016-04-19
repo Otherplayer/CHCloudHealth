@@ -10,6 +10,7 @@
 
 @interface CHAddRelationNumController : CHRootViewController
 
+@property (nonatomic, strong) NSDictionary *originalInfo;
 @property (nonatomic, copy) void(^didAddReleationNumBlock)();
 
 @end

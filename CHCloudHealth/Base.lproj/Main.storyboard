@@ -615,11 +615,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="108" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LUD-8D-hPY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LUD-8D-hPY">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdentifierRelationShipCell" rowHeight="108" id="HOy-Qd-x6T" customClass="CHUnitCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdentifierRelationShipCell" rowHeight="84" id="HOy-Qd-x6T" customClass="CHUnitCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HOy-Qd-x6T" id="m0V-eU-sZN">
@@ -694,12 +694,18 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="leadingMargin" secondItem="Uz1-dT-B9M" secondAttribute="leading" id="Bca-fy-IEE"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="Uz1-dT-B9M" secondAttribute="leading" id="Bca-fy-IEE">
+                                                    <variation key="widthClass=compact" constant="-12"/>
+                                                </constraint>
                                                 <constraint firstItem="7js-nW-92O" firstAttribute="top" secondItem="uHT-Pe-d9o" secondAttribute="bottom" id="ZzE-FT-NVf"/>
                                                 <constraint firstItem="uHT-Pe-d9o" firstAttribute="top" secondItem="m0V-eU-sZN" secondAttribute="topMargin" constant="-2" id="cmL-uf-lKd"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="uHT-Pe-d9o" secondAttribute="leading" id="ieg-gA-HrJ"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="uHT-Pe-d9o" secondAttribute="leading" id="ieg-gA-HrJ">
+                                                    <variation key="widthClass=compact" constant="-12"/>
+                                                </constraint>
                                                 <constraint firstItem="Uz1-dT-B9M" firstAttribute="top" secondItem="7js-nW-92O" secondAttribute="bottom" constant="-2" id="vgd-KL-Eku"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="7js-nW-92O" secondAttribute="leading" id="y6k-0n-LIc"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="7js-nW-92O" secondAttribute="leading" id="y6k-0n-LIc">
+                                                    <variation key="widthClass=compact" constant="-12"/>
+                                                </constraint>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
@@ -739,13 +745,19 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dsG-uq-ihR" id="sVS-wk-2vK"/>
+                                    <outlet property="delegate" destination="dsG-uq-ihR" id="8nq-W0-Brw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FSM-JP-6uv" firstAttribute="top" secondItem="LUD-8D-hPY" secondAttribute="bottom" id="Vd9-hD-Pxm"/>
                             <constraint firstAttribute="trailing" secondItem="LUD-8D-hPY" secondAttribute="trailing" id="c9S-2v-27N"/>
-                            <constraint firstItem="LUD-8D-hPY" firstAttribute="top" secondItem="1e5-s0-mit" secondAttribute="bottom" id="dUt-fd-XaG"/>
+                            <constraint firstItem="LUD-8D-hPY" firstAttribute="top" secondItem="1e5-s0-mit" secondAttribute="bottom" id="dUt-fd-XaG">
+                                <variation key="widthClass=compact" constant="-64"/>
+                            </constraint>
                             <constraint firstItem="LUD-8D-hPY" firstAttribute="leading" secondItem="e3c-w8-pvl" secondAttribute="leading" id="mMT-cc-FTK"/>
                         </constraints>
                         <variation key="default">
