@@ -122,7 +122,7 @@
             if (success) {
                 [self.dataArr addObjectsFromArray:responseData[@"data"]];
                 if (self.dataArr.count == 0) {
-                    [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
+                    [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无轨迹记录",self.selectedDate] dealy:2];
                 }else{
                     [HYQShowTip hideImmediately];
                 }
