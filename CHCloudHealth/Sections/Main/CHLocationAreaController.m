@@ -20,7 +20,7 @@
 @property (strong, nonatomic)UIButton *btnLocation;
 @property (strong, nonatomic)UIButton *btnRoad;
 @property (assign, nonatomic)BMKCoordinateRegion viewRegion;
-
+@property (strong, nonatomic)NSString *selectedDate;
 
 
 /** 位置数组 */
@@ -69,6 +69,12 @@
     [self.mapView setUserTrackingMode:BMKUserTrackingModeFollow];
     [self.mapView setZoomLevel:12];
     
+    
+    
+    self.selectedDate = [NSString stringWithFormat:@"%@",[[NSDate date] descriptionWithFormatter:@"yyyy-MM-dd"]];
+    
+    
+    
     [self getDatas];
     
 }
@@ -111,7 +117,7 @@
 
 - (void)getDatas{
     
-    [[NetworkingManager sharedManager] getLocationInfo:[CHUser sharedInstance].deviceUserId date:@"2016-4-11" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+    [[NetworkingManager sharedManager] getLocationInfo:[CHUser sharedInstance].deviceUserId date:self.selectedDate completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
                 
