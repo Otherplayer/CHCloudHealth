@@ -47,6 +47,9 @@
 		8464DE1B1CAA48C7000B987E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8464DE191CAA48C7000B987E /* Main.storyboard */; };
 		8464DE1D1CAA48C7000B987E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8464DE1C1CAA48C7000B987E /* Assets.xcassets */; };
 		8464DE201CAA48C7000B987E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8464DE1E1CAA48C7000B987E /* LaunchScreen.storyboard */; };
+		846FEC441CC772B800BC482A /* HYQWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846FEC431CC772B800BC482A /* HYQWebViewController.m */; };
+		846FEC491CC772C100BC482A /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 846FEC461CC772C100BC482A /* NJKWebViewProgress.m */; };
+		846FEC4A1CC772C100BC482A /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846FEC481CC772C100BC482A /* NJKWebViewProgressView.m */; };
 		8472D1FB1CAE53930003E35A /* FQAHDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8472D1CB1CAE53930003E35A /* FQAHDiskCache.m */; };
 		8472D1FC1CAE53930003E35A /* FQAHDiskCachedObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8472D1CD1CAE53930003E35A /* FQAHDiskCachedObject+CoreDataProperties.m */; };
 		8472D1FD1CAE53930003E35A /* FQAHDiskCachedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8472D1CF1CAE53930003E35A /* FQAHDiskCachedObject.m */; };
@@ -199,6 +202,12 @@
 		8464DE1C1CAA48C7000B987E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8464DE1F1CAA48C7000B987E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8464DE211CAA48C7000B987E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846FEC421CC772B800BC482A /* HYQWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQWebViewController.h; sourceTree = "<group>"; };
+		846FEC431CC772B800BC482A /* HYQWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQWebViewController.m; sourceTree = "<group>"; };
+		846FEC451CC772C100BC482A /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		846FEC461CC772C100BC482A /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		846FEC471CC772C100BC482A /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		846FEC481CC772C100BC482A /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
 		8472D1CA1CAE53930003E35A /* FQAHDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQAHDiskCache.h; sourceTree = "<group>"; };
 		8472D1CB1CAE53930003E35A /* FQAHDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQAHDiskCache.m; sourceTree = "<group>"; };
 		8472D1CC1CAE53930003E35A /* FQAHDiskCachedObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FQAHDiskCachedObject+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -689,6 +698,12 @@
 		84B1E2111CAE7197004573F4 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				846FEC451CC772C100BC482A /* NJKWebViewProgress.h */,
+				846FEC461CC772C100BC482A /* NJKWebViewProgress.m */,
+				846FEC471CC772C100BC482A /* NJKWebViewProgressView.h */,
+				846FEC481CC772C100BC482A /* NJKWebViewProgressView.m */,
+				846FEC421CC772B800BC482A /* HYQWebViewController.h */,
+				846FEC431CC772B800BC482A /* HYQWebViewController.m */,
 				63FBD81C1CC675DF00457887 /* HYQDatePickerView.h */,
 				63FBD81D1CC675DF00457887 /* HYQDatePickerView.m */,
 				84B1E3341CB3CDF6004573F4 /* HYQActionSheet.h */,
@@ -984,8 +999,10 @@
 				84B1E3331CB3C7E2004573F4 /* CHUnitAvatarCell.m in Sources */,
 				84B1E20D1CAE5FEA004573F4 /* CHRootViewController.m in Sources */,
 				63412E3A1CB285B100FAD0DA /* UITableView+Empty.m in Sources */,
+				846FEC491CC772C100BC482A /* NJKWebViewProgress.m in Sources */,
 				84B1E2FA1CAE77BA004573F4 /* NSDate+HYQFormatter.m in Sources */,
 				63412E5E1CB2A58400FAD0DA /* CHMainHeaderCell.m in Sources */,
+				846FEC441CC772B800BC482A /* HYQWebViewController.m in Sources */,
 				63412E301CB279B300FAD0DA /* CHResetPsdStep1Controller.m in Sources */,
 				634131861CB8EBEB0072C8DA /* CHDeviceManagerController.m in Sources */,
 				8472D1FE1CAE53930003E35A /* FQAHNetworking.xcdatamodeld in Sources */,
@@ -1076,6 +1093,7 @@
 				63FBD81E1CC675DF00457887 /* HYQDatePickerView.m in Sources */,
 				637339A41CB69F750018FE46 /* CHSwitchCell.m in Sources */,
 				84B1E3021CAE77BA004573F4 /* UIApplication+Categories.m in Sources */,
+				846FEC4A1CC772C100BC482A /* NJKWebViewProgressView.m in Sources */,
 				63412E2D1CB273CA00FAD0DA /* CHBaseNavigationController.m in Sources */,
 				8464DE121CAA48C7000B987E /* main.m in Sources */,
 				8472D2091CAE53930003E35A /* FQAHBaseNetwork.m in Sources */,
