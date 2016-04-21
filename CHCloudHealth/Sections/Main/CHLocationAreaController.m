@@ -90,23 +90,33 @@
 - (void)refreshLine{
     //添加折线(分段颜色绘制)覆盖物
     [self.mapView removeOverlays:_mapView.overlays];
-    CLLocationCoordinate2D coords[5] = {0};
-    coords[0].latitude = 39.965;
-    coords[0].longitude = 116.404;
-    coords[1].latitude = 39.925;
-    coords[1].longitude = 116.454;
-    coords[2].latitude = 39.955;
-    coords[2].longitude = 116.494;
-    coords[3].latitude = 39.905;
-    coords[3].longitude = 116.554;
-    coords[4].latitude = 39.965;
-    coords[4].longitude = 116.604;
+
+    CLLocationCoordinate2D coords[self.dataArr.count];
+    for (int i = 0; i < self.dataArr.count; i++) {
+        
+        NSDictionary *info = self.dataArr[i];
+        double latitude = [info[@"latitude"] floatValue];
+        double longitude = [info[@"longitude"] floatValue];
+        
+        coords[i].latitude = latitude;
+        coords[i].longitude = longitude;
+    }
+    
+//    coords[0].latitude = 39.965;
+//    coords[0].longitude = 116.404;
+//    coords[1].latitude = 39.925;
+//    coords[1].longitude = 116.454;
+//    coords[2].latitude = 39.955;
+//    coords[2].longitude = 116.494;
+//    coords[3].latitude = 39.905;
+//    coords[3].longitude = 116.554;
+//    coords[4].latitude = 39.965;
+//    coords[4].longitude = 116.604;
     //构建分段颜色索引数组
-    NSArray *colorIndexs = [NSArray arrayWithObjects:
-                            [NSNumber numberWithInt:0], nil];
+    NSArray *colorIndexs = [NSArray arrayWithObjects:@0, nil];
     
     //构建BMKPolyline,使用分段颜色索引，其对应的BMKPolylineView必须设置colors属性
-    colorfulPolyline = [BMKPolyline polylineWithCoordinates:coords count:5 textureIndex:colorIndexs];
+    colorfulPolyline = [BMKPolyline polylineWithCoordinates:coords count:self.dataArr.count textureIndex:colorIndexs];
     //    if (colorfulPolyline == nil) {
     //    }
     [self.mapView addOverlay:colorfulPolyline];
@@ -116,10 +126,10 @@
 #pragma mark -
 
 - (void)getDatas{
-    [self.dataArr removeAllObjects];
     [[NetworkingManager sharedManager] getLocationInfo:[CHUser sharedInstance].deviceUserId date:self.selectedDate completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
+                [self.dataArr removeAllObjects];
                 [self.dataArr addObjectsFromArray:responseData[@"data"]];
                 if (self.dataArr.count == 0) {
                     [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无轨迹记录",self.selectedDate] dealy:2];
