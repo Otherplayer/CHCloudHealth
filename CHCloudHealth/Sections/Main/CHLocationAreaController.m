@@ -91,6 +91,11 @@
     //添加折线(分段颜色绘制)覆盖物
     [self.mapView removeOverlays:_mapView.overlays];
 
+    if (self.dataArr.count == 0) {
+        return;
+    }
+    
+    
     CLLocationCoordinate2D coords[self.dataArr.count];
     for (int i = 0; i < self.dataArr.count; i++) {
         
