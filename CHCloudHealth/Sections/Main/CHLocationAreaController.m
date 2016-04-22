@@ -70,7 +70,7 @@
     [self.mapView setShowMapScaleBar:YES];//设定是否显式比例尺
     [self.mapView setShowsUserLocation:YES];//显示定位图层
     [self.mapView setUserTrackingMode:BMKUserTrackingModeFollow];
-    [self.mapView setZoomLevel:12];
+    [self.mapView setZoomLevel:16];
     
     
     
@@ -125,6 +125,9 @@
     //    if (colorfulPolyline == nil) {
     //    }
     [self.mapView addOverlay:colorfulPolyline];
+    [self.mapView setCenterCoordinate:coords[0] animated:YES];
+    
+    
 }
 
 
