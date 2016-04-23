@@ -8,6 +8,7 @@
 
 #import "CHMessageController.h"
 #import "CMMessageCell.h"
+#import "HYQWebViewController.h"
 
 @interface CHMessageController ()
 
@@ -33,6 +34,12 @@
     [self getDatas];
     
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self setAutomaticallyAdjustsScrollViewInsets:NO];
+}
+
 
 #pragma mark -
 
@@ -71,6 +78,16 @@
     CMMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMessageCell forIndexPath:indexPath];
     [cell configureTitle:title detail:detail time:time];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *info = self.datas[indexPath.row];
+    NSString *noticeId = info[@"id"];
+    
+    HYQWebViewController *controller = [[HYQWebViewController alloc] init];
+    controller.urlStr = @"http://221.1.104.218:8081/healthcloud-mobile/notice/getDetail";
+    controller.params = @{@"noticeId":noticeId};
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 

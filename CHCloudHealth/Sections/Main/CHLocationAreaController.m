@@ -70,7 +70,7 @@
     [self.mapView setShowMapScaleBar:YES];//设定是否显式比例尺
     [self.mapView setShowsUserLocation:YES];//显示定位图层
     [self.mapView setUserTrackingMode:BMKUserTrackingModeFollow];
-    [self.mapView setZoomLevel:12];
+    [self.mapView setZoomLevel:16];
     
     
     
@@ -90,36 +90,81 @@
 - (void)refreshLine{
     //添加折线(分段颜色绘制)覆盖物
     [self.mapView removeOverlays:_mapView.overlays];
-    CLLocationCoordinate2D coords[5] = {0};
-    coords[0].latitude = 39.965;
-    coords[0].longitude = 116.404;
-    coords[1].latitude = 39.925;
-    coords[1].longitude = 116.454;
-    coords[2].latitude = 39.955;
-    coords[2].longitude = 116.494;
-    coords[3].latitude = 39.905;
-    coords[3].longitude = 116.554;
-    coords[4].latitude = 39.965;
-    coords[4].longitude = 116.604;
+
+    if (self.dataArr.count == 0) {
+        return;
+    }
+    
+    
+    CLLocationCoordinate2D coords[self.dataArr.count];
+    for (int i = 0; i < self.dataArr.count; i++) {
+        
+        NSDictionary *info = self.dataArr[i];
+        double latitude = [info[@"latitude"] floatValue];
+        double longitude = [info[@"longitude"] floatValue];
+        
+        coords[i].latitude = latitude;
+        coords[i].longitude = longitude;
+    }
+    
+//    coords[0].latitude = 39.965;
+//    coords[0].longitude = 116.404;
+//    coords[1].latitude = 39.925;
+//    coords[1].longitude = 116.454;
+//    coords[2].latitude = 39.955;
+//    coords[2].longitude = 116.494;
+//    coords[3].latitude = 39.905;
+//    coords[3].longitude = 116.554;
+//    coords[4].latitude = 39.965;
+//    coords[4].longitude = 116.604;
     //构建分段颜色索引数组
-    NSArray *colorIndexs = [NSArray arrayWithObjects:
-                            [NSNumber numberWithInt:0], nil];
+    NSArray *colorIndexs = [NSArray arrayWithObjects:@0, nil];
     
     //构建BMKPolyline,使用分段颜色索引，其对应的BMKPolylineView必须设置colors属性
-    colorfulPolyline = [BMKPolyline polylineWithCoordinates:coords count:5 textureIndex:colorIndexs];
+    colorfulPolyline = [BMKPolyline polylineWithCoordinates:coords count:self.dataArr.count textureIndex:colorIndexs];
     //    if (colorfulPolyline == nil) {
     //    }
     [self.mapView addOverlay:colorfulPolyline];
+    [self.mapView setCenterCoordinate:coords[0] animated:YES];
+    
+    [self refresCircle];
+    
+}
+
+
+- (void)refresCircle{
+    NSDictionary *info = self.dataArr[0];
+    double latitude = [info[@"latitude"] floatValue];
+    double longitude = [info[@"longitude"] floatValue];
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+    
+    circle = [BMKCircle circleWithCenterCoordinate:coordinate radius:1000];
+    [self.mapView addOverlay:circle];
 }
 
 
 #pragma mark -
 
 - (void)getDatas{
-    [self.dataArr removeAllObjects];
+    
+    
+    
+    [[NetworkingManager sharedManager] getSafeArea:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                
+            }else{
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+            
+        });
+    }];
+    
+    
     [[NetworkingManager sharedManager] getLocationInfo:[CHUser sharedInstance].deviceUserId date:self.selectedDate completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
+                [self.dataArr removeAllObjects];
                 [self.dataArr addObjectsFromArray:responseData[@"data"]];
                 if (self.dataArr.count == 0) {
                     [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无轨迹记录",self.selectedDate] dealy:2];
@@ -174,8 +219,7 @@
 - (BMKOverlayView *)mapView:(BMKMapView *)mapView viewForOverlay:(id <BMKOverlay>)overlay{
     
     
-    if ([overlay isKindOfClass:[BMKPolyline class]])
-    {
+    if ([overlay isKindOfClass:[BMKPolyline class]]){
         BMKPolylineView* polylineView = [[BMKPolylineView alloc] initWithOverlay:overlay];
         polylineView.lineWidth = 5;
         /// 使用分段颜色绘制时，必须设置（内容必须为UIColor）
@@ -184,7 +228,16 @@
                                [UIColor defaultColor],
                                [UIColor defaultColor], nil];
         return polylineView;
+    }else if ([overlay isKindOfClass:[BMKCircle class]]){
+        BMKCircleView* circleView = [[BMKCircleView alloc] initWithOverlay:overlay];
+        circleView.fillColor = [[UIColor alloc] initWithRed:0.400 green:1.000 blue:0.400 alpha:0.247];
+        circleView.strokeColor = [[UIColor alloc] initWithRed:0.400 green:1.000 blue:0.400 alpha:1.000];
+        circleView.lineWidth = 1.0;
+        
+        return circleView;
     }
+    
+    
     return nil;
 }
 - (void)mapViewDidFinishLoading:(BMKMapView *)mapView{

@@ -8,8 +8,10 @@
 
 #import "CHHealthReportController.h"
 #import "CMMessageCell.h"
+#import "FQAHPublicParameter.h"
+#import "HYQWebViewController.h"
 
-@interface CHHealthReportController ()
+@interface CHHealthReportController ()<UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *datas;
@@ -31,6 +33,11 @@
     self.tableView.loading = YES;
     [self getDatas];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+        [self setAutomaticallyAdjustsScrollViewInsets:NO];
 }
 
 - (void)rightBarButtonPressed:(id)rightBarButtonPressed{
@@ -86,15 +93,60 @@
     NSDictionary *info = self.datas[indexPath.row];
     NSString *healthDetailId = info[@"healthRecordId"];
     
-    [[NetworkingManager sharedManager] getHealthRecordDetailInfo:healthDetailId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-        if (success) {
-            
-        }else{
-            [HYQShowTip showTipTextOnly:errDesc dealy:2];
-        }
-    }];
+    HYQWebViewController *controller = [[HYQWebViewController alloc] init];
+    controller.urlStr = @"http://221.1.104.218:8081/healthcloud-mobile/deviceUser/getHealthRecordDetail";
+    controller.params = @{@"heathRecordId":healthDetailId};
+    [self.navigationController pushViewController:controller animated:YES];
+    
+////    [[NetworkingManager sharedManager] getHealthRecordDetailInfo:healthDetailId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+////        if (success) {
+////            
+////        }else{
+////            [HYQShowTip showTipTextOnly:errDesc dealy:2];
+////        }
+////    }];
+//    
+//    
+//
+////    
+////    NSString *body = [NSString stringWithFormat:@"data=%@",[allparameters jsonString]];
+////    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+//////    request.HTTPMethod = request.HTTPMethod;
+//////    request.HTTPBody = request.HTTPBody;
+////    [request setHTTPMethod: @"POST"];
+////    [request setHTTPBody: [body dataUsingEncoding:NSUTF8StringEncoding]];
+////    webView.delegate = self;
+////    [webView loadRequest: request];
+//    
+//    
+//    NSMutableArray *webViewParams = [NSMutableArray arrayWithObjects:
+//                                     @"data", [allparameters jsonString],
+//                                    
+//                                     nil];
+//    
+//    [self UIWebViewWithPost:webView url:[NSString stringWithFormat:@"%@",url] params:webViewParams];
+    
 }
-
+//- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+//    
+//    return YES;
+//}
+//- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error{
+//    NSLog(@"Error%@",error);
+//}
+//- (void)UIWebViewWithPost:(UIWebView *)uiWebView url:(NSString *)url params:(NSMutableArray *)params
+//{
+//    NSMutableString *s = [NSMutableString stringWithCapacity:0];
+//    [s appendString: [NSString stringWithFormat:@"<html><body onload=\"document.forms[0].submit()\">"
+//                      "<form method=\"post\" action=\"%@\">", url]];
+//    if([params count] % 2 == 1) { NSLog(@"UIWebViewWithPost error: params don't seem right"); return; }
+//    for (int i=0; i < [params count] / 2; i++) {
+//        [s appendString: [NSString stringWithFormat:@"<input type=\"hidden\" name=\"%@\" value=\"%@\" >\n", [params objectAtIndex:i*2], [params objectAtIndex:(i*2)+1]]];
+//    }
+//    [s appendString: @"</input></form></body></html>"];
+//    //NSLog(@"%@", s);
+//    [uiWebView loadHTMLString:s baseURL:nil];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
