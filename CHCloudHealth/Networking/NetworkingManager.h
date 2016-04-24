@@ -79,6 +79,6 @@
 
 
 - (void)getListFamliyNumber:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed;
-- (void)setFamliyNumber:(NSString *)deviceUserId name:(NSString *)name relation:(NSString *)relation mobile:(NSString *)mobile address:(NSString *)address remark:(NSString *)remark completedHandler:(GGRequestCallbackBlock)completed;
-
+//- (void)setFamliyNumber:(NSString *)deviceUserId name:(NSString *)name relation:(NSString *)relation mobile:(NSString *)mobile address:(NSString *)address remark:(NSString *)remark completedHandler:(GGRequestCallbackBlock)completed;
+- (void)setFamliyNumber:(NSString *)deviceUserId num1:(NSString *)num1 num2:(NSString *)num2 num3:(NSString *)num3 num4:(NSString *)num4  completedHandler:(GGRequestCallbackBlock)completed;
 @end

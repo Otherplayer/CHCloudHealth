@@ -45,22 +45,27 @@
     
     
     if ([self check]) {
-        [[NetworkingManager sharedManager] setFamliyNumber:[CHUser sharedInstance].deviceUserId name:self.tfName.text relation:self.tfRelation.text mobile:self.tfMobile.text address:self.tfAddress.text remark:self.tfRemark.text completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        
+        [[NetworkingManager sharedManager] setFamliyNumber:[CHUser sharedInstance].deviceUserId num1:@"1234567890123" num2:@"09871234567890" num3:@"18513149993" num4:@"18513149999" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (success) {
-                    
-                    if (self.didAddReleationNumBlock) {
-                        self.didAddReleationNumBlock();
-                    }
-                    
-                    [self leftBarButtonPressed:nil];
-                    
-                }else{
-                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
-                }
-            });
         }];
+        
+//        [[NetworkingManager sharedManager] setFamliyNumber:[CHUser sharedInstance].deviceUserId name:self.tfName.text relation:self.tfRelation.text mobile:self.tfMobile.text address:self.tfAddress.text remark:self.tfRemark.text completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                if (success) {
+//                    
+//                    if (self.didAddReleationNumBlock) {
+//                        self.didAddReleationNumBlock();
+//                    }
+//                    
+//                    [self leftBarButtonPressed:nil];
+//                    
+//                }else{
+//                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
+//                }
+//            });
+//        }];
         
     }
     

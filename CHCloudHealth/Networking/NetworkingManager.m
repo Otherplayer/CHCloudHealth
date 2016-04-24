@@ -322,8 +322,27 @@ NSString *const kAPI_SIZE = @"pageSize";
     NSDictionary *params = @{@"deviceUserId":deviceUserId};
     [self POST:kAPI_listFamliyNumber params:params memoryCache:NO diskCache:NO completed:completed];
 }
-- (void)setFamliyNumber:(NSString *)deviceUserId name:(NSString *)name relation:(NSString *)relation mobile:(NSString *)mobile address:(NSString *)address remark:(NSString *)remark completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"deviceUserId":deviceUserId,@"name":name,@"relation":relation,@"mobile":mobile,@"address":@"",@"remark":@""};
+//- (void)setFamliyNumber:(NSString *)deviceUserId name:(NSString *)name relation:(NSString *)relation mobile:(NSString *)mobile address:(NSString *)address remark:(NSString *)remark completedHandler:(GGRequestCallbackBlock)completed{
+//    NSDictionary *params = @{@"deviceUserId":deviceUserId,@"name":name,@"relation":relation,@"mobile":mobile,@"address":@"",@"remark":@""};
+//    [self POST:kAPI_setFamliyNumber params:params memoryCache:NO diskCache:NO completed:completed];
+//}
+
+- (void)setFamliyNumber:(NSString *)deviceUserId num1:(NSString *)num1 num2:(NSString *)num2 num3:(NSString *)num3 num4:(NSString *)num4  completedHandler:(GGRequestCallbackBlock)completed{
+    
+    if (!num4 || num4.length == 0) {
+        num4 = @"";
+    }
+    if (!num3 || num3.length == 0) {
+        num3 = @"";
+    }
+    if (!num2 || num2.length == 0) {
+        num2 = @"";
+    }
+    if (!num1 || num1.length == 0) {
+        num1 = @"";
+    }
+    
+    NSDictionary *params = @{@"deviceUserId":deviceUserId,@"num1":num1,@"num2":num2,@"num3":num3,@"num4":num4};
     [self POST:kAPI_setFamliyNumber params:params memoryCache:NO diskCache:NO completed:completed];
 }
 
