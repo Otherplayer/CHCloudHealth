@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *mailButtonItem;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *datas;
+@property (strong, nonatomic) NSMutableArray *tempDatas;
 
 @end
 
@@ -38,6 +39,7 @@
     [self installRevealGesture];
     [self setTitle:@"慈海云健康"];
     self.datas = [[NSMutableArray alloc] init];
+    self.tempDatas = [[NSMutableArray alloc] init];
     
     [self.view setBackgroundColor:[UIColor gradientFromColor:[UIColor defaultColor] toColor:[UIColor whiteColor] height:kMainHeight]];
     
@@ -108,8 +110,8 @@
     [[NetworkingManager sharedManager] getDeviceInfo:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
-                    [self.datas removeAllObjects];
-                    [self.datas addObject:@[responseData[@"data"]]];
+                    [self.tempDatas removeAllObjects];
+                    [self.tempDatas addObject:@[responseData[@"data"]]];
                     [self getHealthTypeInfo];
             }else{
                 self.tableView.loading = NO;
@@ -124,11 +126,13 @@
     [[NetworkingManager sharedManager] getHealthTypeInfo:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
-                    self.tableView.loading = NO;
-                    for (NSDictionary *info in responseData[@"data"]) {
-                        [self.datas addObject:@[info]];
-                    }
-                    [self.tableView reloadData];
+                self.tableView.loading = NO;
+                for (NSDictionary *info in responseData[@"data"]) {
+                    [self.tempDatas addObject:@[info]];
+                }
+                [self.datas removeAllObjects];
+                self.datas = [[NSMutableArray alloc] initWithArray:self.tempDatas];
+                [self.tableView reloadData];
             }else{
                 self.tableView.loading = NO;
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];
