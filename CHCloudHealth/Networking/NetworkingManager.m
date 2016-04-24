@@ -261,6 +261,11 @@ NSString *const kAPI_SIZE = @"pageSize";
 - (void)setHeartRateSetting:(NSString *)deviceId heartRateSwitch:(NSInteger)heartRateSwitch max:(NSString *)max min:(NSString *)min interval:(NSString *)interval completedHandler:(GGRequestCallbackBlock)completed{
     if ([interval hasSuffix:@"分钟"]) {
         interval = [interval substringWithRange:NSMakeRange(0, interval.length - 2)];
+    }else if ([interval hasSuffix:@"小时"]){
+        interval = [interval substringWithRange:NSMakeRange(0, interval.length - 2)];
+        interval = [NSString stringWithFormat:@"%@",@(interval.integerValue * 60)];
+    }else{
+        interval = @"0";
     }
     NSDictionary *params = @{@"deviceId":deviceId,@"heartRateSwitch":[NSString stringWithFormat:@"%@",@(heartRateSwitch)],@"max":@(max.integerValue),@"min":@(min.integerValue),@"interval":interval};
     [self POST:kAPI_SetHeartRateSetting params:params memoryCache:NO diskCache:NO completed:completed];
