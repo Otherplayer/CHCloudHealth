@@ -29,7 +29,7 @@
     // section second
     [self.datas addObject:@[
                             @{@"title":@"基础信息",@"identifier":@"CHUserInfoController"},
-                            @{@"title":@"亲情号码",@"identifier":@"CHRelationShipController"},
+                            @{@"title":@"亲情号码",@"identifier":@"CHAddRelationNumController"},
 //                            @{@"title":@"监护区域",@"identifier":@"CHMonitorCareController"},
                             @{@"title":@"位置监测",@"identifier":@"CHLocationMonitorController"},
                             @{@"title":@"心率监测",@"identifier":@"CHMonitorCareController"},
