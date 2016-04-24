@@ -70,7 +70,7 @@
     }else{
         
         
-        if ([[CHUser sharedInstance].deviceId isEqualToString:@"-1"]) {
+        if ([[CHUser sharedInstance].deviceUserId isEqualToString:@"-1"]) {
             CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
             [self presentViewController:nav animated:YES completion:nil];
         }else{
