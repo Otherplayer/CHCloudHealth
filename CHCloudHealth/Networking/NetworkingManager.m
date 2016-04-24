@@ -241,6 +241,11 @@ NSString *const kAPI_SIZE = @"pageSize";
     
     if ([timeInterval hasSuffix:@"分钟"]) {
         timeInterval = [timeInterval substringWithRange:NSMakeRange(0, timeInterval.length - 2)];
+    }else if ([timeInterval hasSuffix:@"小时"]){
+        timeInterval = [timeInterval substringWithRange:NSMakeRange(0, timeInterval.length - 2)];
+        timeInterval = [NSString stringWithFormat:@"%@",@(timeInterval.integerValue * 60)];
+    }else{
+        timeInterval = @"0";
     }
     
     NSDictionary *params = @{@"deviceId":deviceId,@"locationSwitch":[NSString stringWithFormat:@"%@",@(locationSwitch)],@"interval":timeInterval};

@@ -42,9 +42,9 @@
     [self.view setBackgroundColor:[UIColor gradientFromColor:[UIColor defaultColor] toColor:[UIColor whiteColor] height:kMainHeight]];
     
     [self.tableView blankTableFooterView];
-    self.tableView.descriptionText = @"连接设备后\n才会显示数据哦";
+    self.tableView.descriptionText = @"数据加载失败~";
     self.tableView.loadedImageName = @"ios_icon_17";
-    self.tableView.buttonText = @"绑定设备";
+    self.tableView.buttonText = @"重新加载";
     [self.tableView clickLoading:^{
 //        if ([[CHUser sharedInstance].deviceId isEmptyObject]) {
 //            CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
