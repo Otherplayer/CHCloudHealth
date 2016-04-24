@@ -51,7 +51,6 @@
         [self.labState setText:@"当前状态：未绑定"];
     }else{
         [self.labState setText:@"当前状态：已绑定"];
-        
     }
 }
 

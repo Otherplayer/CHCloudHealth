@@ -76,11 +76,13 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
         NSDictionary *info = self.datas[indexPath.row];
-        NSString *deviceId = [NSString stringWithFormat:@"%@",info[@"deviceId"]];
+        NSString *deviceId = [NSString stringWithFormat:@"%@",info[@"id"]];
         
         [[NetworkingManager sharedManager] unbindDevice:[CHUser sharedInstance].uid number:deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
+                    //解绑
+                    [CHUser sharedInstance].deviceId = @"-1";
                     [self.datas removeObjectAtIndex:indexPath.row];
                     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
                 }else{

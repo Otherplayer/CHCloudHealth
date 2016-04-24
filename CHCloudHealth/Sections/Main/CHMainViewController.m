@@ -46,12 +46,12 @@
     self.tableView.loadedImageName = @"ios_icon_17";
     self.tableView.buttonText = @"绑定设备";
     [self.tableView clickLoading:^{
-        if ([[CHUser sharedInstance].deviceId isEmptyObject]) {
-            CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
-            [self presentViewController:nav animated:YES completion:nil];
-        }else{
-            [self getDatas];
-        }
+//        if ([[CHUser sharedInstance].deviceId isEmptyObject]) {
+//            CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
+//            [self presentViewController:nav animated:YES completion:nil];
+//        }else{
+//        }
+        [self getDatas];
     }];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldGotoSubMenuController:) name:kNotificationMenuController object:nil];
@@ -68,7 +68,15 @@
     if (![self isLogin]) {
         [self gotoLogin];
     }else{
-        [self getDatas];
+        
+        
+        if ([[CHUser sharedInstance].deviceId isEqualToString:@"-1"]) {
+            CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
+            [self presentViewController:nav animated:YES completion:nil];
+        }else{
+            [self getDatas];
+        }
+        
 //        [[NetworkingManager sharedManager] getBindDeviceListInfo:[CHUser sharedInstance].uid completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
 //            
 //        }];
@@ -93,12 +101,12 @@
     
     self.tableView.loading = YES;
     
-    NSLog(@"%@",[CHUser sharedInstance].deviceId);
-    if (![CHUser sharedInstance].deviceId || [CHUser sharedInstance].deviceId.length == 0) {
-        self.tableView.loading = NO;
-        [self.tableView reloadData];
-        return;
-    }
+//    NSLog(@"%@",[CHUser sharedInstance].deviceId);
+//    if (![CHUser sharedInstance].deviceId || [CHUser sharedInstance].deviceId.length == 0) {
+//        self.tableView.loading = NO;
+//        [self.tableView reloadData];
+//        return;
+//    }
     
     [[NetworkingManager sharedManager] getDeviceInfo:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{

@@ -218,11 +218,11 @@ NSString *const kAPI_SIZE = @"pageSize";
 }
 
 - (void)unbindDevice:(NSString *)userId number:(NSString *)number completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"userId":userId,@"imei":number};
+    NSDictionary *params = @{@"userId":userId,@"deviceId":number};
     [self POST:kAPI_UNBindingDevice params:params memoryCache:NO diskCache:NO completed:completed];
 }
 - (void)chnageDevice:(NSString *)userId number:(NSString *)number completedHandler:(GGRequestCallbackBlock)completed{
-    NSDictionary *params = @{@"userId":userId,@"imei":number};
+    NSDictionary *params = @{@"userId":userId,@"deviceId":number};
     [self POST:kAPI_ChangeDevice params:params memoryCache:NO diskCache:NO completed:completed];
 }
 

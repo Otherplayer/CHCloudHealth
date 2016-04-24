@@ -37,11 +37,23 @@
 - (void)rightBarButtonPressed:(id)rightBarButtonPressed{
     if ([self canGo]) {
         NSString *deviceNumber = [self.numTextField.text trimmingWhitespace];
+        [HYQShowTip showProgressWithText:@"" dealy:30];
         [[NetworkingManager sharedManager] bindDevice:[CHUser sharedInstance].uid number:deviceNumber completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
-                [CHUser sharedInstance].deviceId = deviceNumber;
-                [self dismissViewControllerAnimated:YES completion:nil];
-                [HYQShowTip showTipTextOnly:@"绑定成功" dealy:2];
+                
+                NSString *deviceId = responseData[@"data"][@"id"];
+                
+                [[NetworkingManager sharedManager] chnageDevice:[CHUser sharedInstance].uid number:deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+                    if (success) {
+                        
+                        [CHUser sharedInstance].deviceId = deviceNumber;
+                        [self dismissViewControllerAnimated:YES completion:nil];
+                        [HYQShowTip showTipTextOnly:@"绑定成功" dealy:2];
+                    }else{
+                        [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                    }
+                }];
+                
             }else{
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];
             }
