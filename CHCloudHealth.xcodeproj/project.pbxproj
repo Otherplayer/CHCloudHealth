@@ -1286,7 +1286,7 @@
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/CorePlot/ios\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fqah.CHCloudHealth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chy.chyHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "179f7b36-0b07-429e-8cab-995e3126e58e";
 				WARNING_CFLAGS = "-Wno-deprecated-declarations";
@@ -1358,7 +1358,7 @@
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/CorePlot/ios\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fqah.CHCloudHealth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chy.chyHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "179f7b36-0b07-429e-8cab-995e3126e58e";
 			};

@@ -7,6 +7,7 @@
 //
 
 #import "CHUser.h"
+#import <JPUSHService.h>
 
 NSString *const kUSER_ID = @"user_id";
 NSString *const kUSER_NAME = @"username";
@@ -44,6 +45,8 @@ NSString *const kUSER_SEX = @"sex";
     if (![info[@"data"][kUSER_DEVICE_USER_ID] isEmptyObject]) {
         deviceUserId = info[@"data"][kUSER_DEVICE_USER_ID];
     }
+    
+    [JPUSHService setAlias:uid callbackSelector:nil object:nil];
     
     [self.userDefaults setObject:uid forKey:kUSER_ID];
     [self.userDefaults setObject:deviceId forKey:kUSER_DEVICE_ID];

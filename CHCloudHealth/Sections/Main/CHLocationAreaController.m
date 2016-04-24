@@ -127,18 +127,16 @@
     [self.mapView addOverlay:colorfulPolyline];
     [self.mapView setCenterCoordinate:coords[0] animated:YES];
     
-    [self refresCircle];
-    
 }
 
 
-- (void)refresCircle{
-    NSDictionary *info = self.dataArr[0];
-    double latitude = [info[@"latitude"] floatValue];
-    double longitude = [info[@"longitude"] floatValue];
+- (void)refresCircle:(NSDictionary *)info{
+    double latitude = [info[@"lat"] floatValue];
+    double longitude = [info[@"lng"] floatValue];
+    double radius = [info[@"radius"] floatValue];
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
     
-    circle = [BMKCircle circleWithCenterCoordinate:coordinate radius:1000];
+    circle = [BMKCircle circleWithCenterCoordinate:coordinate radius:radius];
     [self.mapView addOverlay:circle];
 }
 
@@ -146,19 +144,22 @@
 #pragma mark -
 
 - (void)getDatas{
-    
-    
-    
-//    [[NetworkingManager sharedManager] getSafeArea:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            if (success) {
-//                
-//            }else{
-//                [HYQShowTip showTipTextOnly:errDesc dealy:2];
-//            }
-//            
-//        });
+//    
+//    [[NetworkingManager sharedManager] setSafeArea:[CHUser sharedInstance].deviceId lng:@"39" lat:@"119" radius:@"100" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+//        
 //    }];
+    
+    [[NetworkingManager sharedManager] getSafeArea:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                NSDictionary *info = responseData[@"data"];
+                [self refresCircle:info];
+            }else{
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+            
+        });
+    }];
     
     
     [[NetworkingManager sharedManager] getLocationInfo:[CHUser sharedInstance].deviceUserId date:self.selectedDate completedHandler:^(BOOL success, NSString *errDesc, id responseData) {

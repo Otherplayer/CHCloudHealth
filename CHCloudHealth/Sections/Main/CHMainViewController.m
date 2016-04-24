@@ -46,11 +46,6 @@
     self.tableView.loadedImageName = @"ios_icon_17";
     self.tableView.buttonText = @"重新加载";
     [self.tableView clickLoading:^{
-//        if ([[CHUser sharedInstance].deviceId isEmptyObject]) {
-//            CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
-//            [self presentViewController:nav animated:YES completion:nil];
-//        }else{
-//        }
         [self getDatas];
     }];
     
@@ -107,6 +102,8 @@
 //        [self.tableView reloadData];
 //        return;
 //    }
+    
+    //
     
     [[NetworkingManager sharedManager] getDeviceInfo:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{

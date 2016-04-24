@@ -131,6 +131,7 @@
     if (DEBUG) {
         isProduction = NO;
     }
+
     [JPUSHService setupWithOption:launchOptions appKey:kAPPKEY_JPUSH channel:nil apsForProduction:isProduction];
 }
 - (void)installBaiduMap{
