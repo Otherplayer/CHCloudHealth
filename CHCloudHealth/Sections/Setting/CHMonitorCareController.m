@@ -55,6 +55,7 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
 #pragma mark -
 
 - (void)getDatas{
+    self.tableView.loading = YES;
     if (self.type == 3) {//心率
         [[NetworkingManager sharedManager] getHeartRateSetting:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -182,6 +183,7 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
     NSDictionary *section1 = [self.datas objectAtIndex:0];
     NSInteger state = [section1[@"value"] integerValue];
     
+    [HYQShowTip showProgressWithText:@"" dealy:30];
     if (self.type == 3) {//心率
         
         NSDictionary *section2 = self.datas[1];
