@@ -89,8 +89,8 @@
 
 - (void)refreshLine{
     //添加折线(分段颜色绘制)覆盖物
-    [self.mapView removeOverlays:_mapView.overlays];
-
+//    [self.mapView removeOverlays:_mapView.overlays];
+    [self.mapView removeOverlay:colorfulPolyline];
     if (self.dataArr.count == 0) {
         return;
     }
@@ -131,6 +131,7 @@
 
 
 - (void)refresCircle:(NSDictionary *)info{
+    [self.mapView removeOverlay:circle];
     double latitude = [info[@"lat"] floatValue];
     double longitude = [info[@"lng"] floatValue];
     double radius = [info[@"radius"] floatValue];

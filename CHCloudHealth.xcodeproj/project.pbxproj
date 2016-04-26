@@ -1175,7 +1175,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "932a70c0-0d3b-4507-b874-fba81fde3c80";
+				PROVISIONING_PROFILE = "b2cd3c7c-7a7a-43f2-86cb-3c04a79e53bf";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1215,7 +1215,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "932a70c0-0d3b-4507-b874-fba81fde3c80";
+				PROVISIONING_PROFILE = "b2cd3c7c-7a7a-43f2-86cb-3c04a79e53bf";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1290,7 +1290,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chy.chyHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e606aa50-d8ec-402f-8dac-9a40b11f41f6";
+				PROVISIONING_PROFILE = "b2cd3c7c-7a7a-43f2-86cb-3c04a79e53bf";
 				WARNING_CFLAGS = "-Wno-deprecated-declarations";
 			};
 			name = Debug;
@@ -1300,7 +1300,7 @@
 			baseConfigurationReference = 32E958EE73A4318A56D03553 /* Pods-CHCloudHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1364,7 +1364,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chy.chyHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e606aa50-d8ec-402f-8dac-9a40b11f41f6";
+				PROVISIONING_PROFILE = "b2cd3c7c-7a7a-43f2-86cb-3c04a79e53bf";
 			};
 			name = Release;
 		};
