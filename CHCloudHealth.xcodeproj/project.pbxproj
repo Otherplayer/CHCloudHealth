@@ -1151,8 +1151,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zujian zhang (D36M6KT9L4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zujian zhang (D36M6KT9L4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
@@ -1175,7 +1175,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "b2cd3c7c-7a7a-43f2-86cb-3c04a79e53bf";
+				PROVISIONING_PROFILE = "5aca6ab0-f905-4e83-b3f8-e68e6db83c12";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1198,7 +1198,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zujian zhang (D36M6KT9L4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1215,7 +1215,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "b2cd3c7c-7a7a-43f2-86cb-3c04a79e53bf";
+				PROVISIONING_PROFILE = "5aca6ab0-f905-4e83-b3f8-e68e6db83c12";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1226,8 +1226,8 @@
 			baseConfigurationReference = EA12FFC0D604A8243CDEE906 /* Pods-CHCloudHealth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zujian zhang (D36M6KT9L4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zujian zhang (D36M6KT9L4)";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/CHCloudHealth/PrefixHeader.pch;
@@ -1288,9 +1288,9 @@
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/CorePlot/ios\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chy.chyHealth;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chy.chy-health";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b2cd3c7c-7a7a-43f2-86cb-3c04a79e53bf";
+				PROVISIONING_PROFILE = "5aca6ab0-f905-4e83-b3f8-e68e6db83c12";
 				WARNING_CFLAGS = "-Wno-deprecated-declarations";
 			};
 			name = Debug;
@@ -1362,9 +1362,9 @@
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/CorePlot/ios\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chy.chyHealth;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chy.chy-health";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b2cd3c7c-7a7a-43f2-86cb-3c04a79e53bf";
+				PROVISIONING_PROFILE = "5aca6ab0-f905-4e83-b3f8-e68e6db83c12";
 			};
 			name = Release;
 		};

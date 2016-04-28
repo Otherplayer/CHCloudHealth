@@ -68,13 +68,16 @@ NSString *const kUSER_SEX = @"sex";
     [self.userDefaults setObject:deviceId forKey:kUSER_DEVICE_ID];
 }
 - (NSString *)deviceId{
-    return [self.userDefaults objectForKey:kUSER_DEVICE_ID] ? : @"";
+    return [self.userDefaults objectForKey:kUSER_DEVICE_ID] ? [self.userDefaults objectForKey:kUSER_DEVICE_ID] : @"";
 }
 
 - (NSString *)deviceUserId{
-    return [self.userDefaults objectForKey:kUSER_DEVICE_USER_ID] ? : @"";
+    return [NSString stringWithFormat:@"%@",[self.userDefaults objectForKey:kUSER_DEVICE_USER_ID]];
 }
 
+- (void)setDeviceUserId:(NSString *)deviceUserId{
+    [self.userDefaults setObject:deviceUserId forKey:kUSER_DEVICE_USER_ID];
+}
 
 - (NSString *)avatarurl{
     return [self.userDefaults objectForKey:kUSER_AVATAR];

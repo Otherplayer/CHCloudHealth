@@ -45,12 +45,12 @@
         NSString *description = info[@"description"];
         [self.labValue setNumberOfLines:0];
         [self.labValue setLineBreakMode:NSLineBreakByWordWrapping];
-        [self.labValue setText:description];
-        if ([type isEqualToString:@"0004"]) {
-            [self.labValue setText:@"北京西城区西直门"];
-        }else{
-            [self.labValue setText:@"点击查看历史体检报告"];
-        }
+        [self.labValue setText:[NSString stringWithFormat:@"%@",description]];
+//        if ([type isEqualToString:@"0004"]) {
+//            [self.labValue setText:@"北京西城区西直门"];
+//        }else{
+//            [self.labValue setText:@"点击查看历史体检报告"];
+//        }
         [self.labValue setFont:[UIFont systemFontOfSize:20]];
     }
     

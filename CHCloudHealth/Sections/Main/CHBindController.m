@@ -41,8 +41,8 @@
         [[NetworkingManager sharedManager] bindDevice:[CHUser sharedInstance].uid number:deviceNumber completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
                 
-                NSString *deviceId = responseData[@"data"][@"id"];
-                NSString *deviceUserId = responseData[@"data"][@"deviceUserId"];
+                NSString *deviceId = [NSString stringWithFormat:@"%@",responseData[@"data"][@"id"]];
+                NSString *deviceUserId = [NSString stringWithFormat:@"%@",responseData[@"data"][@"deviceUserId"]];
                 
                 [[NetworkingManager sharedManager] chnageDevice:[CHUser sharedInstance].uid number:deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
                     if (success) {

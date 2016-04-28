@@ -66,7 +66,7 @@
         [self gotoLogin];
     }else{
         
-        
+        NSLog(@"%@",[CHUser sharedInstance].deviceUserId);
         if ([[CHUser sharedInstance].deviceUserId isEqualToString:@"-1"]) {
             CHBaseNavigationController *nav = [[UIStoryboard mainStoryboard] bindController];
             [self presentViewController:nav animated:YES completion:nil];
