@@ -86,6 +86,9 @@
                     [CHUser sharedInstance].deviceUserId = @"-1";
                     [self.datas removeObjectAtIndex:indexPath.row];
                     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+                    
+                    [self.navigationController popViewControllerAnimated:YES];
+                    
                 }else{
                     [HYQShowTip showTipTextOnly:errDesc dealy:2];
                 }
