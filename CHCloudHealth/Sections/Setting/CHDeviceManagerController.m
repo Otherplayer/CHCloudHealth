@@ -83,6 +83,7 @@
                 if (success) {
                     //解绑
                     [CHUser sharedInstance].deviceId = @"-1";
+                    [CHUser sharedInstance].deviceUserId = @"-1";
                     [self.datas removeObjectAtIndex:indexPath.row];
                     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
                 }else{
