@@ -315,6 +315,10 @@ NSString *const kIMGKey = @"kIMGKey";
     response.requestParams = params;
     response.requestUrlStr = url;
     
+    
+    
+    
+    
     [self handleResponse:response shouldCache:memoryCache diskCache:diskCache completedHandler:completed];
 }
 
