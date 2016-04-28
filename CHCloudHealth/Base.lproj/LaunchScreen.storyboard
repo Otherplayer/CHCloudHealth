@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,13 +17,88 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-76" translatesAutoresizingMaskIntoConstraints="NO" id="c4Q-h9-179">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="R8F-FL-3ZM"/>
+                                    <constraint firstAttribute="height" constant="76" id="REw-Ya-3Ko"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="R8F-FL-3ZM"/>
+                                        <exclude reference="REw-Ya-3Ko"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="R8F-FL-3ZM"/>
+                                        <include reference="REw-Ya-3Ko"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="慈海云健康" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHg-9O-9Iu">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="BGr-Yp-2I8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BGr-Yp-2I8"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="BGr-Yp-2I8"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DHg-9O-9Iu" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="EC3-20-ViH"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="DHg-9O-9Iu" secondAttribute="bottom" constant="41" id="QIC-o3-9wW"/>
+                            <constraint firstItem="c4Q-h9-179" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="TAR-r4-SSB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DHg-9O-9Iu" secondAttribute="trailing" constant="-20" id="xUI-dV-PHp"/>
+                            <constraint firstItem="c4Q-h9-179" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="76" id="yoZ-vk-K2c"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="c4Q-h9-179"/>
+                                <exclude reference="DHg-9O-9Iu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="TAR-r4-SSB"/>
+                                <exclude reference="yoZ-vk-K2c"/>
+                                <exclude reference="EC3-20-ViH"/>
+                                <exclude reference="xUI-dV-PHp"/>
+                                <exclude reference="QIC-o3-9wW"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="c4Q-h9-179"/>
+                                <include reference="DHg-9O-9Iu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="TAR-r4-SSB"/>
+                                <include reference="yoZ-vk-K2c"/>
+                                <include reference="EC3-20-ViH"/>
+                                <include reference="xUI-dV-PHp"/>
+                                <include reference="QIC-o3-9wW"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.5" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon-76" width="76" height="76"/>
+    </resources>
 </document>
