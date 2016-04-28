@@ -128,9 +128,9 @@
     //如需兼容旧版本的方式，请依旧使用[JPUSHService setupWithOption:launchOptions]方式初始化和同时使用pushConfig.plist文件声明appKey等配置内容。
     //isProduction 是否生产环境. 如果为开发状态,设置为 NO; 如果为生产状态,应改为 YES.
     BOOL isProduction = YES;
-    if (DEBUG) {
-        isProduction = NO;
-    }
+//    if (DEBUG) {
+//        isProduction = NO;
+//    }
 
     [JPUSHService setupWithOption:launchOptions appKey:kAPPKEY_JPUSH channel:nil apsForProduction:isProduction];
 }
