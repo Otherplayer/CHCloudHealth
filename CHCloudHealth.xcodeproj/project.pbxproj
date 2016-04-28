@@ -899,8 +899,12 @@
 				TargetAttributes = {
 					8464DE0C1CAA48C7000B987E = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = F45Y9J9Z7T;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -1199,7 +1203,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: zujian zhang (D36M6KT9L4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zujian zhang (D36M6KT9L4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
@@ -1300,8 +1304,8 @@
 			baseConfigurationReference = 32E958EE73A4318A56D03553 /* Pods-CHCloudHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zujian zhang (D36M6KT9L4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zujian zhang (D36M6KT9L4)";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/CHCloudHealth/PrefixHeader.pch;
