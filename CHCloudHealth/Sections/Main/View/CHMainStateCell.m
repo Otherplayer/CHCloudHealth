@@ -38,19 +38,31 @@
     NSString *type = info[@"typeCode"];
     [self.ivAvatar setImage:[UIImage imageNamed:[self imageWithType:type]]];
     if (type.integerValue < 4) {
-        NSString *value = [NSString stringWithFormat:@"%@ %@",info[@"val"],[self unitWithType:type]];
-        [self.labValue setAttributedText:[self fixColorText:value]];
-        [self.labValue setAdjustsFontSizeToFitWidth:YES];
+        
+        NSString *val = [NSString stringWithFormat:@"%@",info[@"val"]];
+        if (info[@"val"] == [NSNull null]) {
+            val = @"暂无数据";
+        }
+        
+        if ([val isEqualToString:@"暂无数据"]) {
+            [self.labValue setNumberOfLines:0];
+            [self.labValue setLineBreakMode:NSLineBreakByWordWrapping];
+            [self.labValue setText:val];
+            [self.labValue setFont:[UIFont systemFontOfSize:20]];
+        }else{
+            NSString *value = [NSString stringWithFormat:@"%@ %@",val,[self unitWithType:type]];
+            [self.labValue setAttributedText:[self fixColorText:value]];
+            [self.labValue setAdjustsFontSizeToFitWidth:YES];
+        }
     }else{
-        NSString *description = info[@"description"];
+        NSString *description = [NSString stringWithFormat:@"%@",info[@"description"]];
+        if (info[@"description"] == [NSNull null]) {
+            description = @"暂无数据";
+        }
+        
         [self.labValue setNumberOfLines:0];
         [self.labValue setLineBreakMode:NSLineBreakByWordWrapping];
-        [self.labValue setText:[NSString stringWithFormat:@"%@",description]];
-//        if ([type isEqualToString:@"0004"]) {
-//            [self.labValue setText:@"北京西城区西直门"];
-//        }else{
-//            [self.labValue setText:@"点击查看历史体检报告"];
-//        }
+        [self.labValue setText:description];
         [self.labValue setFont:[UIFont systemFontOfSize:20]];
     }
     
