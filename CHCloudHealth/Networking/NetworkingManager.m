@@ -89,6 +89,10 @@ NSString *const kAPI_GetSafeArea = HOTYQ_JAVA_API @"device/getSafeAreaSetting";
 //设置电子围栏
 NSString *const kAPI_SetSafeArea = HOTYQ_JAVA_API @"device/setSafeAreaSetting";
 
+//发送实时位置检测指令
+NSString *const kAPI_SendCurrentLocation = HOTYQ_JAVA_API @"device/sendCurrentLocationCmd";
+//获取实时位置检测
+NSString *const kAPI_GetCurrentLocation = HOTYQ_JAVA_API @"deviceUser/getCurrentLocation";
 
 
 //设置亲情号码
@@ -367,7 +371,15 @@ NSString *const kAPI_SIZE = @"pageSize";
     [self POST:kAPI_SetMedicineTipSetting params:parameters memoryCache:NO diskCache:NO completed:completed];
 }
 
+- (void)sendCurrentLocation:(NSString *)deviceId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceId":deviceId};
+    [self POST:kAPI_SendCurrentLocation params:params memoryCache:NO diskCache:NO completed:completed];
+}
 
+- (void)getCurrentLocation:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceUserId":deviceUserId};
+    [self POST:kAPI_GetCurrentLocation params:params memoryCache:NO diskCache:NO completed:completed];
+}
 
 
 

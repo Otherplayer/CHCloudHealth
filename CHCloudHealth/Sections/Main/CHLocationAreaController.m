@@ -188,9 +188,38 @@
 
 
 - (void)startLocationAction:(id)sender {
-    BMKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:self.viewRegion];
-//    [self.mapView setRegion:adjustedRegion animated:YES];
-    [self.mapView setCenterCoordinate:adjustedRegion.center animated:YES];
+    
+    [[NetworkingManager sharedManager] sendCurrentLocation:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        if (success) {
+            [HYQShowTip showTipTextOnly:@"发送实时位置检测成功" dealy:2];
+            
+            
+            [[NetworkingManager sharedManager] getCurrentLocation:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+                if (success) {
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        NSDictionary *info = responseData[@"data"];
+                        
+                        double latitude = [info[@"latitude"] floatValue];
+                        double longitude = [info[@"longitude"] floatValue];
+                        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+                        
+                        [self.mapView setCenterCoordinate:coordinate animated:YES];
+                       
+                        [self addPointAnnotationWithCoor:coordinate];
+                        
+                    });
+                    
+                }
+            }];
+            
+        }
+    }];
+    
+    
+//    BMKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:self.viewRegion];
+////    [self.mapView setRegion:adjustedRegion animated:YES];
+//    [self.mapView setCenterCoordinate:adjustedRegion.center animated:YES];
 }
 - (void)startRoadAction:(id)sender{
     [self showDateAction:nil];
