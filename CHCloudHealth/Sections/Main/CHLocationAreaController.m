@@ -87,6 +87,11 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [HYQShowTip hideImmediately];
+}
+
 - (void)refreshLine{
     //添加折线(分段颜色绘制)覆盖物
 //    [self.mapView removeOverlays:_mapView.overlays];
@@ -189,6 +194,7 @@
 
 - (void)startLocationAction:(id)sender {
     
+    [HYQShowTip showProgressWithText:@"" dealy:15];
     [[NetworkingManager sharedManager] sendCurrentLocation:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
             [HYQShowTip showTipTextOnly:@"发送实时位置检测成功" dealy:2];
