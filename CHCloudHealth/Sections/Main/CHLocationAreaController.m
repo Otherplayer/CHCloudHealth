@@ -87,11 +87,6 @@
     }
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [HYQShowTip hideImmediately];
-}
-
 - (void)refreshLine{
     //添加折线(分段颜色绘制)覆盖物
 //    [self.mapView removeOverlays:_mapView.overlays];
@@ -248,6 +243,7 @@
     _locService.delegate = nil;
     _geocodesearch.delegate = nil;
     _mapView.delegate = nil; // 不用时，置nil
+    [HYQShowTip hideImmediately];
 }
 
 #pragma mark -
