@@ -13,6 +13,7 @@
 @interface CHStatisticsController ()
 
 @property (nonatomic, strong)NSMutableArray *dataArr;
+@property (nonatomic, strong)NSMutableArray *dataArrSecond;
 @property (nonatomic, strong)NSMutableArray *originalDataArr;
 @property (strong, nonatomic)NSString *selectedDate;
 
@@ -35,6 +36,7 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     self.dataArr = [[NSMutableArray alloc] init];
+    self.dataArrSecond = [[NSMutableArray alloc] init];
     self.originalDataArr = [[NSMutableArray alloc] init];
     
     
@@ -147,12 +149,38 @@
 - (void)refreshGraph{
     
     [self.dataArr removeAllObjects];
-    for (int i = 0; i < self.originalDataArr.count; i++) {
-        NSDictionary *info = self.originalDataArr[i];
-        NSNumber *x = @(i);
-        NSNumber *y = @([info[@"val"] integerValue] + 60);
-        [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
+    
+    
+    if (self.type == 2) {
+        for (int i = 0; i < self.originalDataArr.count; i++) {
+            NSDictionary *info = self.originalDataArr[i];
+            NSNumber *x = @(i);
+            NSNumber *y = @([info[@"val"] integerValue] + 60);
+            [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
+        }
+        
+    }else if (self.type == 3){
+        for (int i = 0; i < self.originalDataArr.count; i++) {
+            NSDictionary *info = self.originalDataArr[i];
+            NSNumber *x = @(i);
+            NSNumber *y = @([info[@"diastolicPressures"] integerValue]);
+            
+            NSNumber *xs = @(i);
+            NSNumber *ys = @([info[@"systolicePressures"] integerValue]);
+            
+            [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
+            [self.dataArrSecond addObject:@{ X_AXIS: xs, Y_AXIS: ys }];
+        }
+    }else if (self.type == 4){
+        for (int i = 0; i < self.originalDataArr.count; i++) {
+            NSDictionary *info = self.originalDataArr[i];
+            NSNumber *x = @(i);
+            NSNumber *y = @([info[@"val"] integerValue]);
+            [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
+        }
     }
+    
+    
     
 //    for ( NSUInteger i = 0; i < 60; i++ ) {
 //        NSNumber *x = @(i);
@@ -162,6 +190,7 @@
 //    }
     
     [self.graphView.plotDatasDictionary setObject:self.dataArr forKey:kDataLine];
+    [self.graphView.plotDatasDictionary setObject:self.dataArrSecond forKey:kDataLineSecond];
 //    [self.graphView setLowerwarningValue:86];
 //    [self.graphView setUpwarningValue:110];
     [self.graphView refresh];

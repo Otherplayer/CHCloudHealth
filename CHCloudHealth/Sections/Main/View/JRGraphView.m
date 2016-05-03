@@ -21,6 +21,7 @@ static int startY = 55;
 {
     CPTPlotSpaceAnnotation *symbolTextAnnotation;
     CPTScatterPlot *dataLinePlot;
+    CPTScatterPlot *dataLinePlotSecond;
 }
 @property (nonatomic, strong)CPTGraphHostingView *hostView;
 
@@ -109,6 +110,19 @@ static int startY = 55;
     dataLinePlot.plotSymbol = plotSymbol;
     dataLinePlot.plotSymbolMarginForHitDetection = 10.0f;
     [graph addPlot:dataLinePlot];
+    
+    // Data lines second
+    dataLinePlotSecond = [[CPTScatterPlot alloc] init];
+    dataLinePlotSecond.identifier = kDataLineSecond;
+    dataLinePlotSecond.dataSource = self; //设定图表数据源
+    dataLinePlotSecond.delegate   = self;
+    lineStyle.lineColor = [CPTColor colorWithCGColor:[UIColor greenColor].CGColor];
+    dataLinePlotSecond.dataLineStyle = lineStyle;
+    dataLinePlotSecond.cachePrecision = CPTPlotCachePrecisionDouble;
+    dataLinePlotSecond.interpolation = CPTScatterPlotInterpolationCurved;
+    dataLinePlotSecond.plotSymbol = plotSymbol;
+    dataLinePlotSecond.plotSymbolMarginForHitDetection = 10.0f;
+    [graph addPlot:dataLinePlotSecond];
     
     
     
@@ -298,9 +312,17 @@ static int startY = 55;
 - (void)refresh {
     
     NSArray *dataArr = [self.plotDatasDictionary objectForKey:kDataLine];
+    NSArray *dataArrSecond = [self.plotDatasDictionary objectForKey:kDataLineSecond];
     BOOL shouldRefresh = NO;
     
     for (NSDictionary *dic in dataArr) {
+        NSNumber *y = dic[Y_AXIS];
+        if (y.intValue > lengthOfY - 30) {
+            lengthOfY = y.intValue + 30;
+            shouldRefresh = YES;
+        }
+    }
+    for (NSDictionary *dic in dataArrSecond) {
         NSNumber *y = dic[Y_AXIS];
         if (y.intValue > lengthOfY - 30) {
             lengthOfY = y.intValue + 30;

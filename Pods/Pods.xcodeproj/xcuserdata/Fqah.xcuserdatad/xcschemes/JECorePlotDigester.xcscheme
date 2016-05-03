@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BE1A67229A40D782D254FE62'
+               BlueprintIdentifier = '31339DCC31A5A2FF22C69DA6'
                BlueprintName = 'JECorePlotDigester'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libJECorePlotDigester.a'>
