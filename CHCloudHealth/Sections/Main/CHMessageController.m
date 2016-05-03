@@ -73,10 +73,11 @@
     NSString *title = [NSString stringWithFormat:@"%@",info[@"title"]];
     NSString *detail = [NSString stringWithFormat:@"%@",info[@"content"]];
     NSString *time = [NSString stringWithFormat:@"%@",info[@"createDate"]];
+    NSInteger type = [info[@"msgType"] integerValue];
     //readStatus
     static NSString *identifierMessageCell = @"IdentifierMessageCell";
     CMMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMessageCell forIndexPath:indexPath];
-    [cell configureTitle:title detail:detail time:time];
+    [cell configureTitle:title detail:detail time:time type:type];
     return cell;
 }
 

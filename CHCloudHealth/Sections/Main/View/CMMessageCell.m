@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labDetail;
 @property (weak, nonatomic) IBOutlet UILabel *labTime;
 @property (weak, nonatomic) IBOutlet UILabel *labState;
+@property (weak, nonatomic) IBOutlet UIImageView *ivImage;
 
 
 
@@ -22,13 +23,25 @@
 
 @implementation CMMessageCell
 
-- (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time{
+- (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time type:(NSInteger)type{
     [self.labTitle setText:title];
     [self.labDetail setText:detail];
     
     NSString *date = [NSDate dateFromStr:time];
     
     [self.labTime setText:date];
+    
+    
+    if (type == 1) {
+        [self.ivImage setImage:[UIImage imageNamed:@"ios_icon_14"]];
+    }else if (type == 2){
+        [self.ivImage setImage:[UIImage imageNamed:@"ios_icon_19"]];
+    }else if (type == 3){
+        [self.ivImage setImage:[UIImage imageNamed:@"ios_icon_22"]];
+    }
+    
+    
+    
 }
 
 - (void)configureTitle:(NSString *)title detail:(NSString *)detail name:(NSString *)name{

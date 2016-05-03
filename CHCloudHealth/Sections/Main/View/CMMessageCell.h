@@ -11,7 +11,7 @@
 @interface CMMessageCell : UITableViewCell
 
 
-- (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time;
+- (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time type:(NSInteger)type;
 - (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time state:(NSInteger)state;
 - (void)configureTitle:(NSString *)title detail:(NSString *)detail name:(NSString *)name;
 
