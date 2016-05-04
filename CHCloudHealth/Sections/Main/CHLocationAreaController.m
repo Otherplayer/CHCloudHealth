@@ -189,7 +189,7 @@
 
 - (void)startLocationAction:(id)sender {
     
-    [HYQShowTip showProgressWithText:@"" dealy:15];
+    [HYQShowTip showProgressWithText:@"位置更新中，请稍后..." dealy:15];
     [[NetworkingManager sharedManager] sendCurrentLocation:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
             [HYQShowTip showTipTextOnly:@"发送实时位置检测成功" dealy:2];
