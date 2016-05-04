@@ -41,6 +41,8 @@
 		63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7E71CB0C47E009BF266 /* bg_login.png */; };
 		63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D9F7EB1CB0C52A009BF266 /* Login.storyboard */; };
 		63FBD81E1CC675DF00457887 /* HYQDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBD81D1CC675DF00457887 /* HYQDatePickerView.m */; };
+		8415A6F51CD9F46000DAEDEB /* woman.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415A6F41CD9F46000DAEDEB /* woman.png */; };
+		8415A6F71CD9F49800DAEDEB /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415A6F61CD9F49800DAEDEB /* man.png */; };
 		8464DE121CAA48C7000B987E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8464DE111CAA48C7000B987E /* main.m */; };
 		8464DE151CAA48C7000B987E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8464DE141CAA48C7000B987E /* AppDelegate.m */; };
 		8464DE181CAA48C7000B987E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8464DE171CAA48C7000B987E /* ViewController.m */; };
@@ -192,6 +194,8 @@
 		63D9F7EC1CB0C52A009BF266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		63FBD81C1CC675DF00457887 /* HYQDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYQDatePickerView.h; sourceTree = "<group>"; };
 		63FBD81D1CC675DF00457887 /* HYQDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYQDatePickerView.m; sourceTree = "<group>"; };
+		8415A6F41CD9F46000DAEDEB /* woman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woman.png; sourceTree = "<group>"; };
+		8415A6F61CD9F49800DAEDEB /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
 		8464DE0D1CAA48C7000B987E /* CHCloudHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHCloudHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8464DE111CAA48C7000B987E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8464DE131CAA48C7000B987E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -455,6 +459,8 @@
 		63D9F7E61CB0C472009BF266 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8415A6F41CD9F46000DAEDEB /* woman.png */,
+				8415A6F61CD9F49800DAEDEB /* man.png */,
 				63D9F7E71CB0C47E009BF266 /* bg_login.png */,
 			);
 			path = Resources;
@@ -938,7 +944,9 @@
 				8464DE201CAA48C7000B987E /* LaunchScreen.storyboard in Resources */,
 				8464DE1D1CAA48C7000B987E /* Assets.xcassets in Resources */,
 				63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */,
+				8415A6F51CD9F46000DAEDEB /* woman.png in Resources */,
 				8464DE1B1CAA48C7000B987E /* Main.storyboard in Resources */,
+				8415A6F71CD9F49800DAEDEB /* man.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1202,7 +1210,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zujian zhang (D36M6KT9L4)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1307,7 +1315,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zujian zhang (D36M6KT9L4)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BeiJing E-Hualu Info Technology Co., Ltd.";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

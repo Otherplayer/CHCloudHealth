@@ -56,7 +56,7 @@
     [self.labReleationNum setText:familyNumCount];
     [self.labStep setText:totalMoveStepCount];
     
-    [self.ivAvatar setImage:[UIImage imageNamed:@"ios_no_login"]];
+    [self.ivAvatar setImage:[UIImage imageNamed:@"man"]];
 }
 
 

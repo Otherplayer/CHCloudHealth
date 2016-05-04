@@ -175,7 +175,7 @@
         for (int i = 0; i < self.originalDataArr.count; i++) {
             NSDictionary *info = self.originalDataArr[i];
             NSNumber *x = @(i);
-            NSNumber *y = @([info[@"val"] integerValue]);
+            NSNumber *y = @([info[@"bloodGlucoseValue"] integerValue]);
             [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
         }
     }
