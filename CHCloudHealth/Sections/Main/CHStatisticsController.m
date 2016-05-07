@@ -58,7 +58,7 @@
 
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    
+    [HYQShowTip hideImmediately];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -164,7 +164,9 @@
             NSDictionary *info = self.originalDataArr[i];
 //            NSNumber *x = @(i);
             
-            NSNumber *newX = @([info[@"createDate"] doubleValue]);
+            NSDate *date = [[NSDate date] dateFromUnixTimestamp:([info[@"createDate"] doubleValue] / 1000)];
+            
+            NSNumber *newX = [self parseDateToXAxisOffset:date];
             
             NSNumber *y = @([info[@"diastolicPressures"] integerValue]);
             
@@ -177,9 +179,13 @@
     }else if (self.type == 4){
         for (int i = 0; i < self.originalDataArr.count; i++) {
             NSDictionary *info = self.originalDataArr[i];
-            NSNumber *x = @(i);
+//            NSNumber *newX = @([info[@"createDate"] doubleValue]/1000);
+            NSDate *date = [[NSDate date] dateFromUnixTimestamp:([info[@"createDate"] doubleValue] / 1000)];
+            
+            NSNumber *newX = [self parseDateToXAxisOffset:date];
+//            NSNumber *x = @(i);
             NSNumber *y = @([info[@"bloodGlucoseValue"] integerValue]);
-            [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
+            [self.dataArr addObject:@{ X_AXIS: newX, Y_AXIS: y }];
         }
     }
     

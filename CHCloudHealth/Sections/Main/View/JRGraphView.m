@@ -9,14 +9,14 @@
 #import "JRGraphView.h"
 
 static int lengthOfY = 80;
-static int lengthOfX = 10;
+static int lengthOfX = 1.5*60*3 * 60 / 2;
 static int positionOfLeft = 3;
 
 //static int standardLengthOfY = 80;
 
 
 #define kNormalXAxisLength (1.5*60*3 * 60 / 2)
-#define kDateFormatter @"MM/dd/yy HH:mm:ss"
+#define kDateFormatter @"yyyy/MM/dd HH:mm:ss"
 
 
 //#define kDateFormatter @"HH:mm\n  MM/dd/yyyy"
@@ -55,7 +55,7 @@ static int startY = 55;
 }
 - (void)awakeFromNib{
     
-    lengthOfX = 10;
+    lengthOfX = kNormalXAxisLength;
     lengthOfY = 80;
     positionOfLeft = 3;
     startY = 55;
@@ -207,7 +207,7 @@ static int startY = 55;
     // Label x axis with a fixed interval policy
     CPTXYAxisSet *axisSet         = (CPTXYAxisSet *)graph.axisSet;
     CPTXYAxis *x                  = axisSet.xAxis;
-    x.majorIntervalLength         = CPTDecimalFromInt(1);
+    x.majorIntervalLength         = CPTDecimalFromInt(60 * 30);   // x轴主刻度：显示数字标签的量度间隔：(30分钟)60秒*30
     x.minorTicksPerInterval       = 0;
     x.orthogonalCoordinateDecimal = CPTDecimalFromFloat(0);
     x.axisConstraints             = [CPTConstraints constraintWithRelativeOffset:0.0];
@@ -369,8 +369,8 @@ static int startY = 55;
     }
     
     // refresh warning line
-    [self setUpwarningValue:_upwarningValue];
-    [self setLowerwarningValue:_lowerwarningValue];
+//    [self setUpwarningValue:_upwarningValue];
+//    [self setLowerwarningValue:_lowerwarningValue];
     
     //    [dataLinePlot reloadData];
     [self.hostView.hostedGraph reloadData];
@@ -382,12 +382,12 @@ static int startY = 55;
 - (void)adjustXAxisToFirstData {//让第一个数据显示在最左边
     NSNumber *x = nil;
     NSArray *meaureBloodGlucoseArray = [self.plotDatasDictionary objectForKey:kDataLine];
-    NSDate *beginDate = [NSDate date];
+//    NSDate *beginDate = [NSDate date];
     if (meaureBloodGlucoseArray.count > 0) {
         x          = [[meaureBloodGlucoseArray objectAtIndex:0] valueForKey:X_AXIS];
-        beginDate = [[meaureBloodGlucoseArray firstObject] valueForKey:@"measureDate"];
+//        beginDate = [[meaureBloodGlucoseArray firstObject] valueForKey:@"measureDate"];
     }else{
-        x = [self parseDateToXAxisOffset:[NSDate date]];
+        x = [self parseDateToXAxisOffset:[NSDate date]];//484330665
     }
     self.plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat([x doubleValue]) length:CPTDecimalFromFloat(kNormalXAxisLength)];//(3小时)60秒*3*60（60个点）
     
@@ -397,34 +397,34 @@ static int startY = 55;
     return @(timeIntervalSinceRef);
 }
 
-
-
--(void)setUpwarningValue:(CGFloat)upwarningValue{
-    _upwarningValue = upwarningValue;
-    
-    NSNumber *startXAxisOffset = @(-2.f);
-    NSNumber *endXAxisXoffset = @(lengthOfX * 3);
-    
-    NSArray *dataArr = [self.plotDatasDictionary objectForKey:kDataLine];
-    if (dataArr.count > lengthOfX) {
-        endXAxisXoffset = @(dataArr.count + lengthOfX * 2);
-    }
-    
-    [self.plotDatasDictionary setObject:@[@{ X_AXIS:startXAxisOffset, Y_AXIS:@(upwarningValue) },@{X_AXIS:endXAxisXoffset, Y_AXIS:@(upwarningValue)}] forKeyedSubscript:kWarningUpLine];
-}
--(void)setLowerwarningValue:(CGFloat)lowerwarningValue{
-    _lowerwarningValue = lowerwarningValue;
-    
-    NSNumber *startXAxisOffset = @(-2.f);
-    NSNumber *endXAxisXoffset = @(lengthOfX * 3);
-    
-    NSArray *dataArr = [self.plotDatasDictionary objectForKey:kDataLine];
-    if (dataArr.count > lengthOfX) {
-        endXAxisXoffset = @(dataArr.count + lengthOfX * 2);
-    }
-    
-    [self.plotDatasDictionary setObject:@[@{ X_AXIS:startXAxisOffset, Y_AXIS:@(lowerwarningValue) },@{X_AXIS:endXAxisXoffset, Y_AXIS:@(lowerwarningValue)}] forKeyedSubscript:kWarningLowerLine];
-}
+//
+//
+//-(void)setUpwarningValue:(CGFloat)upwarningValue{
+//    _upwarningValue = upwarningValue;
+//    
+//    NSNumber *startXAxisOffset = @(-2.f);
+//    NSNumber *endXAxisXoffset = @(lengthOfX * 3);
+//    
+//    NSArray *dataArr = [self.plotDatasDictionary objectForKey:kDataLine];
+//    if (dataArr.count > lengthOfX) {
+//        endXAxisXoffset = @(dataArr.count + lengthOfX * 2);
+//    }
+//    
+//    [self.plotDatasDictionary setObject:@[@{ X_AXIS:startXAxisOffset, Y_AXIS:@(upwarningValue) },@{X_AXIS:endXAxisXoffset, Y_AXIS:@(upwarningValue)}] forKeyedSubscript:kWarningUpLine];
+//}
+//-(void)setLowerwarningValue:(CGFloat)lowerwarningValue{
+//    _lowerwarningValue = lowerwarningValue;
+//    
+//    NSNumber *startXAxisOffset = @(-2.f);
+//    NSNumber *endXAxisXoffset = @(lengthOfX * 3);
+//    
+//    NSArray *dataArr = [self.plotDatasDictionary objectForKey:kDataLine];
+//    if (dataArr.count > lengthOfX) {
+//        endXAxisXoffset = @(dataArr.count + lengthOfX * 2);
+//    }
+//    
+//    [self.plotDatasDictionary setObject:@[@{ X_AXIS:startXAxisOffset, Y_AXIS:@(lowerwarningValue) },@{X_AXIS:endXAxisXoffset, Y_AXIS:@(lowerwarningValue)}] forKeyedSubscript:kWarningLowerLine];
+//}
 
 
 #////////////////////////////////////////////////////////////////////////////////

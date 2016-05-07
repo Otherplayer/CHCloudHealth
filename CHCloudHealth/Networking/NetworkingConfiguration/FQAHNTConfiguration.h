@@ -24,7 +24,7 @@
 
 
 #ifdef IS_OFF_LINE
-#define HOTYQ_JAVA_API @"http://221.1.104.218:8081/healthcloud-mobile/"
+#define HOTYQ_JAVA_API @"http://192.168.31.247:8080/healthcloud-mobile/"
 #else
 #define HOTYQ_JAVA_API @"http://chyjk.chyy.com.cn:8081/healthcloud-mobile/"          //线上接口
 #endif
