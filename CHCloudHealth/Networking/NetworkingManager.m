@@ -23,6 +23,7 @@ NSString *const kAPI_Logout = HOTYQ_JAVA_API @"logout";
 NSString *const kAPI_ForgetPsd = HOTYQ_JAVA_API @"user/forgetPasswd";
 NSString *const kAPI_UpdatePsd = HOTYQ_JAVA_API @"user/updatePasswd";
 NSString *const kAPI_GetUserInfo = HOTYQ_JAVA_API @"user/getUserInfo";
+NSString *const kAPI_GetBindUserInfo = HOTYQ_JAVA_API @"deviceUser/getBindUserInfo";
 NSString *const kAPI_UpdateUserInfo = HOTYQ_JAVA_API @"user/updateUserInfo";
 
 //获取统计信息
@@ -159,6 +160,11 @@ NSString *const kAPI_SIZE = @"pageSize";
 - (void)getUserInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed{
     NSDictionary *params = @{@"userId":userId};
     [self POST:kAPI_GetUserInfo params:params memoryCache:NO diskCache:NO completed:completed];
+}
+
+- (void)getBindUserInfo:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed{
+    NSDictionary *params = @{@"deviceUserId":deviceUserId};
+    [self POST:kAPI_GetBindUserInfo params:params memoryCache:NO diskCache:NO completed:completed];
 }
 - (void)updateUserInfo:(NSString *)userId name:(NSString *)name completedHandler:(GGRequestCallbackBlock)completed{
     NSDictionary *params = @{@"userId":userId,@"nickname":name,@"remark":@""};

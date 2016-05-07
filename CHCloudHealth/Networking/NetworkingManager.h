@@ -29,11 +29,15 @@
 
 - (void)updatePsd:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
 
-- (void)getUserInfo:(NSString *)userId completedHandler:(GGRequestCallbackBlock)completed;
+- (void)getUserInfo:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed;
 
 - (void)updateUserInfo:(NSString *)userId name:(NSString *)name completedHandler:(GGRequestCallbackBlock)completed;
 
 - (void)getDeviceInfo:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed;
+
+- (void)getBindUserInfo:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed;
+
+//- (void)updateUserInfo:(NSString *)userId name:(NSString *)name completedHandler:(GGRequestCallbackBlock)completed;
 
 - (void)getHealthTypeInfo:(NSString *)deviceUserId completedHandler:(GGRequestCallbackBlock)completed;
 

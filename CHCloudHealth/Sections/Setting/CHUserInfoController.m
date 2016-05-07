@@ -27,18 +27,20 @@
     [super viewDidLoad];
     [self addBackButton];
     
-    self.datas = @[
-  @[
-//  @{@"title":@"头像",@"detail":[CHUser sharedInstance].avatarurl ? [CHUser sharedInstance].avatarurl : @""}
-  ],
-                   
-  @[@{@"title":@"昵称",@"detail":[CHUser sharedInstance].name ? [CHUser sharedInstance].name : @""},
-//                     @{@"title":@"性别",@"detail":@""},
-//                     @{@"title":@"手机号",@"detail":[CHUser sharedInstance].phoneNumber ? [CHUser sharedInstance].phoneNumber : @""}
-    ]];
+//    self.datas = @[
+//  @[
+////  @{@"title":@"头像",@"detail":[CHUser sharedInstance].avatarurl ? [CHUser sharedInstance].avatarurl : @""}
+//  ],
+//                   
+//  @[@{@"title":@"昵称",@"detail":[CHUser sharedInstance].name ? [CHUser sharedInstance].name : @""},
+////                     @{@"title":@"性别",@"detail":@""},
+////                     @{@"title":@"手机号",@"detail":[CHUser sharedInstance].phoneNumber ? [CHUser sharedInstance].phoneNumber : @""}
+//    ]
+//  ];
     
-    [self addRightButton2NavWithTitle:@"确定"];
+//    [self addRightButton2NavWithTitle:@"确定"];
     [self.tableView blankTableFooterView];
+    [self getDatas];
     
 }
 #pragma mark - Action
@@ -55,67 +57,89 @@
     }
 }
 
+- (void)getDatas{
+    [[NetworkingManager sharedManager] getBindUserInfo:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                NSDictionary *info = responseData[@"data"];
+                
+                NSString *detail = [NSString stringWithFormat:@"姓名：%@\n设备电话：%@\n出生日期：%@\n地址：%@\n慢性病史：%@",info[@"name"],info[@"simNum"],info[@"birthday"],info[@"address"],info[@"medicalRecord"]];
+                
+                self.datas = @[@"title",detail];
+                [self.tableView reloadData];
+                
+                [HYQShowTip showTipTextOnly:@"修改成功" dealy:2];
+            }else{
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+        });
+    }];
+}
+
 
 #pragma mark - Delegate
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return [self.datas count];
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+//    return [self.datas count];
+//}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.datas[section] count];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        return 100;
-    }
-    return 64;
+    return 1000;
+//    if (indexPath.section == 0) {
+//    }
+//    return 64;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSDictionary *info = self.datas[indexPath.section][indexPath.row];
-    NSString *title = info[@"title"];
+    NSDictionary *info = self.datas[indexPath.row];
+//    NSString *title = info[@"title"];
     NSString *detail = info[@"detail"];
-    if (indexPath.section == 0) {
-        static NSString *identifierUserinfoHeader = @"IdentifierUserinfoHeader";
-        CHUnitAvatarCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoHeader forIndexPath:indexPath];
-        [cell setTitle:title avatar:detail];
-        return cell;
-    }
+//    if (indexPath.section == 0) {
+//        static NSString *identifierUserinfoHeader = @"IdentifierUserinfoHeader";
+//        CHUnitAvatarCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoHeader forIndexPath:indexPath];
+//        [cell setTitle:title avatar:detail];
+//        return cell;
+//    }
     
     static NSString *identifierUserinfoBody = @"IdentifierUserinfoBody";
-    CHUnitCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoBody forIndexPath:indexPath];
-    [cell setTitle:title detail:[CHUser sharedInstance].name];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoBody forIndexPath:indexPath];
+//    [cell setTitle:title detail:[CHUser sharedInstance].name];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    [cell.textLabel setText:detail];
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        [[HYQHelperCamera sharedInstance] showCustomCameraPickerWithResultBlock:^(UIImage *image) {
-            
-        }];
-    }else{
-        if (indexPath.row == 0) {
-            WS(weakSelf);
-            CHChangeNameController *controller = (CHChangeNameController *)[[UIStoryboard mainStoryboard] changeNameController];
-            controller.type = 0;
-            [controller setDidEditSuccessBlock:^(NSString *result) {
-                weakSelf.name = result;
-                [CHUser sharedInstance].name = result;
-                [weakSelf.tableView reloadData];
-            }];
-            [self.navigationController pushViewController:controller animated:YES];
-        }else if (indexPath.row == 1){
-            HYQActionSheet *actionSheet = [[HYQActionSheet alloc] initWithTitle:@"请选择性别" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"男",@"女", nil];
-            [actionSheet handlerClickedButton:^(NSInteger btnIndex) {
-            }];
-            [actionSheet showInView:self.view];
-        }else if (indexPath.row == 2){
-            CHChangeNameController *controller = (CHChangeNameController *)[[UIStoryboard mainStoryboard] changeNameController];
-            controller.type = 1;
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-    }
+//    if (indexPath.section == 0) {
+//        [[HYQHelperCamera sharedInstance] showCustomCameraPickerWithResultBlock:^(UIImage *image) {
+//            
+//        }];
+//    }else{
+//        if (indexPath.row == 0) {
+//            WS(weakSelf);
+//            CHChangeNameController *controller = (CHChangeNameController *)[[UIStoryboard mainStoryboard] changeNameController];
+//            controller.type = 0;
+//            [controller setDidEditSuccessBlock:^(NSString *result) {
+//                weakSelf.name = result;
+//                [CHUser sharedInstance].name = result;
+//                [weakSelf.tableView reloadData];
+//            }];
+//            [self.navigationController pushViewController:controller animated:YES];
+//        }else if (indexPath.row == 1){
+//            HYQActionSheet *actionSheet = [[HYQActionSheet alloc] initWithTitle:@"请选择性别" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"男",@"女", nil];
+//            [actionSheet handlerClickedButton:^(NSInteger btnIndex) {
+//            }];
+//            [actionSheet showInView:self.view];
+//        }else if (indexPath.row == 2){
+//            CHChangeNameController *controller = (CHChangeNameController *)[[UIStoryboard mainStoryboard] changeNameController];
+//            controller.type = 1;
+//            [self.navigationController pushViewController:controller animated:YES];
+//        }
+//    }
 }
 
 
