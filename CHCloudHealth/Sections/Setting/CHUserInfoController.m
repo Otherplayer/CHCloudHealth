@@ -64,7 +64,7 @@
             if (success) {
                 NSDictionary *info = responseData[@"data"];
                 
-                NSString *detail = [NSString stringWithFormat:@"姓名：%@\n设备电话：%@\n出生日期：%@\n地址：%@\n慢性病史：%@",info[@"name"],info[@"simNum"],info[@"birthday"],info[@"address"],info[@"medicalRecord"]];
+                NSString *detail = [NSString stringWithFormat:@"\n姓名：%@\n设备电话：%@\n出生日期：%@\n地址：%@\n慢性病史：%@\n",info[@"name"],info[@"simNum"],info[@"birthday"],info[@"address"],info[@"medicalRecord"]];
                 
                 self.datas = @[@{@"title":detail}];
                 [self.tableView reloadData];
