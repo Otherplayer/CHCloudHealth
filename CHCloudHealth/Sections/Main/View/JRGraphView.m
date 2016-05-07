@@ -14,7 +14,11 @@ static int positionOfLeft = 3;
 
 //static int standardLengthOfY = 80;
 
+
+#define kNormalXAxisLength (1.5*60*3 * 60 / 2)
 #define kDateFormatter @"MM/dd/yy HH:mm:ss"
+
+
 //#define kDateFormatter @"HH:mm\n  MM/dd/yyyy"
 static int startY = 55;
 
@@ -25,6 +29,7 @@ static int startY = 55;
     CPTScatterPlot *dataLinePlotSecond;
 }
 @property (nonatomic, strong)CPTGraphHostingView *hostView;
+@property (nonatomic, strong) CPTXYPlotSpace *plotSpace;
 
 @end
 
@@ -78,16 +83,16 @@ static int startY = 55;
     // Plot area delegate
     graph.plotAreaFrame.plotArea.delegate = self;
     // plotSpace 控制图片的移动及缩放
-    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
-    plotSpace.allowsUserInteraction = YES;
-    plotSpace.delegate = self;
+    self.plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
+    self.plotSpace.allowsUserInteraction = YES;
+    self.plotSpace.delegate = self;
     
     
-    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+    self.plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
                                                     length:CPTDecimalFromFloat(lengthOfX)];
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(startY)
+    self.plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(startY)
                                                     length:CPTDecimalFromFloat(lengthOfY)];
-    plotSpace.globalYRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(startY)
+    self.plotSpace.globalYRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(startY)
                                                           length:CPTDecimalFromFloat(lengthOfY)];// 固定y轴坐标
     
     // 设置图表 线 的样式
@@ -370,8 +375,28 @@ static int startY = 55;
     //    [dataLinePlot reloadData];
     [self.hostView.hostedGraph reloadData];
     
+    [self adjustXAxisToFirstData];
+    
     
 }
+- (void)adjustXAxisToFirstData {//让第一个数据显示在最左边
+    NSNumber *x = nil;
+    NSArray *meaureBloodGlucoseArray = [self.plotDatasDictionary objectForKey:kDataLine];
+    NSDate *beginDate = [NSDate date];
+    if (meaureBloodGlucoseArray.count > 0) {
+        x          = [[meaureBloodGlucoseArray objectAtIndex:0] valueForKey:X_AXIS];
+        beginDate = [[meaureBloodGlucoseArray firstObject] valueForKey:@"measureDate"];
+    }else{
+        x = [self parseDateToXAxisOffset:[NSDate date]];
+    }
+    self.plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat([x doubleValue]) length:CPTDecimalFromFloat(kNormalXAxisLength)];//(3小时)60秒*3*60（60个点）
+    
+}
+- (NSNumber *)parseDateToXAxisOffset:(NSDate *)date {
+    NSTimeInterval timeIntervalSinceRef = [date timeIntervalSinceReferenceDate];
+    return @(timeIntervalSinceRef);
+}
+
 
 
 -(void)setUpwarningValue:(CGFloat)upwarningValue{
