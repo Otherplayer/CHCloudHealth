@@ -464,97 +464,24 @@
                                             <outlet property="labTitle" destination="r7p-dZ-Yyn" id="cai-cF-r0j"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IdentifierUserinfoBody" rowHeight="64" id="8r1-xz-Xah">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IdentifierUserinfoBody" textLabel="8Lg-6s-a3T" rowHeight="64" style="IBUITableViewCellStyleDefault" id="8r1-xz-Xah">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8r1-xz-Xah" id="uz3-ET-neV">
                                             <rect key="frame" x="0.0" y="0.0" width="207" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性别" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VG0-Fm-ZKY">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="119" id="FQm-KQ-dmY"/>
-                                                        <constraint firstAttribute="height" constant="21" id="SIe-qT-OLy"/>
-                                                    </constraints>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Lg-6s-a3T">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="FQm-KQ-dmY"/>
-                                                            <exclude reference="SIe-qT-OLy"/>
-                                                        </mask>
-                                                    </variation>
                                                     <variation key="widthClass=compact">
-                                                        <mask key="constraints">
-                                                            <include reference="FQm-KQ-dmY"/>
-                                                            <include reference="SIe-qT-OLy"/>
-                                                        </mask>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gq0-rq-15K">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="143" id="ULh-19-Fxw"/>
-                                                        <constraint firstAttribute="height" constant="21" id="smX-OH-pFd"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="ULh-19-Fxw"/>
-                                                            <exclude reference="smX-OH-pFd"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="widthClass=compact">
-                                                        <mask key="constraints">
-                                                            <include reference="ULh-19-Fxw"/>
-                                                            <include reference="smX-OH-pFd"/>
-                                                        </mask>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="leadingMargin" secondItem="VG0-Fm-ZKY" secondAttribute="leading" id="Cpu-Qs-Dik">
-                                                    <variation key="widthClass=compact" constant="-8"/>
-                                                </constraint>
-                                                <constraint firstItem="VG0-Fm-ZKY" firstAttribute="top" secondItem="uz3-ET-neV" secondAttribute="topMargin" constant="13" id="Rfx-aC-QU3"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Gq0-rq-15K" secondAttribute="trailing" constant="-9" id="SPK-Wl-RWK">
-                                                    <variation key="widthClass=compact" constant="-2"/>
-                                                </constraint>
-                                                <constraint firstItem="Gq0-rq-15K" firstAttribute="top" secondItem="uz3-ET-neV" secondAttribute="topMargin" constant="13" id="l9J-8Q-Rfy"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="VG0-Fm-ZKY"/>
-                                                    <exclude reference="Gq0-rq-15K"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="SPK-Wl-RWK"/>
-                                                    <exclude reference="l9J-8Q-Rfy"/>
-                                                    <exclude reference="Cpu-Qs-Dik"/>
-                                                    <exclude reference="Rfx-aC-QU3"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="VG0-Fm-ZKY"/>
-                                                    <include reference="Gq0-rq-15K"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="SPK-Wl-RWK"/>
-                                                    <include reference="l9J-8Q-Rfy"/>
-                                                    <include reference="Cpu-Qs-Dik"/>
-                                                    <include reference="Rfx-aC-QU3"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="labDetail" destination="Gq0-rq-15K" id="w09-FL-3mv"/>
-                                            <outlet property="labTitle" destination="VG0-Fm-ZKY" id="3DN-70-OjC"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

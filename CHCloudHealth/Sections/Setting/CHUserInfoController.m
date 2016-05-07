@@ -58,6 +58,7 @@
 }
 
 - (void)getDatas{
+    [HYQShowTip showProgressWithText:@"" dealy:60];
     [[NetworkingManager sharedManager] getBindUserInfo:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
@@ -68,7 +69,8 @@
                 self.datas = @[@{@"title":detail}];
                 [self.tableView reloadData];
                 
-                [HYQShowTip showTipTextOnly:@"修改成功" dealy:2];
+                [HYQShowTip hideImmediately];
+//                [HYQShowTip showTipTextOnly:@"修改成功" dealy:2];
             }else{
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];
             }
@@ -86,7 +88,15 @@
     return self.datas.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 1000;
+   
+    NSDictionary *info = self.datas[indexPath.row];
+    //    NSString *title = info[@"title"];
+    NSString *detail = info[@"title"];
+    
+    CGFloat height = [detail heightWithFont:[UIFont systemFontOfSize:17] size:CGSizeMake(kMainWidth - 20, 10000)] + 1;
+    
+    
+    return height;
 //    if (indexPath.section == 0) {
 //    }
 //    return 64;
