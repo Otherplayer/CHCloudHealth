@@ -14,7 +14,7 @@
 
 @interface CHUserInfoController ()
 @property (nonatomic, strong) NSArray *datas;
-@property (nonatomic, strong) NSString *name;
+//@property (nonatomic, strong) NSString *name;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
@@ -45,16 +45,16 @@
 }
 #pragma mark - Action
 - (void)rightBarButtonPressed:(id)rightBarButtonPressed{
-    if (self.name && self.name.length > 0) {
-        [[NetworkingManager sharedManager] updateUserInfo:[CHUser sharedInstance].uid name:self.name completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-            if (success) {
-                [HYQShowTip showTipTextOnly:@"修改成功" dealy:2];
-            }else{
-                [HYQShowTip showTipTextOnly:errDesc dealy:2];
-            }
-        }];
-        
-    }
+//    if (self.name && self.name.length > 0) {
+//        [[NetworkingManager sharedManager] updateUserInfo:[CHUser sharedInstance].uid name:self.name completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+//            if (success) {
+//                [HYQShowTip showTipTextOnly:@"修改成功" dealy:2];
+//            }else{
+//                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+//            }
+//        }];
+//        
+//    }
 }
 
 - (void)getDatas{
@@ -65,7 +65,7 @@
                 
                 NSString *detail = [NSString stringWithFormat:@"姓名：%@\n设备电话：%@\n出生日期：%@\n地址：%@\n慢性病史：%@",info[@"name"],info[@"simNum"],info[@"birthday"],info[@"address"],info[@"medicalRecord"]];
                 
-                self.datas = @[@"title",detail];
+                self.datas = @[@{@"title":detail}];
                 [self.tableView reloadData];
                 
                 [HYQShowTip showTipTextOnly:@"修改成功" dealy:2];
@@ -83,7 +83,7 @@
 //    return [self.datas count];
 //}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.datas[section] count];
+    return self.datas.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 1000;
@@ -96,7 +96,7 @@
     
     NSDictionary *info = self.datas[indexPath.row];
 //    NSString *title = info[@"title"];
-    NSString *detail = info[@"detail"];
+    NSString *detail = info[@"title"];
 //    if (indexPath.section == 0) {
 //        static NSString *identifierUserinfoHeader = @"IdentifierUserinfoHeader";
 //        CHUnitAvatarCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoHeader forIndexPath:indexPath];
@@ -108,7 +108,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserinfoBody forIndexPath:indexPath];
 //    [cell setTitle:title detail:[CHUser sharedInstance].name];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    [cell setAccessoryType:UITableViewCellAccessoryNone];
     [cell.textLabel setText:detail];
+    [cell.textLabel setNumberOfLines:0];
+    [cell.textLabel setLineBreakMode:NSLineBreakByWordWrapping];
     
     return cell;
 }

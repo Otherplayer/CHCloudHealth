@@ -48,24 +48,24 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
                 
-                NSArray *datas = responseData[@"data"];
+                NSDictionary *info = responseData[@"data"];
                 
-                
-                for (int i = 0; i < datas.count; i++) {
-                    NSDictionary *info = datas[i];
-                    NSString *mobile = info[@"mobile"];
-                    if (i == 0) {
-                        [self.tfName setText:mobile];
-                    }else if (i == 1){
-                        [self.tfRelation setText:mobile];
-                    }else if (i == 2){
-                        [self.tfMobile setText:mobile];
-                    }else if (i == 3){
-                        [self.tfAddress setText:mobile];
-                    }
-                    
-                }
-                
+                [self.tfName setText:info[@"num1"]];
+                [self.tfRelation setText:info[@"num2"]];
+                [self.tfMobile setText:info[@"num3"]];
+                [self.tfAddress setText:info[@"num4"]];
+//                
+//                for (int i = 0; i < datas.count; i++) {
+//                    NSString *mobile = datas[i];
+////                    NSString *mobile = info[[NSString stringWithFormat:@"num%@",@(i+1)]];
+//                    if (i == 0) {
+//                    }else if (i == 1){
+//                    }else if (i == 2){
+//                    }else if (i == 3){
+//                    }
+//                    
+//                }
+//                
                 
             }else{
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];
