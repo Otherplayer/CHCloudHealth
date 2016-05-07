@@ -162,14 +162,17 @@
     }else if (self.type == 3){
         for (int i = 0; i < self.originalDataArr.count; i++) {
             NSDictionary *info = self.originalDataArr[i];
-            NSNumber *x = @(i);
+//            NSNumber *x = @(i);
+            
+            NSNumber *newX = @([info[@"createDate"] doubleValue]);
+            
             NSNumber *y = @([info[@"diastolicPressures"] integerValue]);
             
-            NSNumber *xs = @(i);
+//            NSNumber *xs = @(i);
             NSNumber *ys = @([info[@"systolicePressures"] integerValue]);
             
-            [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
-            [self.dataArrSecond addObject:@{ X_AXIS: xs, Y_AXIS: ys }];
+            [self.dataArr addObject:@{ X_AXIS: newX, Y_AXIS: y }];
+            [self.dataArrSecond addObject:@{ X_AXIS: newX, Y_AXIS: ys }];
         }
     }else if (self.type == 4){
         for (int i = 0; i < self.originalDataArr.count; i++) {
@@ -199,9 +202,14 @@
 
 
 
-
-
-
+ 
+ 
+ - (NSNumber *)parseDateToXAxisOffset:(NSDate *)date {
+     NSTimeInterval timeIntervalSinceRef = [date timeIntervalSinceReferenceDate];
+     return @(timeIntervalSinceRef);
+ }
+ 
+ 
 
 
 

@@ -3489,7 +3489,9 @@
                             <constraint firstItem="dPb-Ae-ixT" firstAttribute="leading" secondItem="lrh-zx-jae" secondAttribute="leading" id="NP1-4T-Whl"/>
                             <constraint firstAttribute="leadingMargin" secondItem="bNg-Kx-9Bz" secondAttribute="leading" id="Z44-yM-fld"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VXU-op-dqx" secondAttribute="trailing" id="a5S-gl-T5N"/>
-                            <constraint firstItem="VXU-op-dqx" firstAttribute="top" secondItem="dPb-Ae-ixT" secondAttribute="bottom" constant="17" id="ml9-Je-8I9"/>
+                            <constraint firstItem="VXU-op-dqx" firstAttribute="top" secondItem="dPb-Ae-ixT" secondAttribute="bottom" constant="17" id="ml9-Je-8I9">
+                                <variation key="widthClass=compact" constant="86"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="bNg-Kx-9Bz" secondAttribute="trailing" id="svF-bn-dcd"/>
                             <constraint firstItem="7yo-Wh-BaI" firstAttribute="top" secondItem="dPb-Ae-ixT" secondAttribute="bottom" constant="70" id="wMW-7r-duo">
                                 <variation key="widthClass=compact" constant="17"/>
