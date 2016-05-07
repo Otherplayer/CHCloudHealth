@@ -14,7 +14,7 @@ static int positionOfLeft = 3;
 
 //static int standardLengthOfY = 80;
 
-
+#define kDateFormatter @"HH:mm\n  MM/dd/yyyy"
 static int startY = 55;
 
 @interface JRGraphView ()<CPTPlotDataSource,CPTPlotSpaceDelegate,CPTPlotAreaDelegate,CPTScatterPlotDelegate,CPTAxisDelegate>
@@ -205,12 +205,16 @@ static int startY = 55;
     x.minorTicksPerInterval       = 0;
     x.orthogonalCoordinateDecimal = CPTDecimalFromFloat(0);
     x.axisConstraints             = [CPTConstraints constraintWithRelativeOffset:0.0];
-    x.labelFormatter              = formatter;
+    x.labelFormatter              = [self xAxisLabelStyle:kDateFormatter];// X轴显示为时间;
     //x.delegate                    = self;
     x.axisLineStyle = clearColorLineStyle;
     x.minorTickLineStyle = clearColorLineStyle;
     x.majorTickLineStyle = clearColorLineStyle;
-    x.labelTextStyle = textStyle;
+    
+    
+    CPTMutableTextStyle *newtextStyle = [CPTMutableTextStyle textStyle];
+    textStyle.color = [CPTColor colorWithCGColor:[UIColor defaultColor].CGColor];
+    x.labelTextStyle = newtextStyle;
     
     // Label y with an automatic label policy.
     CPTXYAxis *y                  = axisSet.yAxis;
@@ -617,6 +621,22 @@ static int startY = 55;
         textStyle  = newStyle;
     }
     return textStyle;
+}
+
+// x轴时间样式
+- (CPTTimeFormatter *)xAxisLabelStyle:(NSString *)formatter{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:formatter];
+    //[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"America/New_York"]];
+    [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+    CPTTimeFormatter *timeFormatter = [[CPTTimeFormatter alloc] initWithDateFormatter:dateFormatter];
+    return timeFormatter;
+}
+
+//TimeFormatter
+- (NSString *)standardTimeFromNumber:(NSNumber *)number{
+    NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:[number doubleValue]];
+    return [date dateFormatter:kDateFormatter];
 }
 
 

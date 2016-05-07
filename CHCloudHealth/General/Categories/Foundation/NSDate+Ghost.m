@@ -16,7 +16,12 @@
     return [[[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:self] year];
 }
 
-
+- (NSString *)dateFormatter:(NSString *)formatter{
+    if (!self) {
+        return @"";
+    }
+    return SDStringFromDate(formatter, self);
+}
 
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////

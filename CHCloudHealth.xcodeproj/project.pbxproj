@@ -1187,7 +1187,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "e606aa50-d8ec-402f-8dac-9a40b11f41f6";
+				PROVISIONING_PROFILE = "b2cd3c7c-7a7a-43f2-86cb-3c04a79e53bf";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1227,7 +1227,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "e606aa50-d8ec-402f-8dac-9a40b11f41f6";
+				PROVISIONING_PROFILE = "b2cd3c7c-7a7a-43f2-86cb-3c04a79e53bf";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1303,7 +1303,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chy.chyHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e606aa50-d8ec-402f-8dac-9a40b11f41f6";
+				PROVISIONING_PROFILE = "b2cd3c7c-7a7a-43f2-86cb-3c04a79e53bf";
 				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = "-Wno-deprecated-declarations";
 			};
@@ -1379,7 +1379,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chy.chyHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e606aa50-d8ec-402f-8dac-9a40b11f41f6";
+				PROVISIONING_PROFILE = "b2cd3c7c-7a7a-43f2-86cb-3c04a79e53bf";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

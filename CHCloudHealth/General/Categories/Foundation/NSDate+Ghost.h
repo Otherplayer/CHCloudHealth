@@ -49,7 +49,7 @@
  *  @return
  */
 - (NSString *)shortCutStringWithDateFormatter:(NSDateFormatter *)dateFormatter;
-
+- (NSString *)dateFormatter:(NSString *)formatter;
 
 /**
  *  根据strFormatter得到时间字符串
