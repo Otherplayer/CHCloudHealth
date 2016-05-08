@@ -164,18 +164,18 @@ static int startY = 55;
     
     
     // Warning lines
-    CPTScatterPlot *warningUpLinePlot = [[CPTScatterPlot alloc] init];
-    warningUpLinePlot.identifier = kWarningUpLine;
-    lineStyle.lineColor           = [CPTColor colorWithCGColor:[UIColor color_ca4341].CGColor];
-    warningUpLinePlot.dataLineStyle = lineStyle;
-    warningUpLinePlot.dataSource = self;
-    [graph addPlot:warningUpLinePlot];
-    
-    CPTScatterPlot *warningDownLinePlot = [[CPTScatterPlot alloc] init];
-    warningDownLinePlot.identifier = kWarningLowerLine;
-    warningDownLinePlot.dataLineStyle = lineStyle;
-    warningDownLinePlot.dataSource = self;
-    [graph addPlot:warningDownLinePlot];
+//    CPTScatterPlot *warningUpLinePlot = [[CPTScatterPlot alloc] init];
+//    warningUpLinePlot.identifier = kWarningUpLine;
+//    lineStyle.lineColor           = [CPTColor colorWithCGColor:[UIColor color_ca4341].CGColor];
+//    warningUpLinePlot.dataLineStyle = lineStyle;
+//    warningUpLinePlot.dataSource = self;
+//    [graph addPlot:warningUpLinePlot];
+//    
+//    CPTScatterPlot *warningDownLinePlot = [[CPTScatterPlot alloc] init];
+//    warningDownLinePlot.identifier = kWarningLowerLine;
+//    warningDownLinePlot.dataLineStyle = lineStyle;
+//    warningDownLinePlot.dataSource = self;
+//    [graph addPlot:warningDownLinePlot];
     
 
     
@@ -246,7 +246,7 @@ static int startY = 55;
     
     
     y.majorGridLineStyle    = majorGridLineStyle;
-    y.gridLinesRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0) length:CPTDecimalFromFloat(1000)];
+    y.gridLinesRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0) length:CPTDecimalFromFloat(MAXFLOAT)];
     
 
     
@@ -390,6 +390,8 @@ static int startY = 55;
         x = [self parseDateToXAxisOffset:[NSDate date]];//484330665
     }
     self.plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat([x doubleValue]) length:CPTDecimalFromFloat(kNormalXAxisLength)];//(3小时)60秒*3*60（60个点）
+    
+
     
 }
 - (NSNumber *)parseDateToXAxisOffset:(NSDate *)date {
