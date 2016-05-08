@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F31a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ij2-Za-dBx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F31a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ij2-Za-dBx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -472,6 +472,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Lg-6s-a3T">
+                                                    <rect key="frame" x="15" y="0.0" width="190" height="63.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -3659,11 +3660,15 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Vm5-Bq-BzR" firstAttribute="top" secondItem="b5w-yF-uPP" secondAttribute="bottom" id="20n-bd-g7q"/>
+                                                <constraint firstItem="Vm5-Bq-BzR" firstAttribute="top" secondItem="b5w-yF-uPP" secondAttribute="bottom" id="20n-bd-g7q">
+                                                    <variation key="widthClass=compact" constant="-16"/>
+                                                </constraint>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Vm5-Bq-BzR" secondAttribute="trailing" id="ATX-my-m8C">
                                                     <variation key="widthClass=compact" constant="12"/>
                                                 </constraint>
-                                                <constraint firstItem="b5w-yF-uPP" firstAttribute="top" secondItem="pxO-oq-9Ds" secondAttribute="topMargin" constant="-7" id="I2J-Z1-XLg"/>
+                                                <constraint firstItem="b5w-yF-uPP" firstAttribute="top" secondItem="pxO-oq-9Ds" secondAttribute="topMargin" constant="-7" id="I2J-Z1-XLg">
+                                                    <variation key="widthClass=compact" constant="9"/>
+                                                </constraint>
                                                 <constraint firstAttribute="trailingMargin" secondItem="UZZ-lx-aKE" secondAttribute="trailing" id="JJq-2Z-EpQ">
                                                     <variation key="widthClass=compact" constant="12"/>
                                                 </constraint>

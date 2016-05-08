@@ -81,12 +81,12 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *info = self.datas[indexPath.row];
-    NSString *title = [NSString stringWithFormat:@"%@",info[@"title"]];
-    NSString *detail = [NSString stringWithFormat:@"%@",info[@"content"]];
-    NSString *name = [NSString stringWithFormat:@"%@",info[@"name"]];
+    NSString *title = [NSString stringWithFormat:@"%@",info[@"name"]];
+//    NSString *detail = [NSString stringWithFormat:@"%@",info[@"content"]];
+//    NSString *name = [NSString stringWithFormat:@"%@",info[@"name"]];
     static NSString *identifierHealthReportCell = @"IdentifierHealthReportCell";
     CMMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierHealthReportCell forIndexPath:indexPath];
-    [cell configureTitle:title detail:detail name:name];
+    [cell configureTitle:title detail:@"" name:@""];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
