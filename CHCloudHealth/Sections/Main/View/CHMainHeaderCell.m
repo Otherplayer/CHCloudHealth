@@ -43,7 +43,7 @@
     NSString *heartRateAlarmCount = [NSString stringWithFormat:@"%@次",info[@"heartRateAlarmCount"]];
     NSString *familyNumCount = [NSString stringWithFormat:@"%@个",info[@"familyNumCount"]];
     NSString *totalMoveStepCount = [NSString stringWithFormat:@"%@w",info[@"totalMoveStepCount"]];
-    
+    NSInteger sex = [info[@"sex"] integerValue];
     
     [self.labName setText:name];
     [self.labMobile setText:mobile];
@@ -56,7 +56,11 @@
     [self.labReleationNum setText:familyNumCount];
     [self.labStep setText:totalMoveStepCount];
     
-    [self.ivAvatar setImage:[UIImage imageNamed:@"man"]];
+    if (sex == 1) {
+        [self.ivAvatar setImage:[UIImage imageNamed:@"man"]];
+    }else{
+        [self.ivAvatar setImage:[UIImage imageNamed:@"woman"]];
+    }
 }
 
 
