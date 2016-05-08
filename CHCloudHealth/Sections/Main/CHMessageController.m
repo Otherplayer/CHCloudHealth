@@ -86,7 +86,7 @@
     NSString *noticeId = info[@"id"];
     
     HYQWebViewController *controller = [[HYQWebViewController alloc] init];
-    controller.urlStr = @"http://221.1.104.218:8081/healthcloud-mobile/notice/getDetail";
+    controller.urlStr = HOTYQ_JAVA_API @"notice/getDetail";
     controller.params = @{@"noticeId":noticeId};
     [self.navigationController pushViewController:controller animated:YES];
 }

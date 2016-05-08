@@ -94,7 +94,7 @@
     NSString *healthDetailId = info[@"healthRecordId"];
     
     HYQWebViewController *controller = [[HYQWebViewController alloc] init];
-    controller.urlStr = @"http://221.1.104.218:8081/healthcloud-mobile/deviceUser/getHealthRecordDetail";
+    controller.urlStr = HOTYQ_JAVA_API @"deviceUser/getHealthRecordDetail";
     controller.params = @{@"heathRecordId":healthDetailId};
     [self.navigationController pushViewController:controller animated:YES];
     

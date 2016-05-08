@@ -3172,7 +3172,7 @@
             </objects>
             <point key="canvasLocation" x="1324.5" y="-469"/>
         </scene>
-        <!--系统消息-->
+        <!--消息中心-->
         <scene sceneID="bgr-nZ-1Mf">
             <objects>
                 <viewController storyboardIdentifier="CHMessageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gje-8u-1Fd" customClass="CHMessageController" sceneMemberID="viewController">
@@ -3236,8 +3236,12 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fjb-rf-qSA">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="48" id="9OS-D8-vjK"/>
-                                                        <constraint firstAttribute="height" constant="46" id="i1f-OQ-HfO"/>
+                                                        <constraint firstAttribute="width" constant="48" id="9OS-D8-vjK">
+                                                            <variation key="widthClass=compact" constant="65"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="height" constant="46" id="i1f-OQ-HfO">
+                                                            <variation key="widthClass=compact" constant="64"/>
+                                                        </constraint>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -3273,11 +3277,17 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6be-f6-kCC" firstAttribute="top" secondItem="lZc-7E-V8S" secondAttribute="topMargin" constant="34" id="Bsb-Yd-jbw"/>
+                                                <constraint firstItem="6be-f6-kCC" firstAttribute="top" secondItem="lZc-7E-V8S" secondAttribute="topMargin" constant="34" id="Bsb-Yd-jbw">
+                                                    <variation key="widthClass=compact" constant="25"/>
+                                                </constraint>
                                                 <constraint firstItem="VJs-yv-NVE" firstAttribute="leading" secondItem="fjb-rf-qSA" secondAttribute="trailing" constant="8" id="Qai-hq-quU"/>
-                                                <constraint firstAttribute="topMargin" secondItem="VJs-yv-NVE" secondAttribute="top" id="Tmz-hx-3fa"/>
+                                                <constraint firstAttribute="topMargin" secondItem="VJs-yv-NVE" secondAttribute="top" id="Tmz-hx-3fa">
+                                                    <variation key="widthClass=compact" constant="-2"/>
+                                                </constraint>
                                                 <constraint firstAttribute="leadingMargin" secondItem="fjb-rf-qSA" secondAttribute="leading" id="XIQ-a9-oa5"/>
-                                                <constraint firstItem="fjb-rf-qSA" firstAttribute="top" secondItem="lZc-7E-V8S" secondAttribute="topMargin" constant="12" id="ZRO-EC-E30"/>
+                                                <constraint firstItem="fjb-rf-qSA" firstAttribute="top" secondItem="lZc-7E-V8S" secondAttribute="topMargin" constant="12" id="ZRO-EC-E30">
+                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                </constraint>
                                                 <constraint firstItem="Q1s-rC-oYU" firstAttribute="leading" secondItem="fjb-rf-qSA" secondAttribute="trailing" constant="8" id="iZl-Qu-VAo"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="6be-f6-kCC" secondAttribute="trailing" id="q0b-9N-gaR"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="VJs-yv-NVE" secondAttribute="trailing" id="qK7-qi-zeI"/>
@@ -3372,7 +3382,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="系统消息" id="AWb-pr-Hi5"/>
+                    <navigationItem key="navigationItem" title="消息中心" id="AWb-pr-Hi5"/>
                     <connections>
                         <outlet property="tableView" destination="DAN-qQ-yHk" id="q6p-cz-Pqo"/>
                     </connections>
