@@ -34,7 +34,7 @@
     if ([UIApplication.sharedApplication.delegate.window respondsToSelector:@selector(setTintColor:)] && UIApplication.sharedApplication.delegate.window.tintColor) {
         tintColor = UIApplication.sharedApplication.delegate.window.tintColor;
     }
-    tintColor = [UIColor defaultColor];
+    tintColor = [UIColor greenColor];
     _progressBarView.backgroundColor = tintColor;
     [self addSubview:_progressBarView];
     
