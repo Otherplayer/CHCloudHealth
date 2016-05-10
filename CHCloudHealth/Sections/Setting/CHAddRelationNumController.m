@@ -43,7 +43,7 @@
 
 
 - (void)getDatas{
-    
+    [HYQShowTip showProgressWithText:@"" dealy:30];
     [[NetworkingManager sharedManager] getListFamliyNumber:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
@@ -67,6 +67,7 @@
 //                }
 //                
                 
+                [HYQShowTip hideImmediately];
             }else{
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];
             }
@@ -91,6 +92,7 @@
         NSString *num3 = [self.tfMobile.text trimmingWhitespace];
         NSString *num4 = [self.tfAddress.text trimmingWhitespace];
         
+        [HYQShowTip showProgressWithText:@"" dealy:30];
         [[NetworkingManager sharedManager] setFamliyNumber:[CHUser sharedInstance].deviceUserId num1:num1 num2:num2 num3:num3 num4:num4 completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
                 [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];

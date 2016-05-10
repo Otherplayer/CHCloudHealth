@@ -55,9 +55,11 @@
 
 - (void)getDatas{
     
+    [HYQShowTip showProgressWithText:@"" dealy:30];
     [[NetworkingManager sharedManager] getListFamliyNumber:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
+                [HYQShowTip hideImmediately];
                 [self.datas removeAllObjects];
                 [self.datas addObjectsFromArray:responseData[@"data"]];
                 self.tableView.loading = NO;
