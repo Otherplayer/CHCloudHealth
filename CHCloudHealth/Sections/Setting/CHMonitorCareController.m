@@ -42,11 +42,11 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
     [self setShouldShowSpaceCell:0];
     
     if (self.type == 3) {
-        self.title = @"心率监测设置";
+        self.title = @"心率检测设置";
     }else if (self.type == 4){
-        self.title = @"血糖监测设置";
+        self.title = @"血糖检测设置";
     }else if (self.type == 5){
-        self.title = @"血压监测设置";
+        self.title = @"血压检测设置";
     }
     
     
@@ -105,7 +105,7 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
                     
                     NSDictionary *info = responseData[@"data"];
                     NSInteger value = [info[@"bloodSugarSwitch"] isEmptyObject] ? 0 : 1;
-                    NSDictionary *section1 = @{@"type":@(CHCellType_Switch),@"title":@"血糖监测",@"value":[NSString stringWithFormat:@"%@",@(value)]};
+                    NSDictionary *section1 = @{@"type":@(CHCellType_Switch),@"title":@"血糖检测",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                     [self.datas addObject:section1];
                     
                     
@@ -137,7 +137,7 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
                     
                     NSDictionary *info = responseData[@"data"];
                     NSInteger value = [info[@"bloodPressureSwitch"] isEmptyObject] ? 0 : 1;
-                    NSDictionary *section1 = @{@"title":@"血压监测",@"value":[NSString stringWithFormat:@"%@",@(value)]};
+                    NSDictionary *section1 = @{@"title":@"血压检测",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                     [self.datas addObject:section1];
                     
                     
