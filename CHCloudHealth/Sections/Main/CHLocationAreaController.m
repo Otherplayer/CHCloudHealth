@@ -189,6 +189,40 @@
 
 - (void)startLocationAction:(id)sender {
     
+    
+    
+    
+    
+    [HYQShowTip showProgressWithText:@"" dealy:30];
+    [[NetworkingManager sharedManager] getLocationSetting:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                
+                NSDictionary *info = responseData[@"data"];
+                NSInteger value = [info[@"locationSwitch"] integerValue];
+                if (value) {
+                    [self getLocationInfo];
+                }else{
+                    [HYQShowTip showTipTextOnly:@"未开启此项功能\n如有需要请呼叫人工坐席" dealy:4];
+                }
+                
+            }else{
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+        });
+        
+    }];
+    
+    
+    
+    
+    
+//    BMKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:self.viewRegion];
+////    [self.mapView setRegion:adjustedRegion animated:YES];
+//    [self.mapView setCenterCoordinate:adjustedRegion.center animated:YES];
+}
+
+- (void)getLocationInfo{
     [HYQShowTip showProgressWithText:@"位置更新中，请稍后..." dealy:60];
     [[NetworkingManager sharedManager] sendCurrentLocation:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
@@ -206,7 +240,7 @@
                         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
                         
                         [self.mapView setCenterCoordinate:coordinate animated:YES];
-                       
+                        
                         [self addPointAnnotationWithCoor:coordinate];
                         
                     });
@@ -218,12 +252,8 @@
             [HYQShowTip showTipTextOnly:errDesc dealy:2];
         }
     }];
-    
-    
-//    BMKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:self.viewRegion];
-////    [self.mapView setRegion:adjustedRegion animated:YES];
-//    [self.mapView setCenterCoordinate:adjustedRegion.center animated:YES];
 }
+
 - (void)startRoadAction:(id)sender{
     [self showDateAction:nil];
 }

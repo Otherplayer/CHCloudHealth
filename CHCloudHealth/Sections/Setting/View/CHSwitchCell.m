@@ -23,6 +23,9 @@
     if (self.didChangeValueBlock) {
         self.didChangeValueBlock(sswitch.isOn ? @"1" : @"0");
     }
+    if (self.didChangeValueSwitchBlock) {
+        self.didChangeValueSwitchBlock(sswitch.isOn ? @"1" : @"0",self);
+    }
 }
 
 @end

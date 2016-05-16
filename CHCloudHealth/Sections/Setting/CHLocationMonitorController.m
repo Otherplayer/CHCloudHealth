@@ -15,6 +15,7 @@
 @interface CHLocationMonitorController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *datas;
+@property (nonatomic, assign) BOOL offSwitchStatus;
 @end
 
 
@@ -24,6 +25,7 @@
     [super viewDidLoad];
     [self addBackButton];
     [self addRightButton2NavWithTitle:@"确认"];
+    self.offSwitchStatus = NO;
     
     self.datas = [[NSMutableArray alloc] init];
     
@@ -44,6 +46,9 @@
                 
                 NSDictionary *info = responseData[@"data"];
                 NSDictionary *section1 = @{@"title":@"电子围栏",@"value":[NSString stringWithFormat:@"%@",info[@"locationSwitch"]]};
+                NSInteger status = [info[@"locationSwitch"] integerValue];
+                self.offSwitchStatus = status;
+                
                 [self.datas addObject:section1];
                 
                 
@@ -120,10 +125,18 @@
         CHSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationHeaderCell forIndexPath:indexPath];
         WS(weakSelf);
         [cell configureTitle:info[@"title"] state:[info[@"value"] integerValue]];
-        [cell setDidChangeValueBlock:^(NSString *isOn) {
-            NSDictionary *section1 = @{@"title":@"电子围栏",@"value":[NSString stringWithFormat:@"%@",isOn]};
-            [weakSelf.datas replaceObjectAtIndex:0 withObject:section1];
-            [weakSelf.tableView reloadData];
+        [cell setDidChangeValueSwitchBlock:^(NSString *isOn,CHSwitchCell *selfCell) {
+            
+            
+            if (self.offSwitchStatus) {
+                NSDictionary *section1 = @{@"title":@"电子围栏",@"value":[NSString stringWithFormat:@"%@",isOn]};
+                [weakSelf.datas replaceObjectAtIndex:0 withObject:section1];
+                [weakSelf.tableView reloadData];
+            }else{
+                [selfCell.sSwitch setOn:NO];
+                [HYQShowTip showTipTextOnly:@"未开启此项功能\n如有需要请呼叫人工坐席" dealy:4];
+            }
+            
         }];
         return cell;
     }

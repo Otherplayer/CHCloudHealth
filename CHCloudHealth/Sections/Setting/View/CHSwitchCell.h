@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *sSwitch;
 
 @property (nonatomic, copy) void(^didChangeValueBlock)(NSString *isOn);
+@property (nonatomic, copy) void(^didChangeValueSwitchBlock)(NSString *isOn,CHSwitchCell *selfCell);
 - (void)configureTitle:(NSString *)title state:(NSInteger)state;
 
 @end
