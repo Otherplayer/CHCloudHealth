@@ -96,6 +96,8 @@
         [[NetworkingManager sharedManager] setFamliyNumber:[CHUser sharedInstance].deviceUserId num1:num1 num2:num2 num3:num3 num4:num4 completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             if (success) {
                 [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
+//                [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
+                [self.navigationController popViewControllerAnimated:YES];
             }else{
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];
             }

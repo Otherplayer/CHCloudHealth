@@ -195,7 +195,7 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
-//                    [self.navigationController popViewControllerAnimated:YES];
+                    [self.navigationController popViewControllerAnimated:YES];
                 }else{
                     self.tableView.loading = NO;
                     [HYQShowTip showTipTextOnly:errDesc dealy:2];
@@ -212,7 +212,7 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
-//                    [self.navigationController popViewControllerAnimated:YES];
+                    [self.navigationController popViewControllerAnimated:YES];
                 }else{
                     self.tableView.loading = NO;
                     [HYQShowTip showTipTextOnly:errDesc dealy:2];
@@ -233,7 +233,7 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
-//                    [self.navigationController popViewControllerAnimated:YES];
+                    [self.navigationController popViewControllerAnimated:YES];
                 }else{
                     self.tableView.loading = NO;
                     [HYQShowTip showTipTextOnly:errDesc dealy:2];

@@ -81,6 +81,8 @@
         if (success) {
             self.tableView.loading = NO;
             [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
+//            [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
+            [self.navigationController popViewControllerAnimated:YES];
         }else{
             self.tableView.loading = NO;
             [HYQShowTip showTipTextOnly:errDesc dealy:2];
