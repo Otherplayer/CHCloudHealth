@@ -54,7 +54,7 @@
 - (void)configureTitle:(NSString *)title detail:(NSString *)detail time:(NSString *)time state:(NSInteger)state{
     
     NSString *date = [NSString stringWithFormat:@"绑定时间：%@",[NSDate dateMMSSFromStr:time]];
-    NSString *imei = [NSString stringWithFormat:@"IMEI：%@",[NSDate dateMMSSFromStr:time]];
+    NSString *imei = [NSString stringWithFormat:@"IMEI：%@",detail];
     
     [self.labTitle setText:title];
     [self.labDetail setText:imei];
