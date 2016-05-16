@@ -57,9 +57,9 @@
     [self.labStep setText:totalMoveStepCount];
     
     if (sex == 1) {
-        [self.ivAvatar setImage:[UIImage imageNamed:@"app_sex_m"]];
+        [self.ivAvatar setImage:[UIImage imageNamed:@"man"]];
     }else{
-        [self.ivAvatar setImage:[UIImage imageNamed:@"app_sex_f"]];
+        [self.ivAvatar setImage:[UIImage imageNamed:@"woman"]];
     }
 }
 

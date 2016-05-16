@@ -93,6 +93,10 @@
 
 
 #pragma mark -
+- (IBAction)refreshDataAction:(id)sender {
+    [HYQShowTip showProgressWithText:@"" dealy:15];
+    [self getDatas];
+}
 
 - (void)getDatas{
     
@@ -133,6 +137,7 @@
                 [self.datas removeAllObjects];
                 self.datas = [[NSMutableArray alloc] initWithArray:self.tempDatas];
                 [self.tableView reloadData];
+                [HYQShowTip hideImmediately];
             }else{
                 self.tableView.loading = NO;
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];
