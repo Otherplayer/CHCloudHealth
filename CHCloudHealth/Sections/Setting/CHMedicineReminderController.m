@@ -43,6 +43,7 @@
                 NSString *time1 = [NSString stringWithFormat:@"%@",info[@"medicationTime1"]];
                 NSString *time2 = [NSString stringWithFormat:@"%@",info[@"medicationTime2"]];
                 NSString *time3 = [NSString stringWithFormat:@"%@",info[@"medicationTime3"]];
+                NSString *time4 = [NSString stringWithFormat:@"%@",info[@"medicationTime4"]];
                 
                 NSDictionary *section1 = @{@"type":@(1),@"title":@"服药提醒",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                 [self.datas addObject:section1];
@@ -50,9 +51,11 @@
                 NSDictionary *section2 = @{@"type":@(2),@"title":@"1",@"value":time1};
                 NSDictionary *section3 = @{@"type":@(2),@"title":@"2",@"value":time2};
                 NSDictionary *section4 = @{@"type":@(2),@"title":@"3",@"value":time3};
+                NSDictionary *section5 = @{@"type":@(2),@"title":@"3",@"value":time4};
                 [self.datas addObject:section2];
                 [self.datas addObject:section3];
                 [self.datas addObject:section4];
+                [self.datas addObject:section5];
                 
                 self.tableView.loading = NO;
                 [self.tableView reloadData];
@@ -72,8 +75,9 @@
     NSString *time1 = self.datas[1][@"value"];
     NSString *time2 = self.datas[2][@"value"];
     NSString *time3 = self.datas[3][@"value"];
+    NSString *time4 = self.datas[4][@"value"];
     
-    [[NetworkingManager sharedManager] setMedicineSetting:[CHUser sharedInstance].deviceId medicationSwitch:state t1:time1 t2:time2 t3:time3 completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+    [[NetworkingManager sharedManager] setMedicineSetting:[CHUser sharedInstance].deviceId medicationSwitch:state t1:time1 t2:time2 t3:time3 t4:time4 completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
             self.tableView.loading = NO;
             [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
