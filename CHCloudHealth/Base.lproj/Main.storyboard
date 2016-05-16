@@ -3295,10 +3295,10 @@
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="42.5" id="Jeh-Fj-uI9">
-                                                            <variation key="widthClass=compact" constant="32.5"/>
+                                                            <variation key="widthClass=compact" constant="37.5"/>
                                                         </constraint>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -3357,7 +3357,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6be-f6-kCC" firstAttribute="top" secondItem="lZc-7E-V8S" secondAttribute="topMargin" constant="34" id="Bsb-Yd-jbw">
-                                                    <variation key="widthClass=compact" constant="36"/>
+                                                    <variation key="widthClass=compact" constant="33"/>
                                                 </constraint>
                                                 <constraint firstItem="VJs-yv-NVE" firstAttribute="leading" secondItem="fjb-rf-qSA" secondAttribute="trailing" constant="8" id="Qai-hq-quU"/>
                                                 <constraint firstAttribute="topMargin" secondItem="VJs-yv-NVE" secondAttribute="top" id="Tmz-hx-3fa">
@@ -3373,7 +3373,7 @@
                                                 <constraint firstItem="6be-f6-kCC" firstAttribute="leading" secondItem="fjb-rf-qSA" secondAttribute="trailing" constant="8" id="qph-ji-Jtc"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Q1s-rC-oYU" secondAttribute="trailing" constant="26" id="vHm-aA-0gm"/>
                                                 <constraint firstItem="Q1s-rC-oYU" firstAttribute="top" secondItem="lZc-7E-V8S" secondAttribute="topMargin" constant="21" id="zeN-Vd-2s8">
-                                                    <variation key="widthClass=compact" constant="19"/>
+                                                    <variation key="widthClass=compact" constant="20"/>
                                                 </constraint>
                                             </constraints>
                                             <variation key="default">
