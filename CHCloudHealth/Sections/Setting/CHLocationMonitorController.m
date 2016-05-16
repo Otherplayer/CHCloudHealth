@@ -47,7 +47,7 @@
                 [self.datas addObject:section1];
                 
                 
-//                NSDictionary *section2 = @{@"title":@"围栏半径",@"value":[NSString stringWithFormat:@"%@",info[@"locationSwitch"]]};
+//                NSDictionary *section2 = @{@"titl= 【；】":@"围栏半径",@"value":[NSString stringWithFormat:@"%@",info[@"locationSwitch"]]};
 //                [self.datas addObject:section1];
                 NSString *time = @"";
                 if(![info[@"interval"] isEmptyObject]){
