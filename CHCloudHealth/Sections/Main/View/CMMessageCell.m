@@ -32,12 +32,12 @@
     [self.labTime setText:date];
     
     
-    if (type == 1) {
-        [self.ivImage setImage:[UIImage imageNamed:@"ios_icon_14"]];
-    }else if (type == 2){
+    if (type == 2){
         [self.ivImage setImage:[UIImage imageNamed:@"ios_icon_19"]];
     }else if (type == 3){
         [self.ivImage setImage:[UIImage imageNamed:@"ios_icon_22"]];
+    }else{
+        [self.ivImage setImage:[UIImage imageNamed:@"ios_icon_14"]];
     }
     
     
