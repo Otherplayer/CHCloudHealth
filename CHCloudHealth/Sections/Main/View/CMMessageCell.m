@@ -27,7 +27,7 @@
     [self.labTitle setText:title];
     [self.labDetail setText:detail];
     
-    NSString *date = [NSDate dateFromStr:time];
+    NSString *date = time;
     
     [self.labTime setText:date];
     

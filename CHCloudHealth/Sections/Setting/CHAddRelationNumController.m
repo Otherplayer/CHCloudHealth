@@ -94,13 +94,16 @@
         
         [HYQShowTip showProgressWithText:@"" dealy:30];
         [[NetworkingManager sharedManager] setFamliyNumber:[CHUser sharedInstance].deviceUserId num1:num1 num2:num2 num3:num3 num4:num4 completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-            if (success) {
-                [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
-//                [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
-                [self.navigationController popViewControllerAnimated:YES];
-            }else{
-                [HYQShowTip showTipTextOnly:errDesc dealy:2];
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (success) {
+                    [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
+                    //                [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
+                    [self.navigationController popViewControllerAnimated:YES];
+                }else{
+                    [HYQShowTip showTipTextOnly:errDesc dealy:2];
+                }
+                
+            });
         }];
         
 //        [[NetworkingManager sharedManager] setFamliyNumber:[CHUser sharedInstance].deviceUserId name:self.tfName.text relation:self.tfRelation.text mobile:self.tfMobile.text address:self.tfAddress.text remark:self.tfRemark.text completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
