@@ -56,7 +56,7 @@
         }
     }else{
         NSString *description = [NSString stringWithFormat:@"%@",info[@"description"]];
-        if (info[@"description"] == [NSNull null]) {
+        if ([info[@"description"] isEmptyObject]) {
             description = @"暂无数据";
         }
         
