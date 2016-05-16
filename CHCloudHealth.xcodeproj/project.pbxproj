@@ -125,6 +125,8 @@
 		84FEA6DD1CB50C8400ADA967 /* JRGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6DC1CB50C8400ADA967 /* JRGraphView.m */; };
 		84FEA6E01CB516F600ADA967 /* CHMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6DF1CB516F600ADA967 /* CHMessageController.m */; };
 		84FEA6E31CB51EA500ADA967 /* CHChangeNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6E21CB51EA500ADA967 /* CHChangeNameController.m */; };
+		B0872DD51CE70E26006BC47E /* app_img_f.png in Resources */ = {isa = PBXBuildFile; fileRef = B0872DD31CE70E26006BC47E /* app_img_f.png */; };
+		B0872DD61CE70E26006BC47E /* app_img_m.png in Resources */ = {isa = PBXBuildFile; fileRef = B0872DD41CE70E26006BC47E /* app_img_m.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -359,6 +361,8 @@
 		84FEA6DF1CB516F600ADA967 /* CHMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMessageController.m; sourceTree = "<group>"; };
 		84FEA6E11CB51EA500ADA967 /* CHChangeNameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHChangeNameController.h; sourceTree = "<group>"; };
 		84FEA6E21CB51EA500ADA967 /* CHChangeNameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHChangeNameController.m; sourceTree = "<group>"; };
+		B0872DD31CE70E26006BC47E /* app_img_f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_img_f.png; sourceTree = "<group>"; };
+		B0872DD41CE70E26006BC47E /* app_img_m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_img_m.png; sourceTree = "<group>"; };
 		EA12FFC0D604A8243CDEE906 /* Pods-CHCloudHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHCloudHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHCloudHealth/Pods-CHCloudHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -459,6 +463,8 @@
 		63D9F7E61CB0C472009BF266 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B0872DD31CE70E26006BC47E /* app_img_f.png */,
+				B0872DD41CE70E26006BC47E /* app_img_m.png */,
 				8415A6F41CD9F46000DAEDEB /* woman.png */,
 				8415A6F61CD9F49800DAEDEB /* man.png */,
 				63D9F7E71CB0C47E009BF266 /* bg_login.png */,
@@ -942,6 +948,8 @@
 			files = (
 				63D9F7E81CB0C47E009BF266 /* bg_login.png in Resources */,
 				8464DE201CAA48C7000B987E /* LaunchScreen.storyboard in Resources */,
+				B0872DD61CE70E26006BC47E /* app_img_m.png in Resources */,
+				B0872DD51CE70E26006BC47E /* app_img_f.png in Resources */,
 				8464DE1D1CAA48C7000B987E /* Assets.xcassets in Resources */,
 				63D9F7ED1CB0C52A009BF266 /* Login.storyboard in Resources */,
 				8415A6F51CD9F46000DAEDEB /* woman.png in Resources */,

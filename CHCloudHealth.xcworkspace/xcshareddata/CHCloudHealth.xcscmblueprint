@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "98C7812238B309C22B64BE9C9A5283D287BA4F22",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "87470ab2-1413-4efc-9f5e-e20b9a4af4c4" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "98C7812238B309C22B64BE9C9A5283D287BA4F22" : 0,
+    "87470ab2-1413-4efc-9f5e-e20b9a4af4c4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "98723241-3901-4050-B494-D48EAD7757DB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "98C7812238B309C22B64BE9C9A5283D287BA4F22" : "CHCloudHealth\/",
+    "87470ab2-1413-4efc-9f5e-e20b9a4af4c4" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CHCloudHealth",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CHCloudHealth.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/123.57.54.62\/CHY",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "87470ab2-1413-4efc-9f5e-e20b9a4af4c4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Otherplayer\/CHCloudHealth.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "98C7812238B309C22B64BE9C9A5283D287BA4F22"
+    }
+  ]
+}
