@@ -8,7 +8,7 @@
 
 #import "JRGraphView.h"
 
-static int lengthOfY = 80;
+static int lengthOfY = 200;
 static int lengthOfX = 1.5*60*3 * 60 / 2;
 static int positionOfLeft = 3;
 
@@ -20,7 +20,7 @@ static int positionOfLeft = 3;
 
 
 //#define kDateFormatter @"HH:mm\n  MM/dd/yyyy"
-static int startY = 55;
+static int startY = 0;
 
 @interface JRGraphView ()<CPTPlotDataSource,CPTPlotSpaceDelegate,CPTPlotAreaDelegate,CPTScatterPlotDelegate,CPTAxisDelegate>
 {
@@ -56,11 +56,11 @@ static int startY = 55;
 - (void)awakeFromNib{
     
     lengthOfX = kNormalXAxisLength;
-    lengthOfY = 80;
+    lengthOfY = 200;
     positionOfLeft = 3;
-    startY = 55;
+    startY = 0;
     
-    self.hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, 300)];
+    self.hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, kMainHeight-64 * 2)];
     self.hostView.backgroundColor = [UIColor whiteColor];
     self.plotDatasDictionary = [[NSMutableDictionary alloc] init];
     
@@ -658,6 +658,8 @@ static int startY = 55;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:formatter];
     //[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"America/New_York"]];
+//    [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+    [dateFormatter setLocale:[NSLocale systemLocale]];
     [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
     CPTTimeFormatter *timeFormatter = [[CPTTimeFormatter alloc] initWithDateFormatter:dateFormatter];
     return timeFormatter;

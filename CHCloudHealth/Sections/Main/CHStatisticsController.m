@@ -154,9 +154,13 @@
     if (self.type == 2) {
         for (int i = 0; i < self.originalDataArr.count; i++) {
             NSDictionary *info = self.originalDataArr[i];
-            NSNumber *x = @(i);
-            NSNumber *y = @([info[@"val"] integerValue] + 60);
-            [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
+            
+            NSDate *date = [[NSDate date] dateFromUnixTimestamp:([info[@"createDate"] doubleValue] / 1000)];
+            NSNumber *newX = [self parseDateToXAxisOffset:date];
+            NSNumber *ys = @([info[@"val"] integerValue]);
+//            NSNumber *x = @(i);
+//            NSNumber *y = @([info[@"val"] integerValue] + 60);
+            [self.dataArr addObject:@{ X_AXIS: newX, Y_AXIS: ys }];
         }
         
     }else if (self.type == 3){
