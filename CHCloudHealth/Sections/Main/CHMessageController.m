@@ -87,7 +87,7 @@
     
     HYQWebViewController *controller = [[HYQWebViewController alloc] init];
     controller.urlStr = HOTYQ_JAVA_API @"notice/getDetail";
-    controller.params = @{@"noticeId":noticeId,@"userId":[CHUser sharedInstance].uid};
+    controller.params = @{@"noticeId":noticeId,@"userId":[CHUser sharedInstance].uid,@"healthRecordId":noticeId};
     [self.navigationController pushViewController:controller animated:YES];
 }
 
