@@ -55,8 +55,8 @@
             [self.labValue setAdjustsFontSizeToFitWidth:YES];
         }
     }else{
-        NSString *description = [NSString stringWithFormat:@"%@",info[@"description"]];
-        if ([info[@"description"] isEmptyObject]) {
+        NSString *description = [NSString stringWithFormat:@"%@",info[@"val"]];
+        if ([info[@"val"] isEmptyObject]) {
             description = @"暂无数据";
         }
         
@@ -70,7 +70,6 @@
         [self.labState setTextColor:[UIColor color_66666]];
     }else{
         [self.labState setTextColor:[UIColor color_ca4341]];
-    
     }
 //    
 //    if ([self isNormalWithType:type]) {

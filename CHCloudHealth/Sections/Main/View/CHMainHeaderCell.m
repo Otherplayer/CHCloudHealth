@@ -45,6 +45,14 @@
     NSString *totalMoveStepCount = [NSString stringWithFormat:@"%@步",info[@"totalMoveStepCount"]];
     NSInteger sex = [info[@"sex"] integerValue];
     
+    
+    if (name.length > 0) {
+        if (sex == 1) {
+            name = [NSString stringWithFormat:@"%@先生",[name substringWithRange:NSMakeRange(0, 1)]];
+        }else{
+            name = [NSString stringWithFormat:@"%@女士",[name substringWithRange:NSMakeRange(0, 1)]];
+        }
+    }
     [self.labName setText:name];
     [self.labMobile setText:mobile];
     
