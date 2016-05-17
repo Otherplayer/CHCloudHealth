@@ -62,7 +62,7 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
                 if (success) {
                     
                     NSDictionary *info = responseData[@"data"];
-                    NSInteger value = [info[@"heartRateSwitch"] isEmptyObject] ? 0 : 1;
+                    NSInteger value = [info[@"heartRateSwitch"] integerValue];
                     NSDictionary *section1 = @{@"type":@(CHCellType_Switch),@"title":@"心率报警",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                     [self.datas addObject:section1];
                     
@@ -104,7 +104,7 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
                 if (success) {
                     
                     NSDictionary *info = responseData[@"data"];
-                    NSInteger value = [info[@"bloodSugarSwitch"] isEmptyObject] ? 0 : 1;
+                    NSInteger value = [info[@"bloodSugarSwitch"] integerValue];
                     NSDictionary *section1 = @{@"type":@(CHCellType_Switch),@"title":@"血糖检测",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                     [self.datas addObject:section1];
                     
@@ -136,7 +136,7 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
                 if (success) {
                     
                     NSDictionary *info = responseData[@"data"];
-                    NSInteger value = [info[@"bloodPressureSwitch"] isEmptyObject] ? 0 : 1;
+                    NSInteger value = [info[@"bloodPressureSwitch"] integerValue];
                     NSDictionary *section1 = @{@"title":@"血压检测",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                     [self.datas addObject:section1];
                     
@@ -272,13 +272,25 @@ typedef NS_ENUM(NSUInteger, CHCellType) {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    WS(weakSelf);
     NSDictionary *info = [self.datas objectAtIndex:indexPath.section];
     NSInteger type = [info[@"type"] integerValue];
     if (type == CHCellType_Switch) {
         static NSString *IdentifierLocationHeaderCell = @"IdentifierLocationHeaderCell";
         CHSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierLocationHeaderCell forIndexPath:indexPath];
         [cell configureTitle:info[@"title"] state:[info[@"value"] integerValue]];
+        [cell setDidChangeValueBlock:^(NSString *isOn) {
+            NSInteger state = 0;
+            if (isOn.integerValue) {
+                state = 1;
+            }
+            
+            NSMutableDictionary *section1 = [[NSMutableDictionary alloc] initWithDictionary:[weakSelf.datas objectAtIndex:0]];
+            [section1 setValue:@(state) forKey:@"value"];
+            [weakSelf.datas replaceObjectAtIndex:0 withObject:section1];
+            NSLog(@"%@",section1);
+            
+        }];
         return cell;
     }else if (type == CHCellType_Unit){
         static NSString *IdentifierLocationRadiusCell = @"IdentifierLocationRadiusCell";

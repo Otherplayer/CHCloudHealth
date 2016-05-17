@@ -91,15 +91,18 @@
     NSString *time4 = self.datas[4][@"value"];
     
     [[NetworkingManager sharedManager] setMedicineSetting:[CHUser sharedInstance].deviceId medicationSwitch:state t1:time1 t2:time2 t3:time3 t4:time4 completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-        if (success) {
-            self.tableView.loading = NO;
-            [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
-//            [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
-            [self.navigationController popViewControllerAnimated:YES];
-        }else{
-            self.tableView.loading = NO;
-            [HYQShowTip showTipTextOnly:errDesc dealy:2];
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (success) {
+                self.tableView.loading = NO;
+                [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
+                //            [HYQShowTip showTipTextOnly:@"设置成功" dealy:2];
+                [self.navigationController popViewControllerAnimated:YES];
+            }else{
+                self.tableView.loading = NO;
+                [HYQShowTip showTipTextOnly:errDesc dealy:2];
+            }
+        });
     }];
 }
 
