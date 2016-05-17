@@ -105,7 +105,23 @@
                                      
                                      nil];
     
-    [self UIWebViewWithPost:self.webView url:self.urlStr params:webViewParams];
+    if ([self.urlStr containsString:@"notice/getDetail"]) {
+        NSURL *url = [NSURL URLWithString: self.urlStr];
+        NSString *body = [NSString stringWithFormat: @"data=%@", [allparameters jsonString]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url];
+        [request setHTTPMethod: @"POST"];
+        [request setHTTPBody: [body dataUsingEncoding: NSUTF8StringEncoding]];
+        [self.webView loadRequest: request];
+        
+    }else{
+        [self UIWebViewWithPost:self.webView url:self.urlStr params:webViewParams];
+    }
+    
+    
+    
+    
+    
+    
 }
 
 
