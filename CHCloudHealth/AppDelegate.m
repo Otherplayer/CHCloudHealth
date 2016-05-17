@@ -75,11 +75,11 @@
     
     [JPUSHService registerDeviceToken:deviceToken];
     
-    
-//    NSString *token = [[deviceToken description] trimCharacterToToken];
-//    NSUserDefaults *standUserDefaults = [NSUserDefaults standardUserDefaults];
-//    [standUserDefaults setObject:token forKey:kAppToken];
-//    [standUserDefaults synchronize];
+    //04baaca75ec37a3899f8e0a0a21939f4727d96f4b02a372b2da6ca53cf77183c
+    NSString *token = [[deviceToken description] trimCharacterToToken];
+    NSUserDefaults *standUserDefaults = [NSUserDefaults standardUserDefaults];
+    [standUserDefaults setObject:token forKey:kAppToken];
+    [standUserDefaults synchronize];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {

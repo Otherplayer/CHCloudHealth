@@ -31,6 +31,8 @@
     
     [self.labTime setText:date];
     
+    [self.labTitle setNumberOfLines:0];
+    
     
     if (type == 2){
         [self.ivImage setImage:[UIImage imageNamed:@"ios_icon_19"]];

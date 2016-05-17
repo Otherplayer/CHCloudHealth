@@ -46,7 +46,8 @@ NSString *const kUSER_SEX = @"sex";
         deviceUserId = info[@"data"][kUSER_DEVICE_USER_ID];
     }
     
-    [JPUSHService setAlias:uid callbackSelector:nil object:nil];
+    NSString *alias = [uid stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    [JPUSHService setAlias:alias callbackSelector:nil object:nil];
     
     [self.userDefaults setObject:uid forKey:kUSER_ID];
     [self.userDefaults setObject:deviceId forKey:kUSER_DEVICE_ID];
