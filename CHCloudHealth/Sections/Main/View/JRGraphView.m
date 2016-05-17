@@ -10,7 +10,7 @@
 
 static int lengthOfY = 200;
 static int lengthOfX = 1.5*60*3 * 60 / 2;
-static int positionOfLeft = 3;
+static int positionOfLeft = 0;
 
 //static int standardLengthOfY = 80;
 
@@ -57,7 +57,7 @@ static int startY = 0;
     
     lengthOfX = kNormalXAxisLength;
     lengthOfY = 200;
-    positionOfLeft = 3;
+    positionOfLeft = 0;
     startY = 0;
     
     self.hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, kMainHeight-64 * 2)];
@@ -389,13 +389,14 @@ static int startY = 0;
     }else{
         x = [self parseDateToXAxisOffset:[NSDate date]];//484330665
     }
-    self.plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat([x doubleValue]) length:CPTDecimalFromFloat(kNormalXAxisLength)];//(3小时)60秒*3*60（60个点）
+    self.plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat([x doubleValue] - 60 * 15) length:CPTDecimalFromFloat(kNormalXAxisLength)];//(3小时)60秒*3*60（60个点）
     
 
     
 }
 - (NSNumber *)parseDateToXAxisOffset:(NSDate *)date {
     NSTimeInterval timeIntervalSinceRef = [date timeIntervalSinceReferenceDate];
+//    timeIntervalSinceRef = timeIntervalSinceRef - 60 * 60;
     return @(timeIntervalSinceRef);
 }
 
