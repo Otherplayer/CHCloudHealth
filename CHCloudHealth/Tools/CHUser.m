@@ -46,8 +46,6 @@ NSString *const kUSER_SEX = @"sex";
         deviceUserId = info[@"data"][kUSER_DEVICE_USER_ID];
     }
     
-    NSString *alias = [uid stringByReplacingOccurrencesOfString:@"-" withString:@""];
-    [JPUSHService setAlias:alias callbackSelector:nil object:nil];
     
     [self.userDefaults setObject:uid forKey:kUSER_ID];
     [self.userDefaults setObject:deviceId forKey:kUSER_DEVICE_ID];
@@ -55,7 +53,30 @@ NSString *const kUSER_SEX = @"sex";
     [self.userDefaults setObject:app_token forKey:kAppToken];
     [self.userDefaults synchronize];
     
+    [self setPushAlias];
 }
+//- (void)didSetAliasSuccess:(id)sender{
+//    NSLog(@"%@",sender);
+//}
+
+- (void)setPushAlias{
+    NSString *alias = [self.uid stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    //    [JPUSHService setAlias:alias callbackSelector:@selector(didSetAliasSuccess:) object:nil];
+    [JPUSHService setTags:[NSSet setWithObject:alias] alias:alias fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+        if (iResCode != 0) {
+            double delayInSeconds = 20;
+            dispatch_time_t delayInNanoSeconds =dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            // 得到全局队列
+            dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+            // 延期执行
+            dispatch_after(delayInNanoSeconds, concurrentQueue, ^(void){
+                [self setPushAlias];
+            });
+        }
+        NSLog(@"-----%@-----%@----%@",@(iResCode),iAlias,iTags);
+    }];
+}
+
 - (NSString *)uid{
     return [self.userDefaults objectForKey:kUSER_ID] ? : @"";
 }
