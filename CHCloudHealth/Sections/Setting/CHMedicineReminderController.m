@@ -39,7 +39,7 @@
                 
                 
                 NSDictionary *info = responseData[@"data"];
-                NSInteger value = [info[@"medicationSwitch"] isEmptyObject] ? 0 : 1;
+                NSInteger value = [info[@"medicationSwitch"] integerValue];
                 NSString *time1 = [NSString stringWithFormat:@"%@",info[@"medicationTime1"]];
                 NSString *time2 = [NSString stringWithFormat:@"%@",info[@"medicationTime2"]];
                 NSString *time3 = [NSString stringWithFormat:@"%@",info[@"medicationTime3"]];
