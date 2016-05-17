@@ -153,6 +153,10 @@ NSString *const kUSER_SEX = @"sex";
     [self.userDefaults removeObjectForKey:kUSER_PHONE];
     [self.userDefaults removeObjectForKey:kUSER_SEX];
     [self.userDefaults synchronize];
+    
+    [JPUSHService setTags:[NSSet set] alias:nil fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+        
+    }];
 }
 
 
