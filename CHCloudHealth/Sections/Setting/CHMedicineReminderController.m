@@ -45,6 +45,19 @@
                 NSString *time3 = [NSString stringWithFormat:@"%@",info[@"medicationTime3"]];
                 NSString *time4 = [NSString stringWithFormat:@"%@",info[@"medicationTime4"]];
                 
+                if ([time1 isEmptyObject]) {
+                    time1 = @"提醒一";
+                }
+                if ([time2 isEmptyObject]) {
+                    time2 = @"提醒二";
+                }
+                if ([time3 isEmptyObject]) {
+                    time3 = @"提醒三";
+                }
+                if ([time4 isEmptyObject]) {
+                    time4 = @"提醒四";
+                }
+                
                 NSDictionary *section1 = @{@"type":@(1),@"title":@"服药提醒",@"value":[NSString stringWithFormat:@"%@",@(value)]};
                 [self.datas addObject:section1];
                 

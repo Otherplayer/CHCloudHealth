@@ -1303,7 +1303,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chy.chy-health";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "94f56a21-70bd-44f4-a52d-f1f8edbec292";
+				PROVISIONING_PROFILE = "5aca6ab0-f905-4e83-b3f8-e68e6db83c12";
 				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = "-Wno-deprecated-declarations";
 			};
