@@ -72,6 +72,7 @@
                 
                 self.tableView.loading = NO;
                 [self.tableView reloadData];
+                
             }else{
                 self.tableView.loading = NO;
                 [HYQShowTip showTipTextOnly:errDesc dealy:2];
@@ -126,13 +127,25 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    WS(weakSelf);
     NSDictionary *info = [self.datas objectAtIndex:indexPath.section];
     NSInteger type = [info[@"type"] integerValue];
     if (type == 1) {
         static NSString *IdentifierReminderHeaderCell = @"IdentifierReminderHeaderCell";
         CHSwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:IdentifierReminderHeaderCell forIndexPath:indexPath];
         [cell configureTitle:info[@"title"] state:[info[@"value"] integerValue]];
+        [cell setDidChangeValueBlock:^(NSString *isOn) {
+            NSInteger state = 0;
+            if (isOn.integerValue) {
+                state = 1;
+            }
+            
+            NSMutableDictionary *section1 = [[NSMutableDictionary alloc] initWithDictionary:[weakSelf.datas objectAtIndex:0]];
+            [section1 setValue:@(state) forKey:@"value"];
+            [weakSelf.datas replaceObjectAtIndex:0 withObject:section1];
+            
+            
+        }];
         return cell;
     }else if (type == 2){
         static NSString *IdentifierReminderCell = @"IdentifierReminderCell";
