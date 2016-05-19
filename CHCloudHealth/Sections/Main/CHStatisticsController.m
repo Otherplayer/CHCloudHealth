@@ -110,7 +110,19 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 if (success) {
-                    [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
+                    
+                    NSArray *results = responseData[@"data"];
+                    
+                    NSArray *newResults = [results sortedArrayUsingComparator:^NSComparisonResult(NSDictionary * obj1, NSDictionary *obj2) {
+                        double tim1 = [obj1[@"createDate"] doubleValue];
+                        double tim2 = [obj2[@"createDate"] doubleValue];
+                        
+                        return tim1 > tim2;
+                    }];
+                    
+                    
+                    
+                    [self.originalDataArr addObjectsFromArray:newResults];
                     [self refreshGraph];
                     if (self.originalDataArr.count == 0) {
                         [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
@@ -128,7 +140,20 @@
            dispatch_async(dispatch_get_main_queue(), ^{
                
                if (success) {
-                   [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
+                   
+                   NSArray *results = responseData[@"data"];
+                   
+                   NSArray *newResults = [results sortedArrayUsingComparator:^NSComparisonResult(NSDictionary * obj1, NSDictionary *obj2) {
+                       double tim1 = [obj1[@"createDate"] doubleValue];
+                       double tim2 = [obj2[@"createDate"] doubleValue];
+                       
+                       return tim1 > tim2;
+                   }];
+                   
+                   
+                   
+                   [self.originalDataArr addObjectsFromArray:newResults];
+//                   [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
                    [self refreshGraph];
                    if (self.originalDataArr.count == 0) {
                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
@@ -169,7 +194,7 @@
 //            NSNumber *x = @(i);
             
             NSDate *date = [[NSDate date] dateFromUnixTimestamp:([info[@"createDate"] doubleValue] / 1000)];
-            
+            NSLog(@"-----%@",date);
             NSNumber *newX = [self parseDateToXAxisOffset:date];
             
             NSNumber *y = @([info[@"diastolicPressures"] integerValue]);
@@ -185,7 +210,7 @@
             NSDictionary *info = self.originalDataArr[i];
 //            NSNumber *newX = @([info[@"createDate"] doubleValue]/1000);
             NSDate *date = [[NSDate date] dateFromUnixTimestamp:([info[@"createDate"] doubleValue] / 1000)];
-            
+            NSLog(@"-----%@",date);
             NSNumber *newX = [self parseDateToXAxisOffset:date];
 //            NSNumber *x = @(i);
             NSNumber *y = @([info[@"bloodGlucoseValue"] integerValue]);
