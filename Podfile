@@ -15,6 +15,7 @@ pod 'JRSwizzle', '~> 1.0'
 pod 'JPush', '~> 2.1.0'
 pod 'BaiduMapKit', '~> 2.10.2'
 pod 'JECorePlotDigester', '~> 0.1.8'
+pod 'PNChart', '~> 0.8.8'
 
 #pod 'NJKWebViewProgress', '~> 0.2.3'
 #pod 'SDWebImage', '~> 3.7.3'
