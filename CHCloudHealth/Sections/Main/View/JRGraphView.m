@@ -629,6 +629,7 @@ static int startY = 0;
         theLabelTextStyle = [self textStyleWithAxis:axis style:zeroStyle color:[CPTColor colorWithCGColor:[UIColor defaultColor].CGColor]];
         
         NSString * labelString      = [formatter stringForObjectValue:tickLocation];
+//        labelString = @"abcd";
         CPTTextLayer * newLabelLayer= [[CPTTextLayer alloc] initWithText:labelString style:theLabelTextStyle];
         
         CPTAxisLabel * newLabel     = [[CPTAxisLabel alloc] initWithContentLayer:newLabelLayer];

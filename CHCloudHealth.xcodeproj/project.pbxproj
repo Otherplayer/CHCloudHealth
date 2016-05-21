@@ -1187,7 +1187,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "94f56a21-70bd-44f4-a52d-f1f8edbec292";
+				PROVISIONING_PROFILE = "01863b04-dea3-400f-83db-b1cc3c59b1cb";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1303,7 +1303,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chy.chy-health";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "94f56a21-70bd-44f4-a52d-f1f8edbec292";
+				PROVISIONING_PROFILE = "01863b04-dea3-400f-83db-b1cc3c59b1cb";
 				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = "-Wno-deprecated-declarations";
 			};
