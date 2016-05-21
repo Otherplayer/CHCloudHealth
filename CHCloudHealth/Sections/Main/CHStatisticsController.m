@@ -92,7 +92,21 @@
         [[NetworkingManager sharedManager] getHeartRateInfo:[CHUser sharedInstance].deviceUserId date:@"2016-05-18" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
-                    [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
+                    
+                    
+                    
+                    NSArray *results = responseData[@"data"];
+                    
+                    NSArray *newResults = [results sortedArrayUsingComparator:^NSComparisonResult(NSDictionary * obj1, NSDictionary *obj2) {
+                        double tim1 = [obj1[@"createDate"] doubleValue];
+                        double tim2 = [obj2[@"createDate"] doubleValue];
+                        
+                        return tim1 > tim2;
+                    }];
+                    
+                    
+                    
+                    [self.originalDataArr addObjectsFromArray:newResults];
                     if (self.originalDataArr.count == 0) {
                         [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
                     }else{
