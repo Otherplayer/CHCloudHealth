@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CorePlot-CocoaTouch.h>
-//#import <CorePlot-CocoaTouch.h>
+#import "CorePlot-CocoaTouch.h"
 
 static NSString *const X_AXIS = @"x";
 static NSString *const Y_AXIS = @"y";
+static NSString *const XXXXXXX = @"xxxxx";
 
 static NSString *const kDataLine    = @"Data Line";
 static NSString *const kDataLineSecond    = @"Data Line Second";

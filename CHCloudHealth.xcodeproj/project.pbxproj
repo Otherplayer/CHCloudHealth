@@ -11,6 +11,7 @@
 		63106CF21CBA84AC001B7D9F /* CHAddRelationNumController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63106CF11CBA84AC001B7D9F /* CHAddRelationNumController.m */; };
 		6315228F1CB55A4F00D8B160 /* CHHealthReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315228E1CB55A4F00D8B160 /* CHHealthReportController.m */; };
 		631522921CB56BD900D8B160 /* CHLocationAreaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631522911CB56BD900D8B160 /* CHLocationAreaController.m */; };
+		634006F01CF0A588006E2E90 /* JRGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634006EF1CF0A588006E2E90 /* JRGraphView.m */; };
 		63412E231CB2628B00FAD0DA /* UIStoryboard+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E221CB2628B00FAD0DA /* UIStoryboard+Categories.m */; };
 		63412E271CB2634600FAD0DA /* CHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E261CB2634600FAD0DA /* CHLoginController.m */; };
 		63412E2A1CB2717B00FAD0DA /* CHRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63412E291CB2717B00FAD0DA /* CHRegisterController.m */; };
@@ -120,7 +121,6 @@
 		84F1F4BE1CAD2CB60061AACC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F1F4BD1CAD2CB60061AACC /* CoreData.framework */; };
 		84FEA6D21CB5082E00ADA967 /* CHBindController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6D11CB5082E00ADA967 /* CHBindController.m */; };
 		84FEA6D71CB50B8000ADA967 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FEA6D61CB50B8000ADA967 /* CoreGraphics.framework */; };
-		84FEA6DD1CB50C8400ADA967 /* JRGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6DC1CB50C8400ADA967 /* JRGraphView.m */; };
 		84FEA6E01CB516F600ADA967 /* CHMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6DF1CB516F600ADA967 /* CHMessageController.m */; };
 		84FEA6E31CB51EA500ADA967 /* CHChangeNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA6E21CB51EA500ADA967 /* CHChangeNameController.m */; };
 		B0872DD51CE70E26006BC47E /* woman.png in Resources */ = {isa = PBXBuildFile; fileRef = B0872DD31CE70E26006BC47E /* woman.png */; };
@@ -136,6 +136,8 @@
 		6315228E1CB55A4F00D8B160 /* CHHealthReportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHHealthReportController.m; sourceTree = "<group>"; };
 		631522901CB56BD900D8B160 /* CHLocationAreaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLocationAreaController.h; sourceTree = "<group>"; };
 		631522911CB56BD900D8B160 /* CHLocationAreaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLocationAreaController.m; sourceTree = "<group>"; };
+		634006EE1CF0A588006E2E90 /* JRGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRGraphView.h; sourceTree = "<group>"; };
+		634006EF1CF0A588006E2E90 /* JRGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRGraphView.m; sourceTree = "<group>"; };
 		63412E211CB2628B00FAD0DA /* UIStoryboard+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+Categories.h"; sourceTree = "<group>"; };
 		63412E221CB2628B00FAD0DA /* UIStoryboard+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+Categories.m"; sourceTree = "<group>"; };
 		63412E251CB2634600FAD0DA /* CHLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLoginController.h; sourceTree = "<group>"; };
@@ -351,8 +353,6 @@
 		84FEA6D01CB5082E00ADA967 /* CHBindController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBindController.h; sourceTree = "<group>"; };
 		84FEA6D11CB5082E00ADA967 /* CHBindController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBindController.m; sourceTree = "<group>"; };
 		84FEA6D61CB50B8000ADA967 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		84FEA6DB1CB50C8400ADA967 /* JRGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRGraphView.h; sourceTree = "<group>"; };
-		84FEA6DC1CB50C8400ADA967 /* JRGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRGraphView.m; sourceTree = "<group>"; };
 		84FEA6DE1CB516F600ADA967 /* CHMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMessageController.h; sourceTree = "<group>"; };
 		84FEA6DF1CB516F600ADA967 /* CHMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMessageController.m; sourceTree = "<group>"; };
 		84FEA6E11CB51EA500ADA967 /* CHChangeNameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHChangeNameController.h; sourceTree = "<group>"; };
@@ -444,8 +444,8 @@
 		63412E5B1CB2A56200FAD0DA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				84FEA6DB1CB50C8400ADA967 /* JRGraphView.h */,
-				84FEA6DC1CB50C8400ADA967 /* JRGraphView.m */,
+				634006EE1CF0A588006E2E90 /* JRGraphView.h */,
+				634006EF1CF0A588006E2E90 /* JRGraphView.m */,
 				63412E5C1CB2A58400FAD0DA /* CHMainHeaderCell.h */,
 				63412E5D1CB2A58400FAD0DA /* CHMainHeaderCell.m */,
 				63412E5F1CB2B31900FAD0DA /* CHMainStateCell.h */,
@@ -1058,6 +1058,7 @@
 				84B1E31A1CAE77BA004573F4 /* UIWebView+JavaScriptAlertCategory.m in Sources */,
 				8472D20C1CAE53930003E35A /* FQAHPublicParameter.m in Sources */,
 				84B1E3141CAE77BA004573F4 /* UITableView+Categories.m in Sources */,
+				634006F01CF0A588006E2E90 /* JRGraphView.m in Sources */,
 				8472D2011CAE53930003E35A /* NSArray+FQAHCategories.m in Sources */,
 				84B1E30E1CAE77BA004573F4 /* UIImage+Extention.m in Sources */,
 				84B1E3121CAE77BA004573F4 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
@@ -1071,7 +1072,6 @@
 				8472D20D1CAE53930003E35A /* FQAHReachibility.m in Sources */,
 				63B983921CB8AF3400150EA2 /* CHSetTimeIntervalController.m in Sources */,
 				63412E4D1CB2A2C500FAD0DA /* CHLocationMonitorController.m in Sources */,
-				84FEA6DD1CB50C8400ADA967 /* JRGraphView.m in Sources */,
 				63412E2A1CB2717B00FAD0DA /* CHRegisterController.m in Sources */,
 				8472D2051CAE53930003E35A /* NSObject+FQAHCategories.m in Sources */,
 				84B1E3051CAE77BA004573F4 /* UIControl+Categories.m in Sources */,

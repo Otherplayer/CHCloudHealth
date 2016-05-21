@@ -33,12 +33,15 @@ PODS:
   - MagicalRecord/Core (2.3.2)
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.0.8)
+  - PNChart (0.8.8):
+    - UICountingLabel (~> 1.2.0)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
   - SWRevealViewController (2.3.0)
   - UIActivityIndicator-for-SDWebImage (1.2):
     - SDWebImage (~> 3.7)
+  - UICountingLabel (1.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.0)
@@ -51,6 +54,7 @@ DEPENDENCIES:
   - MagicalRecord (~> 2.3.2)
   - MBProgressHUD (~> 0.9)
   - MJRefresh (~> 3.0.7)
+  - PNChart (~> 0.8.8)
   - SWRevealViewController (~> 2.3.0)
   - UIActivityIndicator-for-SDWebImage
 
@@ -66,8 +70,10 @@ SPEC CHECKSUMS:
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
+  PNChart: 25f91e9c4688af49c3647489760624d037f5383f
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
 COCOAPODS: 0.39.0

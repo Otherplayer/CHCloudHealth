@@ -7,29 +7,20 @@
 //
 
 #import "JRGraphView.h"
-
-static int lengthOfY = 200;
-static int lengthOfX = 1.5*60*3 * 60 / 2;
-static int positionOfLeft = 0;
-
-//static int standardLengthOfY = 80;
-
-
-#define kNormalXAxisLength (1.5*60*3 * 60 / 2)
 #define kDateFormatter @"yyyy/MM/dd HH:mm:ss"
+static int lengthOfY = 200;
+static int lengthOfX = 10;
+static int positionOfLeft = 3;
 
-
-//#define kDateFormatter @"HH:mm\n  MM/dd/yyyy"
-static int startY = 0;
+static int standardLengthOfY = 200;
 
 @interface JRGraphView ()<CPTPlotDataSource,CPTPlotSpaceDelegate,CPTPlotAreaDelegate,CPTScatterPlotDelegate,CPTAxisDelegate>
 {
     CPTPlotSpaceAnnotation *symbolTextAnnotation;
     CPTScatterPlot *dataLinePlot;
-    CPTScatterPlot *dataLinePlotSecond;
+    CPTScatterPlot *dataLinePlot2;
 }
 @property (nonatomic, strong)CPTGraphHostingView *hostView;
-@property (nonatomic, strong) CPTXYPlotSpace *plotSpace;
 
 @end
 
@@ -40,9 +31,7 @@ static int startY = 0;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
-        
-        self.hostView = [[CPTGraphHostingView alloc] initWithFrame:frame];
+        self.hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, kMainHeight)];
         self.hostView.backgroundColor = [UIColor whiteColor];
         self.plotDatasDictionary = [[NSMutableDictionary alloc] init];
         
@@ -53,14 +42,9 @@ static int startY = 0;
     }
     return self;
 }
+
 - (void)awakeFromNib{
-    
-    lengthOfX = kNormalXAxisLength;
-    lengthOfY = 200;
-    positionOfLeft = 0;
-    startY = 0;
-    
-    self.hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, kMainHeight-64 * 2)];
+    self.hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, kMainHeight - 150)];
     self.hostView.backgroundColor = [UIColor whiteColor];
     self.plotDatasDictionary = [[NSMutableDictionary alloc] init];
     
@@ -83,21 +67,21 @@ static int startY = 0;
     // Plot area delegate
     graph.plotAreaFrame.plotArea.delegate = self;
     // plotSpace 控制图片的移动及缩放
-    self.plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
-    self.plotSpace.allowsUserInteraction = YES;
-    self.plotSpace.delegate = self;
+    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
+    plotSpace.allowsUserInteraction = YES;
+    plotSpace.delegate = self;
     
     
-    self.plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
                                                     length:CPTDecimalFromFloat(lengthOfX)];
-    self.plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(startY)
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
                                                     length:CPTDecimalFromFloat(lengthOfY)];
-    self.plotSpace.globalYRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(startY)
+    plotSpace.globalYRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0)
                                                           length:CPTDecimalFromFloat(lengthOfY)];// 固定y轴坐标
     
     // 设置图表 线 的样式
     CPTMutableLineStyle *lineStyle = [CPTMutableLineStyle lineStyle];
-    lineStyle.lineColor = [CPTColor colorWithCGColor:[UIColor defaultColor].CGColor];
+    lineStyle.lineColor = [CPTColor redColor];
     lineStyle.lineWidth = 1.f;
     // 设置关键 点 的样式
     CPTPlotSymbol * plotSymbol = [CPTPlotSymbol ellipsePlotSymbol];
@@ -112,23 +96,22 @@ static int startY = 0;
     dataLinePlot.delegate   = self;
     dataLinePlot.dataLineStyle = lineStyle;
     dataLinePlot.cachePrecision = CPTPlotCachePrecisionDouble;
-    dataLinePlot.interpolation = CPTScatterPlotInterpolationLinear;
+    dataLinePlot.interpolation = CPTScatterPlotInterpolationCurved;
     dataLinePlot.plotSymbol = plotSymbol;
     dataLinePlot.plotSymbolMarginForHitDetection = 10.0f;
     [graph addPlot:dataLinePlot];
-    
-    // Data lines second
-    dataLinePlotSecond = [[CPTScatterPlot alloc] init];
-    dataLinePlotSecond.identifier = kDataLineSecond;
-    dataLinePlotSecond.dataSource = self; //设定图表数据源
-    dataLinePlotSecond.delegate   = self;
-    lineStyle.lineColor = [CPTColor colorWithCGColor:[UIColor greenColor].CGColor];
-    dataLinePlotSecond.dataLineStyle = lineStyle;
-    dataLinePlotSecond.cachePrecision = CPTPlotCachePrecisionDouble;
-    dataLinePlotSecond.interpolation = CPTScatterPlotInterpolationLinear;
-    dataLinePlotSecond.plotSymbol = plotSymbol;
-    dataLinePlotSecond.plotSymbolMarginForHitDetection = 10.0f;
-    [graph addPlot:dataLinePlotSecond];
+    // Data lines 2
+    dataLinePlot2 = [[CPTScatterPlot alloc] init];
+    dataLinePlot2.identifier = kDataLineSecond;
+    dataLinePlot2.dataSource = self; //设定图表数据源
+    dataLinePlot2.delegate   = self;
+    lineStyle.lineColor = [CPTColor colorWithCGColor:[UIColor defaultColor].CGColor];
+    dataLinePlot2.dataLineStyle = lineStyle;
+    dataLinePlot2.cachePrecision = CPTPlotCachePrecisionDouble;
+    dataLinePlot2.interpolation = CPTScatterPlotInterpolationCurved;
+    dataLinePlot2.plotSymbol = plotSymbol;
+    dataLinePlot2.plotSymbolMarginForHitDetection = 10.0f;
+    [graph addPlot:dataLinePlot2];
     
     
     
@@ -141,7 +124,7 @@ static int startY = 0;
 //    dashDataLinePlot.cachePrecision = CPTPlotCachePrecisionDouble;
 //    dashDataLinePlot.interpolation = CPTScatterPlotInterpolationCurved;
 //    [graph addPlot:dashDataLinePlot];
-//    
+    
 //    CPTColor * blueColor        = [CPTColor colorWithComponentRed:0.3 green:0.3 blue:1.0 alpha:0.8];// 渐变色
 //    CPTColor * redColor         = [CPTColor colorWithComponentRed:1.0 green:0.3 blue:0.3 alpha:0.8];
 //    CPTGradient * areaGradient1 = [CPTGradient gradientWithBeginningColor:blueColor
@@ -159,14 +142,14 @@ static int startY = 0;
 //    fadeInAnimation.toValue             = [NSNumber numberWithFloat:1.0];
 //    [dashDataLinePlot addAnimation:fadeInAnimation forKey:@"animateOpacity"];
 //    
+    
+    
+    
 //    
-    
-    
-    
-    // Warning lines
+//    // Warning lines
 //    CPTScatterPlot *warningUpLinePlot = [[CPTScatterPlot alloc] init];
 //    warningUpLinePlot.identifier = kWarningUpLine;
-//    lineStyle.lineColor           = [CPTColor colorWithCGColor:[UIColor color_ca4341].CGColor];
+//    lineStyle.lineColor           = [CPTColor blueColor];
 //    warningUpLinePlot.dataLineStyle = lineStyle;
 //    warningUpLinePlot.dataSource = self;
 //    [graph addPlot:warningUpLinePlot];
@@ -198,8 +181,6 @@ static int startY = 0;
     redLineStyle.lineWidth = 10.0;
     redLineStyle.lineColor = [[CPTColor redColor] colorWithAlphaComponent:0.5];
     
-    
-    
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init]; // 显示到小数点后两位
     [formatter setMaximumFractionDigits:0];
     
@@ -207,48 +188,34 @@ static int startY = 0;
     // Label x axis with a fixed interval policy
     CPTXYAxisSet *axisSet         = (CPTXYAxisSet *)graph.axisSet;
     CPTXYAxis *x                  = axisSet.xAxis;
-    x.majorIntervalLength         = CPTDecimalFromInt(60 * 30);   // x轴主刻度：显示数字标签的量度间隔：(30分钟)60秒*30
-    x.minorTicksPerInterval       = 0;
+    x.majorIntervalLength         = CPTDecimalFromInt(1);
+    x.minorTicksPerInterval       = 1;
     x.orthogonalCoordinateDecimal = CPTDecimalFromFloat(0);
     x.axisConstraints             = [CPTConstraints constraintWithRelativeOffset:0.0];
-//    x.labelFormatter              = formatter;// X轴显示为时间;
-    x.labelFormatter              = [self xAxisLabelStyle:kDateFormatter];// X轴显示为时间;
-    //x.delegate                    = self;
-    x.axisLineStyle = clearColorLineStyle;
-    x.minorTickLineStyle = clearColorLineStyle;
-    x.majorTickLineStyle = clearColorLineStyle;
+    x.labelFormatter              = formatter;
+//    x.labelOffset = 1;
     // Rotate the labels by 45 degrees, just to show it can be done.
     x.labelRotation = CPTFloat(M_PI_4) / 2.0;
-    
-    CPTMutableTextStyle *newtextStyle = [CPTMutableTextStyle textStyle];
-    textStyle.color = [CPTColor colorWithCGColor:[UIColor defaultColor].CGColor];
-    x.labelTextStyle = newtextStyle;
+    x.delegate                    = self;
     
     // Label y with an automatic label policy.
     CPTXYAxis *y                  = axisSet.yAxis;
 //    y.labelingPolicy              = CPTAxisLabelingPolicyEqualDivisions;
-    y.majorIntervalLength         = CPTDecimalFromInt(20);/////////
-    y.minorTicksPerInterval       = 0;
+    y.majorIntervalLength         = CPTDecimalFromInt(50);
+    y.minorTicksPerInterval       = 1;
 //    y.preferredNumberOfMajorTicks = 5;
-    y.orthogonalCoordinateDecimal = CPTDecimalFromDouble(startY);
+    y.orthogonalCoordinateDecimal = CPTDecimalFromDouble(0);
     y.axisConstraints             = [CPTConstraints constraintWithLowerOffset:0.0];
     
     y.labelFormatter              = formatter;
-    y.axisLineStyle = clearColorLineStyle;
-    y.minorTickLineStyle = clearColorLineStyle;
-    y.majorTickLineStyle = clearColorLineStyle;
-    
     y.labelOffset                 = -2;
-    y.visibleAxisRange            = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(startY) length:CPTDecimalFromFloat(lengthOfY)];
-    y.delegate                    = self;
+    y.visibleAxisRange            = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0) length:CPTDecimalFromFloat(lengthOfY)];
+//    y.delegate                    = self;
     // Set axes
     graph.axisSet.axes = @[x, y];
     
-    
     y.majorGridLineStyle    = majorGridLineStyle;
     y.gridLinesRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0) length:CPTDecimalFromFloat(MAXFLOAT)];
-    
-
     
     
     
@@ -308,7 +275,7 @@ static int startY = 0;
 //    barPlotLast. identifier = kDataLineLast ;
 //    // 添加图形到绘图空间
 //    [ graph addPlot :barPlotLast toPlotSpace :plotSpace];
-//
+
     
     
     
@@ -324,7 +291,6 @@ static int startY = 0;
 - (void)refresh {
     
     NSArray *dataArr = [self.plotDatasDictionary objectForKey:kDataLine];
-    NSArray *dataArrSecond = [self.plotDatasDictionary objectForKey:kDataLineSecond];
     BOOL shouldRefresh = NO;
     
     for (NSDictionary *dic in dataArr) {
@@ -334,33 +300,26 @@ static int startY = 0;
             shouldRefresh = YES;
         }
     }
-    for (NSDictionary *dic in dataArrSecond) {
-        NSNumber *y = dic[Y_AXIS];
-        if (y.intValue > lengthOfY - 30) {
-            lengthOfY = y.intValue + 30;
-            shouldRefresh = YES;
-        }
-    }
-    NSArray *dataLastArr;
-    if (dataArr.count > 0) {
-        dataLastArr = [dataArr lastObject];
-        [self.plotDatasDictionary removeObjectForKey:kDataLineLast];
-        [self.plotDatasDictionary setObject:@[dataLastArr] forKey:kDataLineLast];
-    }
+//    NSArray *dataLastArr;
+//    if (dataArr.count > 0) {
+//        dataLastArr = [dataArr lastObject];
+//        [self.plotDatasDictionary removeObjectForKey:kDataLineLast];
+//        [self.plotDatasDictionary setObject:@[dataLastArr] forKey:kDataLineLast];
+//    }
     
     
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *) self.hostView.hostedGraph.defaultPlotSpace;
-//    CPTXYAxisSet *axisSet         = (CPTXYAxisSet *)self.hostView.hostedGraph.axisSet;
+    CPTXYAxisSet *axisSet         = (CPTXYAxisSet *)self.hostView.hostedGraph.axisSet;
     
     if (shouldRefresh) {
-//        CPTXYAxis *y                  = axisSet.yAxis;
-//        
-//        plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(startY)
-//                                                        length:CPTDecimalFromFloat(lengthOfY)];
-//        plotSpace.globalYRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(startY)
-//                                                              length:CPTDecimalFromFloat(lengthOfY)];// 固定y轴坐标
-//        y.visibleAxisRange            = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(startY)
-//                                                                     length:CPTDecimalFromFloat(lengthOfY)];
+        CPTXYAxis *y                  = axisSet.yAxis;
+        
+        plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+                                                        length:CPTDecimalFromFloat(lengthOfY)];
+        plotSpace.globalYRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInt(0)
+                                                              length:CPTDecimalFromFloat(lengthOfY)];// 固定y轴坐标
+        y.visibleAxisRange            = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+                                                                     length:CPTDecimalFromFloat(lengthOfY)];
         
     }
     if (dataArr.count + positionOfLeft > lengthOfX) {
@@ -375,59 +334,36 @@ static int startY = 0;
     //    [dataLinePlot reloadData];
     [self.hostView.hostedGraph reloadData];
     
-    [self adjustXAxisToFirstData];
-    
     
 }
-- (void)adjustXAxisToFirstData {//让第一个数据显示在最左边
-    NSNumber *x = nil;
-    NSArray *meaureBloodGlucoseArray = [self.plotDatasDictionary objectForKey:kDataLine];
-//    NSDate *beginDate = [NSDate date];
-    if (meaureBloodGlucoseArray.count > 0) {
-        x          = [[meaureBloodGlucoseArray objectAtIndex:0] valueForKey:X_AXIS];
-//        beginDate = [[meaureBloodGlucoseArray firstObject] valueForKey:@"measureDate"];
-    }else{
-        x = [self parseDateToXAxisOffset:[NSDate date]];//484330665
+
+
+-(void)setUpwarningValue:(CGFloat)upwarningValue{
+    _upwarningValue = upwarningValue;
+    
+    NSNumber *startXAxisOffset = @(-2.f);
+    NSNumber *endXAxisXoffset = @(lengthOfX * 3);
+    
+    NSArray *dataArr = [self.plotDatasDictionary objectForKey:kDataLine];
+    if (dataArr.count > lengthOfX) {
+        endXAxisXoffset = @(dataArr.count + lengthOfX * 2);
     }
-    self.plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat([x doubleValue] - 60 * 15) length:CPTDecimalFromFloat(kNormalXAxisLength)];//(3小时)60秒*3*60（60个点）
     
-
+    [self.plotDatasDictionary setObject:@[@{ X_AXIS:startXAxisOffset, Y_AXIS:@(upwarningValue) },@{X_AXIS:endXAxisXoffset, Y_AXIS:@(upwarningValue)}] forKeyedSubscript:kWarningUpLine];
+}
+-(void)setLowerwarningValue:(CGFloat)lowerwarningValue{
+    _lowerwarningValue = lowerwarningValue;
     
+    NSNumber *startXAxisOffset = @(-2.f);
+    NSNumber *endXAxisXoffset = @(lengthOfX * 3);
+    
+    NSArray *dataArr = [self.plotDatasDictionary objectForKey:kDataLine];
+    if (dataArr.count > lengthOfX) {
+        endXAxisXoffset = @(dataArr.count + lengthOfX * 2);
+    }
+    
+    [self.plotDatasDictionary setObject:@[@{ X_AXIS:startXAxisOffset, Y_AXIS:@(lowerwarningValue) },@{X_AXIS:endXAxisXoffset, Y_AXIS:@(lowerwarningValue)}] forKeyedSubscript:kWarningLowerLine];
 }
-- (NSNumber *)parseDateToXAxisOffset:(NSDate *)date {
-    NSTimeInterval timeIntervalSinceRef = [date timeIntervalSinceReferenceDate];
-//    timeIntervalSinceRef = timeIntervalSinceRef - 60 * 60;
-    return @(timeIntervalSinceRef);
-}
-
-//
-//
-//-(void)setUpwarningValue:(CGFloat)upwarningValue{
-//    _upwarningValue = upwarningValue;
-//    
-//    NSNumber *startXAxisOffset = @(-2.f);
-//    NSNumber *endXAxisXoffset = @(lengthOfX * 3);
-//    
-//    NSArray *dataArr = [self.plotDatasDictionary objectForKey:kDataLine];
-//    if (dataArr.count > lengthOfX) {
-//        endXAxisXoffset = @(dataArr.count + lengthOfX * 2);
-//    }
-//    
-//    [self.plotDatasDictionary setObject:@[@{ X_AXIS:startXAxisOffset, Y_AXIS:@(upwarningValue) },@{X_AXIS:endXAxisXoffset, Y_AXIS:@(upwarningValue)}] forKeyedSubscript:kWarningUpLine];
-//}
-//-(void)setLowerwarningValue:(CGFloat)lowerwarningValue{
-//    _lowerwarningValue = lowerwarningValue;
-//    
-//    NSNumber *startXAxisOffset = @(-2.f);
-//    NSNumber *endXAxisXoffset = @(lengthOfX * 3);
-//    
-//    NSArray *dataArr = [self.plotDatasDictionary objectForKey:kDataLine];
-//    if (dataArr.count > lengthOfX) {
-//        endXAxisXoffset = @(dataArr.count + lengthOfX * 2);
-//    }
-//    
-//    [self.plotDatasDictionary setObject:@[@{ X_AXIS:startXAxisOffset, Y_AXIS:@(lowerwarningValue) },@{X_AXIS:endXAxisXoffset, Y_AXIS:@(lowerwarningValue)}] forKeyedSubscript:kWarningLowerLine];
-//}
 
 
 #////////////////////////////////////////////////////////////////////////////////
@@ -489,7 +425,7 @@ static int startY = 0;
     
     // Setup a style for the annotation
     CPTMutableTextStyle *hitAnnotationTextStyle = [CPTMutableTextStyle textStyle];
-    hitAnnotationTextStyle.color    = [CPTColor colorWithCGColor:[UIColor defaultColor].CGColor];
+    hitAnnotationTextStyle.color    = [CPTColor blackColor];
     hitAnnotationTextStyle.fontSize = 16.0;
     hitAnnotationTextStyle.fontName = @"Helvetica-Bold";
     
@@ -539,18 +475,18 @@ static int startY = 0;
     switch ( coordinate ) {
         case CPTCoordinateX:
             if (changedRange.locationDouble < -1) {
-                changedRange = (CPTMutablePlotRange *)[CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(-0.9) length:CPTDecimalFromFloat(newRange.lengthDouble)];
+                changedRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(-0.9) length:CPTDecimalFromFloat(newRange.lengthDouble)];
             }
             if (changedRange.lengthDouble > 10) {
-                changedRange = (CPTMutablePlotRange *)[CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(newRange.locationDouble) length:CPTDecimalFromFloat(lengthOfX)];
+                changedRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(newRange.locationDouble) length:CPTDecimalFromFloat(lengthOfX)];
             }
             break;
             
         case CPTCoordinateY:
-//            if (lengthOfY != standardLengthOfY && lengthOfY > standardLengthOfY) {
-//                changedRange.length = CPTDecimalFromLongLong(lengthOfY);
-//                
-//            }
+            if (lengthOfY != standardLengthOfY && lengthOfY > standardLengthOfY) {
+                changedRange.length = CPTDecimalFromLongLong(lengthOfY);
+                
+            }
             break;
             
         default:
@@ -590,54 +526,151 @@ static int startY = 0;
  **/
 -(BOOL)axis:(CPTAxis *)axis shouldUpdateAxisLabelsAtLocations:(NSSet *)locations{
     
-    static CPTTextStyle * zeroStyle= nil;
-//    static CPTTextStyle * firStyle = nil;
-//    static CPTTextStyle * secStyle = nil;
-//    static CPTTextStyle * thiStyle = nil;
-//    static CPTTextStyle * forStyle = nil;
-//    static CPTTextStyle * fifStyle = nil;
-//    static CPTTextStyle * sexStyle = nil;
     
-    NSFormatter * formatter   = axis.labelFormatter;
-    CGFloat labelOffset             = axis.labelOffset;
     
-//    NSDecimalNumber *firNumber = [NSDecimalNumber decimalNumberWithString:@"20"];
-//    NSDecimalNumber *secNumber = [NSDecimalNumber decimalNumberWithString:@"40"];
-//    NSDecimalNumber *thiNumber = [NSDecimalNumber decimalNumberWithString:@"60"];
-//    NSDecimalNumber *forNumber = [NSDecimalNumber decimalNumberWithString:@"80"];
-//    NSDecimalNumber *fifNumber = [NSDecimalNumber decimalNumberWithString:@"100"];
-//    NSDecimalNumber *sexNumber = [NSDecimalNumber decimalNumberWithString:@"120"];
     
+    
+    
+    CPTXYAxis *xyAxis = (CPTXYAxis *)axis;
     NSMutableSet * newLabels        = [NSMutableSet set];
     
-    for (NSDecimalNumber * tickLocation in locations) {
-        CPTTextStyle *theLabelTextStyle;
-//        if ([tickLocation isGreaterThanOrEqualTo:sexNumber]) {
-//            theLabelTextStyle = [self textStyleWithAxis:axis style:sexStyle color:[CPTColor blackColor]];
-//        }else if ([tickLocation isGreaterThanOrEqualTo:fifNumber]) {
-//            theLabelTextStyle = [self textStyleWithAxis:axis style:fifStyle color:[CPTColor blackColor]];
-//        }else if ([tickLocation isGreaterThanOrEqualTo:forNumber]) {
-//            theLabelTextStyle = [self textStyleWithAxis:axis style:forStyle color:[CPTColor blackColor]];
-//        }else if ([tickLocation isGreaterThanOrEqualTo:thiNumber]) {
-//            theLabelTextStyle = [self textStyleWithAxis:axis style:thiStyle color:[CPTColor blackColor]];
-//        }else if ([tickLocation isGreaterThanOrEqualTo:secNumber]) {
-//            theLabelTextStyle = [self textStyleWithAxis:axis style:secStyle color:[CPTColor blackColor]];
-//        }else if ([tickLocation isGreaterThanOrEqualTo:firNumber]) {
-//            theLabelTextStyle = [self textStyleWithAxis:axis style:firStyle color:[CPTColor blackColor]];
-//        }else {
-//        }
-        theLabelTextStyle = [self textStyleWithAxis:axis style:zeroStyle color:[CPTColor colorWithCGColor:[UIColor defaultColor].CGColor]];
+    switch (xyAxis.coordinate) {
+        case CPTCoordinateX:
+        {
+            
+            NSArray *dataArr = [self.plotDatasDictionary objectForKey:kDataLine];
+//            static CPTTextStyle * zeroStyle= nil;
+            static CPTTextStyle * firStyle = nil;
+//            static CPTTextStyle * secStyle = nil;
+//            static CPTTextStyle * thiStyle = nil;
+//            static CPTTextStyle * forStyle = nil;
+//            static CPTTextStyle * fifStyle = nil;
+//            static CPTTextStyle * sexStyle = nil;
+            
+            NSFormatter * formatter   = axis.labelFormatter;
+            CGFloat labelOffset             = axis.labelOffset;
+            
+//            NSDecimalNumber *firNumber = [NSDecimalNumber decimalNumberWithString:@"50"];
+//            NSDecimalNumber *secNumber = [NSDecimalNumber decimalNumberWithString:@"100"];
+//            NSDecimalNumber *thiNumber = [NSDecimalNumber decimalNumberWithString:@"150"];
+//            NSDecimalNumber *forNumber = [NSDecimalNumber decimalNumberWithString:@"200"];
+//            NSDecimalNumber *fifNumber = [NSDecimalNumber decimalNumberWithString:@"250"];
+//            NSDecimalNumber *sexNumber = [NSDecimalNumber decimalNumberWithString:@"300"];
+            
+//            NSInteger i = 0;
+            for (NSDecimalNumber * tickLocation in locations) {
+                NSString * labelString      = [formatter stringForObjectValue:tickLocation];
+                CPTTextStyle *theLabelTextStyle;
+//                if ([tickLocation isGreaterThanOrEqualTo:sexNumber]) {
+//                    theLabelTextStyle = [self textStyleWithAxis:axis style:sexStyle color:[CPTColor yellowColor]];
+//                    labelString = @"2015-0756";
+//                }else if ([tickLocation isGreaterThanOrEqualTo:fifNumber]) {
+//                    labelString = @"2015-0757";
+//                    theLabelTextStyle = [self textStyleWithAxis:axis style:fifStyle color:[CPTColor purpleColor]];
+//                }else if ([tickLocation isGreaterThanOrEqualTo:forNumber]) {
+//                    labelString = @"2015-0758";
+//                    theLabelTextStyle = [self textStyleWithAxis:axis style:forStyle color:[CPTColor greenColor]];
+//                }else if ([tickLocation isGreaterThanOrEqualTo:thiNumber]) {
+//                    theLabelTextStyle = [self textStyleWithAxis:axis style:thiStyle color:[CPTColor redColor]];
+//                }else if ([tickLocation isGreaterThanOrEqualTo:secNumber]) {
+//                    theLabelTextStyle = [self textStyleWithAxis:axis style:secStyle color:[CPTColor blueColor]];
+//                }else if ([tickLocation isGreaterThanOrEqualTo:firNumber]) {
+//                    labelString = @"";
+//                }else {
+//                    labelString = @"2015-0755";
+//                    theLabelTextStyle = [self textStyleWithAxis:axis style:zeroStyle color:[CPTColor blackColor]];
+//                }
+                
+                NSLog(@"------%@  %@",labelString,tickLocation);
+                NSString *target = @"";
+                
+                if (tickLocation.integerValue < dataArr.count) {
+                    NSNumber *number = dataArr[tickLocation.integerValue][XXXXXXX];
+                    target = [NSString stringWithFormat:@"%@",[self standardTimeFromNumber:number]];
+                }
+                
+                labelString = target;
+                
+                theLabelTextStyle = [self textStyleWithAxis:axis style:firStyle color:[CPTColor blackColor]];
+                
+                CPTTextLayer * newLabelLayer= [[CPTTextLayer alloc] initWithText:labelString style:theLabelTextStyle];
+                
+                CPTAxisLabel * newLabel     = [[CPTAxisLabel alloc] initWithContentLayer:newLabelLayer];
+                newLabel.tickLocation       = tickLocation.decimalValue;
+                newLabel.offset             = labelOffset;
+                //        newLabel.labelRotation = CPTFloat(M_PI_4)/2.0;
+                
+                newLabel.rotation = CPTFloat(M_PI_4)/1.2;
+                [newLabels addObject:newLabel];
+                
+            }
+
+        }
+            break;
+        case CPTCoordinateY:{
+            static CPTTextStyle * zeroStyle= nil;
+//            static CPTTextStyle * firStyle = nil;
+//            static CPTTextStyle * secStyle = nil;
+//            static CPTTextStyle * thiStyle = nil;
+//            static CPTTextStyle * forStyle = nil;
+//            static CPTTextStyle * fifStyle = nil;
+//            static CPTTextStyle * sexStyle = nil;
+            
+            NSFormatter * formatter   = axis.labelFormatter;
+            CGFloat labelOffset             = axis.labelOffset;
+            
+//            NSDecimalNumber *firNumber = [NSDecimalNumber decimalNumberWithString:@"50"];
+//            NSDecimalNumber *secNumber = [NSDecimalNumber decimalNumberWithString:@"100"];
+//            NSDecimalNumber *thiNumber = [NSDecimalNumber decimalNumberWithString:@"150"];
+//            NSDecimalNumber *forNumber = [NSDecimalNumber decimalNumberWithString:@"200"];
+//            NSDecimalNumber *fifNumber = [NSDecimalNumber decimalNumberWithString:@"250"];
+//            NSDecimalNumber *sexNumber = [NSDecimalNumber decimalNumberWithString:@"300"];
+            
+            NSMutableSet * newLabels        = [NSMutableSet set];
+            
+            for (NSDecimalNumber * tickLocation in locations) {
+                NSString * labelString      = [formatter stringForObjectValue:tickLocation];
+                CPTTextStyle *theLabelTextStyle;
+//                if ([tickLocation isGreaterThanOrEqualTo:sexNumber]) {
+//                    theLabelTextStyle = [self textStyleWithAxis:axis style:sexStyle color:[CPTColor yellowColor]];
+//                    
+//                }else if ([tickLocation isGreaterThanOrEqualTo:fifNumber]) {
+//                    
+//                    theLabelTextStyle = [self textStyleWithAxis:axis style:fifStyle color:[CPTColor purpleColor]];
+//                }else if ([tickLocation isGreaterThanOrEqualTo:forNumber]) {
+//                    
+//                    theLabelTextStyle = [self textStyleWithAxis:axis style:forStyle color:[CPTColor greenColor]];
+//                }else if ([tickLocation isGreaterThanOrEqualTo:thiNumber]) {
+//                    theLabelTextStyle = [self textStyleWithAxis:axis style:thiStyle color:[CPTColor redColor]];
+//                }else if ([tickLocation isGreaterThanOrEqualTo:secNumber]) {
+//                    theLabelTextStyle = [self textStyleWithAxis:axis style:secStyle color:[CPTColor blueColor]];
+//                }else if ([tickLocation isGreaterThanOrEqualTo:firNumber]) {
+//                    theLabelTextStyle = [self textStyleWithAxis:axis style:firStyle color:[CPTColor cyanColor]];
+//                    labelString = @"";
+//                }else {
+//                }
+                theLabelTextStyle = [self textStyleWithAxis:axis style:zeroStyle color:[CPTColor blackColor]];
+                
+                CPTTextLayer * newLabelLayer= [[CPTTextLayer alloc] initWithText:labelString style:theLabelTextStyle];
+                
+                CPTAxisLabel * newLabel     = [[CPTAxisLabel alloc] initWithContentLayer:newLabelLayer];
+                newLabel.tickLocation       = tickLocation.decimalValue;
+                newLabel.offset             = labelOffset;
+                
+//                newLabel.rotation = CPTFloat(M_PI_4)/1.0;
+                [newLabels addObject:newLabel];
+            }
         
-        NSString * labelString      = [formatter stringForObjectValue:tickLocation];
-//        labelString = @"abcd";
-        CPTTextLayer * newLabelLayer= [[CPTTextLayer alloc] initWithText:labelString style:theLabelTextStyle];
-        
-        CPTAxisLabel * newLabel     = [[CPTAxisLabel alloc] initWithContentLayer:newLabelLayer];
-        newLabel.tickLocation       = tickLocation.decimalValue;
-        newLabel.offset             = labelOffset;
-        
-        [newLabels addObject:newLabel];
+        }
+            break;
+            
+        default:
+            break;
     }
+    
+    
+    
+    
     
     axis.axisLabels = newLabels;
     
@@ -654,25 +687,11 @@ static int startY = 0;
     }
     return textStyle;
 }
-
-// x轴时间样式
-- (CPTTimeFormatter *)xAxisLabelStyle:(NSString *)formatter{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:formatter];
-    //[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"America/New_York"]];
-//    [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
-    [dateFormatter setLocale:[NSLocale systemLocale]];
-    [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
-    CPTTimeFormatter *timeFormatter = [[CPTTimeFormatter alloc] initWithDateFormatter:dateFormatter];
-    return timeFormatter;
-}
-
 //TimeFormatter
 - (NSString *)standardTimeFromNumber:(NSNumber *)number{
     NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:[number doubleValue]];
     return [date dateFormatter:kDateFormatter];
 }
-
 
 
 @end

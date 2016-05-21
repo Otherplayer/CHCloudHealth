@@ -89,7 +89,7 @@
     [self.originalDataArr removeAllObjects];
     if (self.type == 2) {
         [HYQShowTip showProgressWithText:@"" dealy:30];
-        [[NetworkingManager sharedManager] getHeartRateInfo:[CHUser sharedInstance].deviceUserId date:self.selectedDate completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+        [[NetworkingManager sharedManager] getHeartRateInfo:[CHUser sharedInstance].deviceUserId date:@"2016-05-18" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
                     [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
@@ -110,7 +110,19 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 if (success) {
-                    [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
+                    
+                    NSArray *results = responseData[@"data"];
+                    
+                    NSArray *newResults = [results sortedArrayUsingComparator:^NSComparisonResult(NSDictionary * obj1, NSDictionary *obj2) {
+                        double tim1 = [obj1[@"createDate"] doubleValue];
+                        double tim2 = [obj2[@"createDate"] doubleValue];
+                        
+                        return tim1 > tim2;
+                    }];
+                    
+                    
+                    
+                    [self.originalDataArr addObjectsFromArray:newResults];
                     [self refreshGraph];
                     if (self.originalDataArr.count == 0) {
                         [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
@@ -128,7 +140,20 @@
            dispatch_async(dispatch_get_main_queue(), ^{
                
                if (success) {
-                   [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
+                   
+                   NSArray *results = responseData[@"data"];
+                   
+                   NSArray *newResults = [results sortedArrayUsingComparator:^NSComparisonResult(NSDictionary * obj1, NSDictionary *obj2) {
+                       double tim1 = [obj1[@"createDate"] doubleValue];
+                       double tim2 = [obj2[@"createDate"] doubleValue];
+                       
+                       return tim1 > tim2;
+                   }];
+                   
+                   
+                   
+                   [self.originalDataArr addObjectsFromArray:newResults];
+//                   [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
                    [self refreshGraph];
                    if (self.originalDataArr.count == 0) {
                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
@@ -158,38 +183,36 @@
             NSDate *date = [[NSDate date] dateFromUnixTimestamp:([info[@"createDate"] doubleValue] / 1000)];
             NSNumber *newX = [self parseDateToXAxisOffset:date];
             NSNumber *ys = @([info[@"val"] integerValue]);
-//            NSNumber *x = @(i);
+            NSNumber *x = @(i);
 //            NSNumber *y = @([info[@"val"] integerValue] + 60);
-            [self.dataArr addObject:@{ X_AXIS: newX, Y_AXIS: ys }];
+            [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: ys ,XXXXXXX :newX}];
         }
         
     }else if (self.type == 3){
         for (int i = 0; i < self.originalDataArr.count; i++) {
             NSDictionary *info = self.originalDataArr[i];
-//            NSNumber *x = @(i);
+            NSNumber *x = @(i);
             
             NSDate *date = [[NSDate date] dateFromUnixTimestamp:([info[@"createDate"] doubleValue] / 1000)];
-            
+            NSLog(@"-----%@",date);
             NSNumber *newX = [self parseDateToXAxisOffset:date];
             
             NSNumber *y = @([info[@"diastolicPressures"] integerValue]);
             
-//            NSNumber *xs = @(i);
             NSNumber *ys = @([info[@"systolicePressures"] integerValue]);
             
-            [self.dataArr addObject:@{ X_AXIS: newX, Y_AXIS: y }];
-            [self.dataArrSecond addObject:@{ X_AXIS: newX, Y_AXIS: ys }];
+            [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y ,XXXXXXX: newX}];
+            [self.dataArrSecond addObject:@{ X_AXIS: x, Y_AXIS: ys ,XXXXXXX:newX}];
         }
     }else if (self.type == 4){
         for (int i = 0; i < self.originalDataArr.count; i++) {
             NSDictionary *info = self.originalDataArr[i];
-//            NSNumber *newX = @([info[@"createDate"] doubleValue]/1000);
             NSDate *date = [[NSDate date] dateFromUnixTimestamp:([info[@"createDate"] doubleValue] / 1000)];
-            
+            NSLog(@"-----%@",date);
             NSNumber *newX = [self parseDateToXAxisOffset:date];
-//            NSNumber *x = @(i);
+            NSNumber *x = @(i);
             NSNumber *y = @([info[@"bloodGlucoseValue"] integerValue]);
-            [self.dataArr addObject:@{ X_AXIS: newX, Y_AXIS: y }];
+            [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y ,XXXXXXX: newX}];
         }
     }
     
@@ -199,7 +222,7 @@
 //        NSNumber *x = @(i);
 //        i = i + 1;
 //        NSNumber *y = @((arc4random() % 120) + 41);
-//        [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y }];
+//        [self.dataArrSecond addObject:@{ X_AXIS: x, Y_AXIS: y ,XXXXXXX:@(1463615099000)}];
 //    }
     
     [self.graphView.plotDatasDictionary setObject:self.dataArr forKey:kDataLine];
