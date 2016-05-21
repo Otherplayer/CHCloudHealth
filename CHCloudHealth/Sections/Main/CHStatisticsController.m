@@ -17,7 +17,8 @@
 @property (nonatomic, strong)NSMutableArray *originalDataArr;
 @property (strong, nonatomic)NSString *selectedDate;
 
-@property (weak, nonatomic) IBOutlet JRGraphView *graphView;
+//@property (weak, nonatomic) IBOutlet JRGraphView *graphView;
+@property (strong, nonatomic) JRGraphView *graphView;
 @property (weak, nonatomic) IBOutlet UILabel *labFirst;
 @property (weak, nonatomic) IBOutlet UILabel *labSecond;
 @property (weak, nonatomic) IBOutlet UIButton *btnDate;
@@ -188,6 +189,10 @@
 - (void)refreshGraph{
     
     [self.dataArr removeAllObjects];
+    
+    
+    self.graphView = [[JRGraphView alloc] initWithFrame:CGRectMake(0, 64, kMainWidth, kMainHeight - 150)];
+    [self.view addSubview:self.graphView];
     
     
     if (self.type == 2) {
