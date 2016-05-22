@@ -10,6 +10,8 @@
 
 @interface CHMainHeaderCell : UITableViewCell
 
+@property (nonatomic, copy)void(^didClickAvatarAction)();
+
 - (void)configure:(NSDictionary *)info;
 
 @end

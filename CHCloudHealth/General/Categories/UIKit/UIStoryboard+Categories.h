@@ -26,5 +26,6 @@
 - (UIViewController *)addRelationNumController;
 
 - (UIViewController *)resetPsdStep2Controller;
+- (UIViewController *)userInfoController;
 
 @end

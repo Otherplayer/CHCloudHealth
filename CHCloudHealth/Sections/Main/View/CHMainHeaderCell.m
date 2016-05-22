@@ -64,10 +64,24 @@
     [self.labReleationNum setText:familyNumCount];
     [self.labStep setText:totalMoveStepCount];
     
+    
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didClickAvatarAction:)];
+    [self.ivAvatar setUserInteractionEnabled:YES];
+    [self.ivAvatar addGestureRecognizer:tapGesture];
+    
+    
+    
     if (sex == 1) {
         [self.ivAvatar setImage:[UIImage imageNamed:@"man"]];
     }else{
         [self.ivAvatar setImage:[UIImage imageNamed:@"woman"]];
+    }
+}
+
+- (void)didClickAvatarAction:(id)sender{
+    if (self.didClickAvatarAction) {
+        self.didClickAvatarAction();
     }
 }
 

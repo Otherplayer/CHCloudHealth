@@ -18,6 +18,7 @@
 #import "CHMainStateCell.h"
 #import "UIColor+Gradient.h"
 #import "NSObject+FQAHCategories.h"
+#import "CHUserInfoController.h"
 
 
 
@@ -171,9 +172,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *info = self.datas[indexPath.section][indexPath.row];
     if (indexPath.section == 0) {
+        WS(weakSelf);
         static NSString *identifierMainHeader = @"IdentifierMainHeaderCell";
         CHMainHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMainHeader forIndexPath:indexPath];
         [cell configure:info];
+        [cell setDidClickAvatarAction:^{
+            CHUserInfoController *controller = [[CHUserInfoController alloc] init];
+            [weakSelf.navigationController pushViewController:controller animated:YES];
+        }];
         return cell;
     }
     static NSString *identifierMainState = @"IdentifierMainStateCell";
