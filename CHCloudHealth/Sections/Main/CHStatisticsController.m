@@ -16,6 +16,7 @@
 @property (nonatomic, strong)NSMutableArray *dataArrSecond;
 @property (nonatomic, strong)NSMutableArray *originalDataArr;
 @property (strong, nonatomic)NSString *selectedDate;
+@property (weak, nonatomic) IBOutlet UILabel *labUnit;
 
 //@property (weak, nonatomic) IBOutlet JRGraphView *graphView;
 @property (strong, nonatomic) JRGraphView *graphView;
@@ -89,6 +90,8 @@
     
     [self.originalDataArr removeAllObjects];
     if (self.type == 2) {
+        
+        [self.labUnit setText:@"心率（次/分钟）"];
         [HYQShowTip showProgressWithText:@"" dealy:30];
         [[NetworkingManager sharedManager] getHeartRateInfo:[CHUser sharedInstance].deviceUserId date:@"2016-05-18" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -121,6 +124,7 @@
             });
         }];
     }else if (self.type == 3){
+        [self.labUnit setText:@"血压（mmHg）"];
         [HYQShowTip showProgressWithText:@"" dealy:30];
         [[NetworkingManager sharedManager] getBloodPressureInfo:[CHUser sharedInstance].deviceUserId date:self.selectedDate completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -152,6 +156,7 @@
             });
         }];
     }else if (self.type == 4){
+        [self.labUnit setText:@"血糖（mmol/L）"];
         [HYQShowTip showProgressWithText:@"" dealy:30];
         [[NetworkingManager sharedManager] getBloodSugarInfo:[CHUser sharedInstance].deviceUserId date:self.selectedDate completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
            dispatch_async(dispatch_get_main_queue(), ^{
@@ -198,7 +203,7 @@
     }
     
     
-    self.graphView = [[JRGraphView alloc] initWithFrame:CGRectMake(0, 64, kMainWidth, kMainHeight - 150)];
+    self.graphView = [[JRGraphView alloc] initWithFrame:CGRectMake(0, 64 + 40, kMainWidth, kMainHeight - 150)];
     [self.view addSubview:self.graphView];
     
     

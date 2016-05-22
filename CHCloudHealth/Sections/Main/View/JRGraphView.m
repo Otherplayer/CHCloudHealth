@@ -31,7 +31,7 @@ static int standardLengthOfY = 200;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, kMainHeight - 150)];
+        self.hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, kMainHeight - 150 - 40)];
         self.hostView.backgroundColor = [UIColor whiteColor];
         self.plotDatasDictionary = [[NSMutableDictionary alloc] init];
         
