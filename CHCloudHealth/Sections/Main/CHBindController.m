@@ -42,13 +42,13 @@
             if (success) {
                 
                 NSString *deviceId = [NSString stringWithFormat:@"%@",responseData[@"data"][@"id"]];
-                NSString *deviceUserId = [NSString stringWithFormat:@"%@",responseData[@"data"][@"deviceUserId"]];
+//                NSString *deviceUserId = [NSString stringWithFormat:@"%@",responseData[@"data"][@"deviceUserId"]];
                 
                 [[NetworkingManager sharedManager] chnageDevice:[CHUser sharedInstance].uid number:deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
                     if (success) {
                         
-                        [CHUser sharedInstance].deviceId = deviceNumber;
-                        [CHUser sharedInstance].deviceUserId = deviceUserId;
+                        [CHUser sharedInstance].deviceId = responseData[@"data"][@"id"];
+                        [CHUser sharedInstance].deviceUserId = responseData[@"data"][@"deviceUserId"];
                         
                         [self dismissViewControllerAnimated:YES completion:nil];
                         [HYQShowTip showTipTextOnly:@"绑定成功" dealy:2];
