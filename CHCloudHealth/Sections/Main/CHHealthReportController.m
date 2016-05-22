@@ -95,7 +95,7 @@
     
     HYQWebViewController *controller = [[HYQWebViewController alloc] init];
     controller.urlStr = HOTYQ_JAVA_API @"deviceUser/getHealthRecordDetail";
-    controller.params = @{@"heathRecordId":healthDetailId};
+    controller.params = @{@"healthRecordId":healthDetailId};
     [self.navigationController pushViewController:controller animated:YES];
     
 ////    [[NetworkingManager sharedManager] getHealthRecordDetailInfo:healthDetailId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
