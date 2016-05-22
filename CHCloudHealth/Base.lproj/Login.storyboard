@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Alo-WS-rGB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Alo-WS-rGB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -489,7 +489,9 @@
                                 <color key="backgroundColor" red="0.31830841302871704" green="0.61763226985931396" blue="0.91251415014266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="H2M-bi-GFr"/>
-                                    <constraint firstAttribute="width" constant="137" id="S0K-Rg-47V"/>
+                                    <constraint firstAttribute="width" constant="137" id="S0K-Rg-47V">
+                                        <variation key="widthClass=compact" constant="115"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="获取验证码">
@@ -845,7 +847,9 @@
                                 <color key="backgroundColor" red="0.31830841302871704" green="0.61763226985931396" blue="0.91251415014266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="IWw-tZ-XIX"/>
-                                    <constraint firstAttribute="width" constant="137" id="s2G-yd-trH"/>
+                                    <constraint firstAttribute="width" constant="137" id="s2G-yd-trH">
+                                        <variation key="widthClass=compact" constant="107"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="获取验证码">
