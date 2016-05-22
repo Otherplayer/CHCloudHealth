@@ -110,7 +110,7 @@
                     [self.originalDataArr addObjectsFromArray:newResults];
                     if (self.originalDataArr.count == 0) {
 //                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
-                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"暂无数据"] dealy:2];
+                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"暂无数据"] dealy:4];
                     }else{
                         [HYQShowTip hideImmediately];
                     }
@@ -142,7 +142,7 @@
                     [self refreshGraph];
                     if (self.originalDataArr.count == 0) {
 //                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
-                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"暂无数据"] dealy:2];
+                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"暂无数据"] dealy:4];
                     }else{
                         [HYQShowTip hideImmediately];
                     }
@@ -174,7 +174,7 @@
                    [self refreshGraph];
                    if (self.originalDataArr.count == 0) {
 //                       [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
-                       [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"暂无数据"] dealy:2];
+                       [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"暂无数据"] dealy:4];
                    }else{
                        [HYQShowTip hideImmediately];
                    }
@@ -192,6 +192,10 @@
 - (void)refreshGraph{
     
     [self.dataArr removeAllObjects];
+    
+    if (self.dataArr.count == 0 && self.dataArrSecond.count == 0) {
+        return;
+    }
     
     
     self.graphView = [[JRGraphView alloc] initWithFrame:CGRectMake(0, 64, kMainWidth, kMainHeight - 150)];

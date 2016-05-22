@@ -97,7 +97,7 @@ static int standardLengthOfY = 200;
     dataLinePlot.dataLineStyle = lineStyle;
     dataLinePlot.cachePrecision = CPTPlotCachePrecisionDouble;
     dataLinePlot.interpolation = CPTScatterPlotInterpolationCurved;
-    dataLinePlot.plotSymbol = nil;
+    dataLinePlot.plotSymbol = CPTPlotSymbolTypeNone;
     dataLinePlot.plotSymbolMarginForHitDetection = 10.0f;
     [graph addPlot:dataLinePlot];
     // Data lines 2
@@ -109,7 +109,7 @@ static int standardLengthOfY = 200;
     dataLinePlot2.dataLineStyle = lineStyle;
     dataLinePlot2.cachePrecision = CPTPlotCachePrecisionDouble;
     dataLinePlot2.interpolation = CPTScatterPlotInterpolationCurved;
-    dataLinePlot2.plotSymbol = nil;
+    dataLinePlot2.plotSymbol = CPTPlotSymbolTypeNone;
     dataLinePlot2.plotSymbolMarginForHitDetection = 10.0f;
     [graph addPlot:dataLinePlot2];
     
