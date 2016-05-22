@@ -214,7 +214,7 @@
             
             NSDate *date = [[NSDate date] dateFromUnixTimestamp:([info[@"createDate"] doubleValue] / 1000)];
             NSNumber *newX = [self parseDateToXAxisOffset:date];
-            NSNumber *ys = @([info[@"val"] integerValue]);
+            NSNumber *ys = @([info[@"val"] floatValue]);
             NSNumber *x = @(i);
 //            NSNumber *y = @([info[@"val"] integerValue] + 60);
             [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: ys ,XXXXXXX :newX}];
@@ -229,9 +229,9 @@
             NSLog(@"-----%@",date);
             NSNumber *newX = [self parseDateToXAxisOffset:date];
             
-            NSNumber *y = @([info[@"diastolicPressures"] integerValue]);
+            NSNumber *y = @([info[@"diastolicPressures"] floatValue]);
             
-            NSNumber *ys = @([info[@"systolicePressures"] integerValue]);
+            NSNumber *ys = @([info[@"systolicePressures"] floatValue]);
             
             [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y ,XXXXXXX: newX}];
             [self.dataArrSecond addObject:@{ X_AXIS: x, Y_AXIS: ys ,XXXXXXX:newX}];
@@ -243,7 +243,7 @@
             NSLog(@"-----%@",date);
             NSNumber *newX = [self parseDateToXAxisOffset:date];
             NSNumber *x = @(i);
-            NSNumber *y = @([info[@"bloodGlucoseValue"] integerValue]);
+            NSNumber *y = @([info[@"bloodGlucoseValue"] floatValue]);
             [self.dataArr addObject:@{ X_AXIS: x, Y_AXIS: y ,XXXXXXX: newX}];
         }
     }
