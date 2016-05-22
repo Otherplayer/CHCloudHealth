@@ -193,7 +193,7 @@
     
     [self.dataArr removeAllObjects];
     
-    if (self.dataArr.count == 0 && self.dataArrSecond.count == 0) {
+    if (self.originalDataArr.count == 0) {
         return;
     }
     
