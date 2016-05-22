@@ -177,7 +177,9 @@
         CHMainHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierMainHeader forIndexPath:indexPath];
         [cell configure:info];
         [cell setDidClickAvatarAction:^{
-            CHUserInfoController *controller = [[CHUserInfoController alloc] init];
+            CHUserInfoController *controller = (CHUserInfoController *)[[UIStoryboard mainStoryboard] instantiateViewControllerWithIdentifier:@"CHUserInfoController"];
+//            UIViewController *controller = [[UIStoryboard mainStoryboard] userInfoController];
+            controller.type = 1;
             [weakSelf.navigationController pushViewController:controller animated:YES];
         }];
         return cell;

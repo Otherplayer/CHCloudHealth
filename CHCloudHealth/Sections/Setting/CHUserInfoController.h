@@ -9,5 +9,5 @@
 #import "CHRootViewController.h"
 
 @interface CHUserInfoController : CHRootViewController
-
+@property (nonatomic, assign)NSInteger type;
 @end
