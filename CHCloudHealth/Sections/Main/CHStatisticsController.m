@@ -109,7 +109,8 @@
                     
                     [self.originalDataArr addObjectsFromArray:newResults];
                     if (self.originalDataArr.count == 0) {
-                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
+//                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
+                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"暂无数据"] dealy:2];
                     }else{
                         [HYQShowTip hideImmediately];
                     }
@@ -140,7 +141,8 @@
                     [self.originalDataArr addObjectsFromArray:newResults];
                     [self refreshGraph];
                     if (self.originalDataArr.count == 0) {
-                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
+//                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
+                        [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"暂无数据"] dealy:2];
                     }else{
                         [HYQShowTip hideImmediately];
                     }
@@ -171,7 +173,8 @@
 //                   [self.originalDataArr addObjectsFromArray:responseData[@"data"]];
                    [self refreshGraph];
                    if (self.originalDataArr.count == 0) {
-                       [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
+//                       [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"%@无记录",self.selectedDate] dealy:2];
+                       [HYQShowTip showTipTextOnly:[NSString stringWithFormat:@"暂无数据"] dealy:2];
                    }else{
                        [HYQShowTip hideImmediately];
                    }
