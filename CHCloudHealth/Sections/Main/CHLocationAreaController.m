@@ -229,7 +229,7 @@
     [HYQShowTip showProgressWithText:@"位置更新中，请稍后..." dealy:60];
     [[NetworkingManager sharedManager] sendCurrentLocation:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         if (success) {
-            [HYQShowTip showTipTextOnly:@"发送实时位置检测成功" dealy:2];
+            [HYQShowTip showTipTextOnly:@"发送实时位置监测成功" dealy:2];
             
             
             [[NetworkingManager sharedManager] getCurrentLocation:[CHUser sharedInstance].deviceUserId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
