@@ -204,7 +204,7 @@
     }
     
     
-    self.graphView = [[JRGraphView alloc] initWithFrame:CGRectMake(0, 64 + 40, kMainWidth, kMainHeight - 150)];
+    self.graphView = [[JRGraphView alloc] initWithFrame:CGRectMake(0, 64 + 40, kMainWidth, kMainHeight - 150) type:self.type];
     [self.view addSubview:self.graphView];
     
     

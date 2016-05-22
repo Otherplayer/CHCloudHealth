@@ -23,10 +23,10 @@ static NSString *const kWarningLowerLine = @"Warning Lower Line";
 
 
 @interface JRGraphView : UIView
-
+@property (nonatomic, assign)NSInteger contentType;
 @property (nonatomic, strong)NSMutableDictionary *plotDatasDictionary;
 @property (nonatomic, unsafe_unretained)CGFloat upwarningValue;
 @property (nonatomic, unsafe_unretained)CGFloat lowerwarningValue;
 - (void)refresh;
-
+- (instancetype)initWithFrame:(CGRect)frame type:(NSInteger)type;////1.心率、2.血压、3.血糖
 @end

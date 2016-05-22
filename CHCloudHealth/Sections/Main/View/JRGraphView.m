@@ -27,10 +27,20 @@ static int standardLengthOfY = 200;
 
 @implementation JRGraphView
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame type:(NSInteger)type
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.contentType = type;
+        
+        if (type == 4) {
+            lengthOfY = 18;
+            standardLengthOfY = 18;
+        }else{
+            lengthOfY = 200;
+            standardLengthOfY = 200;
+        }
+        
         self.hostView = [[CPTGraphHostingView alloc] initWithFrame:CGRectMake(0, 0, kMainWidth, kMainHeight - 150 - 40)];
         self.hostView.backgroundColor = [UIColor whiteColor];
         self.plotDatasDictionary = [[NSMutableDictionary alloc] init];
@@ -202,7 +212,13 @@ static int standardLengthOfY = 200;
     // Label y with an automatic label policy.
     CPTXYAxis *y                  = axisSet.yAxis;
 //    y.labelingPolicy              = CPTAxisLabelingPolicyEqualDivisions;
-    y.majorIntervalLength         = CPTDecimalFromInt(50);
+    
+    int mILength = 50;
+    if (self.contentType == 4) {
+        mILength = 5;
+    }
+    
+    y.majorIntervalLength         = CPTDecimalFromInt(mILength);
     y.minorTicksPerInterval       = 1;
 //    y.preferredNumberOfMajorTicks = 5;
     y.orthogonalCoordinateDecimal = CPTDecimalFromDouble(0);
