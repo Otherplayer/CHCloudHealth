@@ -429,13 +429,16 @@
 #pragma mark - 
 
 - (IBAction)showDateAction:(id)sender {
-    WS(weakSelf);
-    HYQDatePickerView *datePicker = [[HYQDatePickerView alloc] init];
-    [datePicker setDidClickedOkAction:^(NSString *result) {
-        weakSelf.selectedDate = result;
-        [weakSelf getDatas];
-    }];
-    [datePicker showInView:self.view withSelectDate:self.selectedDate timeOnly:YES];
+//    WS(weakSelf);
+    
+    [self getDatas];
+    
+//    HYQDatePickerView *datePicker = [[HYQDatePickerView alloc] init];
+//    [datePicker setDidClickedOkAction:^(NSString *result) {
+//        weakSelf.selectedDate = result;
+//        [weakSelf getDatas];
+//    }];
+//    [datePicker showInView:self.view withSelectDate:self.selectedDate timeOnly:YES];
 }
 
 
