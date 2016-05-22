@@ -248,6 +248,8 @@
                         
                     });
                     
+                }else{
+                    [HYQShowTip showTipTextOnly:errDesc dealy:4];
                 }
             }];
             
