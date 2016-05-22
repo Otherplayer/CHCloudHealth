@@ -16,7 +16,8 @@
 @property (nonatomic, strong)NSMutableArray *dataArrSecond;
 @property (nonatomic, strong)NSMutableArray *originalDataArr;
 @property (strong, nonatomic)NSString *selectedDate;
-@property (weak, nonatomic) IBOutlet UILabel *labUnit;
+//@property (weak, nonatomic) IBOutlet UILabel *labUnit;
+@property (strong, nonatomic) UILabel *labUnit;
 
 //@property (weak, nonatomic) IBOutlet JRGraphView *graphView;
 @property (strong, nonatomic) JRGraphView *graphView;
@@ -41,7 +42,7 @@
     self.dataArrSecond = [[NSMutableArray alloc] init];
     self.originalDataArr = [[NSMutableArray alloc] init];
     
-    
+    [self.view addSubview:self.labUnit];
     self.selectedDate = [NSString stringWithFormat:@"%@",[[NSDate date] descriptionWithFormatter:@"yyyy-MM-dd"]];
     [self.btnDate setTitle:self.selectedDate forState:UIControlStateNormal];
     [self.btnDate setBackgroundColor:[UIColor defaultColor]];
@@ -273,7 +274,13 @@
      return @(timeIntervalSinceRef);
  }
  
- 
+- (UILabel *)labUnit{
+    if (!_labUnit) {
+        _labUnit = [[UILabel alloc] initWithFrame:CGRectMake(10, 64, kMainWidth - 20, 40)];
+        _labUnit.font = [UIFont systemFontOfSize:15];
+    }
+    return _labUnit;
+}
 
 
 
