@@ -78,7 +78,8 @@
     
     
     
-    [self getDatas];
+//    [self getDatas];
+    [self getSafeAreaAction];
     
 }
 - (void)dealloc {
@@ -144,12 +145,7 @@
 
 #pragma mark -
 
-- (void)getDatas{
-//    
-//    [[NetworkingManager sharedManager] setSafeArea:[CHUser sharedInstance].deviceId lng:@"39" lat:@"119" radius:@"100" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
-//        
-//    }];
-    
+- (void)getSafeAreaAction{
     [[NetworkingManager sharedManager] getSafeArea:[CHUser sharedInstance].deviceId completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
@@ -161,6 +157,13 @@
             
         });
     }];
+}
+
+- (void)getDatas{
+//    
+//    [[NetworkingManager sharedManager] setSafeArea:[CHUser sharedInstance].deviceId lng:@"39" lat:@"119" radius:@"100" completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
+//        
+//    }];
     
     
     [[NetworkingManager sharedManager] getLocationInfo:[CHUser sharedInstance].deviceUserId date:self.selectedDate completedHandler:^(BOOL success, NSString *errDesc, id responseData) {
